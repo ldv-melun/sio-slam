@@ -1,0 +1,33 @@
+site:
+  title: sio-slam
+#  url:
+  start_page: sio-component::sio-slam-index.adoc
+content:
+  sources:
+  - url: ./
+    start_path: sio-slam-index
+  - url: ./
+    start_path: 2022-2023
+  - url: ./
+    start_path: sio-slam-backend
+  - url: ./
+    start_path: sio-slam-frontend
+  - url: ./
+    start_path: sio-slam-poo
+  - url: ./
+    start_path: sio-slam-sql
+
+asciidoc:
+  extensions:
+   - ./custom-lib/extension
+
+ui:
+  bundle:
+#    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable
+#    url: https://github.com/ocapuozzo/p4guitar-ui/blob/master/build/ui-bundle.zip?raw=true&v=3
+    url: ./../sio-ui/build/ui-bundle.zip
+    snapshot: false
+
+# ou passer en argument de cli : antora --fetch antora-playbook.yml
+# runtime:
+#  fetch: true

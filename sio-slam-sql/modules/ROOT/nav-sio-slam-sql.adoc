@@ -1,0 +1,2 @@
+* Glossary
+** xref:index-sql.adoc[Home Page]

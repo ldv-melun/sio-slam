@@ -1,0 +1,27 @@
+= SIO-SLAM
+
+== Portée
+
+Objectif de ce document : définir un axe directeur pour l’enseignement SIO SLAM deuxième année  (à terme il serait bon d’y réfléchir aussi pour la première année, bien qu’un peu plus cadré par le référentiel…)
+
+On tient compte :
+
+* des capacités de nos étudiants à étudier et à comprendre les technologies, mais aussi à oublier des acquis de première année
+* des difficultés à acquérir des compétences de base liées au métier de développeur d’applications
+* d’inclure des aspects de cybersécurité dans nos enseignements, en lien avec l’orientation cybersécurité du référentiel SIO, évaluée par une épreuve nationale (E6)
+
+Pour cela nous optons pour Kotlin, un langage de programmation structurant (adopté par l’industrie logicielle, souple en terme de paradigme et au typage statique).
+
+On vise à donner à l’étudiant une certaine forme d’autonomie dans des situations de création et de maintenance d’applications, particulièrement dans le cadre d’applications web, naturellement à forte diversité technologique, incluant le frontend et le backend. On portera une attention particulière aux bonnes pratiques et à la cybersécurité.
+
+
+== Principe didactique 
+
+1. Introduction de quelques concepts (pas trop, sur la base d’exemples interactifs si possible)
+2. Exercices et tp
+3. Rappel des concepts (plus abstrait)
+4. Évaluation
+5. Correction
+
+
+:xref::warning-p4concepts.adoc[caution]

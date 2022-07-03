@@ -1,0 +1,24 @@
+= SIO-SLAM
+
+== Page Coordinates
+
+page-component-name: {page-component-name}
+
+page-component-version: {page-component-version}
+
+page-module: {page-module}
+
+// page-relative: {page-relative}
+
+== A simple distributed component
+
+This is a simple example of a distributed component.
+
+* One content file is in source1 and one in source2.
+* One navigation file is in source1 and one in source2.
+* All the configuration for the component is in source1's `antora.yml`.
+* Antora errors if you have duplicated a navigation or content file across the multiple sources for the component.
+* Note the component selector (below the nav tree) has only one component listed.
+* The content is one component because the two `antora.yml` files have the same name and version attributes.
+
+Here's a link to the content in the other part:

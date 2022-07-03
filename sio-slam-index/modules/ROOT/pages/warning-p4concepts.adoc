@@ -1,0 +1,29 @@
+= P4 guitar concepts
+
+== Caution
+
+This resource is intended for guitar player informed, curious wishing to go beyond the framework
+of _traditional open tuning_  : `E-A-D-G_B-E` for regular tuning, particularly  *_all fourths tuning_*
+ : `E-A-D-G-C-F` (or equivalent as `Eb-Ab-Db-Gb-B-E`)
+
+.illustration 4ths tuning vs Tradi tuning
+|===
+|All 4ths tuning
+
+`E-A-D-G-C-F` | Traditional open tuning
+
+`E-A-D-G_B-E`
+|image:tuning-compare-4ths.png[tuning in 4ths] |image:tuning-compare-trad.png[tuning traditionnal]
+|**Regularity** shape <--> musical structure |**Irregularity** shape <-->  musical structure
+| One shape denote one musical structure | One shape for three musical structures : relation shape with
+musical structure depends of shape position on neck. This is the reality of traditional tuning.
+|===
+
+[IMPORTANT]
+====
+Be careful, switching to all fourths tuning is a **break** with tradition and is
+not suitable for all uses !
+
+If you plan to exactly reproduce guitar shots or accompany yourself on the guitar,
+we advise you to skip your way from this website.
+====

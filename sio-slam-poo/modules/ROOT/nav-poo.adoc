@@ -1,0 +1,3 @@
+* Training
+** xref:index-poo.adoc[Home Page]
+** xref:intro-poo.adoc[Explain introduction]
