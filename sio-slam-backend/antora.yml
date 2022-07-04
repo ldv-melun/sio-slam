@@ -1,11 +1,3 @@
 name: sio-component
-title: 'SIO-SLAM'
-version: '1.0'
-start_page: ROOT:index-sio-slam.adoc
-nav:
-  - modules/ROOT/nav-slam-backend.adoc
-  - modules/ROOT/nav-slam-frontend.adoc
-  - modules/ROOT/nav-slam-poo.adoc
-  - modules/ROOT/nav-slam-sql.adoc
-
+version: ~
 

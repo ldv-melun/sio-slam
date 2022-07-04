@@ -1,2 +1,2 @@
-* Glossary
-** xref:index-sql.adoc[Home Page]
+* SQL
+** xref:index-sql.adoc[SQL Home Page]

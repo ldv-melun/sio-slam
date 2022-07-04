@@ -23,5 +23,17 @@ On vise à donner à l’étudiant une certaine forme d’autonomie dans des sit
 4. Évaluation
 5. Correction
 
+== Architecture
 
-:xref::warning-p4concepts.adoc[caution]
+La pierre angulaire du contenu pourrait s'appuyer sur les logiques du 3 tiers web et des couches
+
+
+
+
+**Client HTTP + UI** : HTML/CSS/DOM/JS et HTTP
+
+**LOGIQUE APPLICATIVE et METIER** : facteurs de qualité du code, programmation objet, un peu de fonctionnel, structuration en couche, framework, analyse et ORM, patterns… et HTTP
+
+**LOGIQUE DE PERSISTANCE** : SQL et NoSQL (après le stage?)
+
+en teintant le tout de cybersécurité, de bonnes pratiques.
