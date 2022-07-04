@@ -23,7 +23,7 @@ Notion de qualité et design pattern (Gof, ACID…)
 * Les bases de SQL : DDL, DMLDCL, DQL…
 image:sql-map.png[cartographie sql]
 
-* Aborder les procédures stockées, triggers (tombe parfois à l’examen)
+* Procédures stockées, triggers (tombe parfois à l’examen)
 * Notion de sauvegarde et restauration
 
 * NoSQL : exemple MongoDB, Firebase dans le cloud…

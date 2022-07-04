@@ -1,0 +1,117 @@
+= utilisation d'antora (juillet 2022)
+
+== projet sio-slam
+
+Pour factoriser/harmoniser les ressources pédagogiques pour l'enseignement de SIO SLAM deuxième année.
+
+Le play book antora, se lance via la cmd (à la racine du projet) :
+
+ `antora antora-playbook.yml`
+
+puis aller voir dans build/site afin d'ouvrir `index.html` avec le navigateur.
+
+== projet sio-ui
+
+basé sur le modèle par défaut d'antora
+
+=== pour tester le modèle-ui :
+
+`gulp preview`
+
+puis aller sur `http://localhost:5252/`
+
+-> le préview est basé sur un modèle exemple (`CTRL + C` pour arrêter)
+
+===  Pour le déploiement
+
+`gulp bundle`
+
+(build/*.zip) est dans les documents suivis par git
+
+1/ commit
+2/ push (attention choisir la bonne branche )
+
+Dans le playbook de sio-slam
+
+----
+  bundle:
+#    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable
+#    url: https://github.com/ocapuozzo/p4guitar-ui/blob/master/build/ui-bundle.zip?raw=true
+    url: ./../p4guitar-ui/build/ui-bundle.zip
+    snapshot: true
+----
+
+VOIR snapshot:false
+
+ne prend pas en compte les changements de vars.css si url de github est appliquée (après push)...
+???
+corriger : changer la forme de l'url, par exemple en ajoutant un parametre : &v=1  ceci invalide le cache éventuel
+
+TODO : remote pour github
+
+== Extensions
+
+https://gitter.im/antora/users?at=5ed806935c9dcd57a10f71cf
+
+Lisa Gunn @lsgunnlsgunn juin 03 2020 23:33
+
+@eskwayrd , I know this is probably user error, but what I'm getting for the tabset output isn't quite what I expect yet.
+
+    I've added the behavior.js as 07-tabset.js to the js folder in my UI src,
+    I've copied the styles.css styles into the doc.css file in my UI src.
+    I've added ./custom-lib/extensions.js to my playbook file.
+    I've added the tab section with include files to my test document:
+
+Ce que j'ai fait :
+----
+ cp antora-asciidoctor-extensions/tabs-block/behavior.js p4guitar-ui/src/js/07-tabset.js
+ cat antora-asciidoctor-extensions/tabs-block/styles.css >> p4guitar-ui/src/css/doc.css
+ mkdir custom-l
+ cp ../antora-asciidoctor-extensions/tabs-block/extension.js custom-lib/ib
+----
+
+dans playbook de sio-slam :
+
+----
+asciidoc:
+extensions:
+- ./custom-lib/extensions
+----
+
+Exemple :
+
+[tabs]
+====
+Motoko::
++
+// TODO  example$counter.mo[]
+
+Rust::
++
+ // TODO example$counter.rs[]
+
+====
+
+doc.css update
+
+[source,css]
+----
+.tabs li {
+  [...]
+  font-weight: bold;
+  height: 2rem;
+  background-color: white;
+  color: black;
+}
+
+.tabset.is-loading .tabs li:not(:first-child),
+.tabset:not(.is-loading) .tabs li:not(.is-active) {
+  background-color: lavenderblush;
+  color: black;
+  font-weight: normal;
+}
+----
+
+Un projet sur ce thème par David Jencks :
+https://gitlab.com/djencks/asciidoctor-tabset-block
+

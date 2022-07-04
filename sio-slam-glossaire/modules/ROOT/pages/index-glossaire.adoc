@@ -2,19 +2,19 @@
 
 [glossary]
 
-path::
- set of _fingerprints_ left on playing surface (guitar neck), borrowed to play a musical motif
+variable::
+ symbole dans le code, dont le nom témoigne de son rôle, qui désigne selon son utilisation soit un _contenant_ (une adresse mémoire) soit une _valeur de contenu_ (interprétée selon son type)
+
+type::
+ Désigne comment utiliser et comment stocker la valeur d'une variable
+
+valeur d'une variable:: interprétation du contenu de (l'espace occupé par) la variable, selon sont type.
 +
-TODO image example
-
-path-card::
- number of fingerprints of a path
-
-m-path:: _path_ taken by the fingers to play a melodic line.
+Exemple : `String x = "42"` ou `int y = 42`;
 +
-Exemple : TODO images
-
-c-path:: a chord _path_ (polyphonic). Path taken by the fingers to play a chord.  Example : `XX2202` (chords 4 pitches on 6 strings guitar)
-
-
+La valeur de `_x_` est `"42"`
++
+La valeur de `_y_` est `42`
++
+Ces deux variables pointent vers des espaces mémoire peu comparables en terme de structure binaire et de taille.
 

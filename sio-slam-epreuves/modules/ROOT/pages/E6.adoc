@@ -2,7 +2,7 @@
 
 == Étude de cas nationale
 
-=== Protéger les données à caractère personnel (voir règlement CNIL et RGPD)
+=== Protéger les données à caractère personnel (CNIL et RGPD)
 
 === Préserver l'identité numérique de l’organisation (notion de preuve, …)
 
@@ -38,4 +38,5 @@ mots clés : réduction de la surface d’attaque, principe du moindre privilè
     • Bon usage de .gitignore
     • ...
 
+* Prépa **épreuves dominantes E6 et E5**
 
