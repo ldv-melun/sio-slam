@@ -13,7 +13,9 @@ content:
    - url: ./
      start_path: sio-slam-poo
    - url: ./
-     start_path: sio-slam-sql
+     start_path: sio-slam-analyse
+   - url: ./
+     start_path: sio-slam-missions
    - url: ./
      start_path: sio-slam-glossaire
 
@@ -23,9 +25,9 @@ asciidoc:
 
 ui:
   bundle:
-    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable
+#    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable
 #    url: https://github.com/ocapuozzo/p4guitar-ui/blob/master/build/ui-bundle.zip?raw=true&v=3
-#    url: ./../sio-ui/build/ui-bundle.zip
+    url: ./../sio-ui/build/ui-bundle.zip
     snapshot: false
 
 # ou passer en argument de cli : antora --fetch antora-playbook.yml
