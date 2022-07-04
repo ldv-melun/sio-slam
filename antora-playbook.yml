@@ -14,6 +14,8 @@ content:
      start_path: sio-slam-poo
    - url: ./
      start_path: sio-slam-sql
+   - url: ./
+     start_path: sio-slam-glossaire
 
 asciidoc:
   extensions:
