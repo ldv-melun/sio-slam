@@ -1,2 +1,0 @@
-* SQL
-** xref:index-sql.adoc[SQL Home Page]
