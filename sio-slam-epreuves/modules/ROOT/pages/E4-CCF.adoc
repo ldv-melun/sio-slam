@@ -1,0 +1,39 @@
+= E4 en CCF (BLOC 1)
+
+== Gestion du patrimoine informatique
+
+* Recensement du patrimoine informatique réalisé au moyen d’un outil de gestion des actifs informatiques.
+* Référentiels, normes et standards sont mobilisés de façon pertinente.
+* Les droits mis en place correspondent aux habilitations des acteurs.
+* Conditions de continuité et de reprise d’un service
+* Sauvegardes et restaurations
+
+== Répondre aux incidents et aux demandes d’assistance et d’évolution
+
+* Notion de niveaux de hotline
+* Outil de gestion de tickets d’incidents (jira… voir solutions en lien avec les dépôt distant git)
+
+== Développer la présence en ligne de l’organisation
+
+* Technologies du web (protocoles, format d’échanges et de présentation, html/css/xml/json, DOM, js …)
+* Notion de référencement
+
+== Travailler en mode projet
+
+* Gestionnaire de code source, travail collaboratif: Git et dépôt distant
+* Méthodes agiles
+* UML et diagrammes courants
+
+== Mettre à disposition des utilisateurs d’un service informatique
+
+* Réaliser les tests d’intégration et d’acceptation d’un service
+* Déploiement
+
+== Organiser son développement professionnel
+
+* Organiser sa veille technologique
+* Développer son projet professionnel
+* *Prépa épreuve dominante E4*, portfolio (et indirectement E5 et E6)
+
+
+

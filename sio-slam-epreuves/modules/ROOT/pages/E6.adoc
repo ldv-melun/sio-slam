@@ -1,0 +1,41 @@
+= E6 - cybersécurité (BLOC 3)
+
+== Étude de cas nationale
+
+=== Protéger les données à caractère personnel (voir règlement CNIL et RGPD)
+
+=== Préserver l'identité numérique de l’organisation (notion de preuve, …)
+
+=== Sécuriser les équipements et les usages des utilisateurs
+
+=== Garantir la disponibilité, l’intégrité et la confidentialité des services informatiques et des données de l’organisation face à des cyberattaques
+
+== SLAM Assurer la cybersécurité d’une solution applicative et de son développement
+
+* Participer à la vérification des éléments contribuant à la qualité d‟un développement informatique
+* Prendre en compte la sécurité dans un projet de développement d’une solution applicative
+* Mettre en œuvre et vérifier la conformité d‟une solution applicative et de son développement à un référentiel, une norme ou un standard de sécurité
+    • Prévenir les attaques
+    • Analyser les connexions (logs)
+    • Analyser des incidents de sécurité
+    • Concevoir de récits utilisateur malveillants (Evil User Story), proposer et mettre en œuvre des contres-mesures
+    • Journaux de l’application et des services tiers (logs)
+
+Thèmes abordables en SIO SLAM Application Web et Cybersécurité
+
+mots clés : réduction de la surface d’attaque, principe du moindre privilège, défense en profondeur
+
+    • Différentes techniques de suivis de session HTTP
+    • Qualité de la structure du contenu retourné au client (didactique : passer par XML ? Bien formé et valide?)
+    • La redirection côté client : définition et différentes formes de réalisation
+    • Pattern PRG généralisé et message Flash
+    • Respect de conventions de nommage et d’organisation des fichiers (capacité à s’adapter, exploiter les normes et standards)
+    • Niveau de confiance des données d’entrée
+    • Identification de la surface d’attaque (définition de périmètres, modélisation)
+    • Stratégie de gestion de la surface d’attaque (réduction, gestion, délégation)
+    • Mot de passe chiffrés en base de données et comment l’utiliser
+    • Identité utilisée par l’application pour se connecter au système de persistance
+    • Bon usage de .gitignore
+    • ...
+
+

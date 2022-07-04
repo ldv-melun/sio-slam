@@ -1,0 +1,31 @@
+= E5 en CCF
+
+== Concevoir et développer une solution applicative
+
+* Analyser un besoin exprimé et son contexte juridique
+* Modéliser une solution applicative
+* Participer à la conception de l’architecture d’une solution applicative
+* Exploiter les technologies Web et mobile pour mettre en œuvre les échanges entre applications,
+* Programmation Objet, procédurale et fonctionnelle
+Notion de qualité et design pattern (Gof, ACID…)
+* Application en architecture 3 tiers Web
+
+== Assurer la maintenance corrective ou évolutive d’une solution applicative
+
+* Capacité à interagir avec un existant (remarque : c’est le cas avec les frameworks)
+* Analyser et corriger un dysfonctionnement
+* Élaborer et réaliser des tests
+* Documentation technique et fonctionnelle
+
+== Gérer les données
+
+* Éléments d’analyse et implémentation dans un SGBDR
+* Les bases de SQL : DDL, DMLDCL, DQL…
+image:sql-map.png[cartographie sql]
+
+* Aborder les procédures stockées, triggers (tombe parfois à l’examen)
+* Notion de sauvegarde et restauration
+
+* NoSQL : exemple MongoDB, Firebase dans le cloud…
+
+* Prépa **épreuves dominantes E5 et E6**
