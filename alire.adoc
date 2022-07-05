@@ -6,11 +6,13 @@ Pour factoriser/harmoniser les ressources pédagogiques éditées en AsciiDoc po
 
 Aller sur https://antora.org/ pour installer en local les outils nécessaires.
 
+cloner le projet
+
 Le play book antora, se lance via la cmd (à la racine du projet) :
 
 `antora antora-playbook.yml`
 
-puis aller voir dans `build/site` afin d'ouvrir `index.html` avec le navigateur.
+puis aller voir dans `docs/` afin d'ouvrir `index.html` avec le navigateur.
 
 == projet sio-ui
 

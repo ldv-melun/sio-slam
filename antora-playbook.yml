@@ -31,8 +31,8 @@ asciidoc:
 ui:
   bundle:
 #    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable
-#    url: https://github.com/ocapuozzo/p4guitar-ui/blob/master/build/ui-bundle.zip?raw=true&v=3
-    url: ./../sio-ui/build/ui-bundle.zip
+    url: https://github.com/ldv-melun/sio-ui/blob/master/build/ui-bundle.zip?raw=true&v=1
+#    url: ./../sio-ui/build/ui-bundle.zip
     snapshot: false
 
 # ou passer en argument de cli : antora --fetch antora-playbook.yml
