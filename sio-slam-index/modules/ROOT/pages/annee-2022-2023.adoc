@@ -4,19 +4,6 @@
 
 image:schemadirecteurV1.png[Schema directeur]
 
-:table-caption: Tableau
-.Épreuves professionnelles
-
-[frame=all]
-|===
-|Période| Thème | Coefficient
-
-|E4 -
-Support et mise à disposition de services informatiques| CCF, oral de 40mn | 4
-|E5 - Conception et développement d'applications| CCF, pratique de 2h10 | 4
-|E6 - Cybersécurité des services informatiques - SLAM| Ponctuelle, épreuve nationale de 4h, devoir sur table | 4
-|===
-
 == Déroulement
 
 === Semaine 5 septembre
