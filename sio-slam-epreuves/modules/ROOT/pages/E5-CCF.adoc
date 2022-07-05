@@ -28,4 +28,4 @@ image:sql-map.png[cartographie sql]
 
 * NoSQL : exemple MongoDB, Firebase dans le cloud…
 
-* Prépa **épreuves dominantes E5 et E6**
+* Prépa **épreuves dominantes E5** (et indirectement E6)

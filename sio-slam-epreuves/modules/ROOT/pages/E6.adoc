@@ -38,5 +38,5 @@ mots clés : réduction de la surface d’attaque, principe du moindre privilè
     • Bon usage de .gitignore
     • ...
 
-* Prépa **épreuves dominantes E6 et E5**
+* Prépa **épreuves dominantes E6** (et indirectement E5)
 

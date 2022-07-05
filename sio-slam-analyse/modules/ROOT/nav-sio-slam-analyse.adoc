@@ -1,5 +1,5 @@
 * Analyse
-** xref:index-analyse.adoc[Analyse Home Page]
+** xref:index-analyse.adoc[Conduire une analyse]
 ** xref:index-sql.adoc[SQL]
 ** xref:index-nosql.adoc[NoSQL]
 

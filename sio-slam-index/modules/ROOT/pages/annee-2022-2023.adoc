@@ -1,8 +1,26 @@
 = Année scolaire 2022-2023
 
+== Schéma directeur
+
+
+:table-caption: Tableau
+.Schéma directeur
+
+[frame=all]
+|===
+|Période| Thème | Coefficient
+
+|E4 -
+Support et mise à disposition de services informatiques| CCF, oral de 40mn | 4
+|E5 - Conception et développement d'applications| CCF, pratique de 2h10 | 4
+|E6 - Cybersécurité des services informatiques - SLAM| Ponctuelle, épreuve nationale de 4h, devoir sur table | 4
+|===
+
+
+
 == Objectif SLAM deuxième année
 
-== Semaine 5 septembre 
+== Semaine 5 septembre
 
 Étude de...
- 
+
