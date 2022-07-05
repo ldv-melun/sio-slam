@@ -1,7 +1,4 @@
 = Notions de DF et DMR
-ifndef::backend-pdf[]
-:imagesdir: images
-endif::[]
 
 == Introduction
 
@@ -52,7 +49,7 @@ leur *valeur est unique* au sein du système.
 NOTE: Par exemple, `idClient -> nomClient`,  `idClient` est la *clé* qui permet l'accès à l'information `nomClient`. Pour la cohérence du sytème,
 cette clé doit être unique (absence de doublons)
 
-TIP: La source d'une dépendance engendrera, dans la majorité des cas, une *entité* dénotant un concept métier. (voir plus bas : link:#règles-de-passage-du-gd-au-modèle-du-domaine-uml[règles-de-passage-du-gd-au-modèle-du-domaine-uml])
+TIP: La source d'une dépendance engendrera, dans la majorité des cas, une *entité* dénotant un concept métier. (voir plus bas : xref:#règles-de-passage-du-gd-au-modèle-du-domaine-uml[règles-de-passage-du-gd-au-modèle-du-domaine-uml])
 
 === Propriétés des DF : Axiomes d'Armstrong
 
@@ -132,10 +129,11 @@ si la DF  `id_commande  --- > date_commande` suffit.
 
 Contre exemple (DF transitive)
 
-```
+[code]
+----
     transitivité
   A  ---------->  C  si une conséquence des DF :  A → B  et  B → C
-```
+----
 
 Exemple : `idCmd --- > idFournisseur, nomFournisseur`,
 qui se lit : "_la connaisance du numéro de commande me permet de connaître l'identifiant du fourniseur et son nom_" (ce qui est logique, vous en conviendrez)
@@ -461,12 +459,11 @@ Vous trouverez un autre exemple dans le chapitre MCD vers SR (entité `Documenta
 
 === Héritage et DF/DM
 
-à venir
+L'héritage permet de spécialiser un attribut, une entité. Le formalisme UML est recommandé.
 
 === Exemple de conduite d'analyse
 
-Su la base d'une petite étude de cas improvisée avec le concours
-d'étudiants en ligne : link:assets/etude-de-cas-exemple-vote.pdf[etude-de-cas-exemple-vote.pdf] (link:assets/etude-de-cas-exemple-vote.odt[source odt])
+Sur la base d'une petite étude de cas improvisée avec le concours d'étudiants en ligne : xref:sio-component:ROOT:attachment$etude-de-cas-exemple-vote.pdf[etude-de-cas-exemple-vote.pdf]
 
 === Exercices
 
@@ -838,29 +835,3 @@ image:diagUML-analyse-sr-ManyToMany-Porteuse-v2.png[title="ManyToMany"]
 
 == Exercices
 
-
-////
-[NOTE]
---
-Ici, c'est un apparté (sidebar, dont le rendu peut varier, c'est responsive).
-On y met ce que l'on veut, par exemple une liste :
-
-* level1
-** level2
-* level1
-[sidebar]
-****
-WARNING: Ici, c'est un apparté dans l'apparté, avec ci-dessous un tableau :
-|===
-|col1 | col2| col3
-|A
-|B
-|C
-|===
-[sidebar]
-*****
-IMPORTANT: Et on peut continueeeeer ! Taïôôôôôôôôôô
-*****
-****
---
-////

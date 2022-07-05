@@ -1,4 +1,4 @@
-* POO
-** xref:index-programmation.adoc[Index Programmation]
-** xref:index-qualite.adoc[Facteurs de qualité dans le code]
+* Programmation
+** xref:index-programmation.adoc[Introduction]
+** xref:index-qualite.adoc[Facteurs de qualité]
 ** xref:intro-poo.adoc[POO]

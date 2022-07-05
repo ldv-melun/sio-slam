@@ -2,14 +2,6 @@
 
 == Présentation
 
-ifdef::backend-pdf[]
-image:cogitas.png[title="cogitas", 200]
-endif::[]
-
-ifndef::backend-pdf[]
-image:cogitas.png[title="cogitas", 200]
-endif::[]
-
 Ce support vise à présenter une aide méthodologique en analyse, en vue de constituer un modèle de domaine.
 
 // <<<
