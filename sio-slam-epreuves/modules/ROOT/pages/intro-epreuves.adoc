@@ -5,8 +5,10 @@ Les épreuves professionnelles du BTS SIO sont au nombre de trois.
 
 :table-caption: Tableau
 .Épreuves professionnelles du BTS SIO
+[frame=ends]
 |===
 |Intitulé de l'épreuve| Forme | Coefficient
+
 |E4 -
 Support et mise à disposition de services informatiques| CCF, oral de 40mn | 4
 |E5 - Conception et développement d'applications| CCF, pratique de 2h10 | 4

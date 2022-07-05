@@ -120,6 +120,7 @@ Rust::
 }
 ----
 
+Exemple de rendu (copie écran) :
 image:sio-slam-backend/modules/ROOT/assets/images/exemple-tabs-html.png[rendu tabs]
 
 

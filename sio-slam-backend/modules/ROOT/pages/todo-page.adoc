@@ -9,13 +9,14 @@
 Exemple de tabs (une extension)
 
 .exemple
+
 [tabs]
 ====
-Motoko::
+Mokoto::
 +
-// TODO  example$counter.mo[]
+ // TODO  example$counter.mo[]
 
 Rust::
 +
-// TODO example$counter.rs[]
+ // TODO example$counter.rs[]
 ====
