@@ -2,54 +2,59 @@
 
 == projet sio-slam
 
-Pour factoriser/harmoniser les ressources pédagogiques pour l'enseignement de SIO SLAM deuxième année.
+Pour factoriser/harmoniser les ressources pédagogiques éditées en AsciiDoc pour l'enseignement de SIO SLAM deuxième année.
+
+Aller sur https://antora.org/ pour installer en local les outils nécessaires.
 
 Le play book antora, se lance via la cmd (à la racine du projet) :
 
- `antora antora-playbook.yml`
+`antora antora-playbook.yml`
 
-puis aller voir dans build/site afin d'ouvrir `index.html` avec le navigateur.
+puis aller voir dans `build/site` afin d'ouvrir `index.html` avec le navigateur.
 
 == projet sio-ui
 
-basé sur le modèle par défaut d'antora
+Basé sur le modèle par défaut d'Antora. C'est la partie `UI template` du site.
 
 === pour tester le modèle-ui :
 
-`gulp preview`
+à la racine du projet : `gulp preview`
 
 puis aller sur `http://localhost:5252/`
 
--> le préview est basé sur un modèle exemple (`CTRL + C` pour arrêter)
+Le _preview_ est basé sur un modèle Antora exemple (`CTRL + C` pour arrêter)
 
 ===  Pour le déploiement
 
+Consiste à produit un fichier compressé `.zip` contenant les ressources du template.
+
 `gulp bundle`
 
-(build/*.zip) est dans les documents suivis par git
+Génère le `zip` dans le dossier  `build`.
 
-1/ commit
-2/ push (attention choisir la bonne branche )
+IMPORTANT: La génération se base sur la dernière version du projet. Faire un `git commit` préalablement (puis un `push` sur la bonne branche)
 
-Dans le playbook de sio-slam
+Dans le `playbook` de sio-slam
 
+[source, yml]
 ----
   bundle:
 #    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable
-#    url: https://github.com/ocapuozzo/p4guitar-ui/blob/master/build/ui-bundle.zip?raw=true
-    url: ./../p4guitar-ui/build/ui-bundle.zip
+    url: ./../sio-ui/build/ui-bundle.zip
     snapshot: true
 ----
 
-VOIR snapshot:false
+TIP: Ne prend pas en compte les changements de `vars.css` si url de github est appliquée (après push)... ??? +
+corriger : changer la forme de l'url, par exemple en ajoutant un parametre : &v=1  ceci invalide le cache éventuel +
+=> Voir s'il n'existe pas une autre méthode
 
-ne prend pas en compte les changements de vars.css si url de github est appliquée (après push)...
-???
-corriger : changer la forme de l'url, par exemple en ajoutant un parametre : &v=1  ceci invalide le cache éventuel
-
-TODO : remote pour github
 
 == Extensions
+
+On peut ajouter des extensions à Antora
+
+J'ai voulu ajouter un système de `tabs` pour la vue `HTML`.  Un projet sur ce thème par David Jencks :
+https://gitlab.com/djencks/asciidoctor-tabset-block
 
 https://gitter.im/antora/users?at=5ed806935c9dcd57a10f71cf
 
@@ -80,6 +85,8 @@ extensions:
 
 Exemple :
 
+[code, antora]
+----
 [tabs]
 ====
 Motoko::
@@ -91,8 +98,9 @@ Rust::
  // TODO example$counter.rs[]
 
 ====
+----
 
-doc.css update
+`doc.css` update
 
 [source,css]
 ----
@@ -112,6 +120,6 @@ doc.css update
 }
 ----
 
-Un projet sur ce thème par David Jencks :
-https://gitlab.com/djencks/asciidoctor-tabset-block
+image:sio-slam-backend/modules/ROOT/assets/images/exemple-tabs-html.png[rendu tabs]
+
 

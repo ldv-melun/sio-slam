@@ -11,11 +11,11 @@ Exemple de tabs (une extension)
 .exemple
 [tabs]
 ====
-Chord::
+Motoko::
 +
- // TODO  example$counter.mo[]
+// TODO  example$counter.mo[]
 
-Melodic::
+Rust::
 +
- // TODO example$counter.rs[]
+// TODO example$counter.rs[]
 ====
