@@ -14,6 +14,15 @@ Le play book antora, se lance via la cmd (à la racine du projet) :
 
 puis aller voir dans `docs/` afin d'ouvrir `index.html` avec le navigateur.
 
+L'idée est d'inscrire le programme de la semaine (cours+tp ou projet + évaluation etc.) dans le fichier `sio-slam-index/modules/ROOT/page/annee-2022-2023.adoc`
+
+Pour appliquer les changements opérés (modification de contenu asciidoc, ajout de fichiers, de modules, etc.), il est nécessaire de relancer la commade `antora antora-playbook.yml`, puis faire un `commit` puis un `push`. Attendre un peu pour la prise en compte par le système qui gère les `github pages`.
+
+Voir le rendu ici : https://ldv-melun.github.io/sio-slam/
+
+
+NOTE: Le reste de ce document explique la configuration du template du site, qui est un projet à part entière pour Antora. Il peut être ignoré.
+
 == projet sio-ui
 
 Basé sur le modèle par défaut d'Antora. C'est la partie `UI template` du site.
@@ -42,7 +51,8 @@ Dans le `playbook` de sio-slam
 ----
   bundle:
 #    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable
-    url: ./../sio-ui/build/ui-bundle.zip
+    url: https://github.com/ldv-melun/sio-ui/blob/master/build/ui-bundle.zip?raw=true&v=1
+#    url: ./../sio-ui/build/ui-bundle.zip
     snapshot: true
 ----
 
