@@ -2,9 +2,10 @@
 
 == Schéma directeur
 
+image:schemadirecteurV1.png[Schema directeur]
 
 :table-caption: Tableau
-.Schéma directeur
+.Épreuves professionnelles
 
 [frame=all]
 |===
@@ -16,11 +17,9 @@ Support et mise à disposition de services informatiques| CCF, oral de 40mn | 4
 |E6 - Cybersécurité des services informatiques - SLAM| Ponctuelle, épreuve nationale de 4h, devoir sur table | 4
 |===
 
+== Déroulement
 
-
-== Objectif SLAM deuxième année
-
-== Semaine 5 septembre
+=== Semaine 5 septembre
 
 Étude de...
 
