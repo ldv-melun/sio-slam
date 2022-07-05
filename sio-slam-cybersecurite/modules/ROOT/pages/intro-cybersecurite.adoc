@@ -1,0 +1,9 @@
+= Cybersécurite
+
+== Règles dans l'entreprise
+
+Voici 10 règles qu'une entreprise devrait observer afin de prende en compte les risques liés à la cybersécurité.
+
+// https://docs.antora.org/antora/latest/page/attachments/
+
+xref:sio-component:ROOT:attachment$SecuriteInformatique.pdf[10 règles de sécurité pour l'entreprise]

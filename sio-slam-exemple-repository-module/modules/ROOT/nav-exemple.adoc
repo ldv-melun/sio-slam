@@ -1,0 +1,4 @@
+* Exemple
+** xref:intro-exemple.adoc[intro exemple]
+** xref:intro-exemple.adoc[intro exemple le même]
+

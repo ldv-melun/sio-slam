@@ -1,0 +1,11 @@
+= Exemple
+
+== titre
+
+Blabla
+
+// https://docs.antora.org/antora/latest/page/attachments/
+
+xref:sio-component:ROOT:attachment$ressource-nom-unique.pdf[texte du lien vers la ressource]
+
+Une image : image:sio-component:ROOT:exemple-tabs-html.png[une extension à antora]
