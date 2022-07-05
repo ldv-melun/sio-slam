@@ -6,7 +6,7 @@ nav:
   - modules/ROOT/nav-sio-slam.adoc
   - modules/ROOT/nav-sio-slam-backend.adoc
   - modules/ROOT/nav-sio-slam-frontend.adoc
-  - modules/ROOT/nav-sio-slam-poo.adoc
+  - modules/ROOT/nav-sio-slam-programmation.adoc
   - modules/ROOT/nav-sio-slam-analyse.adoc
   - modules/ROOT/nav-sio-slam-missions.adoc
   - modules/ROOT/nav-sio-slam-epreuves.adoc

@@ -11,7 +11,7 @@ content:
    - url: ./
      start_path: sio-slam-backend
    - url: ./
-     start_path: sio-slam-poo
+     start_path: sio-slam-programmation
    - url: ./
      start_path: sio-slam-analyse
    - url: ./

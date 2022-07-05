@@ -1,0 +1,11 @@
+= Programmation
+
+== Différents paradigmes
+
+TODO : parler de langage impératif,  objet et fonctionnel
+
+== Qualité dans le code
+
+Ne dépend pas du paradigme.
+
+xref::index-qualite.adoc[]

@@ -1,0 +1,17 @@
+= Efficacité
+i
+
+====
+L'**efficacité** est la capacité d'un système à utiliser le
+minimum de ressources matérielles.
+====
+
+
+Les ressources à préserver sont :
+
+- _temps machine_ ,
+- _espace occupé_ en mémoire externe et interne,
+- _bande passante_ des moyens de communication.
+
+
+

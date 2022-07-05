@@ -1,0 +1,11 @@
+= Compatibilité
+
+====
+La **compatibilité** est la faculté avec laquelle des éléments logiciels peuvent
+être combinés à d'autres.
+====
+
+Exemple : Les formats de fichier d'un logiciel ouverts ou propriétaires.
+
+NOTE: Adopter des standards. Par exemple XML/JSON comme strutures d'échanges, Web Service, architecture REST, etc.
+
