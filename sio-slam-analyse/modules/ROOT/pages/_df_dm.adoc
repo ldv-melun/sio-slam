@@ -4,7 +4,6 @@
 
 En phase d'analyse, la collecte des données et leurs relations est au centre des préoccupations.
 
-
 image:analyse-artefacts.png[title="artefacts et analyse"]
 
 Après avoir indentifier des concepts métier clés, ces derniers seront **regroupés** (en référence au concept d'_encapsulation_ et de _classe_) et placés
@@ -12,15 +11,13 @@ en relation de dépendances (_association_, _heritage_).
 
 Notion de **D**épendance **F**onctionnelle (*DF*) et **D**épendance **M**ultivaluée (*DM*)
 
-
 == Dépendance Fonctionnelle
 
 soit A et B, deux données (concept métier) du système.
 
 ====
 
-*Def* : Lorsqu'une valeur de A (une donnée) permet, au plus, de connaître une et une seule valeur de B,
-on dit que *B dépend fonctionnellement de A*.
+*Def* : Lorsqu'une valeur de A (une donnée) permet, au plus, de connaître une et une seule valeur de B, on dit que *B dépend fonctionnellement de A*.
 
 [cols="1,1,2", options="header"]
 |===

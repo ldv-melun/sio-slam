@@ -1,5 +1,9 @@
 = SIO-SLAM
 
+== Schéma directeur
+
+image:sio-component:ROOT:schemadirecteurV1.png[Schema directeur]
+
 == Portée
 
 Objectif de ce document : définir un axe directeur pour l’enseignement SIO SLAM deuxième année  (à terme il serait bon d’y réfléchir aussi pour la première année, bien qu’un peu plus cadré par le référentiel…)

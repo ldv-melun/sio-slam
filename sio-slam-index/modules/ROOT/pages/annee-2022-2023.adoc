@@ -1,8 +1,8 @@
 = Année scolaire 2022-2023
 
-== Schéma directeur
+Bonjour !
 
-image:sio-component:ROOT:schemadirecteurV1.png[Schema directeur]
+Vous trouverez ci-dessous le déroulement progressif de votre enseignement professionnel de cette année.
 
 == Déroulement
 
