@@ -8,5 +8,5 @@ Vous trouverez ci-dessous le déroulement progressif de votre enseignement profe
 
 === Semaine 5 septembre
 
-Étude de...
+Étude de la POO
 
