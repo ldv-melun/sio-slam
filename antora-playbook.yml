@@ -17,6 +17,8 @@ content:
    - url: ./
      start_path: sio-slam-analyse
    - url: ./
+     start_path: sio-slam-poo
+   - url: ./
      start_path: sio-slam-missions
    - url: ./
      start_path: sio-slam-epreuves
