@@ -41,7 +41,7 @@ La programmation orientée objet offre de nombreux avantages :
 
 === Représentation d'une classe
 
-image::classe.png[]
+image::classe1.png[]
 
 == Encapsulation
 
