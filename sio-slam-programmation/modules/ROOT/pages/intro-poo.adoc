@@ -1,6 +1,6 @@
 = POO
 
-==== **P**rogrammation **O**rientée **O**bjet
+== **P**rogrammation **O**rientée **O**bjet
 
 . Classes et objets
 . Encapsulation
@@ -100,7 +100,7 @@ Le mot-clé *constructor* peut être omis si aucune annotation ou modificateur d
         // code
     }
 
-===== Exemple de classe Kotlin avec constructeur principal :
+==== Exemple de classe Kotlin avec constructeur principal :
 
     //main function
     fun main(args: Array<String>) {

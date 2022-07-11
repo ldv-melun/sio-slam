@@ -24,8 +24,8 @@ On vise à donner à l’étudiant une certaine forme d’autonomie dans des sit
 1. Introduction de quelques concepts (pas trop, sur la base d’exemples interactifs si possible)
 2. Exercices et tp
 3. Rappel des concepts (plus abstrait)
-4. Évaluation
-5. Correction
+4. Mission ou Évaluation
+5. Analyse / Correction
 
 == Architecture
 

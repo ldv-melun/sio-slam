@@ -1,5 +1,5 @@
 * Missions
+** xref:mission-0.adoc[Mission 0]
 ** xref:mission-1.adoc[Mission 1]
 ** xref:mission-2.adoc[Mission 2]
 ** xref:mission-3.adoc[Mission 3]
-
