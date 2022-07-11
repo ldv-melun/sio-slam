@@ -92,7 +92,7 @@ Les paramètres *sont facultatifs* dans le constructeur principal.
     }
 
 
-Le mot-clé constructor peut être omis si aucune annotation ou modificateur d’accès n’est spécifié.
+Le mot-clé *constructor* peut être omis si aucune annotation ou modificateur d’accès n’est spécifié.
 
     class Etudiant(val a: Int, val b: Int) {
         // code
