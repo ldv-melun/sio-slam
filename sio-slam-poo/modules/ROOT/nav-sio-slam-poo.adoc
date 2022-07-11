@@ -1,3 +1,0 @@
-* Programmation objet
-** xref:fondamentaux.adoc[Fondamentaux POO]
-** xref:heritage.adoc[Héritage]
