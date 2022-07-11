@@ -48,7 +48,11 @@ image::classe.png[]
 L'encapsulation est un mécanisme consistant à rassembler les attributs et les méthodes au sein d'une structure en cachant l'implémentation de l'objet, c'est-à-dire en empêchant l'accès aux données par un autre moyen que les services proposés. L'encapsulation permet donc de garantir l'intégrité des données contenues dans l'objet.
 L'encapsulation permet de définir des niveaux de visibilité des resources de la classe. Elle permet de sécuriser l'accès aux éléments d'une classe (Attributs et méthodes),
 
+<<<<<<< HEAD
 Il existe trois niveaux de visibilité avec le langage Kotlin :
+=======
+Il existe trois niveaux de visibilité:
+>>>>>>> origin/main
 
 ==== Public (public)
 Les méthodes de toutes les classes peuvent accéder aux données ou aux méthodes d'une classe définie avec le niveau de visibilité public. Il s'agit du plus bas niveau de protection des données,
