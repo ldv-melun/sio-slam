@@ -1,0 +1,34 @@
+= Mission 0
+
+== Objectifs
+
+Niveau : *grand débutant*
+
+* savoir définir une classe avec des attributs : au moins 2 façons de faire avec Kotlin)
+* savoir déclarer des références à des objets pouvant être null ou non
+* savoir concevoir des méthodes
+* savoir tester un objet
+* savoir mettre en oeuvre des tests unitaires
+* savoir gérer une liste d'objets
+* connaitre la différence entre val et var
+* Comprendre les différents mode de  passage d'argument à une fonction (par position, par nom)
+* savoir déclarer un fonction en dehors d'une classe
+* savoir gérer les structures de contrôle classiques (celle qui ont été étudiées l'année dernière avec php et java)
+* savoir utiliser le bon vocabulaire technique
+* savoir interpréter et concevoir un diag de classe simple (sans héritage)
+* savoir pousser un travail sur gitlab, voire travailler en équipe...
+* s'être impliquer dans un travail en mode projet (autonomie, respect des consignes, d'une deadline...)
+
+== Présentation de la mission 0
+
+todo
+
+== Livraison
+
+=== Ce qui est attendu
+
+todo
+
+=== Deadline
+
+todo
