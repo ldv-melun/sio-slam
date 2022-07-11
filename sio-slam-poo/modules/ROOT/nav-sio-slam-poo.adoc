@@ -1,1 +1,2 @@
-* xref:fondamentaux.adoc[Fondamentaux POO]
+** xref:fondamentaux.adoc[Fondamentaux POO]
+** xref:heritage.adoc[Héritage]
