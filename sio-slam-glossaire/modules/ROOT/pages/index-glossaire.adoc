@@ -18,3 +18,5 @@ La valeur de `_y_` est `42`
 +
 Ces deux variables pointent vers des espaces mémoire peu comparables en terme de structure binaire et de taille.
 
+accesseurs::
+ Associés à une propriété (un attribut), ce sont des méthodes permettant d'atteindre la valeur de cette propriété, soit en lecture _get_ soit en écriture _set_
