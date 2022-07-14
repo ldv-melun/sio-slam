@@ -1,0 +1,5 @@
+* Projets
+** xref:projet-0.adoc[Projet 0]
+** xref:projet-1.adoc[Projet 1]
+** xref:projet-2.adoc[Projet 2]
+** xref:projet-3.adoc[Projet 3]
