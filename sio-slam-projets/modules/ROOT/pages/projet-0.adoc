@@ -19,18 +19,17 @@ Niveau : *grand débutant*
 * savoir redéfinir les méthodes de la classe mère `Any`
 * comprendre le mécanisme des _accesseurs_ lié aux properties (Kotlin)
 * savoir déclarer des références à des objets pouvant être null ou non
-* savoir définir et intégrer de la documentation technique (`KDoc`)
-* savoir appeler des méthodes
+* savoir définir une méthode et intégrer de la documentation technique (`KDoc`)
+* savoir faire la distinction entre définir et appeler une méthode
 * savoir interpréter/comprendre du code simple écrit par un autre
 * savoir interpréter et concevoir une représentation d'un algorithme simple en UML (diag. d'activités)
-* savoir tester un objet
 * savoir mettre en oeuvre des tests unitaires
 * savoir gérer une liste d'objets
 * connaitre la différence entre val et var
 * Comprendre les différents modes de  passage d'argument à une fonction (par position, par nom)
 * savoir déclarer (et utiliser) une fonction en dehors d'une classe
 * savoir gérer les structures de contrôle classiques (celle qui ont été étudiées l'année dernière avec php et java)
-* savoir utiliser le bon vocabulaire technique
+* savoir utiliser un bon vocabulaire technique
 * savoir interpréter et concevoir un diag de classe simple (sans héritage)
 * savoir pousser un travail sur gitlab, voire travailler en équipe...
 * s'être impliquer dans un travail en mode projet (autonomie, respect des consignes, d'une deadline...)

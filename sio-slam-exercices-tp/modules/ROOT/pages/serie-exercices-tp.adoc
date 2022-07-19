@@ -1,0 +1,34 @@
+= Exercices
+
+== Le panier mode console
+
+Gestion d'un panier
+
+=== Prérequis
+
+* cours d'initiation à Kotlin
+* cours d'initiation au diag de classes
+
+
+=== Énoncé
+
+Développer un programme permettant à l'utilisateur de gérer des produits dans un panier.
+
+Se restreindre aux 3 classes listées ci-dessous et à leurs propriétés :
+
+*Produit* : id, nom, prixHT, catégorie
+
+*Categorie* : Enfant ou Adulte
+
+*Panier* : liste de produits
+
+=== Les attendus
+
+* Diagramme de classes avec propriétés et opérations (sans leur type)
+
+* Au lancement du programme, 10 produits sont automatiquement créés, le panier est vide.
+
+* L'utilisateur peut réaliser les opérations **[.underline]#C#**R**[.underline]#UD#**+**[.underline]#List#** sur le panier (pas de recherche)
+
+// Par la suite, demander à l'étudiant d'ajouter la catégorie "ToutAge", et voir commet cette nouvelle donnée bouscule son programme (dépend comment il a été conçu)
+
