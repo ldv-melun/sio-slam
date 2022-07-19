@@ -1,5 +1,20 @@
 = Exercices
 
+
+== Courts exercices d'initiation
+
+=== Exo1
+
+...
+
+=== Exo2
+
+...
+
+=== Exo3
+
+...
+
 == Le panier mode console
 
 Gestion d'un panier
@@ -20,7 +35,7 @@ Se restreindre aux 3 classes listées ci-dessous et à leurs propriétés :
 
 *Categorie* : Enfant ou Adulte
 
-*Panier* : liste de produits
+*Panier* : liste de produits avec quantité commandée par produit, totalHT
 
 === Les attendus
 
