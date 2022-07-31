@@ -1,0 +1,57 @@
+== *Analyse des besoins*
+
+=== Les cas d'utilisation – USE CASE
+
+Un cas d'utilisation est :
+
+*** Une manière d'exprimer un besoin utilisateur.
+
+*** L'image d'une fonction du système, suite à un événement.
+
+*** Pour un système, tous les use case doivent être recensés.
+
+Dans un use case, on doit représenter deux concepts :
+
+*** Acteur.
+
+*** Cas d'utilisation.
+
+=== Les cas d'utilisation - Use Case (UC)
+
+Décrit la fonctionnalité que le système délivre à ses utilisateurs (humains ou système), et les liens entre eux.
+
+Acteur : rôle qu’un utilisateur joue dans le système.
+
+Use Case (UC) : C'est un texte décrivant un ensemble d’actions permettant de couvrir un besoin utilisateur.
+Un UC doit pouvoir évoluer tout au long du projet ou du cycle de vie du produit.
+
+Arcs: use/include, extends (options)
+
+image::use_case.png[450,450]
+
+
+==== Exemples de cas d'utilisation - Monopoly
+
+image::exemples_use_case.png[450,450]
+
+=== Associations entre les cas d'utilisation et les rôles
+
+*** Associations
+
+image::exe1_uc.png[450,450]
+
+*** Générlisation
+
+image::generalisation.png[450,450]
+
+*** Inclusion :
+Elle permet d'exprimer que le cas d'utilisation inclus ne peut être
+réalisé que si le cas d'utilisation incluant est réalisé.
+
+image::inclusion.png[450,450]
+
+*** Extension
+Elle permet de spécifier un comportement additionnel qui peut incrémenter le comportement
+d’un cas d’utilisation de base.
+
+image::extension.png[450,450]

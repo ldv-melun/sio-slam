@@ -1,0 +1,45 @@
+=== Diagramme de Classes
+** Un diagramme de classes ou d'objets  est un graphe d’éléments connectés par des relations ou des associations qui représente la vue structurale d'un SI
+** Un diagramme de classes est une vue graphique de la structure statique
+** Un diagramme d'objet est un cas particulier d'un diagramme de classes (Image dans le temps).
+
+image::d_classes.png[550,550]
+
+=== Les classes et les objets (Instances)
+
+* Une classe représente la structure commune d’un ensemble d’objets, c'est un modèle pour la création des objets.
+
+* C'est un type abstrait caractérisé par des propriétés (attributs et méthodes) communes à un ensemble d'objets.
+
+* Une classe modélise des objets matériels et immatériels d'un SI
+
+* Classe = attributs + méthodes + instances (Objets)
+
+* Une classe est représentée par un rectangle qui contient une chaîne de caractères correspondant au nom de la classe.
+
+* Ce rectangle peut être séparé en trois parties (nom, attributs, opérations).
+
+* Le nom de la classe doit commencer par un caractère alphabétique et ne pas contenir le caractère ::
+
+image::classe_1.png[450,450]
+
+=== Attributs
+
+Une classe peut contenir des attributs
+La syntaxe d’un attribut est :
+
+[NOTE]
+   visibilité nom : type
+
+
+La visibilité est :
+
+** '+' pour public
+** '#' pour protected
+** '-' pour private
+
+UML définit son propre ensemble de types Integer, real, string, …
+
+Un attribut peut être un attribut de classe, il est alors souligné.
+
+Un attribut peut être dérivé, il est alors préfixé par le caractère ‘/’
