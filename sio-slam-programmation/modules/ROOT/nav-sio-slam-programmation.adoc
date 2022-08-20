@@ -1,4 +1,5 @@
 * Programmation
 ** xref:index-programmation.adoc[Introduction]
+** xref:index-kotlin.adoc[Kotlin]
 ** xref:index-qualite.adoc[Facteurs de qualité]
 ** xref:intro-poo.adoc[POO]

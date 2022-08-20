@@ -1,49 +1,12 @@
-= SIO-SLAM
+= SIO-SLAM Année scolaire 2022-2023
 
-== Schéma directeur
+Bonjour !
 
-image:sio-component:ROOT:schemadirecteurV1.png[Schema directeur]
+Vous trouverez ci-dessous le déroulement progressif de votre enseignement professionnel de cette année. (Le schéma directeur est consultable ici : xref:axe-directeur-2022-2023.adoc#_schéma_directeur[Schéma directeur])
 
-== Portée
+== Déroulement
 
-Objectif de ce document : définir un axe directeur pour l’enseignement SIO SLAM deuxième année  (à terme il serait bon d’y réfléchir aussi pour la première année, bien qu’un peu plus cadré par le référentiel…)
+=== Semaine 05 septembre
 
-On tient compte :
+Étude des bases du langage de programmation  Kotlin, premiers pas avec un MOOC
 
-* des capacités de nos étudiants à étudier et à comprendre les technologies, mais aussi à oublier des acquis de première année
-* des difficultés à acquérir des compétences de base liées au métier de développeur d’applications
-* d’inclure des aspects de cybersécurité dans nos enseignements, en lien avec l’orientation cybersécurité du référentiel SIO, évaluée par une épreuve nationale (E6)
-
-Pour cela nous optons pour Kotlin, un langage de programmation structurant (adopté par l’industrie logicielle, souple en terme de paradigme et au typage statique).
-
-On vise à donner à l’étudiant une certaine forme d’autonomie dans des situations de création et de maintenance d’applications, particulièrement dans le cadre d’applications web, naturellement à forte diversité technologique, incluant le frontend et le backend. On portera une attention particulière aux bonnes pratiques et à la cybersécurité.
-
-
-== Principe didactique 
-
-1. Introduction de quelques concepts (pas trop, sur la base d’exemples interactifs si possible)
-2. Exercices et tp
-3. Rappel des concepts (plus abstrait)
-4. Mission et/ou Évaluation
-5. Analyse / Correction
-
-== Architecture
-
-La pierre angulaire du contenu s'appuye sur les logiques du 3 tiers web et des couches
-
-[frame=ends]
-|===
-|Tiers | Détail
-
-|LOGIQUES DE PRÉSENTATION du client HTTP
-| UIHTML/CSS/DOM/JS et HTTP
-
-|LOGIQUE APPLICATIVE et METIER sur serveur HTTP
-|facteurs de qualité du code, programmation objet, un peu de fonctionnel, structuration en couche, framework, analyse et ORM, patterns… et HTTP
-
-|LOGIQUE DE PERSISTANCE
-|*SQL* et NoSQL
-
-|===
-
-En teintant le tout de cybersécurité, de bonnes pratiques.

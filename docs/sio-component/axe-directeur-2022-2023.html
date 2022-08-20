@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Glossary :: sio-slam</title>
+    <title>SIO-SLAM :: sio-slam</title>
     <meta name="generator" content="Antora 3.0.1">
     <link rel="stylesheet" href="../_/css/site.css">
     <script>var uiRootPath = '../_'</script>
@@ -70,7 +70,7 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="index-sio-slam.html">index sio slam</a>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="axe-directeur-2022-2023.html">année 2022-2023</a>
   </li>
 </ul>
@@ -224,7 +224,7 @@
   </li>
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="1">
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="index-glossaire.html">Glossaire</a>
   </li>
 </ul>
@@ -258,48 +258,120 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index-glossaire.html">SIO-SLAM</a></li>
-    <li><a href="index-glossaire.html">Glossaire</a></li>
+    <li>Présentation</li>
+    <li><a href="axe-directeur-2022-2023.html">année 2022-2023</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///home/kpu/ldv/sio/antora-sio-slam/sio-slam/sio-slam-glossaire/modules/ROOT/pages/index-glossaire.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="file:///home/kpu/ldv/sio/antora-sio-slam/sio-slam/sio-slam-index/modules/ROOT/pages/axe-directeur-2022-2023.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Glossary</h1>
-<div class="dlist glossary">
-<dl>
-<dt>variable</dt>
-<dd>
-<p>symbole dans le code, dont le nom témoigne de son rôle, qui désigne selon son utilisation soit un <em>contenant</em> (une adresse mémoire) soit une <em>valeur de contenu</em> (interprétée selon son type)</p>
-</dd>
-<dt>type</dt>
-<dd>
-<p>Désigne comment utiliser et comment stocker la valeur d&#8217;une variable</p>
-</dd>
-<dt>valeur d&#8217;une variable</dt>
-<dd>
-<p>interprétation du contenu de (l&#8217;espace occupé par) la variable, selon sont type.</p>
+<h1 class="page">SIO-SLAM</h1>
+<div class="sect1">
+<h2 id="_schéma_directeur"><a class="anchor" href="#_schéma_directeur"></a>Schéma directeur</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>Exemple : <code>String x = "42"</code> ou <code>int y = 42</code>;</p>
+<p><span class="image"><img src="_images/schemadirecteurV1.png" alt="Schema directeur"></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_portée"><a class="anchor" href="#_portée"></a>Portée</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Objectif de ce document : définir un axe directeur pour l’enseignement SIO SLAM deuxième année  (à terme il serait bon d’y réfléchir aussi pour la première année, bien qu’un peu plus cadré par le référentiel…)</p>
 </div>
 <div class="paragraph">
-<p>La valeur de <code><em>x</em></code> est <code>"42"</code></p>
+<p>On tient compte :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>des capacités de nos étudiants à étudier et à comprendre les technologies, mais aussi à oublier des acquis de première année</p>
+</li>
+<li>
+<p>des difficultés à acquérir des compétences de base liées au métier de développeur d’applications</p>
+</li>
+<li>
+<p>d’inclure des aspects de cybersécurité dans nos enseignements, en lien avec l’orientation cybersécurité du référentiel SIO, évaluée par une épreuve nationale (E6)</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>La valeur de <code><em>y</em></code> est <code>42</code></p>
+<p>Pour cela nous optons pour Kotlin, un langage de programmation structurant (adopté par l’industrie logicielle, souple en terme de paradigme et au typage statique).</p>
 </div>
 <div class="paragraph">
-<p>Ces deux variables pointent vers des espaces mémoire peu comparables en terme de structure binaire et de taille.</p>
+<p>On vise à donner à l’étudiant une certaine forme d’autonomie dans des situations de création et de maintenance d’applications, particulièrement dans le cadre d’applications web, naturellement à forte diversité technologique, incluant le frontend et le backend. On portera une attention particulière aux bonnes pratiques et à la cybersécurité.</p>
 </div>
-</dd>
-<dt>accesseurs</dt>
-<dd>
-<p>Associés à une propriété (un attribut), ce sont des méthodes permettant d&#8217;atteindre la valeur de cette propriété, soit en lecture <em>get</em> soit en écriture <em>set</em></p>
-</dd>
-</dl>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_principe_didactique"><a class="anchor" href="#_principe_didactique"></a>Principe didactique</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<div class="title">Structure itérative</div>
+<ol class="arabic">
+<li>
+<p>Introduction de quelques concepts (pas trop, sur la base d’exemples interactifs si possible)</p>
+</li>
+<li>
+<p>Exercices et tp</p>
+</li>
+<li>
+<p>Rappel des concepts (plus abstrait)</p>
+</li>
+<li>
+<p>Mission et/ou Évaluation</p>
+</li>
+<li>
+<p>Analyse / Correction</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Puis, mise en pratique sur la base d&#8217;un projet de dveloppement d&#8217;une application métier.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_architecture"><a class="anchor" href="#_architecture"></a>Architecture</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>La pierre angulaire du contenu s&#8217;appuye sur les logiques du 3 tiers web et des couches</p>
+</div>
+<table class="tableblock frame-ends grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Tiers</th>
+<th class="tableblock halign-left valign-top">Détail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LOGIQUES DE PRÉSENTATION du client HTTP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">UIHTML/CSS/DOM/JS et HTTP</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LOGIQUE APPLICATIVE et METIER sur serveur HTTP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">facteurs de qualité du code, programmation objet, un peu de fonctionnel, structuration en couche, framework, analyse et ORM, patterns… et HTTP</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LOGIQUE DE PERSISTANCE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>SQL</strong> et NoSQL</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>En teintant le tout de cybersécurité, de bonnes pratiques.</p>
+</div>
+</div>
 </div>
 </article>
   </div>
