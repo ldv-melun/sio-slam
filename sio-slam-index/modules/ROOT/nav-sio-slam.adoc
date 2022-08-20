@@ -1,5 +1,5 @@
 * Présentation
 ** xref:index-sio-slam.adoc[index sio slam]
-** xref:axe-directeur-2022-2023.adoc[année 2022-2023]
+** xref:axe-directeur-2022-2023.adoc[schéma directeur]
 
 
