@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Cybersécurite :: sio-slam</title>
+    <title>Untitled :: sio-slam</title>
     <meta name="generator" content="Antora 3.0.2">
     <link rel="stylesheet" href="../_/css/site.css">
     <script>var uiRootPath = '../_'</script>
@@ -71,7 +71,7 @@
     <a class="nav-link" href="index-sio-slam.html">index sio slam</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="axe-directeur-2022-2023.html">année 2022-2023</a>
+    <a class="nav-link" href="annee-2022-2023.html">année 2022-2023</a>
   </li>
 </ul>
   </li>
@@ -140,9 +140,6 @@
     <a class="nav-link" href="index-programmation.html">Introduction</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="index-kotlin.html">Kotlin</a>
-  </li>
-  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="index-qualite.html">Facteurs de qualité</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -159,7 +156,7 @@
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="d_uc.html">use_case</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item is-current-page" data-depth="4">
     <a class="nav-link" href="d_classe.html">Classes</a>
   </li>
 </ul>
@@ -235,7 +232,7 @@
   </li>
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="1">
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="intro-cybersecurite.html">Cybersecurite</a>
   </li>
 </ul>
@@ -276,26 +273,115 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index-glossaire.html">SIO-SLAM</a></li>
-    <li><a href="intro-cybersecurite.html">Cybersecurite</a></li>
+    <li>Programmation</li>
+    <li><a href="langage-uml.html">UML</a></li>
+    <li><a href="d_uc.html">Diagrammes</a></li>
+    <li><a href="d_classe.html">Classes</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///D:/SI6/sio-slam/sio-slam-cybersecurite/modules/ROOT/pages/intro-cybersecurite.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="file:///D:/SI6/sio-slam/sio-slam-programmation/modules/ROOT/pages/d_classe.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Cybersécurite</h1>
-<div class="sect1">
-<h2 id="_règles_dans_lentreprise"><a class="anchor" href="#_règles_dans_lentreprise"></a>Règles dans l&#8217;entreprise</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_diagramme_de_classes"><a class="anchor" href="#_diagramme_de_classes"></a>Diagramme de Classes</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Un diagramme de classes ou d&#8217;objets  est un graphe d’éléments connectés par des relations ou des associations qui représente la vue structurale d&#8217;un SI</p>
+</li>
+<li>
+<p>Un diagramme de classes est une vue graphique de la structure statique</p>
+</li>
+<li>
+<p>Un diagramme d&#8217;objet est un cas particulier d&#8217;un diagramme de classes (Image dans le temps).</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/d_classes.png" alt="550" width="550">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_les_classes_et_les_objets_instances"><a class="anchor" href="#_les_classes_et_les_objets_instances"></a>Les classes et les objets (Instances)</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Une classe représente la structure commune d’un ensemble d’objets, c&#8217;est un modèle pour la création des objets.</p>
+</li>
+<li>
+<p>C&#8217;est un type abstrait caractérisé par des propriétés (attributs et méthodes) communes à un ensemble d&#8217;objets.</p>
+</li>
+<li>
+<p>Une classe modélise des objets matériels et immatériels d&#8217;un SI</p>
+</li>
+<li>
+<p>Classe = attributs + méthodes + instances (Objets)</p>
+</li>
+<li>
+<p>Une classe est représentée par un rectangle qui contient une chaîne de caractères correspondant au nom de la classe.</p>
+</li>
+<li>
+<p>Ce rectangle peut être séparé en trois parties (nom, attributs, opérations).</p>
+</li>
+<li>
+<p>Le nom de la classe doit commencer par un caractère alphabétique et ne pas contenir le caractère ::</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/classe_1.png" alt="450" width="450">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_attributs"><a class="anchor" href="#_attributs"></a>Attributs</h3>
 <div class="paragraph">
-<p>Voici 10 règles qu&#8217;une entreprise devrait observer afin de prende en compte les risques liés à la cybersécurité.</p>
+<p>Une classe peut contenir des attributs
+La syntaxe d’un attribut est :</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+   visibilité nom : type
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
-<p><a href="_attachments/SecuriteInformatique.pdf" class="xref attachment">10 règles de sécurité pour l&#8217;entreprise</a></p>
+<p>La visibilité est :</p>
 </div>
+<div class="ulist">
+<ul>
+<li>
+<p>'+' pour public</p>
+</li>
+<li>
+<p>'#' pour protected</p>
+</li>
+<li>
+<p>'-' pour private</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>UML définit son propre ensemble de types Integer, real, string, …</p>
+</div>
+<div class="paragraph">
+<p>Un attribut peut être un attribut de classe, il est alors souligné.</p>
+</div>
+<div class="paragraph">
+<p>Un attribut peut être dérivé, il est alors préfixé par le caractère ‘/’</p>
 </div>
 </div>
 </article>

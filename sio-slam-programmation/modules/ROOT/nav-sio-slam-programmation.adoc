@@ -3,3 +3,7 @@
 ** xref:index-kotlin.adoc[Kotlin]
 ** xref:index-qualite.adoc[Facteurs de qualité]
 ** xref:intro-poo.adoc[POO]
+** xref:langage-uml.adoc[UML]
+*** xref:d_uc.adoc[Diagrammes]
+**** xref:d_uc.adoc[use_case]
+**** xref:d_classe.adoc[Classes]
