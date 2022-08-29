@@ -1,4 +1,5 @@
 = UML (Unified Modeling Language)
+
 == Langage de modélisation unifié
 
 UML est un langage graphique d'usage et universel pour spécifier, visualiser, construire et documenter des systèmes logiciels complexes.
@@ -17,7 +18,6 @@ Les méthodes OOSE, OMT et OOD ont trouvé un compromis, pour mettre en place un
 L'unification et la normalisation des méthodes précédentes a donné naissance au langage UML en 1996.
 
 image::historique_uml.png[]
-
 
 == UML et ses applications
 
