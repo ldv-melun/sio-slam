@@ -12,5 +12,6 @@ nav:
   - modules/ROOT/nav-sio-slam-epreuves.adoc
   - modules/ROOT/nav-sio-slam-cybersecurite.adoc
   - modules/ROOT/nav-sio-slam-glossaire.adoc
+  - modules/ROOT/nav.adoc
 
 

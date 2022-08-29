@@ -1,26 +1,25 @@
-== UML (Unified Modeling Language)
-==== Langage de modélisation unifié
+= UML (Unified Modeling Language)
+== Langage de modélisation unifié
 
 UML est un langage graphique d'usage et universel pour spécifier, visualiser, construire et documenter des systèmes logiciels complexes.
 Il est utilisé pour comprendre, concevoir, configurer, maintenir et contrôler l’information sur les systèmes d'informations
 
 *UML n’est pas une méthode, c’est un langage*
 
-
 === A partir de 1990
 Mise en place d'un grand nombre de méthodes pour implémenter le concept de POO (Programmation Orienté Objet).
 (OOSE, OMT, HOOD, OOD, …).
 
-== A partir de 1995
+=== A partir de 1995
 Les méthodes OOSE, OMT et OOD ont trouvé un compromis, pour mettre en place un langage pour le développement de logiciels invoquant les données et les traitements en même temps.
 
-== A partir de 1995 – 1997
+=== A partir de 1995 – 1997
 L'unification et la normalisation des méthodes précédentes a donné naissance au langage UML en 1996.
 
 image::historique_uml.png[]
 
 
-=== UML et ses applications
+== UML et ses applications
 
 ** UML est le langage le plus utilisé au niveau professionnel.
 ** C'est le résultat d'un large consensus, utilisé dans divers secteurs (gestion, industrie, éducation,…).
@@ -31,7 +30,7 @@ image::historique_uml.png[]
 ** spécifier, visualiser, construire et documenter la solution.
 
 
-=== Vues et diagrammes  UML
+== Vues et diagrammes  UML
 
 image::diag_uml.png[]
 

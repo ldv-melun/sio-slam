@@ -8,7 +8,7 @@ variable::
 type::
  Désigne comment utiliser et comment stocker la valeur d'une variable
 
-valeur d'une variable:: interprétation du contenu de (l'espace occupé par) la variable, selon sont type.
+valeur d'une variable:: interprétation du contenu de (l'espace occupé par) la variable, selon son type.
 +
 Exemple : `String x = "42"` ou `int y = 42`;
 +
@@ -20,3 +20,4 @@ Ces deux variables pointent vers des espaces mémoire peu comparables en terme d
 
 accesseurs::
  Associés à une propriété (un attribut), ce sont des méthodes permettant d'atteindre la valeur de cette propriété, soit en lecture _get_ soit en écriture _set_
+
