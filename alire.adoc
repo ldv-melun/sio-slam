@@ -20,6 +20,32 @@ Pour appliquer les changements opérés (modification de contenu asciidoc, ajout
 
 Voir le rendu ici : https://ldv-melun.github.io/sio-slam/
 
+=== configuration Antora Plantuml
+
+Le module `asciidoctor-plantuml` est obsolète.
+
+Une solution : utiliser `kroki`
+
+[code]
+----
+npm i asciidoctor-kroki
+
+# pour créer l'image en local (et non déléguer à kroki le soin de faire le rendu)
+npm install unxhr
+----
+
+Dans `antora-playbook.yml` :
+
+[code]
+----
+asciidoc:
+  extensions:
+   - ./custom-lib/extension
+   - asciidoctor-kroki
+  attributes:
+     kroki-fetch-diagram: true
+
+----
 
 NOTE: Le reste de ce document explique la configuration du template du site, qui est un projet à part entière pour Antora. Il peut être ignoré.
 

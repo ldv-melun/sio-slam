@@ -10,7 +10,6 @@
 
 * Premier pas en mode projet
 
-
 == Compétences visées à l'issue des 3 premières semaines
 
 Niveau : *grand débutant*

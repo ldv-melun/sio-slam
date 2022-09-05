@@ -27,10 +27,13 @@ content:
    - url: https://gitlab.com/ljules/doc_kotlin.git
 
 
-
 asciidoc:
   extensions:
    - ./custom-lib/extension
+   - asciidoctor-kroki
+  attributes:
+     kroki-fetch-diagram: true
+
 
 ui:
   bundle:
