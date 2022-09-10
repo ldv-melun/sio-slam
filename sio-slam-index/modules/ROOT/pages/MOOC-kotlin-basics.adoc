@@ -1,6 +1,6 @@
-= Une introduction à Kotlin via un MOOC
-Firstname Lastname <author@asciidoctor.org>
-3.0, July 29, 2022: AsciiDoc article template
+= Une introduction à Kotlin (MOOC & Co)
+Lycée Léonard de Vinci - Melun
+1.0, Sept 10, 2022: AsciiDoc
 :toc:
 :icons: font
 :url-quickref: https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/
@@ -11,22 +11,22 @@ Les premières semaines sont consacrées à l'étude des bases du langage Kotlin
 
 L'apprentissage des concepts de bases du langage Kotlin est organisé de la sorte :
 
-=== Premier temps (2 à 3 semaines)
+=== Partie 1 (2 à 3 semaines)
 
 Cours et Travaux Pratiques sont organisés ainsi :
 
-. En TP/AP : Approche individuelle, adaptée à votre niveau. Vous progressez à votre rythme (à prolonger de *chez vous*)
+. En TP/AP : Approche individuelle, adaptée à votre niveau. Vous progressez à votre rythme (à poursuivre également *chez vous*)
 
 . En cours : Éclairage et approfondissement en cours collectif.
 - Des aspects du langage Kotlin ciblés par le MOOC sont *revisités* afin de vous aider à les intégrer.
 - Des concepts *non abordés* dans le MOOC sont étudiés.
 
-=== Deuxième temps (1 à 2 semaines)
+=== Partie 2 (1 à 2 semaines)
 
-. En TP/AP : Passage en mode projet : un *projet challenge* est à réaliser. Le projet est relativement cadré. Nous vous conseillons le travail collaboratif
+. En TP/AP : Passage en mode projet : Ce _"projet zéro"_ est relativement cadré. Nous vous conseillons le travail collaboratif
 
 . En cours :
-- Des évaluations seront organisées, par professeur, sous la forme d'un *contrôle sur table* (pas sur machine - le MOOC s'en charge déjà). C'est une façon de mesurer votre *qualité* d'investissement :  compréhension du langage et de votre capacité à programmer (compréhension/interprétation/critique d'un code existant, et production/création)
+- Des évaluations seront organisées, par professeur, sous la forme d'un *contrôle sur table* (pas sur machine - le MOOC s'en charge déjà). C'est une façon de mesurer la *qualité de votre investissement* :  compréhension du langage et de votre capacité à programmer (compréhension/interprétation/critique d'un code existant, et production/création)
 
 - Correction des contrôles : C'est un moment à forte valeur formative
 
@@ -50,9 +50,36 @@ Vous saurez :
 
 * Placer votre travail sur un dépôt git distant
 
-//
-//.Image caption
-//image::image-file-name.png[I am the image alt text.]
+
+== Pour commencer la Partie 1
+
+. Aller sur https://hyperskill.org/tracks[JetBrains Academy]
+. Sélectionner `Kotlin Basics` (ce MOOC est gratuit)
+
+Vous allez devoir *créer un compte sur cette plateforme*, et *passer des tests de positionnement*. En fonction des résultats de ces tests, vous pourrez, ou non, sauter des étapes.
+
+Pour commencer la formation _Kotlin Basics_, vous serez invité à sélectionner un projet.
+
+Vous sélectionnerez le projet `_Sorting Tool_` (qui couvre les concepts de base de la programmation, dont certains ont été étudiés en première année)
+
+[NOTE]
+====
+On attend que vous avanciez de manière soutenue dans ce MOOC. C'est pourquoi vous devriez vous investir également en dehors des séances de TP/AP.
+
+N'hésitez pas à demander de l'aide méthodologique à vos camarades, vos professeurs.
+
+Pour rappel, cette étude est un préambule à vos projets : xref:axe-directeur-2022-2023.adoc[axe directeur de la formation]
+====
+
+=== Projet _Sorting tool_
+
+Vus trouverez ci-dessous la couverture des concepts de ce module, composé de 6 grandes phases (_stage_). Une phase est composée d'étapes, à l'issue desquelles vous devrez faire avancer votre projet _Sorting Tool_ pour accéder à la phase suivante (votre projet sert de base au projet de la phase suivante)
+
+.concepts fondamentaux
+image::sorting-tool-concepts-fondamentals.png[concepts fondamentaux]
+
+.concepts langages de prog.
+image::sorting-tool-concepts-programming-languages.png[concepts langages de prog.]
 
 //This is another paragraph.footnote:[I am footnote text and will be displayed at the bottom of the article.]
 //

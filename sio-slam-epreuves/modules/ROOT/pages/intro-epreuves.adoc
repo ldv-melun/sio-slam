@@ -26,7 +26,8 @@ Support et mise à disposition de services informatiques| CCF, oral de 40mn | 4
 |EF3 -
 PARCOURS DE CERTIFICATION COMPLÉMENTAIRE| Ponctuelle Ile de France, oral de 20mn | 1
 |E4 "Prolongement" -
-ENGAGEMENT ÉTUDIANT| Ponctuelle Ile de France, oral de 20mn | 1
+xref:attachment$BTS_COM_2022-DEFINITION_DE_L_EPREUVE_ENGAGEMENT_ETUDIANT_2022.pdf[ENGAGEMENT ÉTUDIANT]
+| CCF/Ponctuelle Ile de France, oral de 20mn | 1
 
 |===
 
