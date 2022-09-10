@@ -1,10 +1,10 @@
 == Épreuves professionnelles
 
-Les épreuves professionnelles du BTS SIO sont au nombre de trois.
+Les épreuves professionnelles obligatoires du BTS SIO sont au nombre de trois.
 
 
 :table-caption: Tableau
-.Épreuves professionnelles du BTS SIO
+.Épreuves professionnelles obligatoires du BTS SIO
 
 [frame=all]
 |===
@@ -15,3 +15,25 @@ Support et mise à disposition de services informatiques| CCF, oral de 40mn | 4
 |E5 - Conception et développement d'applications| CCF, pratique et oral de 2h10 | 4
 |E6 - Cybersécurité des services informatiques - SLAM| Ponctuelle, épreuve nationale de 4h, devoir sur table | 4
 |===
+
+:table-caption: Tableau
+.Épreuves professionnelles facultatives du BTS SIO
+
+[frame=all]
+|===
+|Intitulé de l'épreuve| Forme | Coefficient
+
+|EF3 -
+PARCOURS DE CERTIFICATION COMPLÉMENTAIRE| Ponctuelle Ile de France, oral de 20mn | 1
+|E4 "Prolongement" -
+ENGAGEMENT ÉTUDIANT| Ponctuelle Ile de France, oral de 20mn | 1
+
+|===
+
+xref:E4-CCF.adoc[Lien vers E4] ---- xref:E5-CCF.adoc[Lien vers E5] ---- xref:E6.adoc[Lien vers E6]
+
+== Récap épreuves du BTS
+
+.Les épreuves du BTS SIO
+image::epreuves-bts-sio.png[épreuves du bts sio.]
+

@@ -1,0 +1,131 @@
+= Une introduction à Kotlin via un MOOC
+Firstname Lastname <author@asciidoctor.org>
+3.0, July 29, 2022: AsciiDoc article template
+:toc:
+:icons: font
+:url-quickref: https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/
+
+Les premières semaines sont consacrées à l'étude des bases du langage Kotlin.
+
+== Organisation de la première phase
+
+L'apprentissage des concepts de bases du langage Kotlin est organisé de la sorte :
+
+=== Premier temps (2 à 3 semaines)
+
+Cours et Travaux Pratiques sont organisés ainsi :
+
+. En TP/AP : Approche individuelle, adaptée à votre niveau. Vous progressez à votre rythme (à prolonger de *chez vous*)
+
+. En cours : Éclairage et approfondissement en cours collectif.
+- Des aspects du langage Kotlin ciblés par le MOOC sont *revisités* afin de vous aider à les intégrer.
+- Des concepts *non abordés* dans le MOOC sont étudiés.
+
+=== Deuxième temps (1 à 2 semaines)
+
+. En TP/AP : Passage en mode projet : un *projet challenge* est à réaliser. Le projet est relativement cadré. Nous vous conseillons le travail collaboratif
+
+. En cours :
+- Des évaluations seront organisées, par professeur, sous la forme d'un *contrôle sur table* (pas sur machine - le MOOC s'en charge déjà). C'est une façon de mesurer votre *qualité* d'investissement :  compréhension du langage et de votre capacité à programmer (compréhension/interprétation/critique d'un code existant, et production/création)
+
+- Correction des contrôles : C'est un moment à forte valeur formative
+
+- A votre demande, focus sur un point jugé difficile du projet
+
+- Approfondissement
+
+== À l'issue de cette première phase
+
+Vous saurez :
+
+* Maîtriser les structures principales qui contrôlent le flux d'exécution (itérations, conditionnelles, exception)
+
+* Utiliser des classes et des objets
+
+* Concevoir des tests unitaires dans un environnement simple
+
+* Intervenir dans un code existant afin de l'améliorer, voire de corriger des bugs logiques
+
+* Respecter des conventions de nommages et prendre en compte des facteurs de qualité du code (préambule à la sécurité)
+
+* Placer votre travail sur un dépôt git distant
+
+//
+//.Image caption
+//image::image-file-name.png[I am the image alt text.]
+
+//This is another paragraph.footnote:[I am footnote text and will be displayed at the bottom of the article.]
+//
+//=== Second level heading
+//
+//.Unordered list title
+//* list item 1
+//** nested list item
+//*** nested nested list item 1
+//*** nested nested list item 2
+//* list item 2
+//
+//This is a paragraph.
+//
+//.Example block title
+//====
+//Content in an example block is subject to normal substitutions.
+//====
+//
+//.Sidebar title
+//****
+//Sidebars contain aside text and are subject to normal substitutions.
+//****
+//
+//==== Third level heading
+//
+//[#id-for-listing-block]
+//.Listing block title
+//----
+//Content in a listing block is subject to verbatim substitutions.
+//Listing block content is commonly used to preserve code input.
+//----
+//
+//===== Fourth level heading
+//
+//.Table title
+//|===
+//|Column heading 1 |Column heading 2
+//
+//|Column 1, row 1
+//|Column 2, row 1
+//
+//|Column 1, row 2
+//|Column 2, row 2
+//|===
+//
+//====== Fifth level heading
+//
+//[quote,firstname lastname,movie title]
+//____
+//I am a block quote or a prose excerpt.
+//I am subject to normal substitutions.
+//____
+//
+//[verse,firstname lastname,poem title and more]
+//____
+//I am a verse block.
+//  Indents and endlines are preserved in verse blocks.
+//____
+//
+//== First level heading
+//
+//TIP: There are five admonition labels: Tip, Note, Important, Caution and Warning.
+//
+// //I am a comment and won't be rendered.
+//
+//. ordered list item
+//.. nested ordered list item
+//. ordered list item
+//
+//The text at the end of this sentence is cross referenced to <<_third_level_heading,the third level heading>>
+//
+//== First level heading
+//
+//This is a link to the https://docs.asciidoctor.org/home/[Asciidoctor documentation].
+//This is an attribute reference {url-quickref}[that links this text to the AsciiDoc Syntax Quick Reference].

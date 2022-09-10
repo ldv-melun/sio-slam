@@ -3,6 +3,7 @@
 
 == Schéma directeur
 
+.Axe directeur 20222-2023
 image:sio-component:ROOT:schemadirecteurV1.png[Schema directeur]
 
 == Portée
@@ -19,17 +20,17 @@ Pour cela nous optons pour Kotlin, un langage de programmation structurant (adop
 
 On vise à donner à l’étudiant une certaine forme d’autonomie dans des situations de création et de maintenance d’applications, particulièrement dans le cadre d’applications web, naturellement à forte diversité technologique, incluant le frontend et le backend. On portera une attention particulière aux bonnes pratiques et à la cybersécurité.
 
-
-== Principe didactique 
-
-.Structure itérative
-1. Introduction de quelques concepts (pas trop, sur la base d’exemples interactifs si possible)
-2. Exercices et tp
-3. Rappel des concepts (plus abstrait)
-4. Mission et/ou Évaluation
-5. Analyse / Correction
-
-Puis, mise en pratique sur la base d'un projet de dveloppement d'une application métier.
+//
+//== Principe didactique 
+//
+//.Structure itérative
+//1. Introduction de quelques concepts (pas trop, sur la base d’exemples interactifs si possible)
+//2. Exercices et tp
+//3. Rappel des concepts (plus abstrait)
+//4. Mission et/ou Évaluation
+//5. Analyse / Correction
+//
+//Puis, mise en pratique sur la base d'un projet de dveloppement d'une application métier.
 
 == Architecture
 
@@ -43,7 +44,7 @@ La pierre angulaire du contenu s'appuye sur les logiques du 3 tiers web et des c
 | UIHTML/CSS/DOM/JS et HTTP
 
 |LOGIQUE APPLICATIVE et METIER sur serveur HTTP
-|facteurs de qualité du code, programmation objet, un peu de fonctionnel, structuration en couche, framework, analyse et ORM, patterns… et HTTP
+|facteurs de qualité du code, programmation objet, un peu de fonctionnel, structuration en couche, framework, analyse et ORM, patterns, cybersécurité et habilitations, HTTP...
 
 |LOGIQUE DE PERSISTANCE
 |*SQL* et NoSQL
