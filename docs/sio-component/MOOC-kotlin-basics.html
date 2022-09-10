@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Une introduction à Kotlin (MOOC &amp; Co) :: sio-slam</title>
+    <meta name="generator" content="Antora 3.0.1">
+    <link rel="stylesheet" href="../_/css/site.css">
+    <script>var uiRootPath = '../_'</script>
+    <link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="..">
+        <span> <img style="vertical-align: middle" src="../_/img/logo-sio-slam.png" alt="logo"> &nbsp;
+        sio-slam
+        </span>
+      </a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+<!--        <div class="navbar-item has-dropdown is-hoverable">-->
+<!--          <a class="navbar-link" href="#">Products</a>-->
+<!--          <div class="navbar-dropdown">-->
+<!--            <a class="navbar-item" href="#">Product A</a>-->
+<!--            <a class="navbar-item" href="#">Product B</a>-->
+<!--            <a class="navbar-item" href="#">Product C</a>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="navbar-item has-dropdown is-hoverable">-->
+<!--          <a class="navbar-link" href="#">Services</a>-->
+<!--          <div class="navbar-dropdown">-->
+<!--            <a class="navbar-item" href="#">Service A</a>-->
+<!--            <a class="navbar-item" href="#">Service B</a>-->
+<!--            <a class="navbar-item" href="#">Service C</a>-->
+<!--          </div>-->
+<!--        </div>-->
+        <a class="navbar-item" href="index-sio-slam.html">Année en cours</a>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download ?</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="sio-component" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index-glossaire.html">SIO-SLAM</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Présentation</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="index-sio-slam.html">index sio slam</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="axe-directeur-2022-2023.html">schéma directeur</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Backend</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="todo-page.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="todo-page.html">Principles</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="todo-page.html">Exemple</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="todo-page.html">Exercices</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Sous-categorie A</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="todo-page.html">item A.1</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="todo-page.html">item A.2</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="todo-page.html">item A.3</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Frontend</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="index-frontend.html">Home Page</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="intro-frontend.html">Explain introduction</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Programmation</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="index-programmation.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="index-qualite.html">Facteurs de qualité</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="intro-poo.html">POO</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="langage-uml.html">UML</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="d_uc.html">Diagrammes</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="d_uc.html">use_case</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="d_classe.html">Classes</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Analyse</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="index-analyse.html">Conduire une analyse</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="index-sql.html">SQL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="index-nosql.html">NoSQL</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Projets</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="projet-0.html">Projet 0</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="projet-1.html">Projet 1</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="projet-2.html">Projet 2</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="projet-3.html">Projet 3</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Épreuves professionnelles</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="intro-epreuves.html">Présentation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="E4-CCF.html">E4 - CCF</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="E5-CCF.html">E5 - CCF</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="E6.html">E6 - épreuve nationale</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="intro-cybersecurite.html">Cybersecurite</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Kotlin</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="index-kotlin.html">Les bases de Kotlin</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="index-glossaire.html">Glossaire</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">SIO-SLAM</span>
+    <span class="version">default</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="index-glossaire.html">SIO-SLAM</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index-glossaire.html">default</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="index-sio-slam.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index-glossaire.html">SIO-SLAM</a></li>
+    <li><a href="MOOC-kotlin-basics.html">Une introduction à Kotlin (MOOC &amp; Co)</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="file:///home/kpu/ldv/sio/antora-sio-slam/sio-slam/sio-slam-index/modules/ROOT/pages/MOOC-kotlin-basics.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Une introduction à Kotlin (MOOC &amp; Co)</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_organisation_de_la_première_phase">Organisation de la première phase</a>
+<ul class="sectlevel2">
+<li><a href="#_partie_1_2_à_3_semaines">Partie 1 (2 à 3 semaines)</a></li>
+<li><a href="#_partie_2_1_à_2_semaines">Partie 2 (1 à 2 semaines)</a></li>
+</ul>
+</li>
+<li><a href="#_à_lissue_de_cette_première_phase">À l&#8217;issue de cette première phase</a></li>
+<li><a href="#_pour_commencer_la_partie_1">Pour commencer la Partie 1</a>
+<ul class="sectlevel2">
+<li><a href="#_projet_sorting_tool">Projet <em>Sorting tool</em></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Les premières semaines sont consacrées à l&#8217;étude des bases du langage Kotlin.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_organisation_de_la_première_phase"><a class="anchor" href="#_organisation_de_la_première_phase"></a>Organisation de la première phase</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>L&#8217;apprentissage des concepts de bases du langage Kotlin est organisé de la sorte :</p>
+</div>
+<div class="sect2">
+<h3 id="_partie_1_2_à_3_semaines"><a class="anchor" href="#_partie_1_2_à_3_semaines"></a>Partie 1 (2 à 3 semaines)</h3>
+<div class="paragraph">
+<p>Cours et Travaux Pratiques sont organisés ainsi :</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>En TP/AP : Approche individuelle, adaptée à votre niveau. Vous progressez à votre rythme (à poursuivre également <strong>chez vous</strong>)</p>
+</li>
+<li>
+<p>En cours : Éclairage et approfondissement en cours collectif.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Des aspects du langage Kotlin ciblés par le MOOC sont <strong>revisités</strong> afin de vous aider à les intégrer.</p>
+</li>
+<li>
+<p>Des concepts <strong>non abordés</strong> dans le MOOC sont étudiés.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_partie_2_1_à_2_semaines"><a class="anchor" href="#_partie_2_1_à_2_semaines"></a>Partie 2 (1 à 2 semaines)</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>En TP/AP : Passage en mode projet : Ce <em>"projet zéro"</em> est relativement cadré. Nous vous conseillons le travail collaboratif</p>
+</li>
+<li>
+<p>En cours :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Des évaluations seront organisées, par professeur, sous la forme d&#8217;un <strong>contrôle sur table</strong> (pas sur machine - le MOOC s&#8217;en charge déjà). C&#8217;est une façon de mesurer la <strong>qualité de votre investissement</strong> :  compréhension du langage et de votre capacité à programmer (compréhension/interprétation/critique d&#8217;un code existant, et production/création)</p>
+</li>
+<li>
+<p>Correction des contrôles : C&#8217;est un moment à forte valeur formative</p>
+</li>
+<li>
+<p>A votre demande, focus sur un point jugé difficile du projet</p>
+</li>
+<li>
+<p>Approfondissement</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_à_lissue_de_cette_première_phase"><a class="anchor" href="#_à_lissue_de_cette_première_phase"></a>À l&#8217;issue de cette première phase</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Vous saurez :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Maîtriser les structures principales qui contrôlent le flux d&#8217;exécution (itérations, conditionnelles, exception)</p>
+</li>
+<li>
+<p>Utiliser des classes et des objets</p>
+</li>
+<li>
+<p>Concevoir des tests unitaires dans un environnement simple</p>
+</li>
+<li>
+<p>Intervenir dans un code existant afin de l&#8217;améliorer, voire de corriger des bugs logiques</p>
+</li>
+<li>
+<p>Respecter des conventions de nommages et prendre en compte des facteurs de qualité du code (préambule à la sécurité)</p>
+</li>
+<li>
+<p>Placer votre travail sur un dépôt git distant</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_pour_commencer_la_partie_1"><a class="anchor" href="#_pour_commencer_la_partie_1"></a>Pour commencer la Partie 1</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Aller sur <a href="https://hyperskill.org/tracks">JetBrains Academy</a></p>
+</li>
+<li>
+<p>Sélectionner <code>Kotlin Basics</code> (ce MOOC est gratuit)</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Vous allez devoir <strong>créer un compte sur cette plateforme</strong>, et <strong>passer des tests de positionnement</strong>. En fonction des résultats de ces tests, vous pourrez, ou non, sauter des étapes.</p>
+</div>
+<div class="paragraph">
+<p>Pour commencer la formation <em>Kotlin Basics</em>, vous serez invité à sélectionner un projet.</p>
+</div>
+<div class="paragraph">
+<p>Vous sélectionnerez le projet <code><em>Sorting Tool</em></code> (qui couvre les concepts de base de la programmation, dont certains ont été étudiés en première année)</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>On attend que vous avanciez de manière soutenue dans ce MOOC. C&#8217;est pourquoi vous devriez vous investir également en dehors des séances de TP/AP.</p>
+</div>
+<div class="paragraph">
+<p>N&#8217;hésitez pas à demander de l&#8217;aide méthodologique à vos camarades, vos professeurs.</p>
+</div>
+<div class="paragraph">
+<p>Pour rappel, cette étude est un préambule à vos projets : <a href="axe-directeur-2022-2023.html" class="xref page">axe directeur de la formation</a></p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_projet_sorting_tool"><a class="anchor" href="#_projet_sorting_tool"></a>Projet <em>Sorting tool</em></h3>
+<div class="paragraph">
+<p>Vus trouverez ci-dessous la couverture des concepts de ce module, composé de 6 grandes phases (<em>stage</em>). Une phase est composée d&#8217;étapes, à l&#8217;issue desquelles vous devrez faire avancer votre projet <em>Sorting Tool</em> pour accéder à la phase suivante (votre projet sert de base au projet de la phase suivante)</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/sorting-tool-concepts-fondamentals.png" alt="concepts fondamentaux">
+</div>
+<div class="title">Figure 1. concepts fondamentaux</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/sorting-tool-concepts-programming-languages.png" alt="concepts langages de prog.">
+</div>
+<div class="title">Figure 2. concepts langages de prog.</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Un projet edu <a href="https://ldv-melun.github.io/sio-slam/">SIO SLAM</a> - build on Antora MPL-2.0 license.</p>
+</footer>
+<script src="../_/js/site.js"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
