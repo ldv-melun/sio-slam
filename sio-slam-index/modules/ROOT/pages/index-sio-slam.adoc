@@ -4,9 +4,54 @@ Bonjour !
 
 Vous trouverez ci-dessous le déroulement progressif de votre enseignement professionnel de cette année. (Le schéma directeur est consultable ici : xref:axe-directeur-2022-2023.adoc#_schéma_directeur[Schéma directeur])
 
-== Déroulement
+== Semaine 05 septembre
 
-=== Semaine 05 septembre
+`_Semaine d'intégration_`
 
-Étude des bases du langage de programmation  Kotlin, premiers pas avec un MOOC
+== Semaine 12 septembre
 
+[frame=all]
+|===
+|Lundi am| Mardi am | Mardi pm | Mercredi am | Mercredi pm| Jeudi pm
+
+|L.JULES - O.CAPUOZZO
+
+Cours: xref:axe-directeur-2022-2023.adoc[Présentation de l'axe directeur]
+
+TP: xref:MOOC-kotlin-basics.adoc[Démarrage du MOOC]
+
+
+| O.CAPUOZZO - R.LAROUSSI
+
+Cours : Vocabulaire de base (dev)
+
+TP: Accompagnement MOOC
+
+
+
+| R.LAROUSSI
+
+Cours : UML et POO intro
+
+
+| R.LAROUSSI
+
+Cours : Sensibilisation à la cybersécurité
+
+
+| O.CAPUOZZO - R.LAROUSSI
+
+Cours : Concepts de test unitaire
+
+TP : Accompagnement MOOC
+
+
+| L.JULES - O.CAPUOZZO - E.VIGNA
+
+*Vérification de votre attestation de stage de première année
+
+*Vérification état de votre portfolio
+
+*Accompagnement MOOC
+
+|===
