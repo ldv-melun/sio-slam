@@ -203,3 +203,20 @@ Employe o-- projet
 ==== Agrégation vs Composition
 
 image::agreg_compo.JPG[550,550]
+
+=== TD d'application
+Une entreprise de fabrication et de distribution de matériels agricoles dispose d'une usine et de plusieurs dépôts de stockage/expédition.
+Un produit est caractérisé par un numéro, un libellé et un prix unitaire. Chaque produit peut être stocké dans un ou plusieurs dépôts.
+Un dépôt est caractérisé par son numéro et sa localisation. Dans chaque dépôt, on doit connaître la quantité de chacun des produits.
+Un client est déterminé par son numéro, son nom, son adresse, son chiffre d'affaire et un taux de remise.
+
+Chaque client est livré à partir d'un dépôt privilégié, ou à partir d'un dépôt de secours, en cas de problème.
+Toute commande client peut concerner un ou plusieurs produits. Elle est caractérisée par un id commande et une date.
+Tout mouvement de stock doit enregistrer la nouvelle quantité disponible.
+Toutes les données manipulées dans cette application doivent être en mode privé.
+
+Les objets créés pour chacune des classes du DC doivent initialiser tous les attributs de la classe.
+On doit prévoir également un moyen pour afficher les données des différentes classes du modèle.
+
+==== Proposer un diagramme de classes répondant aux besoins de cette entreprise.
+
