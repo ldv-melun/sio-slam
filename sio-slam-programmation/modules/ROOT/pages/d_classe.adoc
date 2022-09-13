@@ -2,40 +2,31 @@
 ** Un diagramme de classes ou d'objets  est un graphe d’éléments connectés par des relations ou des associations qui représente la vue structurale d'un SI
 ** Un diagramme de classes est une vue graphique de la structure statique
 ** Un diagramme d'objet est un cas particulier d'un diagramme de classes (Image dans le temps).
+** Le diagramme de classes est considéré comme le plus important de la modélisation orientée objet, il est le seul obligatoire lors d'une telle modélisation
 
 image::d_classes.png[550,550]
 
 === Les classes et les objets (Instances)
 
 * Une classe représente la structure commune d’un ensemble d’objets, c'est un modèle pour la création des objets.
-
 * C'est un type abstrait caractérisé par des propriétés (attributs et méthodes) communes à un ensemble d'objets.
-
 * Une classe modélise des objets matériels et immatériels d'un SI
-
 * Classe = attributs + méthodes + instances (Objets)
-
 * Une classe est représentée par un rectangle qui contient une chaîne de caractères correspondant au nom de la classe.
-
 * Ce rectangle peut être séparé en trois parties (nom, attributs, opérations).
-
 * Le nom de la classe doit commencer par un caractère alphabétique et ne pas contenir le caractère ::
 
 image::classe_1.png[450,450]
 
-Exemple test :
+Exemple de classes :
 
 [plantuml]
 .titre du diag
 ----
-Class01 "1" *-- "many" Class02 : contains
+Annee  "1" *-- "many" Semestre : contains
 
-Class03 o-- Class04 : aggregation
-
-Class05 --> "1" Class06
+Classe o-- Etudiant : aggregation
 ----
-
-
 
 === Attributs
 
@@ -48,12 +39,184 @@ La syntaxe d’un attribut est :
 
 La visibilité est :
 
-** '+' pour public
-** '#' pour protected
-** '-' pour private
+** '+' : public
+** '#' : protected
+** '-' : private
+** '/' : attribut calculé
 
 UML définit son propre ensemble de types Integer, real, string, …
 
 Un attribut peut être un attribut de classe, il est alors souligné.
 
 Un attribut peut être dérivé, il est alors préfixé par le caractère ‘/’
+
+
+=== Méthodes (Opérations)
+
+* Une opération est un service qu’une instance de la classe peut exécuter.
+
+* La syntaxe d’une opération est :
+
+=== visibilité nom(param) : return
+
+[plantuml]
+.Les méthodes
+----
+class Avion {
+-numAvion : String
+-capacite : integer
++getNumAvion() : String
++getCapacite() : int
+}
+
+class Vol {
+-numVol : Integer
+-heureDepart : Date
+-heureArr : Date
++getNumVol() : integer
++getHeureDepart() : Date
++calulerDuree(): integer
+}
+----
+
+== Héritage
+
+* L’héritage est une relation entre un concept général et un concept spécifique (Généralisation-spécialisation)
+* L’héritage existe entre des classes, des packages, …
+* La POO s'appuie amplement sur la notion d'héritage.
+* Ce concept permet la réutilisation des classes existantes. On peut créer, à partir d'une classe dite "classe de base" (ou "super classe"), de nouvelles classes dites "classes dérivées" (ou "sous-classes").
+* L’héritage permet de spécialiser les classes existantes : La classe Triangle spécialise la classe Figure.
+* Une classe dérivée hérite des champs et des méthodes de sa classe de base.
+* Une classe dérivée peut devenir une classe de base pour d'autres classes dérivées. On parle alors de dérivations successives.
+* L’héritage multiple est possible en UML (Une sous-classe peut avoir plusieurs classe mère)
+
+[plantuml]
+
+.Héritage
+----
+Forme <|-- Rectangle
+Forme <|-- Triangle
+----
+
+Exemple héritage avec plusieurs sous-classes :
+
+[plantuml]
+.Héritage avec plusieurs sous-classes
+----
+Document <|-- Livre
+Document <|-- DVD
+Document <|-- Magazine
+
+class Document {
+-auteur : String
+-titre : String
+-reference : integer
++getAuteurl() : String
++getTitre() : String
++getReference(): integer
+}
+
+class Livre {
+-nbrePage : interger
+-edition : String
++getNbrePage(): integer
++getEdition(): String
+}
+
+class DVD {
+-duree : interger
+-bonus : integer
++getDuree() : integer
++getBonus() : integer
+}
+
+class Magazine {
+-domaine : String
+-datePub : date
++getDomaine() : String
++getDatePub() : Date
+}
+----
+
+== Associations
+
+Une association est une relation entre deux classes (association binaire) ou plus (association n‑aire), qui décrit les connexions structurelles entre leurs instances. Une association indique donc qu'il peut y avoir des liens entre des instances des classes associées.
+
+image::association.png[450,450]
+
+* Dans la première version, l'association apparaît clairement et constitue une entité distincte.
+* Dans la seconde, l'association se manifeste par la présence de deux attributs dans chacune des classes en relation. C'est en fait la manière dont une association est généralement implémentée dans un langage objet quelconque (cf. section 3.6.2), mais pas dans tout langage de représentation (cf. section 3.6.3).
+
+=== types d'associations
+
+==== Association binaire
+Une association binaire est matérialisée par un trait plein entre les classes associées (cf. figure 3.5). Elle peut être ornée d'un nom, avec éventuellement une précision du sens de lecture (▸ ou ◂).
+Quand les deux extrémités de l'association pointent vers la même classe, l'association est dite réflexive
+
+image::assoc_1.png[450,450]
+
+==== Association n-aire
+* Une association n-aire lie plus de deux classes.
+* La ligne pointillée d'une classe-association peut être reliée au losange par une ligne discontinue pour représenter une association n-aire dotée d'attributs, d'opérations ou d'associations.
+* On représente une association n-aire par un grand losange avec un chemin partant vers chaque classe participante.
+* Le nom de l'association, le cas échéant, apparaît à proximité du losange.
+
+image::assoc_2.png[350,350]
+
+==== Les multiplicités
+La multiplicité associée à une terminaison d'association, d'agrégation ou de composition déclare le nombre d'objets susceptibles d'occuper la position définie par la terminaison d'association.
+Des exemples de multiplicité :
+
+    * exactement un : 1 ou 1..1
+    * plusieurs : * ou 0..*
+    * au moins un : 1..*
+    * de un à six : 1..6
+
+==== La navigabilité
+La navigabilité indique s'il est possible de traverser une association. On représente graphiquement la navigabilité par une flèche du côté de la terminaison navigable et on empêche la navigabilité par une croix du côté de la terminaison non navigable.
+
+image::assoc_3.png[450,450]
+
+==== Classe-association
+Dans le cas où une association doit posséder des propriétés, on doit utiliser le concept de classe association.
+
+image::assoc_4.png[450,450]
+
+==== Agrégation
+Une agrégation est une association qui représente une relation d'inclusion structurelle ou comportementale d'un élément dans un ensemble.
+Graphiquement, on ajoute un losange vide du côté de l'agrégat. Contrairement à une association simple, l'agrégation est transitive.
+
+[plantuml]
+-----
+
+Employe *-- Salaire
+Employe o-- projet
+
+-----
+
+==== Composition
+* La composition, également appelée agrégation composite, décrit une contenance structurelle entre instances.
+* La destruction de l'objet composite implique la destruction de ses composants.
+* Une instance de la partie appartient toujours à au plus une instance de l'élément composite :
+  la multiplicité du côté composite ne doit pas être supérieure à 1
+
+==== Agrégation vs Composition
+
+image::agreg_compo.JPG[550,550]
+
+=== TD d'application
+Une entreprise de fabrication et de distribution de matériels agricoles dispose d'une usine et de plusieurs dépôts de stockage/expédition.
+Un produit est caractérisé par un numéro, un libellé et un prix unitaire. Chaque produit peut être stocké dans un ou plusieurs dépôts.
+Un dépôt est caractérisé par son numéro et sa localisation. Dans chaque dépôt, on doit connaître la quantité de chacun des produits.
+Un client est déterminé par son numéro, son nom, son adresse, son chiffre d'affaire et un taux de remise.
+
+Chaque client est livré à partir d'un dépôt privilégié, ou à partir d'un dépôt de secours, en cas de problème.
+Toute commande client peut concerner un ou plusieurs produits. Elle est caractérisée par un id commande et une date.
+Tout mouvement de stock doit enregistrer la nouvelle quantité disponible.
+Toutes les données manipulées dans cette application doivent être en mode privé.
+
+Les objets créés pour chacune des classes du DC doivent initialiser tous les attributs de la classe.
+On doit prévoir également un moyen pour afficher les données des différentes classes du modèle.
+
+==== Proposer un diagramme de classes répondant aux besoins de cette entreprise.
+
