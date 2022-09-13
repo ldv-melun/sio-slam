@@ -200,3 +200,6 @@ Employe o-- projet
 * Une instance de la partie appartient toujours à au plus une instance de l'élément composite :
   la multiplicité du côté composite ne doit pas être supérieure à 1
 
+==== Agrégation vs Composition
+
+image::agreg_compo.JPG[550,550]
