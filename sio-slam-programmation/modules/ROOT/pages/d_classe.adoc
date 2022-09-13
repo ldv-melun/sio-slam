@@ -147,7 +147,7 @@ image::association.png[450,450]
 * Dans la première version, l'association apparaît clairement et constitue une entité distincte.
 * Dans la seconde, l'association se manifeste par la présence de deux attributs dans chacune des classes en relation. C'est en fait la manière dont une association est généralement implémentée dans un langage objet quelconque (cf. section 3.6.2), mais pas dans tout langage de représentation (cf. section 3.6.3).
 
-2=== types d'associations
+=== types d'associations
 
 ==== Association binaire
 Une association binaire est matérialisée par un trait plein entre les classes associées (cf. figure 3.5). Elle peut être ornée d'un nom, avec éventuellement une précision du sens de lecture (▸ ou ◂).
