@@ -23,7 +23,7 @@ TP: xref:MOOC-kotlin-basics.adoc[Démarrage du MOOC]
 
 | O.CAPUOZZO - R.LAROUSSI
 
-Cours : xref:attachment$2022-20223/vocabulaire-java-kotlin.pdf[Vocabulaire de base (dev)]
+Cours : xref:attachment$2022-20223/vocabulaire-complete.pdf[Vocabulaire de base (dev)]
 
 TP: Accompagnement MOOC
 
