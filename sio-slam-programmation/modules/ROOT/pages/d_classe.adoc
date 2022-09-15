@@ -1,4 +1,4 @@
-=== Diagramme de Classes
+== Diagramme de Classes
 ** Un diagramme de classes ou d'objets  est un graphe d’éléments connectés par des relations ou des associations qui représente la vue structurale d'un SI
 ** Un diagramme de classes est une vue graphique de la structure statique
 ** Un diagramme d'objet est un cas particulier d'un diagramme de classes (Image dans le temps).
@@ -28,7 +28,7 @@ Annee  "1" *-- "many" Semestre : contains
 Classe o-- Etudiant : aggregation
 ----
 
-=== Attributs
+== Attributs
 
 Une classe peut contenir des attributs
 La syntaxe d’un attribut est :
@@ -51,7 +51,7 @@ Un attribut peut être un attribut de classe, il est alors souligné.
 Un attribut peut être dérivé, il est alors préfixé par le caractère ‘/’
 
 
-=== Méthodes (Opérations)
+== Méthodes (Opérations)
 
 * Une opération est un service qu’une instance de la classe peut exécuter.
 
@@ -147,7 +147,7 @@ image::association.png[450,450]
 * Dans la première version, l'association apparaît clairement et constitue une entité distincte.
 * Dans la seconde, l'association se manifeste par la présence de deux attributs dans chacune des classes en relation. C'est en fait la manière dont une association est généralement implémentée dans un langage objet quelconque (cf. section 3.6.2), mais pas dans tout langage de représentation (cf. section 3.6.3).
 
-=== types d'associations
+== types d'associations
 
 ==== Association binaire
 Une association binaire est matérialisée par un trait plein entre les classes associées (cf. figure 3.5). Elle peut être ornée d'un nom, avec éventuellement une précision du sens de lecture (▸ ou ◂).
@@ -218,5 +218,5 @@ Toutes les données manipulées dans cette application doivent être en mode pri
 Les objets créés pour chacune des classes du DC doivent initialiser tous les attributs de la classe.
 On doit prévoir également un moyen pour afficher les données des différentes classes du modèle.
 
-==== Proposer un diagramme de classes répondant aux besoins de cette entreprise.
+=== Proposer un diagramme de classes répondant aux besoins de cette entreprise.
 
