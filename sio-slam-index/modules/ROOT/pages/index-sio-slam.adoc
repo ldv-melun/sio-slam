@@ -14,44 +14,85 @@ Vous trouverez ci-dessous le déroulement progressif de votre enseignement profe
 |===
 |Lundi am| Mardi am | Mardi pm | Mercredi am | Mercredi pm| Jeudi pm
 
-|L.JULES - O.CAPUOZZO
+a|L.JULES - O.CAPUOZZO
 
-Cours: xref:axe-directeur-2022-2023.adoc[Présentation de l'axe directeur]
+* Cours: xref:axe-directeur-2022-2023.adoc[Présentation de l'axe directeur]
 
-TP: xref:MOOC-kotlin-basics.adoc[Démarrage du MOOC]
-
-
-| O.CAPUOZZO - R.LAROUSSI
-
-Cours : xref:attachment$2022-20223/vocabulaire-complete.pdf[Vocabulaire de base (dev)]
-
-TP: Accompagnement MOOC
+* TP: xref:MOOC-kotlin-basics.adoc[Démarrage du MOOC]
 
 
+a| O.CAPUOZZO - R.LAROUSSI
 
-| R.LAROUSSI
+* Cours : xref:attachment$2022-20223/vocabulaire-complete.pdf[Vocabulaire de base (dev)]
 
-Cours : UML et POO intro
-
-
-| R.LAROUSSI
-
-Cours : Sensibilisation à la cybersécurité
+* TP: Accompagnement MOOC
 
 
-| O.CAPUOZZO - R.LAROUSSI
 
-Cours : Concepts de test unitaire
+a| R.LAROUSSI
 
-TP : Accompagnement MOOC
+* Cours : UML et POO intro
 
 
-| L.JULES - O.CAPUOZZO - E.VIGNA
+a| R.LAROUSSI
 
-*Vérification de votre attestation de stage de première année
+* Cours : Sensibilisation à la cybersécurité
 
-*Vérification état de votre portfolio
 
-*Accompagnement MOOC
+a| O.CAPUOZZO - R.LAROUSSI
+
+* Cours :
+** Les bons réflexes d'utilisation d'une doc technique (API)
+** Kotlin Basics : usage de d'IDEA (installation du plugin EduTools)
+
+* TP : Accompagnement MOOC
+
+
+a| L.JULES - O.CAPUOZZO - E.VIGNA
+
+* Vérification de votre attestation de stage de première année
+
+* Vérification état de votre portfolio
+
+* Accompagnement MOOC
 
 |===
+
+
+////
+
+== Semaine xx
+
+[frame=all]
+|===
+|Lundi am| Mardi am | Mardi pm | Mercredi am | Mercredi pm| Jeudi pm
+
+a|L.JULES - O.CAPUOZZO
+
+* Cours:
+* TP:
+
+
+a| O.CAPUOZZO - R.LAROUSSI
+
+* Cours :
+* TP:
+
+a| R.LAROUSSI
+
+* Cours :
+
+a| R.LAROUSSI
+
+* Cours :
+
+a| O.CAPUOZZO - R.LAROUSSI
+
+* Cours :
+* TP :
+
+a| L.JULES - O.CAPUOZZO - E.VIGNA
+
+|===
+
+////
