@@ -59,6 +59,49 @@ a| L.JULES - O.CAPUOZZO - E.VIGNA
 |===
 
 
+
+== Semaine 19 septembre
+
+[frame=all]
+|===
+|Lundi am| Mardi am | Mardi pm | Mercredi am | Mercredi pm| Jeudi pm
+
+a|L.JULES - O.CAPUOZZO
+
+* Cours: Structures de contrôles en Kotlin
+* TP: Accompagnement MOOC
+
+
+a| O.CAPUOZZO - R.LAROUSSI
+
+* Cours :
+** Notion de variable (rappel)
+** Encapsulation et Collaboration entre objets
+
+* TP: Accompagnement MOOC
+
+a| R.LAROUSSI
+
+* Cours : UML Diag de classe
+
+a| R.LAROUSSI
+
+* Cours : (à voir)
+
+a| O.CAPUOZZO - R.LAROUSSI
+
+* Cours : Contrôle vocabulaire, compréhension de code + QCM étudiant
+* TP : Accompagnement MOOC
+
+a| L.JULES - O.CAPUOZZO - E.VIGNA
+
+Accompagnement MOOC
+
+|===
+
+
+
+
 ////
 
 == Semaine xx
