@@ -82,7 +82,7 @@ a| O.CAPUOZZO - R.LAROUSSI
 
 a| R.LAROUSSI
 
-* Cours : UML Diag de classe
+* Cours : UML Diag de classe & POO
 
 a| R.LAROUSSI
 
@@ -90,7 +90,7 @@ a| R.LAROUSSI
 
 a| O.CAPUOZZO - R.LAROUSSI
 
-* Cours : Contrôle vocabulaire, compréhension de code + QCM étudiant
+* Cours : *Contrôle*  vocabulaire, compréhension de code + QCM étudiant
 * TP : Accompagnement MOOC
 
 a| L.JULES - O.CAPUOZZO - E.VIGNA

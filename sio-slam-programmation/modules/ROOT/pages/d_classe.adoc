@@ -1,4 +1,4 @@
-== Diagramme de Classes
+= Diagramme de Classes
 ** Un diagramme de classes ou d'objets  est un graphe d’éléments connectés par des relations ou des associations qui représente la vue structurale d'un SI
 ** Un diagramme de classes est une vue graphique de la structure statique
 ** Un diagramme d'objet est un cas particulier d'un diagramme de classes (Image dans le temps).
@@ -6,7 +6,7 @@
 
 image::d_classes.png[550,550]
 
-=== Les classes et les objets (Instances)
+== Les classes et les objets (Instances)
 
 * Une classe représente la structure commune d’un ensemble d’objets, c'est un modèle pour la création des objets.
 * C'est un type abstrait caractérisé par des propriétés (attributs et méthodes) communes à un ensemble d'objets.
@@ -77,6 +77,7 @@ class Vol {
 +getHeureDepart() : Date
 +calulerDuree(): integer
 }
+hide circle
 ----
 
 == Héritage
@@ -96,6 +97,8 @@ class Vol {
 ----
 Forme <|-- Rectangle
 Forme <|-- Triangle
+
+hide circle
 ----
 
 Exemple héritage avec plusieurs sous-classes :
@@ -136,6 +139,7 @@ class Magazine {
 +getDomaine() : String
 +getDatePub() : Date
 }
+hide circle
 ----
 
 == Associations
@@ -149,13 +153,13 @@ image::association.png[450,450]
 
 == types d'associations
 
-==== Association binaire
+=== Association binaire
 Une association binaire est matérialisée par un trait plein entre les classes associées (cf. figure 3.5). Elle peut être ornée d'un nom, avec éventuellement une précision du sens de lecture (▸ ou ◂).
 Quand les deux extrémités de l'association pointent vers la même classe, l'association est dite réflexive
 
 image::assoc_1.png[450,450]
 
-==== Association n-aire
+=== Association n-aire
 * Une association n-aire lie plus de deux classes.
 * La ligne pointillée d'une classe-association peut être reliée au losange par une ligne discontinue pour représenter une association n-aire dotée d'attributs, d'opérations ou d'associations.
 * On représente une association n-aire par un grand losange avec un chemin partant vers chaque classe participante.
@@ -163,7 +167,7 @@ image::assoc_1.png[450,450]
 
 image::assoc_2.png[350,350]
 
-==== Les multiplicités
+== Les multiplicités
 La multiplicité associée à une terminaison d'association, d'agrégation ou de composition déclare le nombre d'objets susceptibles d'occuper la position définie par la terminaison d'association.
 Des exemples de multiplicité :
 
@@ -172,17 +176,17 @@ Des exemples de multiplicité :
     * au moins un : 1..*
     * de un à six : 1..6
 
-==== La navigabilité
+=== La navigabilité
 La navigabilité indique s'il est possible de traverser une association. On représente graphiquement la navigabilité par une flèche du côté de la terminaison navigable et on empêche la navigabilité par une croix du côté de la terminaison non navigable.
 
 image::assoc_3.png[450,450]
 
-==== Classe-association
+=== Classe-association
 Dans le cas où une association doit posséder des propriétés, on doit utiliser le concept de classe association.
 
 image::assoc_4.png[450,450]
 
-==== Agrégation
+=== Agrégation
 Une agrégation est une association qui représente une relation d'inclusion structurelle ou comportementale d'un élément dans un ensemble.
 Graphiquement, on ajoute un losange vide du côté de l'agrégat. Contrairement à une association simple, l'agrégation est transitive.
 
@@ -192,19 +196,20 @@ Graphiquement, on ajoute un losange vide du côté de l'agrégat. Contrairement 
 Employe *-- Salaire
 Employe o-- projet
 
+hide circle
 -----
 
-==== Composition
+=== Composition
 * La composition, également appelée agrégation composite, décrit une contenance structurelle entre instances.
 * La destruction de l'objet composite implique la destruction de ses composants.
 * Une instance de la partie appartient toujours à au plus une instance de l'élément composite :
   la multiplicité du côté composite ne doit pas être supérieure à 1
 
-==== Agrégation vs Composition
+=== Agrégation vs Composition
 
 image::agreg_compo.JPG[550,550]
 
-=== TD d'application
+== TD d'application
 Une entreprise de fabrication et de distribution de matériels agricoles dispose d'une usine et de plusieurs dépôts de stockage/expédition.
 Un produit est caractérisé par un numéro, un libellé et un prix unitaire. Chaque produit peut être stocké dans un ou plusieurs dépôts.
 Un dépôt est caractérisé par son numéro et sa localisation. Dans chaque dépôt, on doit connaître la quantité de chacun des produits.
