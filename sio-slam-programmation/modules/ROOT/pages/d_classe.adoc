@@ -225,4 +225,11 @@ On doit prévoir également un moyen pour afficher les données des différentes
 
 === Proposer un diagramme de classes répondant aux besoins de cette entreprise.
 
+
+== Proposition de solution
+image::diagramme_classes.JPG[750,750]
+
 xref:sio-component:ROOT:attachment$TD2_UML.pdf[TD2 - Diagramme de classes]
+== Proposition de solution
+
+image::TD2_CORRIGE.JPG[750,750]
