@@ -225,3 +225,4 @@ On doit prévoir également un moyen pour afficher les données des différentes
 
 === Proposer un diagramme de classes répondant aux besoins de cette entreprise.
 
+xref:sio-component:ROOT:attachment$TD2_UML.pdf[TD2 - Diagramme de classes]

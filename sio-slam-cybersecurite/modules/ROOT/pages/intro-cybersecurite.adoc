@@ -9,4 +9,4 @@ Voici 10 règles qu'une entreprise devrait observer afin de prende en compte les
 xref:sio-component:ROOT:attachment$SecuriteInformatique.pdf[10 règles de sécurité pour l'entreprise]
 
 Support de cours : B3 : D5 - Cybersécurité
- xref:sio-component:ROOT:attachment$INTRO_CYBER_ETD.pdf[Cybersécurité - Les fondamentaux]
+ xref:sio-component:ROOT:attachment$INTRO_CYBER_ETD.pdf[Les fondamentaux]
