@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Notion de qualité dans le logiciel :: sio-slam</title>
+    <meta name="description" content="Des facteurs de qualité du code">
     <meta name="generator" content="Antora 3.0.1">
     <link rel="stylesheet" href="../_/css/site.css">
     <script>var uiRootPath = '../_'</script>
@@ -317,6 +318,48 @@
 </aside>
 <article class="doc">
 <h1 class="page">Notion de qualité dans le logiciel</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table des matières</div>
+<ul class="sectlevel1">
+<li><a href="#_présentation">Présentation</a></li>
+<li><a href="#_facteurs_de_qualité_du_logiciel">Facteurs de qualité du logiciel</a></li>
+<li><a href="#_correction">Correction</a></li>
+<li><a href="#_robustesse">Robustesse</a></li>
+<li><a href="#_robustesse_cybersecurité">Robustesse-Cybersecurité</a>
+<ul class="sectlevel2">
+<li><a href="#_references">References</a></li>
+</ul>
+</li>
+<li><a href="#_extensibilité">Extensibilité</a></li>
+<li><a href="#_réutilisabilité">Réutilisabilité</a></li>
+<li><a href="#_compatibilité">Compatibilité</a></li>
+<li><a href="#_efficacité">Efficacité</a></li>
+<li><a href="#_portabilité">Portabilité</a></li>
+<li><a href="#_ux_expérience_utilisateur">UX (expérience utilisateur)</a></li>
+<li><a href="#_couverture">Couverture</a></li>
+<li><a href="#_ponctualité">Ponctualité</a></li>
+<li><a href="#_documentation">Documentation</a></li>
+<li><a href="#_facteurs_contradictoires">Facteurs contradictoires</a>
+<ul class="sectlevel2">
+<li><a href="#_difficiles_compatibilités_et_compromis">Difficiles compatibilités et Compromis</a></li>
+</ul>
+</li>
+<li><a href="#_qualités_essentielles">Qualités essentielles</a>
+<ul class="sectlevel2">
+<li><a href="#_fiabilité">Fiabilité</a></li>
+<li><a href="#_modularité">Modularité</a></li>
+</ul>
+</li>
+<li><a href="#_autres_qualités_internes_extreme_programming">Autres qualités internes (eXtreme Programming)</a>
+<ul class="sectlevel2">
+<li><a href="#_une_fois_et_une_seule">Une fois et une seule</a></li>
+<li><a href="#_convention_de_nommage">Convention de nommage</a></li>
+<li><a href="#_le_code_est_toujours_testé">Le code est toujours testé</a></li>
+<li><a href="#_references_2">References</a></li>
+</ul>
+</li>
+</ul>
+</div>
 <div class="sect1">
 <h2 id="_présentation"><a class="anchor" href="#_présentation"></a>Présentation</h2>
 <div class="sectionbody">

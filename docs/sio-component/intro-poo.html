@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>POO :: sio-slam</title>
+    <meta name="description" content="POO">
     <meta name="generator" content="Antora 3.0.1">
     <link rel="stylesheet" href="../_/css/site.css">
     <script>var uiRootPath = '../_'</script>
@@ -317,25 +318,46 @@
 </aside>
 <article class="doc">
 <h1 class="page">POO</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table des matières</div>
+<ul class="sectlevel1">
+<li><a href="#_programmation_orientée_objet"><strong>P</strong>rogrammation <strong>O</strong>rientée <strong>O</strong>bjet</a>
+<ul class="sectlevel2">
+<li><a href="#_définitions">Définitions</a></li>
+<li><a href="#_notion_de_classes">Notion de classes</a>
+<ul class="sectlevel3">
+<li><a href="#_exemple_dattributs_pour_la_classe_véhicule">Exemple d&#8217;attributs  pour la classe véhicule</a></li>
+<li><a href="#_exemples_de_méthodes">Exemples de méthodes</a></li>
+</ul>
+</li>
+<li><a href="#_représentation_dune_classe">Représentation d&#8217;une classe</a></li>
+</ul>
+</li>
+<li><a href="#_encapsulation">Encapsulation</a>
+<ul class="sectlevel2">
+<li><a href="#_il_existe_plusieurs_niveaux_de_visibilité_avec_le_langage_kotlin">Il existe plusieurs niveaux de visibilité avec le langage Kotlin :</a>
+<ul class="sectlevel3">
+<li><a href="#_public_public">Public (public)</a></li>
+<li><a href="#_protégé_protected">Protégé (protected):</a></li>
+<li><a href="#_privé_private">Privé (private):</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_les_constructeurs">Les constructeurs</a>
+<ul class="sectlevel2">
+<li><a href="#_constructeur_principal">Constructeur principal</a>
+<ul class="sectlevel3">
+<li><a href="#_exemple">Exemple</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
 <div class="sect1">
 <h2 id="_programmation_orientée_objet"><a class="anchor" href="#_programmation_orientée_objet"></a><strong>P</strong>rogrammation <strong>O</strong>rientée <strong>O</strong>bjet</h2>
 <div class="sectionbody">
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Classes et objets</p>
-</li>
-<li>
-<p>Encapsulation</p>
-</li>
-<li>
-<p>Constructeur</p>
-</li>
-<li>
-<p>Implémentation des classes</p>
-</li>
-</ol>
-</div>
 <div class="sect2">
 <h3 id="_définitions"><a class="anchor" href="#_définitions"></a>Définitions</h3>
 <div class="paragraph">
@@ -417,11 +439,11 @@
 L&#8217;encapsulation permet de définir des niveaux de visibilité des resources de la classe. Elle permet de sécuriser l&#8217;accès aux éléments d&#8217;une classe (Attributs et méthodes),</p>
 </div>
 <div class="sect2">
-<h3 id="_il_existe_trois_niveaux_de_visibilité_avec_le_langage_kotlin"><a class="anchor" href="#_il_existe_trois_niveaux_de_visibilité_avec_le_langage_kotlin"></a>Il existe trois niveaux de visibilité avec le langage Kotlin :</h3>
+<h3 id="_il_existe_plusieurs_niveaux_de_visibilité_avec_le_langage_kotlin"><a class="anchor" href="#_il_existe_plusieurs_niveaux_de_visibilité_avec_le_langage_kotlin"></a>Il existe plusieurs niveaux de visibilité avec le langage Kotlin :</h3>
 <div class="sect3">
 <h4 id="_public_public"><a class="anchor" href="#_public_public"></a>Public (public)</h4>
 <div class="paragraph">
-<p>Les méthodes de toutes les classes peuvent accéder aux données ou aux méthodes d&#8217;une classe définie avec le niveau de visibilité public. Il s&#8217;agit du plus bas niveau de protection des données,</p>
+<p>Les méthodes de toutes les classes peuvent accéder aux données ou aux méthodes d&#8217;une classe définie avec le niveau de visibilité public (<strong>valeur par défaut</strong>). Il s&#8217;agit du plus bas niveau de protection des données. Notez que les propriétés sont toutefois protégées par leurs accesseurs (implicites ou non).</p>
 </div>
 </div>
 <div class="sect3">
@@ -435,6 +457,9 @@ L&#8217;encapsulation permet de définir des niveaux de visibilité des resource
 <div class="paragraph">
 <p>l&#8217;accès est limité aux méthodes de la classe elle-même. Il s&#8217;agit du niveau de protection des données le plus élevé.</p>
 </div>
+<div class="paragraph">
+<p>Vous trouverez plus d&#8217;information ici : <a href="https://ldv-melun.github.io/sio-slam/sio-component/index-kotlin.html">doc Kotlin en français par L. Jules</a></p>
+</div>
 </div>
 </div>
 </div>
@@ -445,16 +470,29 @@ L&#8217;encapsulation permet de définir des niveaux de visibilité des resource
 <div class="ulist">
 <ul>
 <li>
-<p>Un constructeur est une fonction membre spéciale qui est invoquée lorsqu’un objet de la classe est créé principalement pour initialiser des variables ou des propriétés. Une classe doit avoir un constructeur et si nous ne déclarons pas de constructeur, alors le compilateur génère un constructeur par défaut.</p>
+<p>Un constructeur est une opération spéciale qui est invoquée lorsqu’un objet de la classe est créé principalement pour initialiser des propriétés. Une classe doit avoir un constructeur et si nous ne déclarons pas de constructeur, alors le compilateur génère un constructeur par défaut.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Le mot clé <code><strong>new</strong></code> n&#8217;existe pas en Kotlin.
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Le constructeur est invoqué via le nom de la classe où il est déclaré, défini. Il permet de créer, mais surtout de mettre l&#8217;objet dans un état stable et cohérent dès sa création.</p>
 </li>
 <li>
-<p>C&#8217;est une méthode spécifique de la classe, qui permet de créer les objets de la classe.</p>
-</li>
-<li>
-<p>Le constructeur est une méthode qui ne retourne rien du tout</p>
-</li>
-<li>
-<p>Elle porte le même nom de la classe</p>
+<p>Le constructeur n&#8217;est pas une méthode</p>
 </li>
 </ul>
 </div>
@@ -471,53 +509,68 @@ En cas d&#8217;absence d&#8217;un constructeur, le système vous en fournit un p
 </table>
 </div>
 <div class="paragraph">
-<p>Une classe dans Kotlin peut avoir au plus un constructeur principal et un ou plusieurs constructeurs secondaires.</p>
+<p>Une classe dans Kotlin peut avoir <strong>au plus</strong> un constructeur principal et zéro ou plusieurs constructeurs secondaires.</p>
 </div>
 <div class="paragraph">
-<p>Le constructeur principal initialise la classe, tandis que le constructeur secondaire est utilisé pour initialiser la classe et introduire une logique supplémentaire.</p>
+<p>Le rôle principale d&#8217;un constructeur est d&#8217;initialiser l&#8217;instance dont il a la charge.</p>
+</div>
+<div class="paragraph">
+<p>La présence de constructeurs secondaires sert à proposer plusieurs façons d&#8217;instancier un objet de la classe en question.</p>
 </div>
 <div class="sect2">
 <h3 id="_constructeur_principal"><a class="anchor" href="#_constructeur_principal"></a>Constructeur principal</h3>
 <div class="paragraph">
-<p>Le constructeur principal est initialisé dans l’en-tête de classe, va après le nom de la classe, en utilisant le mot-clé <strong>constructor</strong>.</p>
+<p>Le constructeur principal est initialisé dans l’en-tête de classe,  après le nom de la classe, en utilisant le mot-clé <strong>constructor</strong>.</p>
 </div>
 <div class="paragraph">
-<p>Les paramètres <strong>sont facultatifs</strong> dans le constructeur principal.</p>
+<p>Le constructeur peut recevoir 2 sortes de paramètres  :</p>
 </div>
-<div class="literalblock">
+<div class="ulist">
+<ul>
+<li>
+<p>Soit des paramètres préfixés par <strong>var</strong> ou <strong>val</strong>. Dans ce cas c&#8217;est un raccourci pour <strong>déclarer des propriétés à l&#8217;objet</strong></p>
+</li>
+<li>
+<p>Soit des paramètres classiques. Dans ce cas ils servent en générale à définir l&#8217;état initial de l&#8217;objet.</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="_exemple"><a class="anchor" href="#_exemple"></a>Exemple</h4>
+<div class="listingblock">
+<div class="title">Listing 1. Définition d&#8217;une classe Produit avec 2 propriétés (<code>nom</code> et <code>prix</code>)</div>
 <div class="content">
-<pre>class Add constructor(val a: Int, val b: Int) {
-// code
-}</pre>
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">  class Produit constructor(val nom: String, val prix: Double) {
+     fun isExpensive() { return this.prix &gt; 4.2 }
+  }</code></pre>
 </div>
 </div>
 <div class="paragraph">
 <p>Le mot-clé <strong>constructor</strong> peut être omis si aucune annotation ou modificateur d’accès n’est spécifié.</p>
 </div>
-<div class="literalblock">
+<div class="listingblock">
+<div class="title">Listing 2. Définition plus concise, identique à la précédente</div>
 <div class="content">
-<pre>class Etudiant(val a: Int, val b: Int) {
-    // code
-}</pre>
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">  class Produit(val nom: String, val prix: Double) {
+    fun isExpensive(): Boolean = this.prix &gt; 4.2
+  }</code></pre>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_exemple_de_classe_kotlin_avec_constructeur_principal"><a class="anchor" href="#_exemple_de_classe_kotlin_avec_constructeur_principal"></a>Exemple de classe Kotlin avec constructeur principal :</h4>
-<div class="literalblock">
+<div class="listingblock">
+<div class="title">Listing 3. Exemple d&#8217;un programme utilisant cette classe</div>
 <div class="content">
-<pre>//main function
-fun main(args: Array&lt;String&gt;) {
-    val add = Produit(5, 6)
-    println("Le produit de 5 fois 6 : ${Produit.c}")
-}
-//primary constructor</pre>
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin"> fun test() {
+   val p: Produit = Produit("truc", 4.2)
+   println("Le produit ${p.nom} coûte ${p.prix}")
+   println("Le produit est-il cher ? ${p.isExpensive()}")
+ }</code></pre>
 </div>
 </div>
-<div class="literalblock">
+<div class="listingblock">
+<div class="title">Listing 4. Résultat à l&#8217;exécution</div>
 <div class="content">
-<pre>class Produit constructor(a: Int,b:Int) {
-    var c = a * b;
-}</pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">Le produit truc coûte 4.2
+Le produit est-il cher ? false</code></pre>
 </div>
 </div>
 </div>

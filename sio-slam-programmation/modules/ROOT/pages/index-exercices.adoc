@@ -1,0 +1,155 @@
+= Compte de banque
+
+Nous allons simuler la représentation du concept de Compte client d'une banque.
+
+== Analyse
+
+Définissons les caractéristiques d'un compte
+
+* Attaché à un client
+* Dispose d'un solde (positif ou négatif)
+* Dispose ou non d'un découvert possible
+
+Les services attendus (comprendre ce que l'on peut faire avec un compte)
+
+* Connaitre le nom du client
+* Pouvoir débiter une somme donnée (extrait de l'argent du compte)
+* Pouvoir créditer une somme donnée (ajouter une somme au solde)
+* Connaître si un débit est possible ou non
+* Connaitre le solde actuel
+* (optionnel) Connaître la liste des opérations passées sur ce compte
+
+== Conception
+
+La conception de notre classe, à minima :
+
+[plantuml]
+----
+class Compte {
+  nomClient : String
+  solde : Double
+  plafondDecouvert : Int
+
+  solde() : Double
+  debiter(montant: Double)
+  crediter(montant: Double)
+  isOperationCrediterPossible(montant: Double) : Boolean
+}
+
+hide circle
+----
+
+== Implémentation
+
+=== Création du projet avec l'IDE
+
+Sous Inellij, `File/New/Project`.
+
+Sélectionner les mêmes options (langage Kotlin, Build IntelliJ, JDK 17)
+
+image:kotlin-new-projet-compte-banquaire.png[Creation projet CompteBancaire]
+
+=== Conception / Implémentation de la classe `Compte`
+
+Dans le dossier `src/main/kotlin`, création de la classe `Compte`.
+
+[source,kotlin, num]
+----
+package com.banque
+
+class Compte constructor(val nomClient: String) {
+}
+
+----
+
+
+=== Ajout d'une classe de test
+
+À partir de l'IDE, faire un clic droit sur le nom de la classe, puis `Generate.../test`
+
+image:clic-droit-generate-test.png[Generate test menu]
+
+Une boite de dialogue vous permet de paramétrer l'action. Le système ne voit pas la librairie `Junit5` (un framework en fait). Sélectionner `Fix` pour permettre à l'IDE de gérer ce problème lui-même (download de Junit, puis intégration au système)
+
+image:create-test-1.png[]
+
+Une fois le problème fixé, sélectionner les options `setUp, Member getNomClient()`. Cette dernière méthode est implicite dans la classe (mécanisme des _properties_)
+
+image:create-test-2.png[]
+
+=== Exemple d'un test
+
+Suite à la dernière action, la classe `CompteTest` a été crée dans la branche `test`.
+
+image:arbo-branch-test.png[]
+
+Voici le squelette du code généré :
+
+[source, kotlin]
+----
+import org.junit.jupiter.api.BeforeEach
+import org.junit.jupiter.api.Test
+
+import org.junit.jupiter.api.Assertions.*
+
+internal class CompteTest {
+
+    @BeforeEach
+    fun setUp() {
+    }
+
+    @Test
+    fun getNomClient() {
+    }
+}
+----
+
+Nous allons maintenant programmer des tests unitaires portant sur  la classe `Compte` par l'intermédiaire de ses instances (comprendre des *objets* de cette classe)
+
+On utilisera les méthodes `assertTrue`, `assertFalse`, `assertEquals` de `JUnit̀`.
+
+Exemple d'un test unitaire automatisé qui vérifie, sur la base d'un scénario imaginé pour l'occasion, un bon comportement de la méthode `getNomClient`.
+
+[source, kotlin]
+----
+    @Test
+    fun getNomClient() {
+        val c = Compte("Mezigue") <1>
+        assertEquals("Mezigue", c.nomClient) <2>
+    }
+----
+
+<1> C'est l'objet à tester (déclaration et l'instanciation)
+<2> `assertEquals` est une fonction qui teste une assertion. Ici on vérifie que la *valeur attendue" (premier argument = `̀"Mezigue"`), et bien *égale* au deuxième argument (une valeur rendue par l'expression `c.nomClient` )
+
+Nous devons maintenant lancer la compilation puis 'exécution de ce test.
+
+=== Exécution d'un test
+
+Le lancement des tests unitaires peuvent se faire directement dans l'IDE (vrai pour tout IDE)
+
+Faire un `̀Clic droit` sur le nom de la méthode.
+
+image:lancement-test-unitaire-1.png[]
+
+Lancer le test, puis contrôler le résultat :
+
+image:resultat-lancement-test-unitaire.png[]
+
+Nous constatons que le test est passé avec succès, ce qui est bon signe.
+
+La suite vous appartient...
+
+== A vous de jouer
+
+La *méthode de développement* consiste à
+
+. Concevoir un scénario de test (par exemple _"si je crédite le compte de 50€, je vérifie que le solde de ce compte a bien été augmenté d'autant"_)
+. Concevoir un test unitaire centré sur ce scénario
+. Lancer le test qui vérifier que la méthode `crediter` fonctionne comme attendu
+. Si ce n'est pas le cas (le test à échoué), intervenir sur la méthode `crediter` (branche `src/`), puis revenir au point 2
+. Si le test est passé, concevoir un nouveau scénario (revenir au point 1)
+
+Vous avez 2 heures pour mener à bien ce travail. C'est à dire, vérifier et implémenter les services attendus de la classe `Compte`, tels qu'ils sont définis dans l' <<_analyse>>.
+
+Bon développement !

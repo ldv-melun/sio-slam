@@ -1,11 +1,14 @@
 = POO
+:docdate: 2022-07-19
+:asciidoctor-version:1.1
+:description: POO
+:icons: font
+:listing-caption: Listing
+:toc-title: Table des matières
+:toc: left
+:toclevels: 4
 
 == **P**rogrammation **O**rientée **O**bjet
-
-. Classes et objets
-. Encapsulation
-. Constructeur
-. Implémentation des classes
 
 === Définitions
 
@@ -51,11 +54,11 @@ L'encapsulation est un mécanisme consistant à rassembler les attributs et les 
 L'encapsulation permet de définir des niveaux de visibilité des resources de la classe. Elle permet de sécuriser l'accès aux éléments d'une classe (Attributs et méthodes),
 
 
-=== Il existe trois niveaux de visibilité avec le langage Kotlin :
+=== Il existe plusieurs niveaux de visibilité avec le langage Kotlin :
 
 
 ==== Public (public)
-Les méthodes de toutes les classes peuvent accéder aux données ou aux méthodes d'une classe définie avec le niveau de visibilité public. Il s'agit du plus bas niveau de protection des données,
+Les méthodes de toutes les classes peuvent accéder aux données ou aux méthodes d'une classe définie avec le niveau de visibilité public (*valeur par défaut*). Il s'agit du plus bas niveau de protection des données. Notez que les propriétés sont toutefois protégées par leurs accesseurs (implicites ou non).
 
 ==== Protégé (protected):
 L'accès est réservé aux fonctions des classes héritières, c'est-à-dire par les fonctions membres de la classe ainsi que des classes dérivées.
@@ -63,54 +66,70 @@ L'accès est réservé aux fonctions des classes héritières, c'est-à-dire par
 ==== Privé (private):
 l'accès est limité aux méthodes de la classe elle-même. Il s'agit du niveau de protection des données le plus élevé.
 
+Vous trouverez plus d'information ici : https://ldv-melun.github.io/sio-slam/sio-component/index-kotlin.html[doc Kotlin en français par L. Jules]
 
 == Les constructeurs
 
-* Un constructeur est une fonction membre spéciale qui est invoquée lorsqu’un objet de la classe est créé principalement pour initialiser des variables ou des propriétés. Une classe doit avoir un constructeur et si nous ne déclarons pas de constructeur, alors le compilateur génère un constructeur par défaut.
+* Un constructeur est une opération spéciale qui est invoquée lorsqu’un objet de la classe est créé principalement pour initialiser des propriétés. Une classe doit avoir un constructeur et si nous ne déclarons pas de constructeur, alors le compilateur génère un constructeur par défaut.
 
-* C'est une méthode spécifique de la classe, qui permet de créer les objets de la classe.
+TIP: Le mot clé `*new*` n'existe pas en Kotlin.
 
-* Le constructeur est une méthode qui ne retourne rien du tout
+* Le constructeur est invoqué via le nom de la classe où il est déclaré, défini. Il permet de créer, mais surtout de mettre l'objet dans un état stable et cohérent dès sa création.
 
-* Elle porte le même nom de la classe
-
+* Le constructeur n'est pas une méthode
 
 [NOTE]
 En cas d'absence d'un constructeur, le système vous en fournit un par défaut.
 
+Une classe dans Kotlin peut avoir *au plus* un constructeur principal et zéro ou plusieurs constructeurs secondaires.
 
-Une classe dans Kotlin peut avoir au plus un constructeur principal et un ou plusieurs constructeurs secondaires.
+Le rôle principale d'un constructeur est d'initialiser l'instance dont il a la charge.
 
-Le constructeur principal initialise la classe, tandis que le constructeur secondaire est utilisé pour initialiser la classe et introduire une logique supplémentaire.
+La présence de constructeurs secondaires sert à proposer plusieurs façons d'instancier un objet de la classe en question.
 
 === Constructeur principal
 
-Le constructeur principal est initialisé dans l’en-tête de classe, va après le nom de la classe, en utilisant le mot-clé *constructor*.
+Le constructeur principal est initialisé dans l’en-tête de classe,  après le nom de la classe, en utilisant le mot-clé *constructor*.
 
-Les paramètres *sont facultatifs* dans le constructeur principal.
+Le constructeur peut recevoir 2 sortes de paramètres  :
 
-    class Add constructor(val a: Int, val b: Int) {
-    // code
-    }
+* Soit des paramètres préfixés par *var* ou *val*. Dans ce cas c'est un raccourci pour *déclarer des propriétés à l'objet*
 
+* Soit des paramètres classiques. Dans ce cas ils servent en générale à définir l'état initial de l'objet.
+
+==== Exemple
+
+.Définition d'une classe Produit avec 2 propriétés (`nom` et `prix`)
+[source, kotlin]
+----
+  class Produit constructor(val nom: String, val prix: Double) {
+     fun isExpensive() { return this.prix > 4.2 }
+  }
+----
 
 Le mot-clé *constructor* peut être omis si aucune annotation ou modificateur d’accès n’est spécifié.
 
-    class Etudiant(val a: Int, val b: Int) {
-        // code
-    }
+.Définition plus concise, identique à la précédente
+[source, kotlin]
+----
+  class Produit(val nom: String, val prix: Double) {
+    fun isExpensive(): Boolean = this.prix > 4.2
+  }
+----
 
-==== Exemple de classe Kotlin avec constructeur principal :
+.Exemple d'un programme utilisant cette classe
+[source, kotlin]
+----
+ fun test() {
+   val p: Produit = Produit("truc", 4.2)
+   println("Le produit ${p.nom} coûte ${p.prix}")
+   println("Le produit est-il cher ? ${p.isExpensive()}")
+ }
+----
 
-    //main function
-    fun main(args: Array<String>) {
-        val add = Produit(5, 6)
-        println("Le produit de 5 fois 6 : ${Produit.c}")
-    }
-    //primary constructor
-
-    class Produit constructor(a: Int,b:Int) {
-        var c = a * b;
-    }
-
-
+.Résultat à l'exécution
+[source, bash]
+----
+Le produit truc coûte 4.2
+Le produit est-il cher ? false
+----
