@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>POO :: sio-slam</title>
+    <title>Controles :: sio-slam</title>
     <meta name="generator" content="Antora 3.0.1">
     <link rel="stylesheet" href="../_/css/site.css">
     <script>var uiRootPath = '../_'</script>
@@ -142,7 +142,7 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="index-qualite.html">Facteurs de qualité</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="2">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="intro-poo.html">POO</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -264,7 +264,7 @@
   </li>
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item is-current-page" data-depth="1">
     <a class="nav-link" href="index-controles.html">Contrôles</a>
   </li>
 </ul>
@@ -305,224 +305,23 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index-glossaire.html">SIO-SLAM</a></li>
-    <li>Programmation</li>
-    <li><a href="intro-poo.html">POO</a></li>
+    <li><a href="index-controles.html">Contrôles</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///home/kpu/ldv/sio/antora-sio-slam/sio-slam/sio-slam-programmation/modules/ROOT/pages/intro-poo.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="file:///home/kpu/ldv/sio/antora-sio-slam/sio-slam/sio-slam-controles/modules/ROOT/pages/index-controles.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">POO</h1>
-<div class="sect1">
-<h2 id="_programmation_orientée_objet"><a class="anchor" href="#_programmation_orientée_objet"></a><strong>P</strong>rogrammation <strong>O</strong>rientée <strong>O</strong>bjet</h2>
-<div class="sectionbody">
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Classes et objets</p>
-</li>
-<li>
-<p>Encapsulation</p>
-</li>
-<li>
-<p>Constructeur</p>
-</li>
-<li>
-<p>Implémentation des classes</p>
-</li>
-</ol>
-</div>
-<div class="sect2">
-<h3 id="_définitions"><a class="anchor" href="#_définitions"></a>Définitions</h3>
-<div class="paragraph">
-<p>La programmation orientée objet offre de nombreux avantages :</p>
-</div>
+<h1 class="page">Controles</h1>
 <div class="ulist">
 <ul>
 <li>
-<p>La possibilité de <strong>réutiliser</strong> le code dans différents projets.</p>
-</li>
-<li>
-<p>Le développeur identifie chaque élément de son programme comme un objet ayant son contexte, ses propriétés et des actions qui lui sont propres.</p>
-</li>
-<li>
-<p>Chaque type d&#8217;objet possède son propre contexte et ne peut agir avec d&#8217;autres que suivant des interfaces bien précises.</p>
-</li>
-<li>
-<p>Cela permet d&#8217;isoler chaque module et d&#8217;en créer séparément de nouveaux qui viendront s&#8217;ajouter à l&#8217;application.</p>
-</li>
-<li>
-<p>Approche particulièrement employée dans le cas des projets répartis entre plusieurs développeurs.</p>
+<p><a href="_attachments/controle-1-slam2-corrige.pdf" class="xref attachment">contrôle 1 - programmation</a>  - 21 septembre 2022</p>
 </li>
 </ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_notion_de_classes"><a class="anchor" href="#_notion_de_classes"></a>Notion de classes</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Une « classe » est un modèle de données définissant la structure commune à tous les objets qui seront créés à partir d&#8217;elle.</p>
-</li>
-<li>
-<p>Une classe est un moule grâce auquel nous allons créer autant d&#8217;objets de même type et de même structure qu&#8217;on le désire. Un objet est donc « issu » d&#8217;une classe, c&#8217;est le produit qui sort d&#8217;un moule.</p>
-</li>
-<li>
-<p>Un objet est une instanciation d&#8217;une classe, c&#8217;est la raison pour laquelle on pourra parler indifféremment d&#8217;objet ou d&#8217;instance (éventuellement d&#8217;occurrence).</p>
-</li>
-<li>
-<p>Une classe est composée de deux parties :</p>
-</li>
-<li>
-<p>Les attributs (parfois appelés données membres) : il s&#8217;agit des données représentant l&#8217;état de l&#8217;objet</p>
-</li>
-</ul>
-</div>
-<div class="sect3">
-<h4 id="_exemple_dattributs_pour_la_classe_véhicule"><a class="anchor" href="#_exemple_dattributs_pour_la_classe_véhicule"></a>Exemple d&#8217;attributs  pour la classe véhicule</h4>
-<div class="literalblock">
-<div class="content">
-<pre>Marque, modèle, couleur, puissance</pre>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_exemples_de_méthodes"><a class="anchor" href="#_exemples_de_méthodes"></a>Exemples de méthodes</h4>
-<div class="literalblock">
-<div class="content">
-<pre>Rouler, Klaxonner, freiner</pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_représentation_dune_classe"><a class="anchor" href="#_représentation_dune_classe"></a>Représentation d&#8217;une classe</h3>
-<div class="imageblock">
-<div class="content">
-<img src="_images/classe.png" alt="classe">
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_encapsulation"><a class="anchor" href="#_encapsulation"></a>Encapsulation</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>L&#8217;encapsulation est un mécanisme consistant à rassembler les attributs et les méthodes au sein d&#8217;une structure en cachant l&#8217;implémentation de l&#8217;objet, c&#8217;est-à-dire en empêchant l&#8217;accès aux données par un autre moyen que les services proposés. L&#8217;encapsulation permet donc de garantir l&#8217;intégrité des données contenues dans l&#8217;objet.
-L&#8217;encapsulation permet de définir des niveaux de visibilité des resources de la classe. Elle permet de sécuriser l&#8217;accès aux éléments d&#8217;une classe (Attributs et méthodes),</p>
-</div>
-<div class="sect2">
-<h3 id="_il_existe_trois_niveaux_de_visibilité_avec_le_langage_kotlin"><a class="anchor" href="#_il_existe_trois_niveaux_de_visibilité_avec_le_langage_kotlin"></a>Il existe trois niveaux de visibilité avec le langage Kotlin :</h3>
-<div class="sect3">
-<h4 id="_public_public"><a class="anchor" href="#_public_public"></a>Public (public)</h4>
-<div class="paragraph">
-<p>Les méthodes de toutes les classes peuvent accéder aux données ou aux méthodes d&#8217;une classe définie avec le niveau de visibilité public. Il s&#8217;agit du plus bas niveau de protection des données,</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_protégé_protected"><a class="anchor" href="#_protégé_protected"></a>Protégé (protected):</h4>
-<div class="paragraph">
-<p>L&#8217;accès est réservé aux fonctions des classes héritières, c&#8217;est-à-dire par les fonctions membres de la classe ainsi que des classes dérivées.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_privé_private"><a class="anchor" href="#_privé_private"></a>Privé (private):</h4>
-<div class="paragraph">
-<p>l&#8217;accès est limité aux méthodes de la classe elle-même. Il s&#8217;agit du niveau de protection des données le plus élevé.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_les_constructeurs"><a class="anchor" href="#_les_constructeurs"></a>Les constructeurs</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>Un constructeur est une fonction membre spéciale qui est invoquée lorsqu’un objet de la classe est créé principalement pour initialiser des variables ou des propriétés. Une classe doit avoir un constructeur et si nous ne déclarons pas de constructeur, alors le compilateur génère un constructeur par défaut.</p>
-</li>
-<li>
-<p>C&#8217;est une méthode spécifique de la classe, qui permet de créer les objets de la classe.</p>
-</li>
-<li>
-<p>Le constructeur est une méthode qui ne retourne rien du tout</p>
-</li>
-<li>
-<p>Elle porte le même nom de la classe</p>
-</li>
-</ul>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-En cas d&#8217;absence d&#8217;un constructeur, le système vous en fournit un par défaut.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Une classe dans Kotlin peut avoir au plus un constructeur principal et un ou plusieurs constructeurs secondaires.</p>
-</div>
-<div class="paragraph">
-<p>Le constructeur principal initialise la classe, tandis que le constructeur secondaire est utilisé pour initialiser la classe et introduire une logique supplémentaire.</p>
-</div>
-<div class="sect2">
-<h3 id="_constructeur_principal"><a class="anchor" href="#_constructeur_principal"></a>Constructeur principal</h3>
-<div class="paragraph">
-<p>Le constructeur principal est initialisé dans l’en-tête de classe, va après le nom de la classe, en utilisant le mot-clé <strong>constructor</strong>.</p>
-</div>
-<div class="paragraph">
-<p>Les paramètres <strong>sont facultatifs</strong> dans le constructeur principal.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>class Add constructor(val a: Int, val b: Int) {
-// code
-}</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Le mot-clé <strong>constructor</strong> peut être omis si aucune annotation ou modificateur d’accès n’est spécifié.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>class Etudiant(val a: Int, val b: Int) {
-    // code
-}</pre>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_exemple_de_classe_kotlin_avec_constructeur_principal"><a class="anchor" href="#_exemple_de_classe_kotlin_avec_constructeur_principal"></a>Exemple de classe Kotlin avec constructeur principal :</h4>
-<div class="literalblock">
-<div class="content">
-<pre>//main function
-fun main(args: Array&lt;String&gt;) {
-    val add = Produit(5, 6)
-    println("Le produit de 5 fois 6 : ${Produit.c}")
-}
-//primary constructor</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>class Produit constructor(a: Int,b:Int) {
-    var c = a * b;
-}</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
 </div>
 </article>
   </div>
