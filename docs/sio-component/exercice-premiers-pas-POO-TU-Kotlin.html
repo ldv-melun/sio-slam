@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>NoSQL :: sio-slam</title>
+    <title>Compte de banque :: sio-slam</title>
     <meta name="generator" content="Antora 3.0.1">
     <link rel="stylesheet" href="../_/css/site.css">
     <script>var uiRootPath = '../_'</script>
@@ -185,7 +185,7 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="index-sql.html">SQL</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="2">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="index-nosql.html">NoSQL</a>
   </li>
 </ul>
@@ -305,19 +305,256 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index-glossaire.html">SIO-SLAM</a></li>
-    <li>Analyse</li>
-    <li><a href="index-nosql.html">NoSQL</a></li>
+    <li><a href="exercice-premiers-pas-POO-TU-Kotlin.html">Compte de banque</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///home/kpu/ldv/sio/antora-sio-slam/sio-slam/sio-slam-analyse/modules/ROOT/pages/index-nosql.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="file:///home/kpu/ldv/sio/antora-sio-slam/sio-slam/sio-slam-controles-exercices/modules/ROOT/pages/exercice-premiers-pas-POO-TU-Kotlin.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">NoSQL</h1>
+<h1 class="page">Compte de banque</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Nous allons simuler la représentation du concept de Compte client d&#8217;une banque.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_analyse"><a class="anchor" href="#_analyse"></a>Analyse</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Définissons les caractéristiques d&#8217;un compte</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Attaché à un client</p>
+</li>
+<li>
+<p>Dispose d&#8217;un solde (positif ou négatif)</p>
+</li>
+<li>
+<p>Dispose ou non d&#8217;un découvert possible</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Les services attendus (comprendre ce que l&#8217;on peut faire avec un compte)</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Connaitre le nom du client</p>
+</li>
+<li>
+<p>Pouvoir débiter une somme donnée (extrait de l&#8217;argent du compte)</p>
+</li>
+<li>
+<p>Pouvoir créditer une somme donnée (ajouter une somme au solde)</p>
+</li>
+<li>
+<p>Connaître si un débit est possible ou non</p>
+</li>
+<li>
+<p>Connaitre le solde actuel</p>
+</li>
+<li>
+<p>(optionnel) Connaître la liste des opérations passées sur ce compte</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_conception"><a class="anchor" href="#_conception"></a>Conception</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>La conception de notre classe, à minima :</p>
+</div>
+<div class="imageblock kroki">
+<div class="content">
+<img src="_images/diag-93cb68b597eba539da195c5080e47566ebdb47c9.svg" alt="Diagram">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_implémentation"><a class="anchor" href="#_implémentation"></a>Implémentation</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_création_du_projet_avec_lide"><a class="anchor" href="#_création_du_projet_avec_lide"></a>Création du projet avec l&#8217;IDE</h3>
+<div class="paragraph">
+<p>Sous Inellij, <code>File/New/Project</code>.</p>
+</div>
+<div class="paragraph">
+<p>Sélectionner les mêmes options (langage Kotlin, Build IntelliJ, JDK 17)</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="_images/kotlin-new-projet-compte-banquaire.png" alt="Creation projet CompteBancaire"></span></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_conception_implémentation_de_la_classe_compte"><a class="anchor" href="#_conception_implémentation_de_la_classe_compte"></a>Conception / Implémentation de la classe <code>Compte</code></h3>
+<div class="paragraph">
+<p>Dans le dossier <code>src/main/kotlin</code>, création de la classe <code>Compte</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">package com.banque
 
+class Compte constructor(val nomClient: String) {
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ajout_dune_classe_de_test"><a class="anchor" href="#_ajout_dune_classe_de_test"></a>Ajout d&#8217;une classe de test</h3>
+<div class="paragraph">
+<p>À partir de l&#8217;IDE, faire un clic droit sur le nom de la classe, puis <code>Generate&#8230;&#8203;/test</code></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="_images/clic-droit-generate-test.png" alt="Generate test menu"></span></p>
+</div>
+<div class="paragraph">
+<p>Une boite de dialogue vous permet de paramétrer l&#8217;action. Le système ne voit pas la librairie <code>Junit5</code> (un framework en fait). Sélectionner <code>Fix</code> pour permettre à l&#8217;IDE de gérer ce problème lui-même (download de Junit, puis intégration au système)</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="_images/create-test-1.png" alt="create test 1"></span></p>
+</div>
+<div class="paragraph">
+<p>Une fois le problème fixé, sélectionner les options <code>setUp, Member getNomClient()</code>. Cette dernière méthode est implicite dans la classe (mécanisme des <em>properties</em>)</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="_images/create-test-2.png" alt="create test 2"></span></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_exemple_dun_test"><a class="anchor" href="#_exemple_dun_test"></a>Exemple d&#8217;un test</h3>
+<div class="paragraph">
+<p>Suite à la dernière action, la classe <code>CompteTest</code> a été crée dans la branche <code>test</code>.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="_images/arbo-branch-test.png" alt="arbo branch test"></span></p>
+</div>
+<div class="paragraph">
+<p>Voici le squelette du code généré :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">import org.junit.jupiter.api.BeforeEach
+import org.junit.jupiter.api.Test
+
+import org.junit.jupiter.api.Assertions.*
+
+internal class CompteTest {
+
+    @BeforeEach
+    fun setUp() {
+    }
+
+    @Test
+    fun getNomClient() {
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Nous allons maintenant programmer des tests unitaires portant sur  la classe <code>Compte</code> par l&#8217;intermédiaire de ses instances (comprendre des <strong>objets</strong> de cette classe)</p>
+</div>
+<div class="paragraph">
+<p>On utilisera les méthodes <code>assertTrue</code>, <code>assertFalse</code>, <code>assertEquals</code> de <code>JUnit̀</code>.</p>
+</div>
+<div class="paragraph">
+<p>Exemple d&#8217;un test unitaire automatisé qui vérifie, sur la base d&#8217;un scénario imaginé pour l&#8217;occasion, un bon comportement de la méthode <code>getNomClient</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">    @Test
+    fun getNomClient() {
+        val c = Compte("Mezigue") <i class="conum" data-value="1"></i><b>(1)</b>
+        assertEquals("Mezigue", c.nomClient) <i class="conum" data-value="2"></i><b>(2)</b>
+    }</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>C&#8217;est l&#8217;objet à tester (déclaration et l&#8217;instanciation)</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td><code>assertEquals</code> est une fonction qui teste une assertion. Ici on vérifie que la <strong>valeur attendue" (premier argument = <code>̀"Mezigue"</code>), et bien *égale</strong> au deuxième argument (une valeur rendue par l&#8217;expression <code>c.nomClient</code> )</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Nous devons maintenant lancer la compilation puis l&#8217;exécution de ce test.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_exécution_dun_test"><a class="anchor" href="#_exécution_dun_test"></a>Exécution d&#8217;un test</h3>
+<div class="paragraph">
+<p>Le lancement des tests unitaires peuvent se faire directement dans l&#8217;IDE (vrai pour tout IDE)</p>
+</div>
+<div class="paragraph">
+<p>Faire un <code>̀Clic droit</code> sur le nom de la méthode.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="_images/lancement-test-unitaire-1.png" alt="lancement test unitaire 1"></span></p>
+</div>
+<div class="paragraph">
+<p>Lancer le test, puis contrôler le résultat :</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="_images/resultat-lancement-test-unitaire.png" alt="resultat lancement test unitaire"></span></p>
+</div>
+<div class="paragraph">
+<p>Nous constatons que le test est passé avec succès, ce qui est bon signe.</p>
+</div>
+<div class="paragraph">
+<p>La suite vous appartient&#8230;&#8203;</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_a_vous_de_jouer"><a class="anchor" href="#_a_vous_de_jouer"></a>A vous de jouer</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>La <strong>méthode de développement</strong> consiste à</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Concevoir un scénario de test (par exemple <em>"si je crédite le compte de 50€, je vérifie que le solde de ce compte a bien été augmenté d&#8217;autant"</em>)</p>
+</li>
+<li>
+<p>Concevoir un test unitaire centré sur ce scénario</p>
+</li>
+<li>
+<p>Lancer le test qui vérifier que la méthode <code>crediter</code> fonctionne comme attendu</p>
+</li>
+<li>
+<p>Si ce n&#8217;est pas le cas (le test à échoué), intervenir sur la méthode <code>crediter</code> (branche <code>src/</code>), puis revenir au point 2</p>
+</li>
+<li>
+<p>Si le test est passé, concevoir un nouveau scénario (revenir au point 1)</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Vous avez 2 heures pour mener à bien ce travail. C&#8217;est à dire, vérifier et implémenter les services attendus de la classe <code>Compte</code>, tels qu&#8217;ils sont définis dans l' <a href="#_analyse">Analyse</a>.</p>
+</div>
+<div class="paragraph">
+<p>Bon développement !</p>
+</div>
+</div>
+</div>
 </article>
   </div>
 </main>

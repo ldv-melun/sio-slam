@@ -122,7 +122,7 @@ Exemple d'un test unitaire automatisé qui vérifie, sur la base d'un scénario 
 <1> C'est l'objet à tester (déclaration et l'instanciation)
 <2> `assertEquals` est une fonction qui teste une assertion. Ici on vérifie que la *valeur attendue" (premier argument = `̀"Mezigue"`), et bien *égale* au deuxième argument (une valeur rendue par l'expression `c.nomClient` )
 
-Nous devons maintenant lancer la compilation puis 'exécution de ce test.
+Nous devons maintenant lancer la compilation puis l'exécution de ce test.
 
 === Exécution d'un test
 

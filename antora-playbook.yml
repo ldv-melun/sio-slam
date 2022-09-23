@@ -23,7 +23,7 @@ content:
    - url: ./
      start_path: sio-slam-glossaire
    - url: ./
-     start_path: sio-slam-controles
+     start_path: sio-slam-controles-exercices
    - url: ./
      start_path: sio-slam-cybersecurite
    - url: https://gitlab.com/ljules/doc_kotlin.git
