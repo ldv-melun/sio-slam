@@ -1,3 +1,0 @@
-= Exercices
-
-* Premiers pas avec la POO avec Kotlin

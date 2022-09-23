@@ -70,7 +70,7 @@ Vous trouverez plus d'information ici : https://ldv-melun.github.io/sio-slam/sio
 
 == Les constructeurs
 
-* Un constructeur est une opération spéciale qui est invoquée lorsqu’un objet de la classe est créé principalement pour initialiser des propriétés. Une classe doit avoir un constructeur et si nous ne déclarons pas de constructeur, alors le compilateur génère un constructeur par défaut.
+* Un constructeur est une opération spéciale qui est invoquée lorsqu’un objet de la classe est créé principalement pour initialiser ses propriétés. Une classe doit avoir un constructeur et si nous ne déclarons pas de constructeur, alors le compilateur génère un constructeur par défaut.
 
 TIP: Le mot clé `*new*` n'existe pas en Kotlin.
 
