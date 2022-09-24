@@ -1,4 +1,13 @@
 = Compte de banque
+:author: Olivier Capuozzo
+:docdate: 2022-09-22
+:asciidoctor-version:1.1
+:description: Exercice initiation TU et POO Kotlin
+:icons: font
+:listing-caption: Listing
+:toc-title: Table des matières
+:toc: left
+:toclevels: 4
 
 Nous allons simuler la représentation du concept de Compte client d'une banque.
 
