@@ -17,6 +17,7 @@ Les services attendus (comprendre ce que l'on peut faire avec un compte)
 * Pouvoir créditer une somme donnée (ajouter une somme au solde)
 * Connaître si un débit est possible ou non
 * Connaitre le solde actuel
+* (optionnel) Faire un transfert d'une somme d'un compte à un autre
 * (optionnel) Connaître la liste des opérations passées sur ce compte
 
 == Conception
@@ -120,23 +121,57 @@ Exemple d'un test unitaire automatisé qui vérifie, sur la base d'un scénario 
 ----
 
 <1> C'est l'objet à tester (déclaration et l'instanciation)
-<2> `assertEquals` est une fonction qui teste une assertion. Ici on vérifie que la *valeur attendue" (premier argument = `̀"Mezigue"`), et bien *égale* au deuxième argument (une valeur rendue par l'expression `c.nomClient` )
+<2> `assertEquals` est une fonction qui teste une assertion. Ici cette assertion vérifie que la *valeur attendue* (premier argument = `̀"Mezigue"`), et bien *égale* au deuxième argument (une valeur rendue par l'expression `c.nomClient` )
 
-Nous devons maintenant lancer la compilation puis l'exécution de ce test.
+
+[NOTE]
+====
+Contrairement à ce que l'on pourrait s'attendre, les fonctions d'assertion de `JUnit` ne sont pas des fonctions booléennes.
+
+[source, java]
+----
+public static void assertEquals(byte expected,
+                                byte actual)
+// Asserts that expected and actual are equal.
+
+public static void assertTrue(boolean condition)
+// Asserts that the supplied condition is true.
+
+public static void assertFalse(boolean condition)
+// Asserts that the supplied condition is not true.
+
+----
+====
+
+C'est `JUnit` qui réceptionnera le résultat de toutes les assertions de test, puis en fera un rapport, comme nous allons le voir maintenant.
 
 === Exécution d'un test
 
-Le lancement des tests unitaires peuvent se faire directement dans l'IDE (vrai pour tout IDE)
+Après avoir vérifié que nos tests sont sans erreurs de syntaxe, nous pouvons les lancer (demander leur compilation et exécution).
+
+Le lancement des tests unitaires peut se faire directement dans l'IDE (vrai pour tout IDE)
 
 Faire un `̀Clic droit` sur le nom de la méthode.
 
-image:lancement-test-unitaire-1.png[]
+image::lancement-test-unitaire-1.png[title="Lancement de l'exécution d'un test"]
 
-Lancer le test, puis contrôler le résultat :
+Lancer le test, puis contrôler le résultat dans la fenêtre, ou le volet, ouverte pour l'occasion par l'IDE.
 
-image:resultat-lancement-test-unitaire.png[]
+
+image::resultat-lancement-test-unitaire.png[title="Exemple de rapport de test"]
 
 Nous constatons que le test est passé avec succès, ce qui est bon signe.
+
+[IMPORTANT]
+====
+Les différents états possibles d'un test sont
+
+* En erreur (ERROR). C'est un bug dans l'écriture même du test
+* En échec (FAILURE). Le test ne passe pas. C'est bon signe car il a détecté un bug dans le code testé par le test.
+* En succès (PASSED). L'nensemble des assertions dans le test sont passés avec succès. Le comportement du code testé est conforme à ce qui est attendu par le test unitaire.
+
+====
+
 
 La suite vous appartient...
 
