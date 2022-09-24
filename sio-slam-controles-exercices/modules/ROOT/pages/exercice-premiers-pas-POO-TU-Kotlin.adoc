@@ -1,4 +1,4 @@
-= Compte de banque
+= Faites vos comptes
 :author: Olivier Capuozzo
 :docdate: 2022-09-22
 :asciidoctor-version:1.1
@@ -9,7 +9,7 @@
 :toc: left
 :toclevels: 4
 
-Nous allons simuler la représentation du concept de Compte client d'une banque.
+Nous allons simuler la représentation du concept de "compte client" d'une banque.
 
 == Analyse
 
