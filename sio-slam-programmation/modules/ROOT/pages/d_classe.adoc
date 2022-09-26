@@ -6,7 +6,8 @@
 
 image::d_classes.png[550,550]
 
-== Les classes et les objets (Instances)
+====
+Les classes et les objets (Instances)
 
 * Une classe représente la structure commune d’un ensemble d’objets, c'est un modèle pour la création des objets.
 * C'est un type abstrait caractérisé par des propriétés (attributs et méthodes) communes à un ensemble d'objets.
@@ -15,6 +16,7 @@ image::d_classes.png[550,550]
 * Une classe est représentée par un rectangle qui contient une chaîne de caractères correspondant au nom de la classe.
 * Ce rectangle peut être séparé en trois parties (nom, attributs, opérations).
 * Le nom de la classe doit commencer par un caractère alphabétique et ne pas contenir le caractère ::
+====
 
 image::classe_1.png[450,450]
 
@@ -79,8 +81,9 @@ class Vol {
 }
 hide circle
 ----
+====
 
-== Héritage
+*Héritage*
 
 * L’héritage est une relation entre un concept général et un concept spécifique (Généralisation-spécialisation)
 * L’héritage existe entre des classes, des packages, …
@@ -90,7 +93,7 @@ hide circle
 * Une classe dérivée hérite des champs et des méthodes de sa classe de base.
 * Une classe dérivée peut devenir une classe de base pour d'autres classes dérivées. On parle alors de dérivations successives.
 * L’héritage multiple est possible en UML (Une sous-classe peut avoir plusieurs classe mère)
-
+====
 [plantuml]
 
 .Héritage
