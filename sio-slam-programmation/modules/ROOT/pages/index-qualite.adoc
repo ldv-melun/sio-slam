@@ -1,4 +1,13 @@
 = Notion de qualité dans le logiciel
+:author: Olivier Capuozzo
+:docdate: 2022-07-19
+:asciidoctor-version:1.1
+:description: Des facteurs de qualité du code
+:icons: font
+:listing-caption: Listing
+:toc-title: Table des matières
+:toc: left
+:toclevels: 4
 
 ifdef::env-github[]
 :tip-caption: :bulb:
@@ -7,6 +16,7 @@ ifdef::env-github[]
 :caution-caption: :fire:
 :warning-caption: :warning:
 endif::[]
+
 
 == Présentation
 

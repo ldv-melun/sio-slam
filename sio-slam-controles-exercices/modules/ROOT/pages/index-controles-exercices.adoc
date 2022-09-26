@@ -1,0 +1,10 @@
+= Controles & Exercices
+
+== Controles
+
+* xref:sio-component:ROOT:attachment$controle-1-slam2-corrige.pdf[contrôle 1 - programmation]  - 21 septembre 2022
+
+
+== Exercices
+
+* xref:exercice-premiers-pas-POO-TU-Kotlin.adoc[Premiers pas POO & TU en Kotlin]

@@ -101,6 +101,44 @@ Accompagnement MOOC
 |===
 
 
+== Semaine 26 semptembre
+
+[frame=all]
+|===
+|Lundi am| Mardi am | Mardi pm | Mercredi am | Mercredi pm| Jeudi pm
+
+a|L.JULES - O.CAPUOZZO
+
+* Cours: POO Kotlin
+* TP: xref::exercice-premiers-pas-POO-TU-Kotlin.adoc[]
+
+
+a| O.CAPUOZZO - R.LAROUSSI
+
+* Cours : Analyse du travail réalisé la veille xref::exercice-premiers-pas-POO-TU-Kotlin.adoc[]
+* TP: Poursuite du TP Compte
+
+a| R.LAROUSSI
+
+* Cours :
+
+a| R.LAROUSSI
+
+* Cours : Analyse 1/6 (?)
+
+a| O.CAPUOZZO - R.LAROUSSI
+
+* Cours : Présentation Projet zéro
+* TP : Mode projet
+
+a| L.JULES - O.CAPUOZZO - E.VIGNA
+
+Mode projet
+
+Check attestation stage 1ere année
+|===
+
+
 
 
 ////
