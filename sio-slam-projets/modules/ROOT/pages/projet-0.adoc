@@ -1,4 +1,4 @@
-= Mission 0
+= Projet 0
 
 == Objectifs
 
@@ -33,7 +33,7 @@ Niveau : *grand débutant*
 * savoir pousser un travail sur gitlab, voire travailler en équipe...
 * s'être impliquer dans un travail en mode projet (autonomie, respect des consignes, d'une deadline...)
 
-== Présentation de la mission 0
+== Présentation du projet 0
 
 arrive bientôt...
 
