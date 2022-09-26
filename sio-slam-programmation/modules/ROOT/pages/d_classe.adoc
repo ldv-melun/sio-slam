@@ -92,7 +92,7 @@ hide circle
 * L’héritage permet de spécialiser les classes existantes : La classe Triangle spécialise la classe Figure.
 * Une classe dérivée hérite des champs et des méthodes de sa classe de base.
 * Une classe dérivée peut devenir une classe de base pour d'autres classes dérivées. On parle alors de dérivations successives.
-* L’héritage multiple est possible en UML (Une sous-classe peut avoir plusieurs classe mère)
+* L’héritage multiple est possible en UML (Une sous-classe peut avoir plusieurs classes mère)
 ====
 [plantuml]
 
