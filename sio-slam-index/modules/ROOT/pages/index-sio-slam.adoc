@@ -116,7 +116,7 @@ a|L.JULES - O.CAPUOZZO
 a| O.CAPUOZZO - R.LAROUSSI
 
 * Cours : Analyse du travail réalisé la veille xref::exercice-premiers-pas-POO-TU-Kotlin.adoc[]
-* TP: Début projet 0
+* TP: Poursuite du TP Compte
 
 a| R.LAROUSSI
 
@@ -128,7 +128,7 @@ a| R.LAROUSSI
 
 a| O.CAPUOZZO - R.LAROUSSI
 
-* Cours :
+* Cours : Présentation Projet zéro
 * TP : Mode projet
 
 a| L.JULES - O.CAPUOZZO - E.VIGNA
