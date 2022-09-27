@@ -78,4 +78,4 @@ La différence entre l'état avant la location et après la location sert à dé
 
 * Modélisation conceptuelle Diagramme de classes
 
-image::diagramme_classes.JPG[700,700]
+image::DC_TP1_Initial.JPG[700,700]
