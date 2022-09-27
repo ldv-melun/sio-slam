@@ -43,7 +43,7 @@ class Compte {
   solde() : Double
   debiter(montant: Double)
   crediter(montant: Double)
-  isOperationCrediterPossible(montant: Double) : Boolean
+  isOperationDebiterPossible(montant: Double) : Boolean
 }
 
 hide circle
