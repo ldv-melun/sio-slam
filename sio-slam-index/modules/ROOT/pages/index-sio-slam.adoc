@@ -120,11 +120,15 @@ a| O.CAPUOZZO - R.LAROUSSI
 
 a| R.LAROUSSI
 
-* Cours :
+* Cours : Introduction aux dépendances fonctionnelles (DF)
+* TD d'applications sur les DF
+* Lancement du TP1 noté à réaliser en binôme (Elaboration d'un DC)
 
 a| R.LAROUSSI
 
-* Cours : Analyse 1/6 (?)
+* Cours : Cybersécurité
+** Poursuite des présentations sur les cyberattaques (Travail réalisé par les étudiants)
+** Préparation de la plateforme pour la première activité OWASP
 
 a| O.CAPUOZZO - R.LAROUSSI
 
