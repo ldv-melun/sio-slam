@@ -132,7 +132,7 @@ a| R.LAROUSSI
 
 a| O.CAPUOZZO - R.LAROUSSI
 
-* Cours : Présentation Projet zéro
+* Cours : Présentation Projet zéro : https://gitlab.com/sio-labo/devinelacarte[Devine la carte]
 * TP : Mode projet
 
 a| L.JULES - O.CAPUOZZO - E.VIGNA
