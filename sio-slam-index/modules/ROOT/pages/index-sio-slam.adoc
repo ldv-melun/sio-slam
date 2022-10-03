@@ -145,6 +145,47 @@ Préparation sortie salon professionnel
 
 |===
 
+
+== Semaine 02 Octobre
+
+[frame=all]
+|===
+|Lundi am| Mardi am | Mardi pm | Mercredi am | Mercredi pm| Jeudi pm
+
+a|L.JULES - O.CAPUOZZO
+
+* Cours: Kotlin Constructor et Properties
+* TP: Mode projet - https://gitlab.com/sio-labo/devinelacarte[Devine la carte]
+
+
+a| O.CAPUOZZO - R.LAROUSSI
+
+* Cours : Objets comparables
+* TP: Mode projet - https://gitlab.com/sio-labo/devinelacarte[Devine la carte]
+
+a| R.LAROUSSI
+
+* Cours :
+
+a| R.LAROUSSI
+
+* Cours :
+
+a| O.CAPUOZZO - R.LAROUSSI
+
+* Cours : Kotlin les collections
+* TP : Mode projet - https://gitlab.com/sio-labo/devinelacarte[Devine la carte]
+
+a| L.JULES - O.CAPUOZZO - E.VIGNA
+
+Mode projet - https://gitlab.com/sio-labo/devinelacarte[Devine la carte]
+
+Recueil des choix "centre d'intérêt" pour le salon Open Source
+
+|===
+
+
+
 ////
 
 == Semaine xx
