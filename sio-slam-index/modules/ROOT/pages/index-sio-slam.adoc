@@ -160,7 +160,7 @@ a|L.JULES - O.CAPUOZZO
 
 a| O.CAPUOZZO - R.LAROUSSI
 
-* Cours : Objets comparables
+* Cours : code support xref:attachment$2022-20223/demoProduit.zip[Objets comparables (produits - panier)]
 * TP: Mode projet - https://gitlab.com/sio-labo/devinelacarte[Devine la carte]
 
 a| R.LAROUSSI
