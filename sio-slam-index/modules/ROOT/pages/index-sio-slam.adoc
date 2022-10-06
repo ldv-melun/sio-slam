@@ -1,4 +1,13 @@
 = SIO-SLAM Année scolaire 2022-2023
+:author: profs info
+:docdate: 2022-07-19
+:asciidoctor-version:1.1
+:description: Progression
+:icons: font
+:listing-caption: Listing
+:toc-title: Table des matières
+:toc: left
+:toclevels: 4
 
 Bonjour !
 
@@ -8,8 +17,11 @@ Vous trouverez ci-dessous le déroulement progressif de votre enseignement profe
 
 `_Semaine d'intégration_`
 
+
 == Semaine 12 septembre
 
+[%collapsible]
+====
 [frame=all]
 |===
 |Lundi am| Mardi am | Mardi pm | Mercredi am | Mercredi pm| Jeudi pm
@@ -57,11 +69,14 @@ a| L.JULES - O.CAPUOZZO - E.VIGNA
 * Accompagnement MOOC
 
 |===
-
+====
 
 
 == Semaine 19 septembre
 
+
+[%collapsible]
+====
 [frame=all]
 |===
 |Lundi am| Mardi am | Mardi pm | Mercredi am | Mercredi pm| Jeudi pm
@@ -99,10 +114,12 @@ a| L.JULES - O.CAPUOZZO - E.VIGNA
 Accompagnement MOOC
 
 |===
-
+====
 
 == Semaine 26 semptembre
 
+[%collapsible]
+====
 [frame=all]
 |===
 |Lundi am| Mardi am | Mardi pm | Mercredi am | Mercredi pm| Jeudi pm
@@ -144,10 +161,13 @@ Check attestation stage 1ere année
 Préparation sortie salon professionnel
 
 |===
-
+====
 
 == Semaine 02 Octobre
 
+
+[%collapsible]
+====
 [frame=all]
 |===
 |Lundi am| Mardi am | Mardi pm | Mercredi am | Mercredi pm| Jeudi pm
@@ -180,7 +200,44 @@ a| L.JULES - O.CAPUOZZO - E.VIGNA
 
 Mode projet - https://gitlab.com/sio-labo/devinelacarte[Devine la carte]
 
+|===
+====
+
+== Semaine 10 octobre
+
+[frame=all]
+|===
+|Lundi am| Mardi am | Mardi pm | Mercredi am | Mercredi pm| Jeudi pm
+
+a|L.JULES - O.CAPUOZZO
+
+* Cours: POO de base - consolidation
+* TP: Projet DevineLaCarte
+
+
+a| O.CAPUOZZO - R.LAROUSSI
+
+* Cours : Les fonctions - consolidation
+* TP: Projet DevineLaCarte : rédaction de votre rapport en asciidoc
+
+a| R.LAROUSSI
+
+* Cours :
+
+a| R.LAROUSSI
+
+* Cours :
+
+a| O.CAPUOZZO - R.LAROUSSI
+
+* Cours : Rappels de cours
+* TP : *contrôle* (projet comme support)
+
+a| L.JULES - O.CAPUOZZO - E.VIGNA
+
 Recueil des choix "centre d'intérêt" pour le salon Open Source
+
+Test prépa machine pour Spring Boot (Hello World)
 
 |===
 
