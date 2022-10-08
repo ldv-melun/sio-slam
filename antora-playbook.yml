@@ -17,11 +17,11 @@ content:
    - url: ./
      start_path: sio-slam-analyse
    - url: ./
-     start_path: sio-slam-uml
-   - url: ./
      start_path: sio-slam-projets
    - url: ./
      start_path: sio-slam-epreuves
+   - url: ./
+     start_path: sio-slam-uml
    - url: ./
      start_path: sio-slam-glossaire
    - url: ./
