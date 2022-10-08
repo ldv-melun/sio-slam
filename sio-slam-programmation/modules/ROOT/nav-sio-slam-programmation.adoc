@@ -1,10 +1,8 @@
+
 * Programmation
-** xref:index-programmation.adoc[Introduction]
+//** xref:index-programmation.adoc[Introduction]
 //** xref:index-kotlin.adoc[KotlinV1]
 ** xref:index-qualite.adoc[Facteurs de qualité]
-** xref:intro-poo.adoc[POO]
-** xref:langage-uml.adoc[UML]
-*** xref:d_uc.adoc[Diagrammes]
-**** xref:d_uc.adoc[use_case]
-**** xref:d_classe.adoc[Classes]
-***** xref:dc_tp1.adoc[TP 1]
+
+
+

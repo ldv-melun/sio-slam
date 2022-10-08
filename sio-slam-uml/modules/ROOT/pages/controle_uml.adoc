@@ -1,0 +1,37 @@
+== Contrôle N° 1 - Diagramme de classes
+
+=== Description du contexte
+La société d'exploitation d'installations pétrolières PETROP, rencontre un certain nombre de difficultés dans le cadre de la maintenance de ses équipements. Cette situation a engendré des conséquences allant du simple dysfonctionnement sur des systèmes secondaires jusqu'à l'immobilisation totale d'équipements névralgiques pendant des semaines, voire des mois, pénalisant ainsi sa production.
+Pour améliorer cette situation, les dirigeants de cette société ont décidé de mettre en place une application de type GMAO (Gestion de la Maintenance Assistée par Ordinateur).
+Une application GMAO permet d’assurer trois principales fonctions :
+
+** Maintenance préventive.
+** Maintenance curative.
+** Gestion du stock des pièces de rechange.
+
+Dans notre cas, on s’intéressera au cas de la maintenance préventive.
+
+Chaque équipement installé au niveau de l'usine est identifié par une référence, une désignation, un fabricant, une date de fabrication, une date d'installation et un numéro de site où est installé. Tout site possède un code, une surface, une localisation et un nombre d’équipements. Un site contient plusieurs équipements et on doit connaitre le nombre d’équipements de chaque site. En cas de besoin, un site peut subir une extension en surface, ne dépassant jamais le double de sa surface initiale.
+Tout équipement est soit de type instrumentation, auquel cas, on doit identifier sa gamme et sa tension de fonctionnement ou de compression et dans ce cas, il est obligatoire de préciser sa capacité. La capacité d’un équipement de compression peut être augmentée, en fonction du besoin, mais elle ne doit jamais être supérieure à une valeur nominale indiquée par le fabricant de l’équipement.
+
+La maintenance préventive est réalisée sur la base des relevés hebdomadaires effectués par les opérateurs d'usine sur les compteurs de fonctionnement de chaque équipement. Ces relevés sont enregistrés et transmis au chef de service "méthodes et planification". Pour chaque relevé effectué, on doit sauvegarder la date, le nouveau nombre d’heure et le nombre d’heures d’utilisation depuis le dernier relevé.
+
+Après consultation du manuel du constructeur, le responsable de service "méthodes et planification" décide, de planifier la révision de l'équipement, auquel cas, il doit donner la date de la révision, sa durée et l'effectif nécessaire pour l'effectuer. On doit fournir la liste de tous les intervenants dans le cadre de la révision.
+
+Les révisions effectuées sur les équipements sont de deux types :
+
+=== Périodique
+planifiée sur la base des consignes du constructeur et supervisée par le responsable du complexe ou de l'usine.
+Dans ce cas, une liste des opérations à réaliser sera établie.
+Pour chaque opération, on notera les données suivantes : numéro opération, date, nom opération, durée).
+
+=== Ponctuelle
+consistant à une vidange, une lubrification ou un graissage des équipements.
+Pour ce type de révision, l'opérateur réalisant l'opération doit renseigner un PV de révision,
+dans lequel il doit indiquer la date, les quantités de lubrifiants utilisés et les éventuels problèmes
+rencontrés.
+
+==== Elaborer un diagramme de classes répondant aux besoins de cette application.
+
+==== Sujet du contrôle
+xref:sio-component:ROOT:attachment$DST_UML_1.pdf[Contrôle N° 1 UML]

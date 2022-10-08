@@ -163,7 +163,7 @@ Préparation sortie salon professionnel
 |===
 ====
 
-== Semaine 02 Octobre
+== Semaine 03 Octobre
 
 
 [%collapsible]
@@ -185,11 +185,13 @@ a| O.CAPUOZZO - R.LAROUSSI
 
 a| R.LAROUSSI
 
-* Cours :
+* Cours : Révision des dépendances fonctionnelles (DF)
+* Contrôle N° 1 sur UML : Diagramme de classes
 
 a| R.LAROUSSI
 
-* Cours :
+* Cours : Suite cours cybersécurité préparation de la plateforme OWASP
+* Contrôle N° 1 sur la partie cybersécurité
 
 a| O.CAPUOZZO - R.LAROUSSI
 
@@ -222,11 +224,13 @@ a| O.CAPUOZZO - R.LAROUSSI
 
 a| R.LAROUSSI
 
-* Cours :
+* Cours : Correction du contrôle N°1 et remise des notes
+* TD : Exercices d'application sur les DF (Les exo à traiter sont sur la plateforme)
 
 a| R.LAROUSSI
 
-* Cours :
+* Cours : Correction du contrôle N°1 et remise des notes
+* TP : Réalisation d'applications sur les injections SQL et XSS
 
 a| O.CAPUOZZO - R.LAROUSSI
 
