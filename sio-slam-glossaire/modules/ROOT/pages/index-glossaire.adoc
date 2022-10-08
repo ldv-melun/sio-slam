@@ -3,7 +3,7 @@
 [glossary]
 
 variable::
- symbole dans le code, dont le nom témoigne de son rôle, qui désigne selon son utilisation soit un _contenant_ (une adresse mémoire) soit une _valeur de contenu_ (interprétée selon son type)
+ symbole dans le code, dont le *nom témoigne de son rôle*, qui désigne selon son utilisation soit un *contenant* (une adresse mémoire) soit une *valeur de contenu* (interprétée selon son *type*)
 
 type::
  Désigne comment utiliser et comment stocker la valeur d'une variable
@@ -19,5 +19,21 @@ La valeur de `_y_` est `42`
 Ces deux variables pointent vers des espaces mémoire peu comparables en terme de structure binaire et de taille.
 
 accesseurs::
- Associés à une propriété (un attribut), ce sont des méthodes permettant d'atteindre la valeur de cette propriété, soit en lecture _get_ soit en écriture _set_
+ Associés à une propriété (un attribut), ce sont des méthodes permettant d'atteindre la valeur de cette propriété, soit en lecture *_get_* soit en écriture *_set_*
 
+convention de nommage::
+ Les conventions usuelles
+
+.Les conventions courantes
+[frame=all]
+|===
+|_nom_| _usage_
+
+|*UpperCamelCase*| nom de classe
+|*lowerCamelCase*| propriété, méthode, variable, paramètre...
+|*SCREAMING_SNAKE_CASE*| constante
+|*kebab-case*| ressource web, identifiant, attribut html
+|===
+
+constructeur::
+Porte le nom de la classe auquel il est lié. Son appel déclenche la création d'une instance de la classe  (un objet). Accepte la plupart du temps des paramètres

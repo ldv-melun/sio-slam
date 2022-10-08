@@ -35,14 +35,14 @@ Niveau : *grand débutant*
 
 == Présentation du projet 0
 
-arrive bientôt...
+Le projet est sur gitlab : https://gitlab.com/sio-labo/devinelacarte[Devine la carte]
 
 == Livraison
 
 === Ce qui est attendu
 
-todo
+https://gitlab.com/sio-labo/devinelacarte#user-content-livraison[Ce que vous devez produire]
 
 === Deadline
 
-todo
+#mardi 11 octobre 2022 23h59.#

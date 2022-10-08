@@ -1,4 +1,13 @@
 = Notions de DF et DMR
+:author: Olivier Capuozzo
+:docdate: 2022-07-19
+:asciidoctor-version:1.1
+:description: Principes d'analyse
+:icons: font
+:listing-caption: Listing
+:toc-title: Table des matières
+:toc: left
+:toclevels: 4
 
 == Introduction
 

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Glossary :: sio-slam</title>
-    <meta name="generator" content="Antora 3.0.2">
+    <meta name="generator" content="Antora 3.0.1">
     <link rel="stylesheet" href="../_/css/site.css">
     <script>var uiRootPath = '../_'</script>
     <link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
@@ -308,7 +308,7 @@
     <li><a href="index-glossaire.html">Glossaire</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///D:/SI6/sio-slam/sio-slam-glossaire/modules/ROOT/pages/index-glossaire.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="file:///home/kpu/ldv/sio/antora-sio-slam/sio-slam/sio-slam-glossaire/modules/ROOT/pages/index-glossaire.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -320,7 +320,7 @@
 <dl>
 <dt>variable</dt>
 <dd>
-<p>symbole dans le code, dont le nom témoigne de son rôle, qui désigne selon son utilisation soit un <em>contenant</em> (une adresse mémoire) soit une <em>valeur de contenu</em> (interprétée selon son type)</p>
+<p>symbole dans le code, dont le <strong>nom témoigne de son rôle</strong>, qui désigne selon son utilisation soit un <strong>contenant</strong> (une adresse mémoire) soit une <strong>valeur de contenu</strong> (interprétée selon son <strong>type</strong>)</p>
 </dd>
 <dt>type</dt>
 <dd>
@@ -344,7 +344,50 @@
 </dd>
 <dt>accesseurs</dt>
 <dd>
-<p>Associés à une propriété (un attribut), ce sont des méthodes permettant d&#8217;atteindre la valeur de cette propriété, soit en lecture <em>get</em> soit en écriture <em>set</em></p>
+<p>Associés à une propriété (un attribut), ce sont des méthodes permettant d&#8217;atteindre la valeur de cette propriété, soit en lecture <strong><em>get</em></strong> soit en écriture <strong><em>set</em></strong></p>
+</dd>
+<dt>convention de nommage</dt>
+<dd>
+<p>Les conventions usuelles</p>
+</dd>
+</dl>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Les conventions courantes</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><em>nom</em></th>
+<th class="tableblock halign-left valign-top"><em>usage</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>UpperCamelCase</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">nom de classe</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>lowerCamelCase</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">propriété, méthode, variable, paramètre&#8230;&#8203;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>SCREAMING_SNAKE_CASE</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">constante</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>kebab-case</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ressource web, identifiant, attribut html</p></td>
+</tr>
+</tbody>
+</table>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">constructeur</dt>
+<dd>
+<p>Porte le nom de la classe auquel il est lié. Son appel déclenche la création d&#8217;une instance de la classe  (un objet). Accepte la plupart du temps des paramètres</p>
 </dd>
 </dl>
 </div>

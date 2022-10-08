@@ -1,10 +1,23 @@
 
 = SIO-SLAM
 
+== Les dates à retenir
+
+* ** Inscription aux épreuves du BTS SIO**  : (_avant la fin de l'année - date de l'inscription non encore déterminée_)
+
+* Livraison de votre projet 0 : **mardi 11 octobre 23h59** (au plus tard)
+
+* Livraison de votre projet 1 : **lundi 07 novembre 23h59** (au plus tard)
+
+* Livraison de votre projet 2 : **lundi 12 décembre 23h59** (date à confirmer)
+
+* **Stage en entreprise** : #**du 03 janvier 2023 au 10/022023**#
+
+
 == Schéma directeur
 
 .Axe directeur 20222-2023
-image:sio-component:ROOT:schemadirecteurV1.png[Schema directeur]
+image:sio-component:ROOT:schema-directeur.png[Schema directeur]
 
 == Portée
 
