@@ -33,4 +33,3 @@ image::historique_uml.png[]
 == Vues et diagrammes  UML
 
 image::diag_uml.png[]
-

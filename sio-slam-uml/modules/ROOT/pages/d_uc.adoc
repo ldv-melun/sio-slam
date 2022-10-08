@@ -40,7 +40,7 @@ image::exemples_use_case.png[450,450]
 
 image::exe1_uc.png[450,450]
 
-*** Générlisation
+*** Généralisation
 
 image::generalisation.png[450,450]
 

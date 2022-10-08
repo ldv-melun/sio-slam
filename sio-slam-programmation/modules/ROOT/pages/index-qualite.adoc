@@ -28,7 +28,7 @@ Cette question nous ramène à la notion de qualité dans le logiciel et ce docu
 les principaux critèques de qualité et nous invitons le lecteur à approfondir ce thème par l'ouvrage de référence,
 sur lequel cette étude est principalement basée, https://www.eyrolles.com/Informatique/Livre/conception-et-programmation-orientees-objet-9782212675009/[Conception et Programmation orientées objet (Bertrand Meyer)].
 
-// <<<
+<<<
 include::include/_introduction.adoc[leveloffset=+1]
 <<<
 include::include/_correction.adoc[leveloffset=+1]
