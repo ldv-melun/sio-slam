@@ -1,8 +1,0 @@
-* xref:index-uml.adoc[UML]
-** xref:d_uc.adoc[Diagrammes UML]
-*** xref:d_uc.adoc[use_case]
-*** xref:d_classe.adoc[Classes]
-**** xref:dc_tp1.adoc[TP 1]
-*** xref:controle_uml.adoc[Contrôle UML]
-
-

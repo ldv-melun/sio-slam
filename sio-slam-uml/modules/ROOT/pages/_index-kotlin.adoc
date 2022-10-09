@@ -1,5 +1,0 @@
-= Kotlin
-
-== Multi-paradigmes
-
-TODO

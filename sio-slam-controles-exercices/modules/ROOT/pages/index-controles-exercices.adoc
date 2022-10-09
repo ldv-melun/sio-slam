@@ -10,3 +10,11 @@
 * xref:exercice-premiers-pas-POO-TU-Kotlin.adoc[] (Premiers pas POO & TU en Kotlin)
 ** Éléments de corrigé : xref:sio-component:ROOT:attachment$Compte.kt[Compte.kt] et xref:sio-component:ROOT:attachment$CompteTest.kt[CompteTest.kt]
 
+== Contrôles UML
+* xref:sio-component:ROOT:attachment$DST_UML_1.pdf[Contrôle N°1 - 29 septembre]
+* Correction en cours ... (Après un débrief en classe)
+
+
+== Contrôles Cybersécurité
+* xref:sio-component:ROOT:attachment$DST_CYBER_1.pdf[Contrôle N°1 - 29 septembre]
+* Correction en cours ... (Après un débrief en classe)
