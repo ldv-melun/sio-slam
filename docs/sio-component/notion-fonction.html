@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>SIO-SLAM :: sio-slam</title>
+    <title>Notion de fonction :: sio-slam</title>
+    <meta name="description" content="Notion de fonction">
     <meta name="generator" content="Antora 3.0.1">
     <link rel="stylesheet" href="../_/css/site.css">
     <script>var uiRootPath = '../_'</script>
@@ -120,7 +121,7 @@
     <button class="nav-item-toggle"></button>
     <span class="nav-text">Frontend</span>
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="2">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="index-frontend.html">Home Page</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -136,7 +137,7 @@
     <button class="nav-item-toggle"></button>
     <span class="nav-text">Programmation</span>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="notion-fonction.html">Fonction - l&#8217;essentiel 1/2</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -311,62 +312,262 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index-glossaire.html">SIO-SLAM</a></li>
-    <li>Frontend</li>
-    <li><a href="index-frontend.html">Home Page</a></li>
+    <li>Programmation</li>
+    <li><a href="notion-fonction.html">Fonction - l&#8217;essentiel 1/2</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///home/kpu/ldv/sio/antora-sio-slam/sio-slam/sio-slam-frontend/modules/ROOT/pages/index-frontend.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="file:///home/kpu/ldv/sio/antora-sio-slam/sio-slam/sio-slam-programmation/modules/ROOT/pages/notion-fonction.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">SIO-SLAM</h1>
-<div class="sect1">
-<h2 id="_page_coordinates"><a class="anchor" href="#_page_coordinates"></a>Page Coordinates</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>page-component-name: sio-component</p>
-</div>
-<div class="paragraph">
-<p>page-component-version: </p>
-</div>
-<div class="paragraph">
-<p>page-module: ROOT</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_a_simple_distributed_component"><a class="anchor" href="#_a_simple_distributed_component"></a>A simple distributed component</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>This is a simple example of a distributed component.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>One content file is in source1 and one in source2.</p>
-</li>
-<li>
-<p>One navigation file is in source1 and one in source2.</p>
-</li>
-<li>
-<p>All the configuration for the component is in source1&#8217;s <code>antora.yml</code>.</p>
-</li>
-<li>
-<p>Antora errors if you have duplicated a navigation or content file across the multiple sources for the component.</p>
-</li>
-<li>
-<p>Note the component selector (below the nav tree) has only one component listed.</p>
-</li>
-<li>
-<p>The content is one component because the two <code>antora.yml</code> files have the same name and version attributes.</p>
-</li>
+<h1 class="page">Notion de fonction</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table des matières</div>
+<ul class="sectlevel1">
+<li><a href="#_principe_de_base">Principe de base</a></li>
+<li><a href="#_quelques_exemples">Quelques exemples</a></li>
+<li><a href="#_cas_des_méthodes">Cas des méthodes</a></li>
 </ul>
 </div>
+<div class="sect1">
+<h2 id="_principe_de_base"><a class="anchor" href="#_principe_de_base"></a>Principe de base</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>Here&#8217;s a link to the content in the other part:</p>
+<p>Une fonction est un bloc nommé paramétrable, réutilisable, centré sur une responsabilité, et une seule. Voir à ce sujet le pattern <a href="https://fr.wikipedia.org/wiki/Principe_de_responsabilit%C3%A9_unique">Principe de responsabilité unique</a> (qui s&#8217;applique également au concept de classe)</p>
+</div>
+<div class="listingblock">
+<div class="title">Listing 1. Exemple de définition</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">fun sum(a: Int, b: Int) : Int = a + b</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Pour utiliser cette fonction, nous devrons lui fournir 2 entiers.</p>
+</div>
+<div class="paragraph">
+<p>En retour, cette fonction nous retournera un entier</p>
+</div>
+<div class="paragraph">
+<p>Le <strong>type abstrait</strong> de la fonction est donc :<strong><code>Int X Int &#8594; Int</code></strong> (se lit <em>Int croix Int dans Int</em>)</p>
+</div>
+<div class="paragraph">
+<p><code>Int X Int</code> représente le <a href="https://fr.wikipedia.org/wiki/Produit_cart%C3%A9sien">produit cartésien</a> de deux entiers, soit l&#8217;ensemble possible de tous les couples <code>(Int, Int)</code></p>
+</div>
+<div class="paragraph">
+<p><code>Int X Int</code> est le domaine de départ et <code>Int</code> le domaine d&#8217;arrivé.</p>
+</div>
+<div class="paragraph">
+<p>C&#8217;est le <strong>contrat d&#8217;utilisation</strong> que devra respecter toute instruction qui ferait appel à cette fonction.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Dans le cas de fonctions simples, le domaine de définition est directement déduit des paramètres de la fonction (comme dans cet exemple)
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="title">Listing 2. Exemple d&#8217;appel (utilisation)</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin"> val x: Int = sum(40, 2)
+ println(x)   // 42</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Nous avons bien donné une paire d&#8217;entier (<code>40</code>, <code>2</code>) et en retour nous avons reçu un entier (<code>42</code>), valeur stockée ici "dans" la variable <code>x</code></p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Chaque fois que vous aurez à définir une fonction, prendre bien soin à définir son type abstrait (<strong>domaine de départ</strong> et <strong>domaine d&#8217;arrivée</strong>), et de respecter le principe de <a href="https://fr.wikipedia.org/wiki/Principe_de_responsabilit%C3%A9_unique"><em>Single Responsability</em></a> - <em>faire une chose, et le faire bien</em>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_quelques_exemples"><a class="anchor" href="#_quelques_exemples"></a>Quelques exemples</h2>
+<div class="sectionbody">
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><code>println: String &#8594; Unit</code></p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Remarque 1 : La fonction ne retourne aucune valeur. En Kotlin, nous utiliserons pour cela le type <code>Unit</code>.</p>
+</div>
+<div class="paragraph">
+<p>Remarque 2 : une fonction qui ne rend rien et qui ne fait rien est rare ! Par exemple, println écrit sur la sortie standard. Cette fonction modifie le système : après son appel, la sortie standard à été modifiée et peut impacter des processus qui sont en écoute de la sortie standard (voir le concept d' effet de bord)</p>
+</div>
+<div class="listingblock">
+<div class="title">Listing 3. Exemple d&#8217;appel</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin"> println("Hello world !")</code></pre>
+</div>
+</div>
+<hr>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><code>emptyList:  T &#8594; List&lt;T&gt;</code></p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Le paramètre est ici un type (nommé <code>T</code>). En retour, on obtient une référence à un objet de type <code>List&lt;T&gt;</code>, vide.</p>
+</div>
+<div class="listingblock">
+<div class="title">Listing 4. Exemple d&#8217;appel</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">val produits = emptyList&lt;Produit&gt;()  // liste vide en lecture seule
+
+val mutableList = mutableListOf&lt;Produit&gt;() // liste vide au départ</code></pre>
+</div>
+</div>
+<hr>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><code>readLine:   &#8594; String?</code></p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Sans paramètre. En retour on obtient une référence à un objet de type <code>String</code> ou <code>null</code>.</p>
+</div>
+<div class="listingblock">
+<div class="title">Listing 5. Exemple d&#8217;appel</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin"> var s1: String? = readLine()
+
+ if (s1 == null) { s1 = "" }
+
+// ou plus simplement et plus sûrement :
+
+ val s2: String = readLine()  ?: ""</code></pre>
+</div>
+</div>
+<hr>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><code>transfert: Compte X Compte x Double  &#8594; Unit</code></p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>La méthode <code>transfert</code> reçoit 2 références à des comptes et un montant. En retour, elle ne retourne rien, mais réalise 2 effets de bords : les objets reçus en paramètre ont été modifiés par la méthode !</p>
+</div>
+<div class="listingblock">
+<div class="title">Listing 6. Exemple de déclaration</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">fun transfert(source: Compte, dest: Compte, montant: Double) {
+   if (source.isOperationDebiterPossible(montant)) {
+     dest.crediter(montant)
+     source.debiter(montant)
+   }
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Listing 7. Exemple d&#8217;appel</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">    @Test
+    fun testTransfertFonction() {
+        val source = Compte("Mezigue", 100.0)
+        val destinataire = Compte("Tezigue", 12.0)
+
+        transfert(source, destinataire, 30.0)
+
+        assertEquals(70.0, source.solde)
+        assertEquals(42.0, destinataire.solde)
+    }</code></pre>
+</div>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_cas_des_méthodes"><a class="anchor" href="#_cas_des_méthodes"></a>Cas des méthodes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Une méthode est une fonction déclarée dans le contexte d&#8217;une classe, sa portée est d&#8217;instance par défaut (comprendre que son appel devra toujours se faire <strong>à partir</strong> d&#8217;une instance).</p>
+</div>
+<div class="listingblock">
+<div class="title">Listing 8. Exemple de définition</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">class Compte constructor(
+    val nomClient: String,
+    solde: Double = 0.0,
+    var plafontDecouvert: Int = 0
+) {
+    var solde: Double = solde
+        private set
+
+    [...]
+
+    fun transfert(destinataire: Compte, montant: Double) {
+        if (this.isOperationDebiterPossible(montant)) {
+            this.debiter(montant)
+            dest.crediter(montant)
+        }
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Du coup son domaine de départ contiendra toujours la classe dans laquelle la méthode est déclarée. Ce qui fait, que même déclaré dans une classe,</p>
+</div>
+<div class="paragraph">
+<p>Exemple</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><code>transfert: Compte X Compte X Double  &#8594; Unit</code></p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>La méthode <code>transfert</code> reçoit 1 référence à un  compte. En retour, elle ne retourne rien, mais réalise 2 effets de bords : la référence à l&#8217;instance de compte à partir de laquelle la fonction a été appelée (référencé par <strong>this</strong> dans le corps de méthode) ainsi que son paramètre ont été modifiés par la méthode !</p>
+</div>
+<div class="listingblock">
+<div class="title">Listing 9. Exemple d&#8217;appel</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">    @Test
+    fun testTransfertFonction() {
+        val source = Compte("Mezigue", 100.0)
+        val destinataire = Compte("Tezigue", 12.0)
+
+        source.transfert(destinataire, 30.0) <i class="conum" data-value="1"></i><b>(1)</b>
+
+        assertEquals(70.0, source.solde)
+        assertEquals(42.0, destinataire.solde)
+    }</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Un seul argument de type <code>Compte</code> en paramètre (le premier argument de la version précédente a été placé en préfixe de l&#8217;appel)</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
