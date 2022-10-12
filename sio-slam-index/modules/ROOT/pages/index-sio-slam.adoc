@@ -239,9 +239,11 @@ a| O.CAPUOZZO - R.LAROUSSI
 
 a| L.JULES - O.CAPUOZZO - E.VIGNA
 
-Recueil des choix "centre d'intérêt" pour le salon Open Source
+* Recueil des choix "centre d'intérêt" pour le salon Open Source
+* Finalisation de votre rapport de projet DevineLaCarte
+* xref:attachment$2022-20223/chap05-http-protocol.pdf[HTTP et TP Challenge - bonus]
 
-Test prépa machine pour Spring Boot (Hello World)
+//Test prépa machine pour Spring Boot (Hello World)
 
 |===
 
