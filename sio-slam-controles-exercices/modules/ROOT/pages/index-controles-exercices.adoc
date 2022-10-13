@@ -12,8 +12,8 @@
 
 == Contrôles UML
 * xref:sio-component:ROOT:attachment$DST_UML_1.pdf[Contrôle N°1 - 29 septembre]
-* Correction en cours ... (Après un débrief en classe)
-
+* xref:sio-component:ROOT:attachment$DST_1_CORR.pdf[]Eléments de correction]
+* xref:sio-component:ROOT:attachment$DST_CORR.uml[Diagramme de classes]
 
 == Contrôles Cybersécurité
 * xref:sio-component:ROOT:attachment$DST_CYBER_1.pdf[Contrôle N°1 - 29 septembre]
