@@ -1,0 +1,203 @@
+= Notion de fonction
+:author: Olivier Capuozzo
+:docdate: 2022-07-19
+:asciidoctor-version:1.1
+:description: Notion de fonction
+:icons: font
+:listing-caption: Listing
+:toc-title: Table des matières
+:toc: left
+:toclevels: 4
+
+== Principe de base
+
+Une fonction est un bloc nommé paramétrable, réutilisable, centré sur une responsabilité, et une seule. Voir à ce sujet le pattern https://fr.wikipedia.org/wiki/Principe_de_responsabilit%C3%A9_unique[Principe de responsabilité unique] (qui s'applique également au concept de classe)
+
+.Exemple de définition
+[source,kotlin]
+----
+fun sum(a: Int, b: Int) : Int = a + b
+----
+
+Pour utiliser cette fonction, nous devrons lui fournir 2 entiers.
+
+En retour, cette fonction nous retournera un entier
+
+Le *type abstrait* de la fonction est donc :**`Int X Int -> Int`** (se lit _Int croix Int dans Int_)
+
+`Int X Int` représente le https://fr.wikipedia.org/wiki/Produit_cart%C3%A9sien[produit cartésien] de deux entiers, soit l'ensemble possible de tous les couples `(Int, Int)`
+
+`Int X Int` est le domaine de départ et `Int` le domaine d'arrivé.
+
+C'est le *contrat d'utilisation* que devra respecter toute instruction qui ferait appel à cette fonction.
+
+TIP: Dans le cas de fonctions simples, le domaine de définition est directement déduit des paramètres de la fonction (comme dans cet exemple)
+
+.Exemple d'appel (utilisation)
+[source,kotlin]
+----
+ val x: Int = sum(40, 2)
+ println(x)   // 42
+----
+
+Nous avons bien donné une paire d'entier (`40`, `2`) et en retour nous avons reçu un entier (`42`), valeur stockée ici "dans" la variable `x`
+
+IMPORTANT: Chaque fois que vous aurez à définir une fonction, prendre bien soin à définir son type abstrait (*domaine de départ* et *domaine d'arrivée*), et de respecter le principe de https://fr.wikipedia.org/wiki/Principe_de_responsabilit%C3%A9_unique[_Single Responsability_] - _faire une chose, et le faire bien_
+
+== Quelques exemples
+
+====
+`println: String -> Unit`
+====
+
+Remarque 1 : La fonction ne retourne aucune valeur. En Kotlin, nous utiliserons pour cela le type `Unit`.
+
+Remarque 2 : une fonction qui ne rend rien et qui ne fait rien est rare ! Par exemple, println écrit sur la sortie standard. Cette fonction modifie le système : après son appel, la sortie standard à été modifiée et peut impacter des processus qui sont en écoute de la sortie standard (voir le concept d' effet de bord)
+
+.Exemple d'appel
+[source,kotlin]
+----
+ println("Hello world !")
+----
+
+'''
+
+====
+
+`emptyList:  T -> List<T>`
+
+====
+
+Le paramètre est ici un type (nommé `T`). En retour, on obtient une référence à un objet de type `List<T>`, vide.
+
+.Exemple d'appel
+[source,kotlin]
+----
+val produits = emptyList<Produit>()  // liste vide en lecture seule
+
+val mutableList = mutableListOf<Produit>() // liste vide au départ
+----
+
+
+'''
+
+====
+
+`readLine:   -> String?`
+
+====
+
+Sans paramètre. En retour on obtient une référence à un objet de type `String` ou `null`.
+
+
+.Exemple d'appel
+[source,kotlin]
+----
+ var s1: String? = readLine()
+
+ if (s1 == null) { s1 = "" }
+
+// ou plus simplement et plus sûrement :
+
+ val s2: String = readLine()  ?: ""
+
+----
+
+'''
+
+
+====
+
+`transfert: Compte X Compte x Double  -> Unit`
+
+====
+
+La méthode `transfert` reçoit 2 références à des comptes et un montant. En retour, elle ne retourne rien, mais réalise 2 effets de bords : les objets reçus en paramètre ont été modifiés par la méthode !
+
+
+.Exemple de déclaration
+[source,kotlin]
+----
+fun transfert(source: Compte, dest: Compte, montant: Double) {
+   if (source.isOperationDebiterPossible(montant)) {
+     dest.crediter(montant)
+     source.debiter(montant)
+   }
+}
+----
+
+
+.Exemple d'appel
+[source,kotlin]
+----
+    @Test
+    fun testTransfertFonction() {
+        val source = Compte("Mezigue", 100.0)
+        val destinataire = Compte("Tezigue", 12.0)
+
+        transfert(source, destinataire, 30.0)
+
+        assertEquals(70.0, source.solde)
+        assertEquals(42.0, destinataire.solde)
+    }
+----
+
+<<<<
+
+== Cas des méthodes
+
+Une méthode est une fonction déclarée dans le contexte d'une classe, sa portée est d'instance par défaut (comprendre que son appel devra toujours se faire **à partir** d'une instance).
+
+
+.Exemple de définition
+[source,kotlin]
+----
+
+class Compte constructor(
+    val nomClient: String,
+    solde: Double = 0.0,
+    var plafontDecouvert: Int = 0
+) {
+    var solde: Double = solde
+        private set
+
+    [...]
+
+    fun transfert(destinataire: Compte, montant: Double) {
+        if (this.isOperationDebiterPossible(montant)) {
+            this.debiter(montant)
+            dest.crediter(montant)
+        }
+    }
+}
+----
+
+Du coup son domaine de départ contiendra toujours la classe dans laquelle la méthode est déclarée. Ce qui fait, que même déclaré dans une classe,
+
+Exemple
+
+====
+
+`transfert: Compte X Compte X Double  -> Unit`
+
+====
+
+La méthode `transfert` reçoit 1 référence à un  compte. En retour, elle ne retourne rien, mais réalise 2 effets de bords : la référence à l'instance de compte à partir de laquelle la fonction a été appelée (référencé par **this** dans le corps de méthode) ainsi que son paramètre ont été modifiés par la méthode !
+
+.Exemple d'appel
+[source,kotlin]
+----
+    @Test
+    fun testTransfertFonction() {
+        val source = Compte("Mezigue", 100.0)
+        val destinataire = Compte("Tezigue", 12.0)
+
+        source.transfert(destinataire, 30.0) <1>
+
+        assertEquals(70.0, source.solde)
+        assertEquals(42.0, destinataire.solde)
+    }
+----
+
+<1> Un seul argument de type `Compte` en paramètre (le premier argument de la version précédente a été placé en préfixe de l'appel)
+

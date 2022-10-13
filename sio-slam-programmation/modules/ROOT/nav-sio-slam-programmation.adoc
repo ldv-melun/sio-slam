@@ -1,8 +1,10 @@
 
 * Programmation
-//** xref:index-programmation.adoc[Introduction]
-//** xref:index-kotlin.adoc[KotlinV1]
+
+** xref:notion-fonction.adoc[Fonction - l'essentiel 1/2]
+//** à venir [Fonction - l'essentiel 2/2]
 ** xref:index-qualite.adoc[Facteurs de qualité]
+
 
 
 
