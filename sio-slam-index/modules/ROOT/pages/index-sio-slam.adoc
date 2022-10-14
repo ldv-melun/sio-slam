@@ -241,8 +241,7 @@ a| L.JULES - O.CAPUOZZO - E.VIGNA
 
 * Recueil des choix "centre d'intérêt" pour le salon Open Source
 * Finalisation de votre rapport de projet DevineLaCarte
-* xref:attachment$2022-20223/chap05-http-protocol.pdf[HTTP et TP Challenge - bonus]
-** à télécharger et exécuter pour le challenge : xref:attachment$projets/sbfirst-session-nom.jar[sbfirst-session-nom.jar]
+* xref:attachment$2022-20223/chap05-http-protocol.pdf[HTTP et TP Challenge - obligatoire - cadeau de Tonino]
 
 //Test prépa machine pour Spring Boot (Hello World)
 
