@@ -3,7 +3,7 @@
 == Controles de programmation
 
 * xref:sio-component:ROOT:attachment$controle-1-slam2-corrige.pdf[contrôle 1 - programmation avec corrigé]  - 21 septembre 2022
-
+* xref:sio-component:ROOT:attachment$controle-2-corrige.pdf[contrôle 2 - programmation avec corrigé]  - 12 octobre 2022
 
 == Exercices
 

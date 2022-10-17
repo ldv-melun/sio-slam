@@ -207,6 +207,8 @@ Mode projet - https://gitlab.com/sio-labo/devinelacarte[Devine la carte]
 
 == Semaine 10 octobre
 
+[%collapsible]
+====
 [frame=all]
 |===
 |Lundi am| Mardi am | Mardi pm | Mercredi am | Mercredi pm| Jeudi pm
@@ -243,7 +245,76 @@ a| L.JULES - O.CAPUOZZO - E.VIGNA
 * Finalisation de votre rapport de projet DevineLaCarte
 * xref:attachment$2022-20223/chap05-http-protocol.pdf[HTTP et TP Challenge - obligatoire - cadeau de Tonino]
 
-//Test prépa machine pour Spring Boot (Hello World)
+|===
+
+====
+
+== Semaine 17 octobbre
+
+Tentative autre présentation
+
+[%collapsible]
+====
+
+* Lundi am a L.JULES - O.CAPUOZZO
+** *Cours*:
+** *TP*:  Correction contrôle prog et devoir cURL
+
+* Mardi am O.CAPUOZZO - R.LAROUSSI
+** *Cours* : Suite correction & Prog Web intro
+** *TP*: sbfirst & Co Test de configuration
+
+* Mardi pm R.LAROUSSI
+** *Cours* :
+
+* Mercredi am R.LAROUSSI
+** *Cours* :
+
+* Mercredi pm O.CAPUOZZO - R.LAROUSSI
+** *Cours* Spring boot MVC - intro O.CAPUOZZO
+** *TP* Spring boot MVC (Vue et Contrôleur)
+
+* Jeudi pm L.JULES - O.CAPUOZZO - E.VIGNA
+** Spring boot exercices (Vue et Contrôleur)
+** Recueil des choix "centre d'intérêt" pour le salon Open Source & IA
+** Vérification de votre certification de stage 1ère année (obligatoire)
+====
+
+== Semaine 17 octobbre
+
+[frame=all]
+|===
+|Lundi am| Mardi am | Mardi pm | Mercredi am | Mercredi pm| Jeudi pm
+
+a|L.JULES - O.CAPUOZZO
+
+* Cours:
+* TP:  Correction contrôle prog et devoir cURL
+
+
+a| O.CAPUOZZO - R.LAROUSSI
+
+* Cours : Prog Web intro
+* TP: sbfirst & Co
+
+a| R.LAROUSSI
+
+* Cours :
+
+a| R.LAROUSSI
+
+* Cours :
+
+a| O.CAPUOZZO - R.LAROUSSI
+
+* Cours : Spring boot MVC - intro
+* TP : Spring boot MVC (Vue et Contrôleur)
+
+a| L.JULES - O.CAPUOZZO - E.VIGNA
+
+* Spring boot exercices (Vue et Contrôleur)
+* Recueil des choix "centre d'intérêt" pour le salon Open Source & IA
+* Vérification de votre certification de stage 1ère année (obligatoire)
 
 |===
 
