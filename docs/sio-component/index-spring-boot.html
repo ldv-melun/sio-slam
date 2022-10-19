@@ -1129,29 +1129,29 @@ souvent via une structure de type dictionnaire (ensemble de couples clé/valeur)
 <div class="literalblock">
 <div class="title">Arborescence du projet <code>sbfirst</code></div>
 <div class="content">
-<pre class="nowrap">sbfirst
-├── .gitignore
-├── HELP.md
-├── mvnw
-├── mvnw.cmd
-├── pom.xml <i class="conum" data-value="1"></i><b>(1)</b>
-└── src
-    ├── main
-    │   ├── java
-    │   │   └── fr
-    │   │       └── vincimelun
-    │   │           └── sbfirst
-    │   │               └── SpringBootFirstApplication.kt <i class="conum" data-value="2"></i><b>(2)</b>
-    │   └── resources
-    │       ├── application.properties <i class="conum" data-value="3"></i><b>(3)</b>
-    │       ├── static <i class="conum" data-value="4"></i><b>(4)</b>
-    │       └── templates <i class="conum" data-value="5"></i><b>(5)</b>
-    └── test
-        └── java
-            └── fr
-                └── vincimelun
-                    └── sbfirst
-                        └── SpringBootFirstApplicationTests.kt</pre>
+<pre> sbfirst
+ ├── .gitignore
+ ├── HELP.md
+ ├── mvnw
+ ├── mvnw.cmd
+ ├── pom.xml <i class="conum" data-value="1"></i><b>(1)</b>
+ └── src
+     ├── main
+     │   ├── java
+     │   │   └── fr
+     │   │       └── vincimelun
+     │   │           └── sbfirst
+     │   │               └── SpringBootFirstApplication.kt <i class="conum" data-value="2"></i><b>(2)</b>
+     │   └── resources
+     │       ├── application.properties <i class="conum" data-value="3"></i><b>(3)</b>
+     │       ├── static <i class="conum" data-value="4"></i><b>(4)</b>
+     │       └── templates <i class="conum" data-value="5"></i><b>(5)</b>
+     └── test
+         └── java
+             └── fr
+                 └── vincimelun
+                     └── sbfirst
+                         └── SpringBootFirstApplicationTests.kt</pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -1181,6 +1181,7 @@ souvent via une structure de type dictionnaire (ensemble de couples clé/valeur)
 <div class="paragraph">
 <p>La classe principale de l&#8217;application ressemble à celles qu&#8217;on peut écrire pour n&#8217;importe quelle application en mode ligne de commande : une fonction <code>main</code> statique qui permet d&#8217;instancier et de lancer l&#8217;application.</p>
 </div>
+<div style="page-break-after: always;"></div>
 <div class="listingblock">
 <div class="title">La classe principale de l&#8217;application</div>
 <div class="content">
@@ -1260,6 +1261,12 @@ fun main(args: Array&lt;String&gt;)  { <i class="conum" data-value="1"></i><b>(1
 </div>
 <div class="paragraph">
 <p>Remarque : le protocole <code>http</code> est celui utilisé pour atteindre le proxy. À modifier le cas échéant.</p>
+</div>
+<div class="paragraph">
+<p>Voir aussi <code>File&gt;Settings&gt;Proxy</code></p>
+</div>
+<div class="paragraph">
+<p>Voir aussi <code>File&gt;Invalide Caches&#8230;&#8203;</code> puis <code>restart</code></p>
 </div>
 <div class="sect3">
 <h4 id="_un_premier_contrôleur"><a class="anchor" href="#_un_premier_contrôleur"></a>3.2.1. Un premier contrôleur</h4>
@@ -1429,7 +1436,7 @@ Le mécanisme qui consiste à fournir des objets en argument est appelé <strong
 <div class="sect3">
 <h4 id="_données_dentrée_implicites"><a class="anchor" href="#_données_dentrée_implicites"></a>3.3.2. Données d&#8217;entrée implicites</h4>
 <div class="paragraph">
-<p>Ce sont les données transmises par le client dans la partie entête HTTP. Ces données sont accessibles <strong>via</strong> l&#8217;objet <code>HttpServletRequest</code> qui dispose de méthodes bien pratiques pour interroger ces données.</p>
+<p>Ce sont les données transmises automatiquement par le tiers client, dans la partie entête HTTP. Ces données sont accessibles <strong>via</strong> l&#8217;objet <code>HttpServletRequest</code> qui dispose de méthodes bien pratiques pour les interroger.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1461,11 +1468,12 @@ Returns the Internet Protocol (IP) address of the client or last proxy that sent
 <div class="paragraph">
 <p>voir <a href="https://tomcat.apache.org/tomcat-7.0-doc/servletapi/javax/servlet/http/HttpServletRequest.html">API Request</a></p>
 </div>
+<div style="page-break-after: always;"></div>
 </div>
 <div class="sect3">
 <h4 id="_données_dentrée_explicites"><a class="anchor" href="#_données_dentrée_explicites"></a>3.3.3. Données d&#8217;entrée explicites</h4>
 <div class="paragraph">
-<p>Typiquement ce sont celles en provenance d&#8217;une requête <code>HTTP</code></p>
+<p>Typiquement ce sont celles volontairement transmises par la requête <code>HTTP</code></p>
 </div>
 <div class="sect4">
 <h5 id="_données_sous_la_forme_de_couples_clévaleur"><a class="anchor" href="#_données_sous_la_forme_de_couples_clévaleur"></a>Données sous la forme de couples <code>clé=valeur</code></h5>
@@ -1533,14 +1541,14 @@ La méthode <code>getParameter</code> ne doit être utilisée que si on est sûr
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>http://quizbe.org/question/edit/42 <i class="conum" data-value="1"></i><b>(1)</b></pre>
+<pre>https://quizbe.org/question/edit/42 <i class="conum" data-value="1"></i><b>(1)</b></pre>
 </div>
 </div>
 <div class="colist arabic">
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Attention, l&#8217;URL <strong>n&#8217;est pas</strong> <code><a href="http://quizbe.org/question/edit?id=42" class="bare">http://quizbe.org/question/edit?id=42</a></code></td>
+<td>Attention, l&#8217;URL <strong>n&#8217;est pas</strong> <code><a href="https://quizbe.org/question/edit?id=42" class="bare">https://quizbe.org/question/edit?id=42</a></code></td>
 </tr>
 </table>
 </div>
@@ -1551,7 +1559,9 @@ La méthode <code>getParameter</code> ne doit être utilisée que si on est sûr
 <div class="title">Exemple d&#8217;exploitation de données d&#8217;URL</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">  @GetMapping("/question/edit/{id}") <i class="conum" data-value="1"></i><b>(1)</b>
-  fun showUpdateForm(@PathVariable("id") id: Long, model: Model, request: HttpServletRequest): String { <i class="conum" data-value="2"></i><b>(2)</b>
+  fun showUpdateForm(@PathVariable("id") id: Long,  <i class="conum" data-value="2"></i><b>(2)</b>
+         model: Model,
+         request: HttpServletRequest): String {
      val questionDto = questionService.findQuestionDtoById(id)
      model["questionDto"] = questionDto
      return "/question/add-update-question"
@@ -1566,14 +1576,12 @@ La méthode <code>getParameter</code> ne doit être utilisée que si on est sûr
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>Reprise de la partie variable de l&#8217;url comme <strong>paramètre typé</strong> de la méthode (attention, la correspondance
-se base sur les <strong>noms</strong> inscrits entre { } dans la route)</td>
+<td>Reprise de la partie variable de l&#8217;url comme <strong>paramètre typé</strong> de la méthode (attention, la correspondance se base sur le <strong>nom</strong> inscrit entre { } dans la route)</td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>Il est dans ce cas très facile de récupérer les valeurs en question, car elles sont passées automatiquement
-en tant qu&#8217;argument de la méthode !</p>
+<p>Il est dans ce cas très facile de récupérer les valeurs en question, car elles sont passées automatiquement en tant qu&#8217;argument de la méthode !</p>
 </div>
 </div>
 </div>
