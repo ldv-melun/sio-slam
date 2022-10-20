@@ -1542,6 +1542,51 @@ La méthode <code>getParameter</code> ne doit être utilisée que si on est sûr
 </tr>
 </table>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Une autre façon d&#8217;opérer est de déclarer la valeur attendue en tant que paramètre <strong>typé</strong> du contrôleur. Pour cela nous devons faire usage de l&#8217;annotation <code><strong>@RequestParam</strong></code></p>
+</div>
+<div class="paragraph">
+<p>Exemple</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin"> @GetMapping("/hello")
+   fun index(@RequestParam(defaultValue = "") nom: String): String { <i class="conum" data-value="1"></i><b>(1)</b>
+        // faire quelque chose avec nom
+    }</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Inutile dans ce cas de demander un objet <code>HttpServletRequest</code></td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Le fait de déclarer une valeur par défaut nous permet de typer la variable <code>nom</code> en <code><strong>String</strong></code>. Dans le cas contraire nous aurions du la typer par <code><strong>String?</strong></code>, car est la valeur par défaut de la valeur par défaut est <code>null</code> (vous avez suivi ? ;)
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
 </div>
 <div class="sect4">
 <h5 id="_données_intégrées_à_lurl"><a class="anchor" href="#_données_intégrées_à_lurl"></a>Données intégrées à l&#8217;url</h5>
@@ -1562,15 +1607,14 @@ La méthode <code>getParameter</code> ne doit être utilisée que si on est sûr
 </table>
 </div>
 <div class="paragraph">
-<p>Pour extraire de l&#8217;URL les parties variables, nous les encadrons d&#8217;accolades et utilisons l&#8217;annotation <strong><code>@PathVariable</code></strong></p>
+<p>Pour extraire les parties variables de l&#8217;URL, nous les encadrons d&#8217;accolades et utilisons l&#8217;annotation <strong><code>@PathVariable</code></strong></p>
 </div>
 <div class="listingblock">
 <div class="title">Exemple d&#8217;exploitation de données d&#8217;URL</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">  @GetMapping("/question/edit/{id}") <i class="conum" data-value="1"></i><b>(1)</b>
   fun showUpdateForm(@PathVariable("id") id: Long,  <i class="conum" data-value="2"></i><b>(2)</b>
-         model: Model,
-         request: HttpServletRequest): String {
+         model: Model): String {
      val questionDto = questionService.findQuestionDtoById(id)
      model["questionDto"] = questionDto
      return "/question/add-update-question"
@@ -1675,7 +1719,7 @@ la forme <em>prenom*nom</em> (avec une étoile entre le prénom et le nom), le m
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-si aucune <em>étoile</em> n&#8217;est présente dans l&#8217;argument de l&#8217;url,
+s aucune <em>étoile</em> n&#8217;est présente dans l&#8217;argument de l&#8217;url,
 le fonctionnement de <code>hello</code> devra rester conforme à l&#8217;attendu de la question précédente (soit "Hello Django (6 caractères)" si, par exemple, seule la valeur "Django" est transmise)
 </td>
 </tr>
