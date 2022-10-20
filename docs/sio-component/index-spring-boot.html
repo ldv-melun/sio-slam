@@ -1293,7 +1293,7 @@ class MainController { <i class="conum" data-value="1"></i><b>(1)</b>
     @GetMapping("/") <i class="conum" data-value="2"></i><b>(2)</b>
     fun index(model: Model): String { <i class="conum" data-value="3"></i><b>(3)</b>
         model["title"] = "Hello world !" <i class="conum" data-value="4"></i><b>(4)</b>
-        return "main/hello" <i class="conum" data-value="5"></i><b>(5)</b>
+        return "main/index" <i class="conum" data-value="5"></i><b>(5)</b>
     }
 
 }</code></pre>
@@ -1658,7 +1658,7 @@ Attention à bien respecter les conventions de nommage <a href="https://kotlinla
 <div class="olist arabic">
 <ol class="arabic" start="1">
 <li>
-<p>Ajouter un nouveau controller nommé <em>SioController</em> disposant d&#8217;une méthode contrôleur <em>index</em>.
+<p>Ajouter une nouvelle classe <code>controller</code> nommé <em>SioController</em> disposant d&#8217;une méthode contrôleur <em>index</em>.
 Faire en sorte que l&#8217;index présente le message « <strong>Hello world !</strong> » à l&#8217;utilisateur
 (vue thymeleaf), suivi de la <strong>langue préférée</strong> du client (donnée implicite) ainsi que <strong>son adresse IP</strong> (idem).</p>
 </li>
