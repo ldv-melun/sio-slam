@@ -1616,17 +1616,17 @@ Le fait de déclarer une valeur par défaut nous permet de typer la variable <co
 <div class="listingblock">
 <div class="title">Exemple d&#8217;exploitation de données d&#8217;URL</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin"> @GetMapping("/article/detail/{id}") <i class="conum" data-value="1"></i><b>(1)</b>
-   fun detail(@PathVariable id: Long, model: Model): String { <i class="conum" data-value="2"></i><b>(2)</b>
-      // println("id = ${id}")
-      val article : Article = articleRepository.findById(id).orElse(
-         throw ResponseStatusException(HttpStatus.NOT_FOUND, "Article not found"))
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">   @GetMapping("/article/detail/{id}")<i class="conum" data-value="1"></i><b>(1)</b>
+    fun detail(@PathVariable id: Long, model: Model): String { <i class="conum" data-value="2"></i><b>(2)</b>
+        // println("id = ${id}")
+        val article : Article = articleRepository.findByIdOrNull(id)
+            ?: throw ResponseStatusException(HttpStatus.NOT_FOUND, "Article not found")
 
-      model["title"] = "Article"
-      model["article"] = article
+        model["title"] = "Article"
+        model["article"] = article
 
-      return "article/detail"
-  }</code></pre>
+        return "article/detail"
+    }</code></pre>
 </div>
 </div>
 <div class="colist arabic">
