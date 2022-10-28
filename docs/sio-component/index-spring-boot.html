@@ -440,7 +440,7 @@ Content-Type: text/html; charset=UTF-8
 
 &lt;!DOCTYPE html&gt;
 &lt;html class="no-js" lang="fr-FR" &gt;
-	&lt;head&gt;
+  &lt;head&gt;
 
 ....
 
@@ -1014,6 +1014,10 @@ souvent via une structure de type dictionnaire (ensemble de couples clé/valeur)
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>Exemple d&#8217;interactions d&#8217;une application web MVC (source : <a href="https://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/html/mvc.html)">https://docs.spring.io</a>
+:<span class="image"><img src="_images/mvc-doc.spring.io.png" alt="mvc doc.spring.io"></span></p>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_préparation_de_votre_machine_de_dev"><a class="anchor" href="#_préparation_de_votre_machine_de_dev"></a>2.4. Préparation de votre machine de dev</h3>
@@ -1194,7 +1198,7 @@ import org.springframework.boot.runApplication
 class SpringBootFirstApplication
 
 fun main(args: Array&lt;String&gt;)  { <i class="conum" data-value="1"></i><b>(1)</b>
-	runApplication&lt;SpringBootFirstApplication&gt;(*args) <i class="conum" data-value="2"></i><b>(2)</b>
+  runApplication&lt;SpringBootFirstApplication&gt;(*args) <i class="conum" data-value="2"></i><b>(2)</b>
 }</code></pre>
 </div>
 </div>
@@ -1324,7 +1328,7 @@ class MainController { <i class="conum" data-value="1"></i><b>(1)</b>
 </table>
 </div>
 <div class="listingblock">
-<div class="title">Un template simple (/src/main/templates/main/index.html)</div>
+<div class="title">Un template simple (/src/main/resources/templates/main/index.html)</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-thymeleaftemplatesfragmentexpressions hljs" data-lang="thymeleaftemplatesfragmentexpressions">&lt;!doctype html&gt;
 &lt;html lang="fr" xmlns:th="http://www.thymeleaf.org"&gt; <i class="conum" data-value="1"></i><b>(1)</b>
@@ -1612,12 +1616,16 @@ Le fait de déclarer une valeur par défaut nous permet de typer la variable <co
 <div class="listingblock">
 <div class="title">Exemple d&#8217;exploitation de données d&#8217;URL</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">  @GetMapping("/question/edit/{id}") <i class="conum" data-value="1"></i><b>(1)</b>
-  fun showUpdateForm(@PathVariable("id") id: Long,  <i class="conum" data-value="2"></i><b>(2)</b>
-         model: Model): String {
-     val questionDto = questionService.findQuestionDtoById(id)
-     model["questionDto"] = questionDto
-     return "/question/add-update-question"
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin"> @GetMapping("/article/detail/{id}") <i class="conum" data-value="1"></i><b>(1)</b>
+   fun detail(@PathVariable id: Long, model: Model): String { <i class="conum" data-value="2"></i><b>(2)</b>
+      // println("id = ${id}")
+      val article : Article = articleRepository.findById(id).orElse(
+         throw ResponseStatusException(HttpStatus.NOT_FOUND, "Article not found"))
+
+      model["title"] = "Article"
+      model["article"] = article
+
+      return "article/detail"
   }</code></pre>
 </div>
 </div>
@@ -1629,7 +1637,7 @@ Le fait de déclarer une valeur par défaut nous permet de typer la variable <co
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>Reprise de la partie variable de l&#8217;url comme <strong>paramètre typé</strong> de la méthode (attention, la correspondance se base sur le <strong>nom</strong> inscrit entre { } dans la route)</td>
+<td>Reprise de la partie variable de l&#8217;url comme <strong>paramètre typé</strong> (Long, String, &#8230;&#8203;) de la méthode (attention, la correspondance se base sur le <strong>nom</strong> inscrit entre { } dans la route)</td>
 </tr>
 </table>
 </div>
