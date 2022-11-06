@@ -1141,7 +1141,7 @@ souvent via une structure de type dictionnaire (ensemble de couples clé/valeur)
  ├── pom.xml <i class="conum" data-value="1"></i><b>(1)</b>
  └── src
      ├── main
-     │   ├── java
+     │   ├── kotlin
      │   │   └── fr
      │   │       └── vincimelun
      │   │           └── sbfirst
@@ -1151,7 +1151,7 @@ souvent via une structure de type dictionnaire (ensemble de couples clé/valeur)
      │       ├── static <i class="conum" data-value="4"></i><b>(4)</b>
      │       └── templates <i class="conum" data-value="5"></i><b>(5)</b>
      └── test
-         └── java
+         └── kotlin
              └── fr
                  └── vincimelun
                      └── sbfirst
@@ -1842,6 +1842,388 @@ Il est possible de réaliser un suivi de session sans rien sauvegarder sur le se
 <p>Recherche dichotomique : <a href="https://fr.wikipedia.org/wiki/Dichotomie" class="bare">https://fr.wikipedia.org/wiki/Dichotomie</a></p>
 </li>
 </ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_introduction_layout_avec_thymleaf"><a class="anchor" href="#_introduction_layout_avec_thymleaf"></a>4. Introduction (layout avec thymleaf)</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_présentation"><a class="anchor" href="#_présentation"></a>4.1. Présentation</h3>
+<div class="paragraph">
+<p>Lorsqu&#8217;une application web est constituée de plusieurs <em>pages</em>,  il est alors
+de bon usage de conserver une unité de représentation.</p>
+</div>
+<div class="paragraph">
+<p>Techniquement, cette unité de représentation se base sur :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>un <strong>modèle</strong>, connu sous le nom de <em>template</em> ou <em>layout</em> (structuration HTML).</p>
+</li>
+<li>
+<p>un ensemble de règles CSS partagées par l&#8217;ensemble des pages</p>
+</li>
+<li>
+<p>[des dépendances de bibliothèques js]</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>En phase de prototypage, il est fréquent de s&#8217;appuyer sur des frameworks CSS (par exemples <a href="https://getbootstrap.com/">Bootstrap</a>, <a href="https://bulma.io/">bulma</a> )</p>
+</div>
+<div class="paragraph">
+<p>Ces solutions intègrent de nombreux composants CSS et JS. Ces composants sont destinés au tiers client (navigateur, smartphone&#8230;&#8203;).</p>
+</div>
+<div class="paragraph">
+<p>Il existe 2 solutions pour distribuer ces composants aux clients tiers :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>donner aux clients un lien sur le réseau de contenu (<em>CDN content delivery network</em>), pour téléchargement, par exemple <a href="http://code.jquery.com/jquery-3.3.1.js" class="bare">http://code.jquery.com/jquery-3.3.1.js</a></p>
+</li>
+<li>
+<p>servir ces composants à partir du serveur web de l&#8217;application (communication HTTP entre le serveur HTTP de l&#8217;application et les clients), par exemple <a href="http://monapplication.com/js/jquery-3.3.1.js" class="bare">http://monapplication.com/js/jquery-3.3.1.js</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Dans le cadre d&#8217;une application à faible diffusion, la deuxième solution peut être envisagée, de plus elle a le mérite d&#8217;assurer la disponibilité des composants (si l&#8217;application est disponible, alors ses composants le sont aussi), et, accessoirement, permet au développeur de travailler hors ligne.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_webjars_une_solution_java"><a class="anchor" href="#_webjars_une_solution_java"></a>4.2. webjars - une solution java</h3>
+<div class="paragraph">
+<p>Nous nous placons dans le cas où c&#8217;est l&#8217;application qui héberge les composants dont auront besoin ses tiers clients.</p>
+</div>
+<div class="paragraph">
+<p>Initialement, l&#8217;application devra donc les obtenir (elle utilisera CDN pour l&#8217;occasion). Elle pourrait pour cela utiliser des gestionnaires de version spécilisés comme <em>npm</em>, <em>yarn</em>, <em>bower</em>&#8230;&#8203;),
+mais il serait dommage de ne pas profiter du gestionnaire de version <em>maven</em> ! C&#8217;est ce que permet la solution <a href="http://www.webjars.org/">webjars</a>, qui encapsule les composants client dans un jar. Tout cela se passe côté serveur bien entendu.</p>
+</div>
+<div class="paragraph">
+<p>Les WebJars sont des librairies à destination des clients-web (par exemple jQuery &amp; Bootstrap), packagées dans un fichier JAR (Java Archive), et disponible via divers gestionnaires d&#8217;automatisation de taches, comme <em>maven</em> par exemple.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.webjars.org/documentation#springboot" class="bare">https://www.webjars.org/documentation#springboot</a></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/webjars-bt.png" alt="webjars-bt">
+</div>
+</div>
+<div class="paragraph">
+<p>La définition de la dépendance devra être copiée dans le fichier <strong>pom.xml</strong> du projet. C&#8217;est à partir de cette référence que <strong>maven</strong> téléchargera dans son dépot local les fichiers en question, et rendra accessibles ces fichiers en les plaçant dans le <em>CLASSPATH</em> du projet (ce qui les rendra accessible à l&#8217;IDE).</p>
+</div>
+<div class="paragraph">
+<p>Pour connaître les instructions de dépendances de composants, aller ici : <a href="https://mvnrepository.com/artifact/org.webjars" class="bare">https://mvnrepository.com/artifact/org.webjars</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_webjars_cas_bootstrap"><a class="anchor" href="#_webjars_cas_bootstrap"></a>4.3. webjars - cas bootstrap</h3>
+<div class="listingblock">
+<div class="title">Exemple pom.xml</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">  [...]
+
+&lt;dependencies&gt;
+&lt;!--making dependencies version agnostic
+@see https://www.webjars.org/documentation#springboot --&gt;
+ &lt;dependency&gt;
+        &lt;groupId&gt;org.webjars&lt;/groupId&gt;
+        &lt;artifactId&gt;webjars-locator-core&lt;/artifactId&gt; <i class="conum" data-value="1"></i><b>(1)</b>
+        &lt;version&gt;0.52&lt;/version&gt;
+ &lt;/dependency&gt;
+
+ &lt;!-- https://mvnrepository.com/artifact/org.webjars/bootstrap --&gt;
+ &lt;dependency&gt;
+    &lt;groupId&gt;org.webjars&lt;/groupId&gt;
+    &lt;artifactId&gt;bootstrap&lt;/artifactId&gt; <i class="conum" data-value="2"></i><b>(2)</b>
+    &lt;version&gt;5.2.2&lt;/version&gt;
+ &lt;/dependency&gt;
+
+&lt;/dependencies&gt;</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Ce composant permet de ne pas renseigner la version des composants dans les instructions d&#8217;inclusion du template html. C&#8217;est ce document qui se charge de cela.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>La dernière version du composant bootstrap (octobre 2022)</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Ces déclarations de dépendances, lorsqu&#8217;elle seront évaluées par <em>maven</em>, provoqueront le rapatriement, sur la machine hôte, des ressources inscrites dans le <em>webjars</em>.</p>
+</div>
+<div class="paragraph">
+<p>Ces ressources seront alors accessibles au projet, via l&#8217;IDE, au même titre que des librairies java.</p>
+</div>
+<div class="paragraph">
+<p>Le développeur pourra donc y faire références à la conception des vues.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_layout_cas_thymeleaf"><a class="anchor" href="#_layout_cas_thymeleaf"></a>4.4. layout - cas thymeleaf</h3>
+<div class="paragraph">
+<p>Avec <em>thymeleaf</em>, la conception d&#8217;un modèle de présentation (<strong>layout</strong> ou <strong>template</strong>)
+est basée sur la décomposition du modèle en <strong>fragments</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Voici une organisation typique de ressources liées à la logique de présentation:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>├── application.properties
+├── static
+│   └── css
+│       └── main.css <i class="conum" data-value="1"></i><b>(1)</b>
+└── templates
+    ├── admin <i class="conum" data-value="2"></i><b>(2)</b>
+    │   └── index.html <i class="conum" data-value="3"></i><b>(3)</b>
+    ├── error
+    │   └── 403.html
+    ...
+    ├── fragments
+    │   ├── footer.html <i class="conum" data-value="4"></i><b>(4)</b>
+    │   └── header.html
+    └─ index.html</pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>pour la redéfinition de règles héritées, propre à l&#8217;application</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>en référence au rôle utilisateur prioritairement concerné (ici un <code>admin</code>)</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>les vues des controleurs sont placées dans un dossier portant le nom racine d&#8217;un contrôleur (AdminController)</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>les fichiers déclarant des <strong>fragments</strong> (parties réutilisées par les vues) sont logés dans le dossier <em>fragments</em></td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Les différentes pages partagent toutes les mêmes parties <code>header</code> (parties &lt;head&gt; et menu) et <code>footer</code>.</p>
+</div>
+<div class="paragraph">
+<p>Voici un exemple d&#8217;utilisation :</p>
+</div>
+<div class="listingblock">
+<div class="title">admin/index.html</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-html hljs" data-lang="html">&lt;!DOCTYPE HTML&gt;
+&lt;html xmlns:th="http://www.thymeleaf.org"&gt;
+&lt;head&gt;
+    &lt;title&gt;Page Admin&lt;/title&gt;
+    &lt;div th:replace="fragments/header :: header-css (title='Admin')"/&gt; <i class="conum" data-value="1"></i><b>(1)</b>
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div th:replace="fragments/header :: header"/&gt; <i class="conum" data-value="2"></i><b>(2)</b>
+
+&lt;div class="container"&gt;
+
+     &lt;h1&gt;Admin index&lt;/h1&gt;
+
+&lt;/div&gt;
+&lt;!-- /.container --&gt;
+
+&lt;div th:replace="fragments/footer:: footer"/&gt; <i class="conum" data-value="3"></i><b>(3)</b>
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>insertion du fragment <em>header-css</em> (définit dans le fichier <em>header.html</em>)</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>insertion du fragment <em>header</em> (définit dans le fichier <em>header.html</em>)</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>insertion du fragment <em>footer</em> (définit dans le fichier <em>footer.html</em>)</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Voyons maintenant des exemples de composants <em>fragment</em></p>
+</div>
+<div class="listingblock">
+<div class="title">footer.html</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-html hljs" data-lang="html">&lt;html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"&gt;
+&lt;head&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div th:fragment="footer"&gt; <i class="conum" data-value="1"></i><b>(1)</b>
+  &lt;div class="container"&gt;
+    &lt;footer&gt;
+        &amp;copy; 2022 myapplication.com
+    &lt;/footer&gt;
+
+    &lt;script type="text/javascript"
+            src="/webjars/bootstrap/5.2.2/js/bootstrap.min.js" <i class="conum" data-value="2"></i><b>(2)</b>
+            th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"&gt; <i class="conum" data-value="3"></i><b>(3)</b>
+    &lt;/script&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Un composant est en fait le body d&#8217;une page HTML particulière, comportant une déclaration de fragment.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Ceci est un exemple (la doc thymleaf parle de <em>prototype</em>). Sous IntelliJ, pensez à utiliser la complétion automatique (ctrl+ esp) pour l&#8217;expression de chemin.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>C&#8217;est la valeur <em>src</em> qui sera appliquée. Les expressions thymleaf de chemin ou de lien sont encadrées  par <code>@{ &#8230;&#8203; }</code>. On notera que nous ne faisons pas appel à une version particulière du composant car c&#8217;est <code>webjars-locator-core</code> qui s&#8217;en charge.</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="title">header.html</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-html hljs" data-lang="html">&lt;html xmlns:th="http://www.thymeleaf.org"&gt;
+&lt;head&gt;
+   &lt;th:block th:fragment="header-css"&gt; <i class="conum" data-value="1"></i><b>(1)</b>
+      &lt;link rel="stylesheet" type="text/css"
+        href="/webjars/bootstrap/5.2.2/css/bootstrap.min.css" <i class="conum" data-value="2"></i><b>(2)</b>
+        th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" /&gt; <i class="conum" data-value="3"></i><b>(3)</b>
+
+      &lt;link rel="stylesheet" th:href="@{/css/main.css}" <i class="conum" data-value="4"></i><b>(4)</b>
+        href="../static/css/main.css" /&gt;
+
+      &lt;title th:text="${title ?: 'Default title'}"&gt;&lt;/title&gt; <i class="conum" data-value="5"></i><b>(5)</b>
+
+   &lt;/th:block&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div th:fragment="header"&gt; <i class="conum" data-value="6"></i><b>(6)</b>
+    &lt;nav class="navbar navbar-inverse"&gt;
+        &lt;div class="container"&gt;
+            &lt;div class="navbar-header"&gt;
+                &lt;a class="navbar-brand" th:href="@{/}"&gt;Spring Boot&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div id="navbar" class="collapse navbar-collapse"&gt;
+                &lt;ul class="nav navbar-nav"&gt;
+                    &lt;li class="active"&gt;&lt;a th:href="@{/}"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/nav&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>déclaration d&#8217;un fragment nommé <em>header-css</em></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>prototype de lien bootstrap</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>expression du lien th:href pour déclaration de l&#8217;inclusion</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>le fichier CSS pour les redéfinitions propres à l&#8217;application (ne pas faire référence au dossier <code>static</code>)</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>définition de la valeur de <code>&lt;title&gt;</code> avec valeur par défaut (opérateur elvis)</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="6"></i><b>6</b></td>
+<td>déclaration d&#8217;un autre fragment dans le même fichier</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_controleur"><a class="anchor" href="#_controleur"></a>4.5. Controleur</h3>
+<div class="paragraph">
+<p>Voici un exemple de mise en oeuvre, à minima :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java"> // AdminController
+
+  @GetMapping("/admin")
+  public String admin() {
+     return "/admin/index";
+  }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Nous avons ici rangé les vues dans des dossiers
+portant le nom du rôle prioritairement concerné, un parti pris.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_documentation"><a class="anchor" href="#_documentation"></a>4.6. Documentation</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Documentation générale :  <a href="https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html">thymeleaf documenataion</a></p>
+</li>
+<li>
+<p>Ne pas passer à côté des classes utilitaires : <a href="https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#appendix-b-expression-utility-objects">classes utilitaires - avec exemples</a></p>
+</li>
+<li>
+<p>Différentes façons d&#8217;inclure un fragment : <a href="http://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#including-template-fragments">thymeleaf:insclusion de fragments</a></p>
+</li>
+<li>
+<p>Paramétrer un fragment : <a href="http://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#parameterizable-fragment-signatures">fragment paramétré</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_travaux_pratiques_2"><a class="anchor" href="#_travaux_pratiques_2"></a>4.7. Travaux pratiques</h3>
+<div class="sect3">
+<h4 id="_exercice_1"><a class="anchor" href="#_exercice_1"></a>4.7.1. Exercice 1</h4>
+<div class="paragraph">
+<p>Intégrer bootstrap dans votre application existante, avec le modèle <code>navbar-static</code> disponible ici : <a href="https://getbootstrap.com/docs/5.2/examples/navbar-static/" class="bare">https://getbootstrap.com/docs/5.2/examples/navbar-static/</a></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="_images/sbfirst-webjars-bootstrap-nav.png" alt="sbfirst-webjars-bootstrap-nav.png"></span></p>
 </div>
 </div>
 </div>
