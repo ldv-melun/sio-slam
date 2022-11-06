@@ -2264,6 +2264,425 @@ portant le nom du rôle prioritairement concerné, un parti pris.</p>
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_introduction_à_jpa"><a class="anchor" href="#_introduction_à_jpa"></a>5. Introduction à JPA</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_présentation_2"><a class="anchor" href="#_présentation_2"></a>5.1. Présentation</h3>
+<div class="paragraph">
+<p>JPA est une interface de programmation permettant d&#8217;utiliser un modèle objet
+au-dessus d&#8217;une base de données relationnelle.</p>
+</div>
+<div class="paragraph">
+<p>JPA associe un graphe de classes Java aux tables d&#8217;une base de données
+relationnelle par le biais :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>de fichiers de configuration xml</p>
+</li>
+<li>
+<p>d&#8217;annotations depuis Java 5 (c&#8217;est la méthode préférée)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Pour la suite nous utiliserons le modèle suivant :</p>
+</div>
+<div class="imageblock kroki">
+<div class="content">
+<img src="_images/diag-6bc95bedd85382606cc822993a6d0bed8485a434.svg" alt="Modèle d&#8217;analyse du domaine">
+</div>
+<div class="title">Figure 3. Modèle d&#8217;analyse du domaine</div>
+</div>
+<div class="paragraph">
+<p>Dans ce modèle une personne peut écrire plusieurs articles (liste de type <code>Article</code>), et un article est crédité par une seule source (de type <code>Person</code>).</p>
+</div>
+<div class="paragraph">
+<p>Une application JPA se divise en deux parties :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Définir le modèle de données (graphe d&#8217;objets)</p>
+</li>
+<li>
+<p>Gérer l&#8217;accès aux données (créer, récupérer, modifier et supprimer les données)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_définir_le_modèle"><a class="anchor" href="#_définir_le_modèle"></a>5.2. Définir le modèle</h3>
+<div class="sect3">
+<h4 id="_une_traduction_de_lanalyse"><a class="anchor" href="#_une_traduction_de_lanalyse"></a>5.2.1. Une traduction de l&#8217;analyse</h4>
+<div class="paragraph">
+<p>Le modèle qui nous intéresse ici est celui centré sur la logique métier du client, les données qu&#8217;ils manipulent. Ces données sont regroupées en <strong>entités</strong>, qui, dans le code, sont représentées par des <strong>classes</strong>, dites <strong>métier</strong>, parfois stéréotypées &lt;&lt;entity&gt;&gt; dans les diagrammes d&#8217;analyse.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Il est fort pratique de représenter l&#8217;analyse sous la forme d&#8217;un diagramme de classes UML, car, en conception (design), l&#8217;analyse permet au développeur de se consacrer sur les détails des entités sans perdre le fil de leurs relations.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_associer_une_table_à_une_classe_les_entités_entities"><a class="anchor" href="#_associer_une_table_à_une_classe_les_entités_entities"></a>5.2.2. Associer une table à une classe, les entités (entities)</h4>
+<div class="listingblock">
+<div class="title">Classe Person associée à la table <code>Person</code> (sans référence à d&#8217;autres entités)</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">@Entity <i class="conum" data-value="1"></i><b>(1)</b>
+@Table(name = "Person") <i class="conum" data-value="2"></i><b>(2)</b>
+class Person(
+
+    @Column(name = "login", unique = true, nullable = false, length = 20) <i class="conum" data-value="3"></i><b>(3)</b>
+    var login: String, <i class="conum" data-value="4"></i><b>(4)</b>
+
+    @Column(name = "firstname", nullable = false)
+    var firstname: String,
+
+    @Column(name = "lastname", nullable = false)
+    var lastname: String,
+
+    @Column(columnDefinition="TEXT")
+    var description: String? = null,
+
+    @Id <i class="conum" data-value="5"></i><b>(5)</b>
+    @GeneratedValue(strategy = GenerationType.IDENTITY) <i class="conum" data-value="6"></i><b>(6)</b>
+    @Column(name = "id", nullable = false)
+    var id: Long? = null) <i class="conum" data-value="7"></i><b>(7)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td><code>@Entity</code> déclare la classe comme un objet persistant
+associé par défaut à la table de même nom (à la casse près).</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td><code>@Table</code> déclare le nom de la table associée à la classe, indispensable
+si les deux noms diffèrent (ce n&#8217;est pas le cas ici).</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td><code>@Column</code> permet d&#8217;établir la correspondance entre la propriété de la classe
+et la colonne de la table, ainsi que certaines règles de validation comme
+l&#8217;interdiction de nullité, la longueur, le type&#8230;&#8203;</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>La propriété associée à la colonne de la table (valeur d&#8217;attribut).</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td><code>@Id</code> déclare l&#8217;attibut comme clé primaire, au moins un attribut doit
+être marqué par cette annotation</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="6"></i><b>6</b></td>
+<td><code>@GeneratedValue</code> indique que la valeur est générée automatiquement</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="7"></i><b>7</b></td>
+<td>Bien que la colonne associée soit déclarée non nullable (c&#8217;est une PK), la propriété <code>id</code> l&#8217;est ! (son type est <code>Long?</code>) En effet, à la création d&#8217;un <strong>nouvel</strong> objet en mémoire, alors qu&#8217;il n&#8217;est pas encore persisté (associé à aucune ligne dans la table), l&#8217;objet n&#8217;a pas encore de valeur d&#8217;identifiant de base de données. Cette valeur lui sera attribuée par le SGBD lors de sa sauvegarde dans la base (donc dans un second temps)</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Le mécanisme qui assure la correspondance entre une Classe Entity et une Table d&#8217;une base de données est appelé <strong>ORM</strong> (<em>Object Relational Mapping</em>)</p>
+</div>
+<div class="paragraph">
+<p><em>Un mapping objet-relationnel (en anglais object-relational mapping ou ORM) est un type de programme informatique qui se place en interface entre un programme applicatif et une base de données relationnelle pour simuler une base de données orientée objet. Ce programme définit des correspondances entre les schémas de la base de données et les classes du programme applicatif. On pourrait le désigner par là, « comme une couche d&#8217;abstraction entre le monde objet et monde relationnel ». Du fait de sa fonction, on retrouve ce type de programme dans un grand nombre de frameworks sous la forme de composant ORM qui a été soit développé, soit intégré depuis une solution externe.</em> source : <a href="https://fr.wikipedia.org/wiki/Mapping_objet-relationnel" class="bare">https://fr.wikipedia.org/wiki/Mapping_objet-relationnel</a></p>
+</div>
+<div class="paragraph">
+<p>Ainsi, à une <strong>instance</strong> d&#8217;une classe Entity correspond une <strong>ligne</strong> d&#8217;une table d&#8217;une base de données relationnelle.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_gérer_les_associations_manytoone_et_onetomany"><a class="anchor" href="#_gérer_les_associations_manytoone_et_onetomany"></a>5.2.3. Gérer les associations (<code>ManyToOne</code> et <code>OneToMany</code>)</h4>
+<div class="paragraph">
+<p>Dans ce modèle un Person peut écrire plusieurs articles, et un article est crédité par une seule personne.</p>
+</div>
+<div class="imageblock kroki">
+<div class="content">
+<img src="_images/diag-1b574a48cc6c0cc67546c1176e0a8f5f0d2a79b2.svg" alt="Modèle d&#8217;analyse du domaine">
+</div>
+<div class="title">Figure 4. Modèle d&#8217;analyse du domaine</div>
+</div>
+<div class="paragraph">
+<p>L&#8217;association de <code>Article</code> vers <code>Person</code> est de type <code>ManyToOne</code>. Cette même association vue côté <code>Person</code> est de type <code>OneToMany</code> vers <code>Article</code>.</p>
+</div>
+<div class="paragraph">
+<p>Si l&#8217;association est bidirectionnelle, la classe côté <code>ManyToOne</code> (dans notre cas <code>Article</code>) est dite propriétaire (<em>owner</em>) de l&#8217;association car sa table associée détient la clé étrangère de la relation. Le côté non propriétaire, ici <code>Person</code>, doit utiliser l&#8217;élément <em>mappedBy</em> de l&#8217;annotation pour spécifier l&#8217;attribut du côté propriétaire. Pour les données en base, le système assure la cohérence des liens entre objets en mémoire. Par contre, en cas gestion mémoire de ces liens par la logique applicative, la cohérence est du ressort du développeur.</p>
+</div>
+<div class="listingblock">
+<div class="title">La classe Article</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">@Entity
+class Article(
+    var title: String,
+    var headline: String,
+    var content: String,
+
+    @ManyToOne <i class="conum" data-value="1"></i><b>(1)</b>
+    @JoinColumn(name = "credited_to_id") <i class="conum" data-value="2"></i><b>(2)</b>
+    var creditedTo: Person, <i class="conum" data-value="3"></i><b>(3)</b>
+
+    var slug: String = title.toSlug(),
+    var addedAt: LocalDateTime = LocalDateTime.now(),
+    @Id @GeneratedValue var id: Long? = null)</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>L&#8217;annotation <code>@ManyToOne</code> permet de savoir que l&#8217;objet annoté doit être retrouvé dans une autre table. Le paramètre <code>FetchType</code> permet de savoir s&#8217;il faut immédiatement retrouver l&#8217;objet lié (<code>EAGER</code>) ou s&#8217;il faut le retrouver seulement lorsqu&#8217;il est accédé dans l&#8217;application (<code>LAZY</code>). La deuxième option diffère la requête SQL jusqu&#8217;à ce que l&#8217;application cherche à accéder à l&#8217;objet Person</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>L&#8217;annotation <code>@JoinColumn</code> permet à l&#8217;application de déterminer quelle colonne dans la table sert de clé étrangère pour retrouver l&#8217;objet lié</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Si <code>credited_to_id</code> est une clé étrangère et un entier, la propriété associée, nommée <code>creditedTo</code>, est de type <code><strong>Person</strong></code>.</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Ne pas confondre clé étrangère et propriété de l&#8217;association.</p>
+</div>
+<div class="paragraph">
+<p><code>credited_to_id</code> est le nom de la colonne dans la table (une clé étrangère), la propriété <code>creditedTo</code> lie une instance d'`Article` à une instance de <code>Person</code>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Avec JPA le développeur gère un graphe d&#8217;objets, pas une base de données SQL.</strong></p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="title">Classe Person et associaton bidirectionnelle avec Article</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">@Entity
+class Person(
+
+    @Column(name = "login", unique = true, nullable = false, length = 20)
+    var login: String,
+
+    @Column(name = "firstname", nullable = false)
+    var firstname: String,
+
+    @Column(name = "lastname", nullable = false)
+    var lastname: String,
+
+    @Column(columnDefinition="TEXT")
+    var description: String? = null,
+
+    @OneToMany(mappedBy = "creditedTo", cascade = [CascadeType.ALL]) <i class="conum" data-value="1"></i><b>(1)</b>
+    var articles: MutableList&lt;Article&gt; = mutableListOf(), <i class="conum" data-value="2"></i><b>(2)</b>
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
+    var id: Long? = null)</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td><code>@OneToMany</code> indique qu&#8217;une instance de <code>Person</code> peut être liée à plusieurs instances de <code>Article</code>, en tant qu&#8217;auteur, c&#8217;est la propriété <code>creditedTo</code> dans <code>Article</code> qui représente ce lien</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Une personne pouvant réaliser plusieurs articles, les références à ses articles sont stockés dans une collection mutable, qui peut être vide.</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_gérer_laccès_aux_données_les_dépôts_repositories"><a class="anchor" href="#_gérer_laccès_aux_données_les_dépôts_repositories"></a>5.3. Gérer l&#8217;accès aux données, les dépôts (repositories)</h3>
+<div class="sect3">
+<h4 id="_présentation_3"><a class="anchor" href="#_présentation_3"></a>5.3.1. Présentation</h4>
+<div class="paragraph">
+<p>Si les classes Entity permettent de définir les structures de données et la façon dont les objets sont liés aux tables SQL, elles ne permettent pas de manipuler les tables : créer, lire, mettre à jour ou supprimer des données. En anglais ces actions sont connues sous le nom de <code>CRUD</code> (<em>Create</em>, <em>Read</em>, <em>Update</em>, <em>Delete</em>). Les objets qui permettent de faire des opérations de type <code>CRUD</code> sur une base de données sont appelés des DAO (Data Access Object).</p>
+</div>
+<div class="paragraph">
+<p>Créer des DAOs est une tâche répétitive et ingrate, 90% du code est
+similaire d&#8217;un DAO à l&#8217;autre. Spring propose une méthode standard pour
+gérer les DAOs au travers d&#8217;objets, ou plutôt d&#8217;interfaces, de type
+<code>CrudRepository</code>, <code>PagingAndSortingRepository
+` ou `JpaRepository</code> qui hérite de la classe précédente. Dans les cas simples <code>CrudRepository</code> suffit largement.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_linterface_crudrepository"><a class="anchor" href="#_linterface_crudrepository"></a>5.3.2. L&#8217;interface CrudRepository</h4>
+<div class="paragraph">
+<p>Permet d&#8217;effectuer toutes les opérations de base d&#8217;un DAO :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>long count()</code> : compte le nombre d&#8217;entités disponibles</p>
+</li>
+<li>
+<p><code>void delete(T entity)</code> : supprime l&#8217;entité passée en paramètre</p>
+</li>
+<li>
+<p><code>void deleteAll()</code> : supprime toutes les entités</p>
+</li>
+<li>
+<p><code>void deleteById(ID id)</code> : supprime une entité avec l&#8217;id passé en paramètre</p>
+</li>
+<li>
+<p><code>void existsById(ID id)</code> : retourne vrai si une entité avec l&#8217;id passé en paramètre existe</p>
+</li>
+<li>
+<p><code>Iterable&lt;T&gt; findAll()</code> : retourne toutes les instances du type</p>
+</li>
+<li>
+<p><code>Iterable&lt;T&gt; findAllById(Iterable&lt;ID&gt; id)</code> :</p>
+</li>
+<li>
+<p><code>Optional&lt;T&gt; findById(ID id)</code> : retrouve une entité par son id</p>
+</li>
+<li>
+<p><code>&lt;S extends T&gt; S save(S entity)</code> : sauvegarde une entité donnée</p>
+</li>
+<li>
+<p><code>&lt;S extends T&gt; Iterable&lt;S&gt; saveAll(Iterable&lt;S&gt; entities)</code> : sauvegarde toutes les entités passées en paramètre.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Ci-dessous un exemple de CrudRepository :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">package com.example.demo.repository
+
+import com.example.demo.model.Person
+import org.springframework.data.repository.CrudRepository
+
+interface PersonRepository : CrudRepository&lt;Person, Long&gt; {
+
+}</code></pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+L&#8217;implémentation de l&#8217;interface est réalisée <strong>automatiquement</strong> par le framework.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_exemple_de_configuration_dun_projet_spring_boot_avec_jpa"><a class="anchor" href="#_exemple_de_configuration_dun_projet_spring_boot_avec_jpa"></a>5.4. Exemple de configuration d&#8217;un projet Spring Boot avec JPA</h3>
+<div class="listingblock">
+<div class="title">Exemple avec H2 (src/main/resources/application.properties)</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties"># Connexion à la base de données
+spring.datasource.url=jdbc:h2:file:c:/db/blog;AUTO_SERVER=true <i class="conum" data-value="1"></i><b>(1)</b>
+#spring.datasource.url=jdbc:h2:file:~/db/blog;AUTO_SERVER=true <i class="conum" data-value="2"></i><b>(2)</b>
+spring.datasource.driver-class-name=org.h2.Driver <i class="conum" data-value="3"></i><b>(3)</b>
+spring.datasource.username=sa <i class="conum" data-value="4"></i><b>(4)</b>
+spring.datasource.password= <i class="conum" data-value="5"></i><b>(5)</b>
+spring.jpa.hibernate.ddl-auto=create-drop <i class="conum" data-value="6"></i><b>(6)</b>
+spring.datasource.initialization-mode=always <i class="conum" data-value="7"></i><b>(7)</b>
+spring.h2.console.enabled=true <i class="conum" data-value="8"></i><b>(8)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Chaîne JDBC de connexion à la base de données, version Windows</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>La même version Linux ou Mac. <code>;AUTO_SERVER=true</code> permet une connexion par des tiers comme intellij&#8230;&#8203; (H2 mixed mode)</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Driver JDBC à utiliser</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>Utilisateur pour accéder à la source de données JDBC</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>Mot de passe de l&#8217;utlisateur</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="6"></i><b>6</b></td>
+<td>Le schéma de la base de données est généré à partir des entités JPA, à chaque exécution de l&#8217;application les tables sont supprimées et recrées, l&#8217;option <code>create-drop</code> n&#8217;est valable que pour la phase de développement, en production on utilise l&#8217;option <code>none</code></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="7"></i><b>7</b></td>
+<td>Si un fichier `data.sql`est présent, il est automatiquement utilisé pour importer les données qu&#8217;il contient dans la base de données</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="8"></i><b>8</b></td>
+<td>Propre à <code>H2</code> (driver par défaut). Permet d&#8217;accéder à la console H2, une fois que l&#8217;application lancée, à l&#8217;URL <code><a href="http://localhost:8080/h2-console" class="bare">http://localhost:8080/h2-console</a></code>, il s&#8217;agit d&#8217;une application web intégrée au moteur H2 permettant de manipuler la base de données.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Voici un exemple avec MysSql : <a href="https://spring.io/guides/gs/accessing-data-mysql/" class="bare">https://spring.io/guides/gs/accessing-data-mysql/</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_travaux_pratiques_3"><a class="anchor" href="#_travaux_pratiques_3"></a>5.5. Travaux pratiques</h3>
+<div class="paragraph">
+<p>Vous étudiez un début d&#8217;application web, structurée en couches minimales, et vous réalisez les travaux attendus.</p>
+</div>
+<div class="paragraph">
+<p>Les explications et le travail à faire se trouvent dans le README.adoc du projet.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://github.com/ldv-melun/app-spring-boot-kotlin-jpa-first" class="bare">https://github.com/ldv-melun/app-spring-boot-kotlin-jpa-first</a></p>
+</div>
+</div>
+</div>
+</div>
 <div id="footnotes">
 <hr>
 <div class="footnote" id="_footnotedef_1">
