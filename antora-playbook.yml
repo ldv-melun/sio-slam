@@ -38,7 +38,6 @@ asciidoc:
   attributes:
      kroki-fetch-diagram: true
 
-
 ui:
   bundle:
 #    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable
