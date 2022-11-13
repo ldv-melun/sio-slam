@@ -324,6 +324,8 @@ a| L.JULES - O.CAPUOZZO - E.VIGNA
 
 == Semaine 7 novembre
 
+[%collapsible]
+====
 [frame=all]
 |===
 |Lundi am| Mardi am | Mardi pm | Mercredi am | Mercredi pm| Jeudi pm
@@ -354,6 +356,44 @@ a| L.JULES - O.CAPUOZZO - E.VIGNA
 
 * Contrôle des connaissances (Spring Boot MVC) - sur table
 * Poursuite des travaux pratiques en développement web
+
+|===
+====
+
+== Semaine 14 novembre
+
+[frame=all]
+|===
+|Lundi am| Mardi am | Mardi pm | Mercredi am | Mercredi pm| Jeudi pm
+
+a|L.JULES - O.CAPUOZZO
+
+* Cours: Les bases du frontend web
+* TP: https://github.com/ldv-melun/app-spring-boot-kotlin-jpa-first[jpa-first]
+
+
+a| O.CAPUOZZO - R.LAROUSSI
+
+* Cours : DTO, Formulaire et Validation https://github.com/ldv-melun/app-spring-boot-kotlin-jpa-first#les-dtos[DTO]
+* TP: https://github.com/ldv-melun/app-spring-boot-kotlin-jpa-first[jpa-first]
+
+a| R.LAROUSSI
+
+* Cours : https://ldv-melun.github.io/sio-slam/sio-component/index-spring-boot.html#_introduction_layout_avec_thymleaf[webjars + bootstrap et thymeleaf layout]
+
+a| R.LAROUSSI
+
+* Cours : Poursuite du thème de la veille
+
+a| O.CAPUOZZO - R.LAROUSSI
+
+* Cours : Rappel/Révision/Q-R
+* TP : Contrôle de connaissance
+
+a| L.JULES - O.CAPUOZZO - E.VIGNA
+
+* Première partie : Le concept AJAX, JSON
+* Deuxième partie : Présentation du projet
 
 |===
 
