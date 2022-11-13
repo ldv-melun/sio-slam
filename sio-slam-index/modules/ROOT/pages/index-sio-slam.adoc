@@ -388,12 +388,12 @@ a| R.LAROUSSI
 a| O.CAPUOZZO - R.LAROUSSI
 
 * Cours : Rappel/Révision/Q-R
-* TP : Contrôle de connaissance
+* TP : **Contrôle de connaissance**
 
 a| L.JULES - O.CAPUOZZO - E.VIGNA
 
 * Première partie : Le concept AJAX, JSON
-* Deuxième partie : Présentation du projet
+* Deuxième partie : **Présentation du projet**
 
 |===
 
