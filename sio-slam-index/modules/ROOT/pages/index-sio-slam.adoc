@@ -374,7 +374,7 @@ a|L.JULES - O.CAPUOZZO
 
 a| O.CAPUOZZO - R.LAROUSSI
 
-* Cours : DTO, Formulaire et Validation https://github.com/ldv-melun/app-spring-boot-kotlin-jpa-first#les-dtos[DTO]
+* Cours : Vue + Détail Demo
 * TP: https://github.com/ldv-melun/app-spring-boot-kotlin-jpa-first[jpa-first]
 
 a| R.LAROUSSI
@@ -383,16 +383,16 @@ a| R.LAROUSSI
 
 a| R.LAROUSSI
 
-* Cours : la Suite...
+* Cours : la Suite... Formulaire
 
 a| O.CAPUOZZO - R.LAROUSSI
 
-* Cours : Rappel/Révision/Q-R
+* Cours : Le concept AJAX, JSON
 * TP : **Contrôle de connaissance**
 
 a| L.JULES - O.CAPUOZZO - E.VIGNA
 
-* Première partie : Le concept AJAX, JSON
+* Première partie : correction du contrôle
 * Deuxième partie : **Présentation du projet**
 
 |===
