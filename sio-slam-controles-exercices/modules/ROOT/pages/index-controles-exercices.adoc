@@ -4,17 +4,27 @@
 
 * xref:sio-component:ROOT:attachment$controle-1-slam2-corrige.pdf[contrôle 1 - programmation avec corrigé]  - 21 septembre 2022
 * xref:sio-component:ROOT:attachment$controle-2-corrige.pdf[contrôle 2 - programmation avec corrigé]  - 12 octobre 2022
+* xref:sio-component:ROOT:attachment$controle-3-correction.pdf[contrôle 3 - programmation avec corrigé]  - 16 novembre 2022
 
 == Exercices
 
 * xref:exercice-premiers-pas-POO-TU-Kotlin.adoc[] (Premiers pas POO & TU en Kotlin)
 ** Éléments de corrigé : xref:sio-component:ROOT:attachment$Compte.kt[Compte.kt] et xref:sio-component:ROOT:attachment$CompteTest.kt[CompteTest.kt]
 * Protocole HTTP sans état,  xref:attachment$2022-20223/chap05-http-protocol.pdf[jouer avec Tortoro]
-** Éléments de corrigé (à venir)
+** Éléments de corrigé
+
+====
+Rappel : HTTP est un protocole sans état.
+
+Pour être reconnu par le serveur (l'application web), l'id de session obtenu en retour d'une requête HTTP, sous la forme d'un cookie, doit être retransmis lors de la seconde requête HTTP.
+
+Cette action est automatiquement réalisée par les navigateurs web, car c'est un comportement défini par la RFC https://www.rfc-editor.org/rfc/rfc6265
+====
 
 == Contrôles UML
 * xref:sio-component:ROOT:attachment$DST_UML_1.pdf[Contrôle N°1 - 29 septembre]
 * xref:sio-component:ROOT:attachment$DST_1_CORR.pdf[Eléments de correction]
+
 
 == Contrôles Cybersécurité
 * xref:sio-component:ROOT:attachment$DST_CYBER_1.pdf[Contrôle N°1 - 29 septembre]
