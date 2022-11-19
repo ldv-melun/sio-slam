@@ -18,7 +18,7 @@ Rappel : HTTP est un protocole sans état.
 
 Pour être reconnu par le serveur (l'application web), l'id de session obtenu en retour d'une requête HTTP, sous la forme d'un cookie, doit être retransmis lors de la seconde requête HTTP pour que l'application vous reconnaisse (parmi l'ensemble des autres clients HTTP qu'elle doit traiter)
 
-Cette action est automatiquement réalisée par les navigateurs web, car c'est un comportement défini par la RFC https://www.rfc-editor.org/rfc/rfc6265
+Cette action est automatiquement réalisée par les navigateurs web, car c'est un comportement défini par la RFC https://www.rfc-editor.org/rfc/rfc6265 - voir aussi https://developer.mozilla.org/fr/docs/Web/HTTP/Cookies
 ====
 
 == Contrôles UML
