@@ -343,6 +343,11 @@
 <li><a href="#_principe_de_base">Principe de base</a></li>
 <li><a href="#_quelques_exemples">Quelques exemples</a></li>
 <li><a href="#_cas_des_méthodes">Cas des méthodes</a></li>
+<li><a href="#_le_contrat_de_la_fonction">Le contrat de la fonction</a>
+<ul class="sectlevel2">
+<li><a href="#_tester_le_contrat">Tester le contrat</a></li>
+</ul>
+</li>
 </ul>
 </div>
 <div class="sect1">
@@ -367,7 +372,7 @@
 <p>Le <strong>type abstrait</strong> de la fonction est donc :<strong><code>Int X Int &#8594; Int</code></strong> (se lit <em>Int croix Int dans Int</em>)</p>
 </div>
 <div class="paragraph">
-<p><code>Int X Int</code> représente le <a href="https://fr.wikipedia.org/wiki/Produit_cart%C3%A9sien">produit cartésien</a> de deux entiers, soit l&#8217;ensemble possible de tous les couples <code>(Int, Int)</code></p>
+<p><code>Int X Int</code> représente le <a href="https://fr.wikipedia.org/wiki/Produit_cart%C3%A9sien">produit cartésien</a> de deux entiers, soit l&#8217;ensemble possible de tous les couples d&#8217;entiers <code>(Int, Int)</code>. Dans le cadre d&#8217;une fonction simple (pas une méthode), l&#8217;ensemble des paramètres constitue le <strong>domaine de départ</strong> de la fonction. Ainsi une fonction se caratérise par son domaine de départ et son domaine d&#8217;arrivé (le type de la valeur de retour de la fonction)</p>
 </div>
 <div class="paragraph">
 <p><code>Int X Int</code> est le domaine de départ et <code>Int</code> le domaine d&#8217;arrivé.</p>
@@ -557,8 +562,9 @@ val mutableList = mutableListOf&lt;Produit&gt;() // liste vide au départ</code>
 </div>
 </div>
 <div class="paragraph">
-<p>La méthode <code>transfert</code> reçoit 1 référence à un  compte. En retour, elle ne retourne rien, mais réalise 2 effets de bords : la référence à l&#8217;instance de compte à partir de laquelle la fonction a été appelée (référencé par <strong>this</strong> dans le corps de méthode) ainsi que son paramètre ont été modifiés par la méthode !</p>
+<p>La méthode <code>transfert</code> reçoit 1 référence à un  compte. En retour, elle ne retourne rien, mais réalise <strong>2 effets de bords</strong> : la référence à l&#8217;instance de compte à partir de laquelle la fonction a été appelée (référencé par <strong>this</strong> dans le corps de méthode) ainsi que son paramètre ont été modifiés par la méthode, comme le montre le test ci-après!</p>
 </div>
+<div style="page-break-after: always;"></div>
 <div class="listingblock">
 <div class="title">Listing 9. Exemple d&#8217;appel</div>
 <div class="content">
@@ -581,6 +587,82 @@ val mutableList = mutableListOf&lt;Produit&gt;() // liste vide au départ</code>
 <td>Un seul argument de type <code>Compte</code> en paramètre (le premier argument de la version précédente a été placé en préfixe de l&#8217;appel)</td>
 </tr>
 </table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_le_contrat_de_la_fonction"><a class="anchor" href="#_le_contrat_de_la_fonction"></a>Le contrat de la fonction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Connu aussi sous la dénomination <em>documentation de l&#8217;API</em></p>
+</div>
+<div class="paragraph">
+<p>Le contrat d&#8217;utilisation précise le rôle des éléments du domaine de départ et celui d&#8217;arrivé. Dans les langages courants, le contrat est représenté par un commentaire technique structuré (<em>JavaDoc</em>, <em>PhpDoc</em>, <em>KDoc</em>, etc.)</p>
+</div>
+<div class="paragraph">
+<p>La documentation technique démarre par une courte description du rôle de la fonction. On peut y placer des exemples d&#8217;utilisation.</p>
+</div>
+<div class="paragraph">
+<p>Puis, paramètre(s) et retour de fonction sont commentés, ainsi que les exceptions éventuelles et leurs conditions de déclenchement.</p>
+</div>
+<div class="listingblock">
+<div class="title">Listing 10. Exemple de déclaration de contrat</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">/**
+* Réalise le transfert d'une somme donnée du compte à un autre compte
+*
+* @param destinataire celui qui bénéficie du transmfert
+* @param montant le montant à transférer
+* @throws IllegalOperationException si crédit de this insuffisant
+*/
+@Throws(IllegalOperationException)
+fun transfert(destinataire: Int, montant: Double) {
+   if (debitPossible(montant) == false)
+       throw IllegalOperationException("solde insuffisant pour le tranfert")
+   // sinon on réalise les opérations demandées
+   // ...
+}</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_tester_le_contrat"><a class="anchor" href="#_tester_le_contrat"></a>Tester le contrat</h3>
+<div class="paragraph">
+<p>Le contrat est de bonne inspiration pour la définition des tests unitaires.</p>
+</div>
+<div class="listingblock">
+<div class="title">Listing 11. Exemple d&#8217;un test unitaire qui contrôle le bon déclenchement d&#8217;une exception</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">  @Test
+    fun testTransfertImpossible() {
+        val source = Compte("Mezigue", 10.0)
+        val destinataire = Compte("Tezigue", 12.0)
+
+        try {
+           // test un transfert interdit
+           source.transfert(destinataire, 42.0)
+           // si on arrive ici, c'est que l'exception ne s'est pas déclenchée !
+           fail("Exception attendue !")
+        } catch (e: IllegalOperationException) {
+           // ok
+        }
+        // les comptes n'ont pas bougés
+        assertEquals(10.0, source.solde)
+        assertEquals(12.0, destinataire.solde)
+    }</code></pre>
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Dorénavant, dans vos projet, veuillez inscrire le contrat d&#8217;utilisation de toutes vos fonctions et méthodes.
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 </div>
