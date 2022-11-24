@@ -361,7 +361,8 @@ a| L.JULES - O.CAPUOZZO - E.VIGNA
 ====
 
 == Semaine 14 novembre
-
+[%collapsible]
+====
 [frame=all]
 |===
 |Lundi am| Mardi am | Mardi pm | Mercredi am | Mercredi pm| Jeudi pm
@@ -394,6 +395,42 @@ a| L.JULES - O.CAPUOZZO - E.VIGNA
 
 * Première partie : correction du contrôle
 * Deuxième partie : **Présentation du projet**
+
+|===
+====
+== Semaine 21 novembre
+
+[frame=all]
+|===
+|Lundi am| Mardi am | Mardi pm | Mercredi am | Mercredi pm| Jeudi pm
+
+a|L.JULES - O.CAPUOZZO
+
+* Cours: Les bases du frontend web
+* TP: mode projet Kot-Line
+
+
+a| O.CAPUOZZO - R.LAROUSSI
+
+* Cours : Gestion des exceptions 1/2
+* TP: mode projet Kot-Line
+
+a| R.LAROUSSI
+
+* Cours : UseCase and Co
+
+
+a| R.LAROUSSI
+
+* Cours : la Suite...
+
+a| O.CAPUOZZO - R.LAROUSSI
+
+* Cours : Gestion  des exceptions 2/3
+* TP : mode projet Kot-Line
+
+a| L.JULES - O.CAPUOZZO - E.VIGNA
+mode projet Kot-Line
 
 |===
 
