@@ -399,7 +399,8 @@ a| L.JULES - O.CAPUOZZO - E.VIGNA
 |===
 ====
 == Semaine 21 novembre
-
+[%collapsible]
+====
 [frame=all]
 |===
 |Lundi am| Mardi am | Mardi pm | Mercredi am | Mercredi pm| Jeudi pm
@@ -433,7 +434,42 @@ a| L.JULES - O.CAPUOZZO - E.VIGNA
 mode projet Kot-Line
 
 |===
+====
 
+== Semaine 28 novembre
+
+[frame=all]
+|===
+|Lundi am| Mardi am | Mardi pm | Mercredi am | Mercredi pm| Jeudi pm
+
+a|L.JULES - O.CAPUOZZO
+
+* Cours: Les bases du frontend web
+* TP: mode projet Kot-Line
+
+
+a| O.CAPUOZZO - R.LAROUSSI
+
+* Contrôle sur la Gestion des exceptions
+* TP: mode projet Kot-Line
+
+a| R.LAROUSSI
+
+* Cours :
+
+a| R.LAROUSSI (remplacé)
+
+* Cours :  Softskills et Gestion de Projet (https://vimeo.com/113939763)
+
+a| O.CAPUOZZO - R.LAROUSSI
+
+* Cours : Éléments de cybersécurité (document transmis - STRIDE et dev web skills)
+* TP : mode projet Kot-Line
+
+a| L.JULES - O.CAPUOZZO - E.VIGNA
+mode projet Kot-Line
+
+|===
 
 ////
 
