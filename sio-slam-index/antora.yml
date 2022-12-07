@@ -12,6 +12,7 @@ nav:
   - modules/ROOT/nav-sio-slam-epreuves.adoc
   - modules/ROOT/nav-sio-slam-cybersecurite.adoc
   - modules/ROOT/nav-kotlin.adoc
+  - modules/ROOT/nav-spring-boot.adoc
   - modules/ROOT/nav-sio-slam-controles-exercices.adoc
   - modules/ROOT/nav-sio-slam-glossaire.adoc
   - modules/ROOT/nav.adoc

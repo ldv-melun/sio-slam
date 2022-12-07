@@ -10,6 +10,7 @@ content:
      start_path: sio-slam-index
    - url: ./
      start_path: sio-slam-frontend
+   - url: https://github.com/ldv-melun/spring-boot-kotlin.git
    - url: ./
      start_path: sio-slam-backend
    - url: ./
@@ -20,8 +21,6 @@ content:
      start_path: sio-slam-projets
    - url: ./
      start_path: sio-slam-epreuves
-#   - url: ./
-#     start_path: sio-slam-uml
    - url: ./
      start_path: sio-slam-glossaire
    - url: ./
@@ -38,7 +37,6 @@ asciidoc:
    - asciidoctor-kroki
   attributes:
      kroki-fetch-diagram: true
-
 
 ui:
   bundle:

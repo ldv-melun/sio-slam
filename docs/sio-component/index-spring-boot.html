@@ -1,0 +1,2702 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Spring Boot Starter :: sio-slam</title>
+    <meta name="generator" content="Antora 3.0.1">
+    <link rel="stylesheet" href="../_/css/site.css">
+    <script>var uiRootPath = '../_'</script>
+    <link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="..">
+        <span> <img style="vertical-align: middle" src="../_/img/logo-sio-slam.png" alt="logo"> &nbsp;
+        sio-slam
+        </span>
+      </a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+<!--        <div class="navbar-item has-dropdown is-hoverable">-->
+<!--          <a class="navbar-link" href="#">Products</a>-->
+<!--          <div class="navbar-dropdown">-->
+<!--            <a class="navbar-item" href="#">Product A</a>-->
+<!--            <a class="navbar-item" href="#">Product B</a>-->
+<!--            <a class="navbar-item" href="#">Product C</a>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="navbar-item has-dropdown is-hoverable">-->
+<!--          <a class="navbar-link" href="#">Services</a>-->
+<!--          <div class="navbar-dropdown">-->
+<!--            <a class="navbar-item" href="#">Service A</a>-->
+<!--            <a class="navbar-item" href="#">Service B</a>-->
+<!--            <a class="navbar-item" href="#">Service C</a>-->
+<!--          </div>-->
+<!--        </div>-->
+        <a class="navbar-item" href="index-sio-slam.html">Année en cours</a>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download ?</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="sio-component" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index-glossaire.html">SIO-SLAM</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Présentation</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="index-sio-slam.html">index sio slam</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="axe-directeur-2022-2023.html">schéma directeur</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Backend</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="todo-page.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="todo-page.html">Principles</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="todo-page.html">Exemple</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="todo-page.html">Exercices</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Sous-categorie A</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="todo-page.html">item A.1</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="todo-page.html">item A.2</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="todo-page.html">item A.3</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Frontend</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="index-frontend.html">Home Page</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="intro-frontend.html">Explain introduction</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Programmation</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="notion-fonction.html">Fonction - l&#8217;essentiel 1/2</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="index-qualite.html">Facteurs de qualité</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Analyse</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="index-analyse.html">Conduire une analyse</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="index-sql.html">SQL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="index-nosql.html">NoSQL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">UML (Unified Modeling Language)</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="index-uml.html">Présentation Générale</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="d_uc.html">Diagrammes UML</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="d_uc.html">Diagramme des cas d&#8217;utilisation</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="d_classe.html">Diagramme de classes</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">TP et activités</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="dc_tp1.html">TP N°1</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="_attachments/TP1_CORR.pdf">Corrigé TP1</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Projets</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="projet-0.html">Projet 0</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="projet-1.html">Projet 1</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="projet-2.html">Projet 2</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="projet-3.html">Projet 3</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Épreuves professionnelles</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="intro-epreuves.html">Présentation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="E4-CCF.html">E4 - CCF</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="E5-CCF.html">E5 - CCF</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="E6.html">E6 - épreuve nationale</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="intro-cybersecurite.html">Cybersecurite</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Activites.html">Activités</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Kotlin</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="index-kotlin.html">Les bases de Kotlin</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Spring Boot Kotlin</span>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="index-spring-boot.html">Initiation à Spring Boot</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="index-controles-exercices.html">Contrôles &amp; Exercices</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="index-glossaire.html">Glossaire</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">SIO-SLAM</span>
+    <span class="version">default</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="index-glossaire.html">SIO-SLAM</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index-glossaire.html">default</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="index-sio-slam.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index-glossaire.html">SIO-SLAM</a></li>
+    <li>Spring Boot Kotlin</li>
+    <li><a href="index-spring-boot.html">Initiation à Spring Boot</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/ldv-melun/spring-boot-kotlin/edit/master/modules/ROOT/pages/index-spring-boot.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Spring Boot Starter</h1>
+<div class="sect1">
+<h2 id="_le_protocole_http"><a class="anchor" href="#_le_protocole_http"></a>1. Le protocole HTTP</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_modèle_darchitecture"><a class="anchor" href="#_modèle_darchitecture"></a>1.1. Modèle d&#8217;architecture</h3>
+<div class="paragraph">
+<p>Le modèle traditionnel d&#8217;architecture des applications web est de type 3 tiers (clients, serveur(s), SBBD(s)), chaque tiers étant, par définition, positionné sur des matériels différents, éloignés les uns des autres mais reliés par des connexions réseaux.</p>
+</div>
+<div class="imageblock kroki">
+<div class="content">
+<img src="_images/diag-6e6a82297c7a9eb2736eea1a9fac4794a0234586.svg" alt="Interaction type entre tiers d&#8217;une application web">
+</div>
+<div class="title">Figure 1. Interaction type entre tiers d&#8217;une application web</div>
+</div>
+<div class="paragraph">
+<p>Les applications se situent sur le tiers du milieu, sur le "server d&#8217;applications" (derrière un serveur HTTP le plus souvent).</p>
+</div>
+<div class="paragraph">
+<p>En environnement de développement, les développeurs disposent d&#8217;un <code>internal web server</code>, un serveur http intégré à leur IDE. Dans le cadre d&#8217;application écrite en Java, c&#8217;est le serveur d&#8217;application <a href="https://tomcat.apache.org/">Apache Tomcat</a>, qui est souvent utilisé pour les tests (en phase de développement).</p>
+</div>
+<div class="paragraph">
+<p>En environnement de production, l&#8217;application pourra être déployée avec un serveur web intégré (tomcat) ou derrière un server d&#8217;applications existant.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_interaction_client_application"><a class="anchor" href="#_interaction_client_application"></a>1.2. Interaction Client &lt;&#8594; Application</h3>
+<div class="paragraph">
+<p>Conformément au modèle d&#8217;architecture 3 tiers web, le client utilise le protocole HTTP<sup class="footnote" id="_footnote_disclaimer">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup> pour interagir avec l&#8217;application web. Le client web le plus populaire est le navigateur Web.</p>
+</div>
+<div class="paragraph">
+<p>HTTP (<em>Hyper Text Transfert Protocol</em>) a été inventé par Tim Berners-Lee, il définit
+la façon dont un serveur et un client web échangent des informations. HTTP ne
+définit ni le format des informations transférées (HTML, GIF, JPEG, &#8230;&#8203;) ni
+le mode de construction des adresses Web (URLs) qui font l&#8217;objet de documents de
+normalisation à part.</p>
+</div>
+<div class="paragraph">
+<p>HTTP définit un ensemble de commandes permettant l&#8217;interaction entre un client
+et un serveur qui supportent le protocole. HTTP est un procole déconnecté ou
+sans état ce qui signifie qu&#8217;il n&#8217;assure pas le suivi d&#8217;un dialogue entre le
+client et le serveur. HTTP est définit au-dessus de TCP qui est un protocole
+connecté et utilise le port TCP 80.</p>
+</div>
+<div class="paragraph">
+<p>Avec HTTP le client initie le dialogue en envoyant une requête à l&#8217;application, le
+serveur répond au client et coupe la communication (HTTP/1.0).</p>
+</div>
+<div class="imageblock kroki">
+<div class="content">
+<img src="_images/diag-0fbb2376c4208a6c7d91287dd8f596f4d2ea9347.svg" alt="Echange client &lt;&#8594; application HTTP">
+</div>
+<div class="title">Figure 2. Echange client &lt;&#8594; application HTTP</div>
+</div>
+<div class="listingblock">
+<div class="title">Structure d&#8217;une requête HTTP</div>
+<div class="content">
+<pre>COMMANDE URI VERSION
+En-tête de la requête
+éventuellement sur plusieurs lignes
+[ligne vide]
+Corps de la requête sur plusieurs
+lignes si nécessaire</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Exemple de requête</div>
+<div class="content">
+<pre>GET / HTTP/1.1
+Host: www2.vinci-melun.org
+User-Agent: curl/7.54.0
+Accept: */*</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Structure d&#8217;une réponse HTTP</div>
+<div class="content">
+<pre>VERSION CODE-REPONSE TEXTE-REPONSE
+entête de réponse
+sur plusieurs lignes si
+nécessaire
+[ligne vide]
+corps de la réponse
+sur autant de lignes
+que nécessaire</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Exemple de réponse</div>
+<div class="content">
+<pre>HTTP/1.1 200 OK
+Date: Fri, 24 Nov 2017 17:10:31 GMT
+Server: Apache/2.4.10 (Debian)
+Set-Cookie: PHPSESSID=8rkmkmu65saa92q0b7vig0mg51; path=/
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Pragma: no-cache
+Link: &lt;http://www2.vinci-melun.org/wp-json/&gt;; rel="https://api.w.org/"
+Link: &lt;https://wp.me/P8ik5n-ba&gt;; rel=shortlink
+Vary: Accept-Encoding
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+&lt;!DOCTYPE html&gt;
+&lt;html class="no-js" lang="fr-FR" &gt;
+  &lt;head&gt;
+
+....
+
+&lt;/html&gt;</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_les_commandes"><a class="anchor" href="#_les_commandes"></a>1.3. Les commandes</h3>
+<div class="paragraph">
+<p>Les commandes les plus utlisées sont par les navigateurs sont <code>GET</code>, <code>POST</code> et <code>HEAD</code>, les applications
+REST font également usage de <code>PUT</code> et <code>DELETE</code>.</p>
+</div>
+<div class="sect3">
+<h4 id="_get"><a class="anchor" href="#_get"></a>1.3.1. GET</h4>
+<div class="paragraph">
+<p>Permet de récupérer une ressource depuis une URI sur le serveur. Cette URI peut faire
+penser à un chemin d&#8217;accès à un fichier et c&#8217;est souvent le cas côté serveur,
+mais ce n&#8217;est pas une obligation, loin de là</p>
+</div>
+<div class="paragraph">
+<p>Il est toujours possible de passer des paramêtres au serveur via une requête GET, mais ces paramètres
+apparaissent dans l&#8217;URL. Une URL avec des paramêtres a la forme suivante :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>http://127.0.0.1/user?id=1274</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Tous les éléments après le ? sont des paramètres de la requête, le ? lui-même n&#8217;en fait pas partie,
+c&#8217;est un délimiteur. Même s&#8217;il n&#8217;y a pas de norme sur la structure exacte
+de la requête la forme la plus courante est <code>clé=valeur</code> pour un paramètre. S&#8217;il y a plusieurs paramètres
+les paires <code>clé=valeur</code> sont séparés par des esperluettes <code>&amp;</code>. Par exemple :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>http://127.0.0.1/chercher?cpost=77000&amp;categorie=5</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Les caractères autorisés dans la chaîne de requête sont :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>[A-Z]</code></p>
+</li>
+<li>
+<p><code>[a-z]</code></p>
+</li>
+<li>
+<p><code>[0-9]</code></p>
+</li>
+<li>
+<p><code>*</code>, <code>-</code>, <code>.</code> et <code>_</code></p>
+</li>
+<li>
+<p>Les autres caractères sont remplacés par leur équivalent numérique hexadécimal précédé du signe <code>%</code>,
+par exemple <code>@</code> est codé <code>%40</code> et <code>+</code> est codé <code>%2B</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Le résultat d&#8217;une
+requête <code>GET</code> ou <code>HEAD</code> devrait pouvoir être mis en cache sauf si l&#8217;en-tête de
+réponse <code>Cache-header</code>
+en décide autrement.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_head"><a class="anchor" href="#_head"></a>1.3.2. HEAD</h4>
+<div class="paragraph">
+<p>La commande <code>HEAD</code> permet de récupérer l&#8217;en-tête correspondant à une ressource la réponse
+est identique à celle d&#8217;une réponse à une commande <code>GET</code>, mais sans les données.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_post"><a class="anchor" href="#_post"></a>1.3.3. POST</h4>
+<div class="paragraph">
+<p>Une requête <code>POST</code> est utilisée pour envoyer des données au serveur, généralement le contenu
+d&#8217;un formulaire dans le cadre d&#8217;une application web traditionnelle. Les données sont stockées dans le
+corps de la requête et leur type est indiqué par l&#8217;entête <code>content-type</code> de la requête.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_put"><a class="anchor" href="#_put"></a>1.3.4. PUT</h4>
+<div class="paragraph">
+<p>Une requête <code>PUT</code> est utilisée de la même façon qu&#8217;une requête <code>POST</code>, à un
+détail prêt : elle est <em>idempotente</em>, c&#8217;est à dire que peu importe le nombre
+de fois où elle est envoyée, elle ne modifie l&#8217;état du server qu&#8217;une seule fois.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_travaux_pratiques"><a class="anchor" href="#_travaux_pratiques"></a>1.4. Travaux pratiques</h3>
+<div class="sect3">
+<h4 id="_prérequis"><a class="anchor" href="#_prérequis"></a>1.4.1. Prérequis</h4>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://curl.se/download.html">curl</a> opérationnel sur votre système</p>
+</li>
+<li>
+<p>une petite application web opérationnelle : <a href="http://51.68.231.195:8080/hello" class="bare">http://51.68.231.195:8080/hello</a> (dont on peut obtenir le code <a href="https://github.com/ldv-melun/sbfirst">ici</a>)</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<strong>cURL</strong> (abréviation de <em>client URL request library</em> : « bibliothèque de requêtes aux URL pour les clients » ou see URL : « voir URL ») est une interface en ligne de commande, écrite en C, destinée à récupérer le contenu d&#8217;une ressource accessible par un réseau informatique. <a href="https://fr.wikipedia.org/wiki/CURL" class="bare">https://fr.wikipedia.org/wiki/CURL</a>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_test_de_lapplication"><a class="anchor" href="#_test_de_lapplication"></a>1.4.2. Test de l&#8217;application</h4>
+<div class="paragraph">
+<p>Plusieurs façons de tester l&#8217;application</p>
+</div>
+<div class="listingblock">
+<div class="title">À l&#8217;aide de votre navigateur</div>
+<div class="content">
+<pre>http://51.68.231.195:8080</pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/sbfirst8080.png" alt="sbfirst">
+</div>
+</div>
+<div class="listingblock">
+<div class="title">En ligne de commande, à l&#8217;aide de cURL</div>
+<div class="content">
+<pre>curl http://51.68.231.195:8080</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Vous recevez le texte (code source html) de la réponse (le même que reçoit le navigateur)</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_challenge"><a class="anchor" href="#_challenge"></a>1.4.3. Challenge</h4>
+<div class="paragraph">
+<p>À l&#8217;aide de votre navigateur, tester la route suivante :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>http://51.68.231.195:8080/hello</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Puis la route suivante, paramétrée :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>http://51.68.231.195:8080/hello?nom=Django</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Puis, de nouveau la route suivante, sans paramètre :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>http://51.68.231.195:8080/hello</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Normalement le serveur s&#8217;est rappelé de votre dernière requête.</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Ce qui est attendu</div>
+<div class="paragraph">
+<p>Votre challenge consiste à reproduire ce scénario, mais en ligne de commande, avec <strong>cURL</strong>. Un rapport détaillé est attendu !</p>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_pour_vous_aider"><a class="anchor" href="#_pour_vous_aider"></a>Pour vous aider</h5>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Des éléments conceptuels permettant de comprendre le problème sont décrits ci-dessous.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_techniques_de_suivi_de_sessions_http"><a class="anchor" href="#_techniques_de_suivi_de_sessions_http"></a>1.5. Techniques de suivi de sessions HTTP</h3>
+<div class="paragraph">
+<p>Rappel : HTTP est un protocole sans état</p>
+</div>
+<div class="paragraph">
+<p>Conséquence : un serveur HTTP n&#8217;a pas les moyens (via le protocole HTTP) de reconnaître une séquence de requêtes provenant d&#8217;un même client. L&#8217;adresse IP n&#8217;est pas suffisante pour identifier un client parce qu&#8217;elle peut faire référence à un serveur proxy sortant par exemple.</p>
+</div>
+<div class="paragraph">
+<p>Problème : Beaucoup d&#8217;applications web doivent gérer des états. Exemple : formulaire multi-pages, gestion d&#8217;un caddie, d’une session utilisateur.</p>
+</div>
+<div class="paragraph">
+<p>Pour contourner ce problème, des données d’état doivent transiter entre les clients et le serveur et être sauvegardées sur un de ces deux tiers. C&#8217;est un des aspects très sensible, en terme de cybersécurité,  du protocole HTTP.</p>
+</div>
+<div class="paragraph">
+<p>Voici les solutions les plus courantes pour réaliser un suivi de sessions utilisateur.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Techniques de suivi de sessions utilisateur</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Solution</th>
+<th class="tableblock halign-left valign-top">Données portées par le client</th>
+<th class="tableblock halign-left valign-top">Données portées par le serveur</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Champs cachés de formulaire</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Réécriture de l&#8217;URL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cookies persistants</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">API de suivi de session par identifiant de session</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="_champs_de_formulaire_cachés"><a class="anchor" href="#_champs_de_formulaire_cachés"></a>1.5.1. Champs de formulaire cachés</h4>
+<div class="paragraph">
+<p>L&#8217;utilisation de champs de formulaire cachés permet au serveur de transmettre des informations au client qu&#8217;il retransmet au serveur de façon transparente.
+Exemple :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-html hljs" data-lang="html">&lt;form name='formcaddie1' onSubmit='return checkdata()'&gt;
+  &lt;input type='hidden' name='code' value='3'&gt;
+  &lt;input type='hidden' name='niveau' value='expert'&gt;
+  &lt;input type='hidden' name='user' value='julien'&gt;
+  ...
+  &lt;input type='text' name='quantiteprod' size='3'&gt;
+  &lt;p&gt;&lt;input type='submit' value='valider' name='valider'&gt;
+&lt;/form&gt;</code></pre>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_avantages"><a class="anchor" href="#_avantages"></a>Avantages</h5>
+<div class="paragraph">
+<p>Portabilité : les champs cachés sont supportés par tous les navigateurs.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_inconvénients"><a class="anchor" href="#_inconvénients"></a>Inconvénients</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Nécessite toujours une construction dynamique des pages avec toutes les informations.</p>
+</li>
+<li>
+<p>Problème côté client lorsque le navigateur s&#8217;arrête, qu&#8217;une page est mise dans un signet etc.
+Utilisation systématique de <code>&lt;form&gt;</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_réécriture_de_lurl"><a class="anchor" href="#_réécriture_de_lurl"></a>1.5.2. Réécriture de l&#8217;URL</h4>
+<div class="paragraph">
+<p>L&#8217;idée consiste à placer des paramètres dans les URLs renvoyées à l&#8217;utilisateur sous forme de liens <code>&lt;a href='construction dynamique'&gt; lien &lt;/a&gt;</code>
+afin d&#8217;assurer le suivi de session.</p>
+</div>
+<div class="paragraph">
+<p>Par exemple :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-html hljs" data-lang="html">&lt;a href='/listerProduits?user=julien&amp;categorie=classique'&gt; lien &lt;/a&gt;</code></pre>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_avantages_2"><a class="anchor" href="#_avantages_2"></a>Avantages</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Portabilité, car supporté par tous les navigateurs.</p>
+</li>
+<li>
+<p>Anonymat, l&#8217;utilisateur ne se fera connaître qu&#8217;au moment de la vente</p>
+</li>
+<li>
+<p>N&#8217;est pas tenu d&#8217;utiliser la balise &lt;FORM&gt;</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_inconvénients_2"><a class="anchor" href="#_inconvénients_2"></a>Inconvénients</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Nécessite toujours une construction dynamique des URLs. Peut être fastidieux à mettre en place et maintenir.</p>
+</li>
+<li>
+<p>Les URLs doivent être encodées (présence de caractères réservés)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_cookies_http"><a class="anchor" href="#_cookies_http"></a>1.5.3. Cookies HTTP</h4>
+<div class="paragraph">
+<p>Intégré au protocole HTTP, un cookie est un ensemble de données texte enregistré sur le poste client qui contient des informations initialement transmises
+par un serveur web à un navigateur.</p>
+</div>
+<div class="paragraph">
+<p>Un cookie à une portée (domaine) et une durée de vie. Voir <a href="https://developer.mozilla.org/fr/docs/Web/HTTP/Cookies">cookie</a></p>
+</div>
+<div class="paragraph">
+<p>Lorsqu&#8217;un navigateur reçoit en entête HTTP l&#8217;instruction (<code>Set-Cookie: nom=valeur</code>), le couple clé=valeur est sauvé sur disque et le renvoie systématiquement, à chaque nouvelle
+requête HTTP du client (dans l&#8217;entête HTTP <code>Cookie: nom=valeur</code>), au serveur (l&#8217;application web) à l&#8217;origine du cookie.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GET / HTTP/1.1
+Host: www.exemple.org
+...
+
+HTTP/1.1 200 OK
+Content-type: text/html
+Set-Cookie: name=value
+...
+
+GET /page.html HTTP/1.1
+Host: www.exemple.org
+Cookie: name=value
+...</pre>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_avantages_3"><a class="anchor" href="#_avantages_3"></a>Avantages</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Facilité et cohérence de mise en œuvre (le client détient les informations le concernant).</p>
+</li>
+<li>
+<p>Bonne capacité de personnalisation</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_inconvénients_3"><a class="anchor" href="#_inconvénients_3"></a>Inconvénients</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Pas plus de 20 cookies par domaine et pas plus de 300 cookies par utilisateur</p>
+</li>
+<li>
+<p>La taille d&#8217;un cookie peut être limitée à 4096 octets (4ko)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_api_de_suivi_de_session_par_identifiant_de_session"><a class="anchor" href="#_api_de_suivi_de_session_par_identifiant_de_session"></a>1.5.4. API de suivi de session par identifiant de session</h4>
+<div class="paragraph">
+<p>Le dispositif de suivi de session est un mécanisme automatique, déclenché coté serveur ;
+un <strong>identifiant de session</strong> est alors généré qui sera stocké à la fois sur le serveur <strong>et</strong> sur le client, ce dernier aura la responsabilité de le transmettre au serveur lors de chacune de ses requêtes à ce même
+ serveur (par cookie ou paramètre d&#8217;url).</p>
+</div>
+<div class="paragraph">
+<p>L&#8217;identifiant de session est une valeur arbitraire qui permet d&#8217;identifier (côté serveur)
+un utilisateur d&#8217;un autre. L&#8217;identifiant de session fait alors office de clé d&#8217;accès à
+des informations personnelles à une session (un utilisateur).
+Ces informations sont stockées sur le serveur (en mémoire, fichiers texte ou dans une base de données)</p>
+</div>
+<div class="paragraph">
+<p>La création de ce type d&#8217;identifiant et la technique de transmission (par url ou par cookie) sont pris
+en charge par les outils de développement web (sous la forme d&#8217;une librairie ou d&#8217;une classe <code>Session</code>).
+Le développeur ne manipule que rarement l&#8217;id de session; l&#8217;accès aux données de session s&#8217;opère le plus
+souvent via une structure de type dictionnaire (ensemble de couples clé/valeur).</p>
+</div>
+<div class="sect4">
+<h5 id="_avantages_4"><a class="anchor" href="#_avantages_4"></a>Avantages</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Traitement générique déjà implémenté</p>
+</li>
+<li>
+<p>Utilise la technologie Cookie HTTP</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_inconvénients_4"><a class="anchor" href="#_inconvénients_4"></a>Inconvénients</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Utilise la technologie Cookie HTTP</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_introduction"><a class="anchor" href="#_introduction"></a>2. Introduction</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_spring"><a class="anchor" href="#_spring"></a>2.1. Spring</h3>
+<div class="paragraph">
+<p>Spring, un framework java pour les applications connectées, rend la programmation Kotlin/Java plus rapide, plus facile et plus sûre pour tout le monde. L&#8217;orientation de Spring sur la vitesse, la simplicité et la productivité en a fait l&#8217;un des plus populaires framework Java.</p>
+</div>
+<div class="paragraph">
+<p>On retrouve Spring dans tous les contextes : depuis les sites de commerce en ligne jusqu&#8217;aux voitures connectées, en passant par les applications de streaming TV et bien d&#8217;autres applications.</p>
+</div>
+<div class="paragraph">
+<p>Spring est un ensemble d&#8217;extensions et de bibliothèques tierces intégrées qui permet de bâtir à peu près n&#8217;importe quel type d&#8217;applicaton. Au coeur de Spring on retrouve l&#8217;Inversion de Contôle (Inversion of Control, <em>IoC</em>) et l&#8217;Injection de dépendances (Dependency Injection, <em>DI</em>), ces deux caractéristiques sont à la base d&#8217;un grand nombre d&#8217;autres caractéristiques et fonctionnalités.</p>
+</div>
+<div class="paragraph">
+<p>Une application Spring <em>classique</em> est relativement difficile à mettre en oeuvre et demande une expertise certaine pour définir l&#8217;ossature et les fichiers de configuration.</p>
+</div>
+<div class="paragraph">
+<p>Spring Boot est une version de Spring basé sur le principe d'<strong>auto-configuration</strong>, plus facile à mettre en oeuvre tout en offrant les mêmes avantages que Spring. Spring Boot évite notamment les fichiers de configuration XML complexes. Par ailleurs, Kotlin simplifie la syntaxe et renforce la cohérence et sureté du code.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_spring_boot"><a class="anchor" href="#_spring_boot"></a>2.2. Spring Boot</h3>
+<div class="paragraph">
+<p>Spring Boot est une version de Spring qui <strong>privilégie les conventions</strong> plutôt que les configurations (<em>convention over configuration</em>), à savoir que si le développeur respecte un certain nombre de normes comme le nommage, le placement des fichiers de code, les annotations, &#8230;&#8203; il peut s&#8217;affranchir d&#8217;un grand nombre de fichiers de configuration. Spring fournit même un site dédié qui permet de générer un squelette d&#8217;application, <a href="https://start.spring.io" class="bare">https://start.spring.io</a>, connu également sous le nom de <a href="https://start.spring.io">Spring Initializr</a>.</p>
+</div>
+<div class="sect3">
+<h4 id="_spring_boot_cest"><a class="anchor" href="#_spring_boot_cest"></a>2.2.1. Spring Boot c&#8217;est :</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Un outil de construction rapide de projets Spring</p>
+<div class="ulist">
+<ul>
+<li>
+<p>L’intégration des nombreux sous-projets Spring</p>
+</li>
+<li>
+<p>La possibilité de choisir entre plusieurs technologies pour la persistance, la logique applicative ou la gestion des vues. Plusieurs technologies peuvent cohabiter</p>
+</li>
+<li>
+<p>L’assurance de toujours avoir les bonnes dépendances</p>
+</li>
+<li>
+<p>Etre prêt à commencer à programmer en quelques minutes</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Une vision convention plutôt que configuration</p>
+<div class="ulist">
+<ul>
+<li>
+<p>L’application est prévue pour fonctionner avec un ensemble cohérents de paramètres par défaut</p>
+</li>
+<li>
+<p>La configuration et la dépendance entre beans se fait principalement par annotations</p>
+</li>
+<li>
+<p>Utilisation de fichiers properties simples pour surcharger les paramètres par défaut</p>
+</li>
+<li>
+<p>On peut quand même utiliser des fichiers de configuration XML en faisant un effort</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_spring_boot_nest_pas"><a class="anchor" href="#_spring_boot_nest_pas"></a>2.2.2. Spring Boot n&#8217;est pas :</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Une baguette magique</p>
+</li>
+<li>
+<p>Un outil de scaffolding</p>
+</li>
+<li>
+<p>La solution pour ne pas apprendre les mécanismes internes de Spring</p>
+</li>
+<li>
+<p>Un outil pour les allergiques à <em>Maven</em> et autre <em>Gradle</em></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_les_dépendances_dune_application_spring_boot"><a class="anchor" href="#_les_dépendances_dune_application_spring_boot"></a>2.3. Les dépendances d&#8217;une application Spring Boot</h3>
+<div class="paragraph">
+<p><em>Spring Initializr</em> permet de choisir les dépendances/frameworks à utiliser pour la conception d&#8217;une application certaines dépendances sont presque indispensables à la création d&#8217;une application Web, d&#8217;autres sont optionnelles et peuvent être choisies plus tard.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Les dépendances indispensables :</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Spring Boot DevTools</code> : permet des redémarrages rapides des applications, le rechargement temps réel des configurations pour une expérience de programmation plus fluide. Mais consomme un peu plus de ressources.</p>
+</li>
+<li>
+<p><code>Spring Web</code> : pour construire des applications Web MVC, y compris RESTFUL. Utilise Apache Tomcat comme conteneur de servlets par défaut.</p>
+</li>
+<li>
+<p><code>Thymeleaf</code> ou <code>Apache Freemarker</code> : exemples de moteurs de templates pour gérer les pages HTML, ne pas en choisir plus d&#8217;un dans un projet, autant que possible.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Les dépendances optionnelles :</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Spring Data JPA</code> : pour gérer la persistance des données dans une base SQL</p>
+</li>
+<li>
+<p><code>Apache Derby Database</code> ou <code>H2 Database</code> ou <code>PostgreSQL Driver</code> ou <code>MySQL Driver</code> : pour gérer les accès à une base de données SQL. Nécessaire pour <code>Spring Data JPA</code>.</p>
+</li>
+<li>
+<p><code>Spring Security</code> : framework d&#8217;authentification et d&#8217;autorisation pour créer des applications sécurisées. Attention dès que ce composant est installé l&#8217;application demande une authentification.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Exemple d&#8217;interactions d&#8217;une application web MVC (source : <a href="https://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/html/mvc.html)">https://docs.spring.io</a>
+:<span class="image"><img src="_images/mvc-doc.spring.io.png" alt="mvc doc.spring.io"></span></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_préparation_de_votre_machine_de_dev"><a class="anchor" href="#_préparation_de_votre_machine_de_dev"></a>2.4. Préparation de votre machine de dev</h3>
+<div class="paragraph">
+<p>Rendez-vous <a href="https://github.com/ldv-melun/sbfirst">Starter app Spring Boot Kotlin</a> afin de valider vos prérequis machine pour le développement web. Consulter le README et suivre les étapes qui vont vous amener à télécharger le projet, l&#8217;ouvrir dans un IDE, le compiler et l&#8217;exécuter.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_générer_une_application_spring_boot"><a class="anchor" href="#_générer_une_application_spring_boot"></a>2.5. Générer une application Spring Boot</h3>
+<div class="paragraph">
+<p>Votre machine est maintenant opérationnelle. Vous pouvez vous engagez dans le développement web avec Spring Boot.</p>
+</div>
+<div class="paragraph">
+<p>Le moyen le plus simple pour générer une application Spring Boot est de passer par le site <a href="https://start.spring.io" class="bare">https://start.spring.io</a> qui permet de positionner un certain nombre de paramètres et de choisir les dépendances à utiliser.</p>
+</div>
+<div class="paragraph">
+<p>C&#8217;est ce que nous allons voir maintenant.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_première_application"><a class="anchor" href="#_première_application"></a>3. Première application</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_une_première_application_spring_boot"><a class="anchor" href="#_une_première_application_spring_boot"></a>3.1. Une première application Spring Boot</h3>
+<div class="paragraph">
+<p>Nous allons créer une application Spring Boot <em>from scratch</em> (à partir de zéro)</p>
+</div>
+<div class="paragraph">
+<p>Allez sur : <a href="https://start.spring.io" class="bare">https://start.spring.io</a></p>
+</div>
+<div class="sect3">
+<h4 id="_création_du_projet"><a class="anchor" href="#_création_du_projet"></a>3.1.1. Création du projet</h4>
+<div class="paragraph">
+<p>Dans Spring Initializr effectuez les choix suivants :</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/sb-first-kotlin-initalizr.png" alt="sbfirst.spring.initialzr">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Paramètres :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Project : Maven Project</p>
+</li>
+<li>
+<p>Language : Kotlin</p>
+</li>
+<li>
+<p>Spring Boot version : 2.7.4</p>
+</li>
+<li>
+<p>Métadonnées du projet :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Group : fr.vincimelun</p>
+</li>
+<li>
+<p>Artifact : sbfirst</p>
+</li>
+<li>
+<p>Name : Spring Boot First</p>
+</li>
+<li>
+<p>Description : Première application Spring Boot</p>
+</li>
+<li>
+<p>Package name : fr.vincimelun.sbfirst</p>
+</li>
+<li>
+<p>Packaging : jar</p>
+</li>
+<li>
+<p>Java (JVM) version : 17</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Dependencies :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Spring Boot DevTools</p>
+</li>
+<li>
+<p>Spring Web</p>
+</li>
+<li>
+<p>Thymeleaf</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Spring Initilizr génére un fichier <code>.zip</code>, <code>sbfirst.zip</code>, qui contient le projet prêt à l&#8217;emploi.</p>
+</div>
+<div class="paragraph">
+<p>Une fois téléchargé, décompressez-le dans un dossier <code>projets</code>, puis ouvrir le dossier du projet (et non son dossier parent) avec votre IDE.</p>
+</div>
+<div class="literalblock">
+<div class="title">Arborescence du projet <code>sbfirst</code></div>
+<div class="content">
+<pre> sbfirst
+ ├── .gitignore
+ ├── HELP.md
+ ├── mvnw
+ ├── mvnw.cmd
+ ├── pom.xml <i class="conum" data-value="1"></i><b>(1)</b>
+ └── src
+     ├── main
+     │   ├── kotlin
+     │   │   └── fr
+     │   │       └── vincimelun
+     │   │           └── sbfirst
+     │   │               └── SpringBootFirstApplication.kt <i class="conum" data-value="2"></i><b>(2)</b>
+     │   └── resources
+     │       ├── application.properties <i class="conum" data-value="3"></i><b>(3)</b>
+     │       ├── static <i class="conum" data-value="4"></i><b>(4)</b>
+     │       └── templates <i class="conum" data-value="5"></i><b>(5)</b>
+     └── test
+         └── kotlin
+             └── fr
+                 └── vincimelun
+                     └── sbfirst
+                         └── SpringBootFirstApplicationTests.kt</pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Fichier <code>Maven</code> définissant le projet</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>L&#8217;application principale (fonction main)</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Le fichier de configuration principal de l&#8217;application</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>Le dossier pour stocker les éléments fixes comme les images ou les feuilles de style css</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>Le dossier de stockage des templates Freemarker ou Thymeleaf</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>La classe principale de l&#8217;application ressemble à celles qu&#8217;on peut écrire pour n&#8217;importe quelle application en mode ligne de commande : une fonction <code>main</code> statique qui permet d&#8217;instancier et de lancer l&#8217;application.</p>
+</div>
+<div style="page-break-after: always;"></div>
+<div class="listingblock">
+<div class="title">La classe principale de l&#8217;application</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">package fr.vincimelun.sbfirst
+
+import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.boot.runApplication
+
+@SpringBootApplication
+class SpringBootFirstApplication
+
+fun main(args: Array&lt;String&gt;)  { <i class="conum" data-value="1"></i><b>(1)</b>
+  runApplication&lt;SpringBootFirstApplication&gt;(*args) <i class="conum" data-value="2"></i><b>(2)</b>
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Fonction <code>main</code> de l&#8217;application</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Construction et lancement de l&#8217;application</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Le fichier <code>application.properties</code> est vide, il ne contiendra que les éléments particuliers à la configuration de l&#8217;application comme les informations de connexion aux bases de données, ou la configuration du moteur de templates. Par défaut tout doit fonctionner sur les <code>conventions</code>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_configurer_le_projet"><a class="anchor" href="#_configurer_le_projet"></a>3.1.2. Configurer le projet</h4>
+<div class="listingblock">
+<div class="title">src/main/resources/application.properties</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties"># vide</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_en_cas_de_problème"><a class="anchor" href="#_en_cas_de_problème"></a>3.2. En cas de problème</h3>
+<div class="paragraph">
+<p>L&#8217;application utilise <a href="https://maven.apache.org/">Apache Maven</a> pour la gestion de ses dépendances.</p>
+</div>
+<div class="paragraph">
+<p>Si vous utilisez des postes informatiques d&#8217;une organisation dont les connexions réseaux sont filtrées par un <strong>proxy</strong>, il vous faudra renseigner les données du proxy auprès de Maven.</p>
+</div>
+<div class="paragraph">
+<p>Pour cela vous devez comprendre comment fonctionne Maven : Par défaut, les librairies dont dépend une application sont stockées dans un dossier nommé <code>.m2</code>, à la racine du compte utilisateur (le <code>home directory</code>).</p>
+</div>
+<div class="paragraph">
+<p>La solution consiste alors à créer un fichier nommé <code>settings.xml</code> à la racine de <code>.m2</code>, dont le contenu est basé sur ce schéma</p>
+</div>
+<div class="paragraph">
+<p><code>~/.m2/settings.xml</code> (source : <a href="https://maven.apache.org/guides/mini/guide-proxies.html" class="bare">https://maven.apache.org/guides/mini/guide-proxies.html</a>)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">&lt;settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd"&gt;
+
+  &lt;proxies&gt;
+    &lt;proxy&gt;
+      &lt;id&gt;myproxy&lt;/id&gt;
+      &lt;active&gt;true&lt;/active&gt;
+      &lt;protocol&gt;http&lt;/protocol&gt;
+      &lt;host&gt;proxy.somewhere.com&lt;/host&gt;
+      &lt;port&gt;8080&lt;/port&gt;
+    &lt;/proxy&gt;
+  &lt;/proxies&gt;
+
+&lt;/settings&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Remarque : le protocole <code>http</code> est celui utilisé pour atteindre le proxy. À modifier le cas échéant.</p>
+</div>
+<div class="paragraph">
+<p>Voir aussi <code>File&gt;Settings&gt;Proxy</code></p>
+</div>
+<div class="paragraph">
+<p>Voir aussi <code>File&gt;Invalide Caches&#8230;&#8203;</code> puis <code>restart</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_un_contrôleur_avec_model_et_view_thymeleafhtml"><a class="anchor" href="#_un_contrôleur_avec_model_et_view_thymeleafhtml"></a>3.3. Un contrôleur avec Model et View (Thymeleaf+HTML)</h3>
+<div class="paragraph">
+<p>Un contrôleur est une classe qui est annotée avec <code>@Controller</code> et qui contient des méthodes associées à des URI, ces methodes peuvent être associée à des annotations comme <code>@GetMapping</code>, <code>@PostMapping</code>, &#8230;&#8203; ou <code>@RequestMapping</code> plus générique. Les paramètres passés à ces méthodes sont variables et interprêtés par le moteur de Spring MVC.</p>
+</div>
+<div class="paragraph">
+<p>Par convention les contrôleurs sont créés dans le package <code>controller</code> de l&#8217;application</p>
+</div>
+<div class="listingblock">
+<div class="title">src/main/kotlin/fr/vincimelun/sbfirst/controller/MainController</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">package fr.vincimelun.sbfirst.controller
+
+import org.springframework.stereotype.Controller
+import org.springframework.ui.Model
+import org.springframework.ui.set
+import org.springframework.web.bind.annotation.GetMapping
+
+@Controller
+class MainController { <i class="conum" data-value="1"></i><b>(1)</b>
+
+    @GetMapping("/") <i class="conum" data-value="2"></i><b>(2)</b>
+    fun index(model: Model): String { <i class="conum" data-value="3"></i><b>(3)</b>
+        model["title"] = "Hello world !" <i class="conum" data-value="4"></i><b>(4)</b>
+        return "main/index" <i class="conum" data-value="5"></i><b>(5)</b>
+    }
+
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Par convention, les classes contrôleurs sont préfixées par <code>Controller</code>.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Route correspondant pour la méthode GET et l&#8217;URI <code>/</code></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Pour passer des données au template associé à l&#8217;URI, il suffit de déclarer un objet de type <code>Model</code> dans les paramètres de la méthode. Attention cet objet est instancié par Spring, il n&#8217;y a qu&#8217;à l&#8217;utiliser. On peut considérer un objet de type <code>Model</code> comme un <code>Map</code>.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>Ajoute une valeur au modèle. L&#8217;index <code>title</code> sert de clé pour y loger une valeur (ici la chaine de caractère <em>"Hello world !"</em>)</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>Nom du template associé, sans son extention <code>.html</code></td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="title">Un template simple (/src/main/resources/templates/main/index.html)</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-thymeleaftemplatesfragmentexpressions hljs" data-lang="thymeleaftemplatesfragmentexpressions">&lt;!doctype html&gt;
+&lt;html lang="fr" xmlns:th="http://www.thymeleaf.org"&gt; <i class="conum" data-value="1"></i><b>(1)</b>
+ &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title th:text="${title}"&gt;Titre du document&lt;/title&gt; <i class="conum" data-value="2"></i><b>(2)</b>
+ &lt;/head&gt;
+ &lt;body&gt;
+  &lt;h1 th:text="${title}"&gt;Un titre&lt;/h1&gt; <i class="conum" data-value="3"></i><b>(3)</b>
+ &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Ajout de l&#8217;espace de nom du template <code>thymeleaf</code> - attribut de la balise <code>html</code></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Le title du header est défini par la variable <code>$Spring Boot Starter</code> présente dans le contexte. La valeur actuelle <code>Titre du document</code> est fictive, placée ici en guise de documentation, car elle sera remplacée par la valeur de l&#8217;expression <code>th:text="$Spring Boot Starter"</code> inscrite en tant qu&#8217;attribut de la balise <code>h1</code>.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Dans le body, la balise <code>h1</code> est définie de la même manière. La valeur de <code>$Spring Boot Starter</code> est définie par la méthode <code>index</code> de <code>MainController</code>.</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>L&#8217;expression <code>th:text</code> permet de définir un contenu textuel pour un élément HTML.</p>
+</div>
+<div class="paragraph">
+<p>D&#8217;autres expressions <code>thymeleaf</code> seront présentées ultérieurement.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Lancer l&#8217;application et tester : <code>localhost:8080/</code></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="_images/sbfirst-localhost8080.png" alt="localhost8080"></span></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_un_contrôleur_sans_model_ni_view"><a class="anchor" href="#_un_contrôleur_sans_model_ni_view"></a>3.4. Un contrôleur sans Model ni View</h3>
+<div class="paragraph">
+<p>Certains contrôleurs ne répondent pas au client HTTP avec du contenu HTML. Dans ce cas, la méthode peut se charger de retourner directement du contenu, qu&#8217;il faut alors typer (sans passer par un objet Model ni View). Exemple.</p>
+</div>
+<div class="listingblock">
+<div class="title">Exemple : Retourne directement une simple chaîne de caractères</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">@GetMapping("/hello")
+@ResponseBody <i class="conum" data-value="1"></i><b>(1)</b>
+fun hello(response: HttpServletResponse, request: HttpServletRequest): String {
+    response.contentType = "text/plain" <i class="conum" data-value="2"></i><b>(2)</b>
+    response.characterEncoding = "UTF-8"
+    var nom: String = request.getParameter("nom") ?: "Inconnu"
+    return "Hello $nom\n"
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>La méthode prévient le contrôleur principal qu&#8217;elle se charge de répondre directement, sans passer par un objet Model et View.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Prévenir le client du <strong>type de document retourné</strong>, comme, par exemple, <code>text</code>, <code>audio</code>, <code>video</code>, <code>image</code>&#8230;&#8203;
+<div class="paragraph">
+<p>Voir : <a href="https://stackoverflow.com/questions/23714383/what-are-all-the-possible-values-for-http-content-type-header">stackoverflow http-content-type-header</a> et
+<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Type">developer.mozilla.org</a></p>
+</div></td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_gérer_les_données_dentrée"><a class="anchor" href="#_gérer_les_données_dentrée"></a>3.5. Gérer les données d&#8217;entrée</h3>
+<div class="paragraph">
+<p>Maintenant que nous avons vu comment concevoir un contrôleur et une vue associée, intéressons-nous à la gestion des données transmises (initiation)</p>
+</div>
+<div class="paragraph">
+<p>Conformément à l&#8217;architecture applicative 3 tiers web, c&#8217;est une méthode dite <em>contrôleur</em> qui prend en charge l&#8217;exploitation des données transmises par le client HTTP (le tiers distant qui est à l&#8217;origine de l&#8217;interaction)</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Terminologie : les méthodes associées à des <em>Routes</em> dans une classe <em>Controller</em> sont appelées <strong><em>méthodes d&#8217;action</em></strong> ou <strong>méthodes contrôleur</strong>. Par extension, on nomme parfois de telles méthodes des <strong><em>contrôleurs</em></strong>, et leur classe des "classes contrôleur".
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_auto_injection_de_lobjet_httpservletrequest"><a class="anchor" href="#_auto_injection_de_lobjet_httpservletrequest"></a>3.5.1. Auto-injection de l&#8217;objet HttpServletRequest</h4>
+<div class="paragraph">
+<p>Pour accéder aux données transmises avec la requête HTTP, le contrôleur principal qui appelle les (méthodes) contrôleurs, a la possibilité de passer en argument un objet de type <em>javax.servlet.http.HttpServletRequest</em> (entre autres)</p>
+</div>
+<div class="paragraph">
+<p>Un objet de la classe <em>HttpServletRequest</em> détient les informations transmises par le client HTTP à l&#8217;origine de la requête (par exemple en provenance d&#8217;un navigateur à l&#8217;autre bout de la planète)</p>
+</div>
+<div class="paragraph">
+<p>Un contrôleur qui a besoin d&#8217;exploiter les données du cleint HTTP devra simplement <strong>déclarer, dans ses paramètres, le ou les objets dont il a besoin</strong>. Un objet de la classe <em>HttpServletRequest</em> est riche d&#8217;information (IP du client, les données transmises&#8230;&#8203;). Il existe d&#8217;autres types d&#8217;objets plus spécialisé (<em>Session</em>, &#8230;&#8203;)</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Le mécanisme qui consiste à fournir des objets en argument est appelé <strong>injection de dépendance</strong> : c&#8217;est une des façons de réaliser l&#8217;inversion de contrôle par les frameworks (<em>IOC</em>). Voir à ce sujet <a href="https://fr.wikipedia.org/wiki/Inversion_de_contr%C3%B4le">wikipedia IOC <em>inversion of control</em></a>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>C&#8217;est par l&#8217;intermédiaire de cet objet de type <em>HttpServletRequest</em> que nous pourrons accéder aux données brutes de la session utilisateur. D&#8217;autres façons de faire seront présentées ultérieurement.</p>
+</div>
+<div class="listingblock">
+<div class="title">Exemple d&#8217;injection</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">  @GetMapping("/hello")
+  fun hello(request: HttpServletRequest): String { <i class="conum" data-value="1"></i><b>(1)</b>
+    // code ici
+  }</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>On remarquera, dans la signature de la méthode, la déclaration du paramètre permettant à Spring de réaliser l&#8217;injection.</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_données_dentrée_implicites"><a class="anchor" href="#_données_dentrée_implicites"></a>3.5.2. Données d&#8217;entrée implicites</h4>
+<div class="paragraph">
+<p>Ce sont les données transmises automatiquement par le tiers client, dans la partie entête HTTP. Ces données sont accessibles <strong>via</strong> l&#8217;objet <code>HttpServletRequest</code> qui dispose de méthodes bien pratiques pour les interroger.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>getMethod(): String</code>
+Returns the name of the HTTP method with which this request was made, for example, GET, POST, or PUT.</p>
+</li>
+<li>
+<p><code>isRequestedSessionIdFromCookie(): Boolean</code>
+Checks whether the requested session ID came in as a cookie.</p>
+</li>
+<li>
+<p><code>getLocale()</code>
+Returns the preferred <code>Locale</code> that the client will accept content in, based on the <em>Accept-Language header</em>. If the client request doesn&#8217;t provide an Accept-Language header, this method returns the default locale for the server.</p>
+</li>
+<li>
+<p><code>getCharacterEncoding()</code>
+Returns the name of the character encoding used in the body of this request. This method returns null if the request does not specify a character encoding</p>
+</li>
+<li>
+<p><code>getRemoteAddr()</code>
+Returns the Internet Protocol (IP) address of the client or last proxy that sent the request.</p>
+</li>
+<li>
+<p>&#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>voir <a href="https://tomcat.apache.org/tomcat-7.0-doc/servletapi/javax/servlet/http/HttpServletRequest.html">API Request</a></p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+<div class="sect3">
+<h4 id="_données_dentrée_explicites"><a class="anchor" href="#_données_dentrée_explicites"></a>3.5.3. Données d&#8217;entrée explicites</h4>
+<div class="paragraph">
+<p>Typiquement ce sont celles volontairement transmises par la requête <code>HTTP</code></p>
+</div>
+<div class="sect4">
+<h5 id="_données_sous_la_forme_de_couples_clévaleur"><a class="anchor" href="#_données_sous_la_forme_de_couples_clévaleur"></a>Données sous la forme de couples <code>clé=valeur</code></h5>
+<div class="ulist">
+<ul>
+<li>
+<p>de type <code>GET</code> comme composantes <a href="https://en.wikipedia.org/wiki/Query_string">QueryString</a> de l'<strong>URL</strong></p>
+</li>
+<li>
+<p>de type <code>POST</code> <strong>formulaire HTML ou non</strong>, passé dans le corps de la requête HTTP,</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Exemple. Soit l&#8217;URL suivante (un <code>GET</code>) :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>http://51.68.231.195:8080/hello?nom=Django</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Côté application web, la méthode prenant en charge cette route devra interroger la donnée d&#8217;entrée nommée <code>nom</code> (clé du couple <code>nom=Django</code>)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">   @GetMapping("/hello")
+   fun index(request : HttpServletRequest): String {
+        var nom: String = request.getParameter("nom") ?: "" <i class="conum" data-value="1"></i><b>(1)</b>
+        // faire quelque chose avec nom
+    }</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>La méthode <code>getParameter</code> permet, comme son nom l&#8217;indique, de récupérer l&#8217;éventuelle valeur d&#8217;un paramètre (rend <code>null</code> sinon)
+<div class="paragraph">
+<p>Nous utilisons ici l&#8217;opérateur <em>Elvis</em> (<code>?:</code>) afin de définir une valeur par défaut</p>
+</div></td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Cette façon de faire convient aussi bien aux données en provenance de la <strong>query string</strong> (méthode <code>GET</code>) que celle en postée par un formulaire (méthode <code>POST</code> par exemple).</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+La méthode <code>getParameter</code> ne doit être utilisée que si on est sûr d&#8217;obtenir, <strong>au plus une seule valeur</strong>. Dans le cas contraire nous utiliserons la méthode <a href="https://tomcat.apache.org/tomcat-7.0-doc/servletapi/javax/servlet/ServletRequest.html#getParameterValues(java.lang.String)"><code>getParameterValues</code></a> qui retourne un tableau de String.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Une autre façon d&#8217;opérer est de déclarer la valeur attendue en tant que paramètre <strong>typé</strong> du contrôleur. Pour cela nous devons faire usage de l&#8217;annotation <code><strong>@RequestParam</strong></code></p>
+</div>
+<div class="paragraph">
+<p>Exemple</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin"> @GetMapping("/hello")
+   fun index(@RequestParam(defaultValue = "") nom: String): String { <i class="conum" data-value="1"></i><b>(1)</b>
+        // faire quelque chose avec nom
+    }</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Inutile dans ce cas de demander un objet <code>HttpServletRequest</code></td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Le fait de déclarer une valeur par défaut nous permet de typer la variable <code>nom</code> en <code><strong>String</strong></code>. Dans le cas contraire nous aurions du la typer par <code><strong>String?</strong></code>, car est la valeur par défaut de la valeur par défaut est <code>null</code> (vous avez suivi ? ;)
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_données_intégrées_à_lurl"><a class="anchor" href="#_données_intégrées_à_lurl"></a>Données intégrées à l&#8217;url</h5>
+<div class="paragraph">
+<p>Exemple d&#8217;appel. On souhaite modifier une donnée :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>https://quizbe.org/question/edit/42 <i class="conum" data-value="1"></i><b>(1)</b></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Attention, l&#8217;URL <strong>n&#8217;est pas</strong> <code><a href="https://quizbe.org/question/edit?id=42" class="bare">https://quizbe.org/question/edit?id=42</a></code></td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Pour extraire les parties variables de l&#8217;URL, nous les encadrons d&#8217;accolades et utilisons l&#8217;annotation <strong><code>@PathVariable</code></strong></p>
+</div>
+<div class="listingblock">
+<div class="title">Exemple d&#8217;exploitation de données d&#8217;URL</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">   @GetMapping("/article/detail/{id}")<i class="conum" data-value="1"></i><b>(1)</b>
+    fun detail(@PathVariable id: Long, model: Model): String { <i class="conum" data-value="2"></i><b>(2)</b>
+        // println("id = ${id}")
+        val article : Article = articleRepository.findByIdOrNull(id)
+            ?: throw ResponseStatusException(HttpStatus.NOT_FOUND, "Article not found")
+
+        model["title"] = "Article"
+        model["article"] = article
+
+        return "article/detail"
+    }</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>La route contient une partie <strong>variable</strong>, placé entre accolades <code>{  }</code> (ici <em>id</em> est le nom du paramètre). Exemples d&#8217;arguments : <code>/question/edit/42</code> ou <code>/question/edit/352</code>.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Reprise de la partie variable de l&#8217;url comme <strong>paramètre typé</strong> (Long, String, &#8230;&#8203;) de la méthode (attention, la correspondance se base sur le <strong>nom</strong> inscrit entre { } dans la route)</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Il est dans ce cas très facile de récupérer les valeurs en question, car elles sont passées automatiquement en tant qu&#8217;argument de la méthode !</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_travaux_pratiques_le_contrôleur_et_la_vue_initiation"><a class="anchor" href="#_travaux_pratiques_le_contrôleur_et_la_vue_initiation"></a>3.6. Travaux Pratiques - Le contrôleur et la vue (initiation)</h3>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Attention à bien respecter les conventions de nommage usuelle <a href="https://kotlinlang.org/docs/coding-conventions.html" class="bare">https://kotlinlang.org/docs/coding-conventions.html</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic" start="1">
+<li>
+<p>Ajouter une nouvelle classe <code>controller</code> nommé <em>SioController</em> disposant d&#8217;une méthode contrôleur <em>index</em>.
+Faire en sorte que l&#8217;index présente le message « <strong>Hello world !</strong> » à l&#8217;utilisateur
+(vue thymeleaf), suivi de la <strong>langue préférée</strong> du client (donnée implicite) ainsi que <strong>son adresse IP</strong> (idem).</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic" start="2">
+<li>
+<p>Ajouter la méthode <em>hello</em> ci-dessous, qui reçoit en paramètre
+un nom, et retourne le message « Hello &lt;nom&gt; ! (&lt;n&gt; caractères) » (où &lt;nom&gt; est remplacé par l&#8217;argument reçu, et &lt;n&gt; le nombre de caractères du nom)</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic" start="3">
+<li>
+<p>Faire en sorte que le nom soit présenté à l&#8217;utilisateur soit <strong>capitalisé</strong>.</p>
+<div class="paragraph">
+<p>Comme c&#8217;est un travail de présentation, il est logique de dédier cette tâche
+à la logique de présentation. Vous chercherez comment le faire en <code>tyhymleaf</code>.</p>
+</div>
+<div class="paragraph">
+<p>En cas d&#8217;absence de données d&#8217;entrée, si aucun nom n&#8217;est passé à hello, le
+message 'Hello Inconnu !' (sans le nombre de caractères) est présenté.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic" start="4">
+<li>
+<p>Modifier la méthode d&#8217;action <em>hello</em> afin que, si le nom transmis est de
+la forme <em>prenom*nom</em> (avec une étoile entre le prénom et le nom), le message soit présenté  selon l&#8217;exemple ci-dessous : <a href="http://localhost:8080/hello/django*reinhardt" class="bare">http://localhost:8080/hello/django*reinhardt</a></p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/hello-django.png" alt="hello-django">
+</div>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+s aucune <em>étoile</em> n&#8217;est présente dans l&#8217;argument de l&#8217;url,
+le fonctionnement de <code>hello</code> devra rester conforme à l&#8217;attendu de la question précédente (soit "Hello Django (6 caractères)" si, par exemple, seule la valeur "Django" est transmise)
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>&#8658; à vous de déterminer le travail qui devra être réalisé côté contrôleur et côté logique de présentaiton (thymeleaf)</p>
+</div>
+</div>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic" start="5">
+<li>
+<p>(plus difficile) Ajouter un <strong><em>flash message</em></strong> (message qui s&#8217;affiche qu&#8217;une seule fois), qui retourne  à l&#8217;utilisateur un <strong>message de bienvenue avec son IP</strong> lors d&#8217;une <strong>première connection</strong> à la route <code>/hello</code> (et donc à sa méthode d&#8217;action liée),
+pour une même instance de navigateur. Conseil : Afficher dans un premier temps le message, puis mettre sous condition la création du message en gérant une donnée de session utilisateur.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+l&#8217;objet Session peut être retrouvé via un objet <code>HttpServletRequest</code>. Vous trouverez un exemple ici : <a href="https://github.com/ldv-melun/sbfirst" class="bare">https://github.com/ldv-melun/sbfirst</a>)
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_challenge_2"><a class="anchor" href="#_challenge_2"></a>3.7. Challenge</h3>
+<div class="paragraph">
+<p>Concevoir une application web répondant aux spécifications suivantes :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>L&#8217;utilisateur cherche à trouver un nombre retenu par l&#8217;application de façon « aléatoire », sur une plage d&#8217;amplitude allant de zéro à XXX (à definir).</p>
+</li>
+<li>
+<p>Chaque nombre sera représenté par une cellule td d&#8217;un tableau html.</p>
+</li>
+<li>
+<p>Lorsque l&#8217;utilisateur soumet une proposition (clique sur une cellule/nombre),
+l&#8217;application répond « valeur trop petite », « valeur trop grande » ou « Trouvé ! ».</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Durant les tentatives, l&#8217;application montre les cellules déjà sélectionnées par l&#8217;utilisateur (prévoir une classe CSS dédiée). La partie s&#8217;arrête lorsque l&#8217;utilisateur a trouvé le bon nombre.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Lorsque que le nombre est trouvé, l&#8217;application affiche un des messages suivants :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>« Vous avez de la chance !» si le nombre d’essais du joueur est inférieur au nombre optimal (à déterminer après avoir étudié le principe de la recherche dichotomique - lien wikipédia ci-dessous).</p>
+</li>
+<li>
+<p>« Votre stratégie a été la bonne » si le nombre d’essai du joueur est égale au nombre optimal.</p>
+</li>
+<li>
+<p>« Vous avez débordé de n tentatives » où n est le nombre de tentatives au-delà du
+nombre optimal.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>L&#8217;utilisateur pourra relancer autant de parties qu&#8217;il le souhaite.</p>
+</li>
+<li>
+<p>Comme il se doit, l&#8217;application sera capable de gérer plusieurs utilisateurs/parties en même temps.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Il est possible de réaliser un suivi de session sans rien sauvegarder sur le serveur (les « données de sessions » sont alors transmises au client – et donc portées uniquement par celui-ci).
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Optionnel, pour les plus avancés :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>L&#8217;utilisateur peut étendre l&#8217;amplitude de la matrice (dimension du tableau)</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="_ressources_à_prendre_en_compte"><a class="anchor" href="#_ressources_à_prendre_en_compte"></a>3.7.1. Ressources à prendre en compte</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Recherche dichotomique : <a href="https://fr.wikipedia.org/wiki/Dichotomie" class="bare">https://fr.wikipedia.org/wiki/Dichotomie</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_introduction_layout_avec_thymleaf"><a class="anchor" href="#_introduction_layout_avec_thymleaf"></a>4. Introduction (layout avec thymleaf)</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_présentation"><a class="anchor" href="#_présentation"></a>4.1. Présentation</h3>
+<div class="paragraph">
+<p>Lorsqu&#8217;une application web est constituée de plusieurs <em>pages</em>,  il est alors
+de bon usage de conserver une unité de représentation.</p>
+</div>
+<div class="paragraph">
+<p>Techniquement, cette unité de représentation se base sur :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>un <strong>modèle</strong>, connu sous le nom de <em>template</em> ou <em>layout</em> (structuration HTML).</p>
+</li>
+<li>
+<p>un ensemble de règles CSS partagées par l&#8217;ensemble des pages</p>
+</li>
+<li>
+<p>[des dépendances de bibliothèques js]</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>En phase de prototypage, il est fréquent de s&#8217;appuyer sur des frameworks CSS (par exemples <a href="https://getbootstrap.com/">Bootstrap</a>, <a href="https://bulma.io/">bulma</a> )</p>
+</div>
+<div class="paragraph">
+<p>Ces solutions intègrent de nombreux composants CSS et JS. Ces composants sont destinés au tiers client (navigateur, smartphone&#8230;&#8203;).</p>
+</div>
+<div class="paragraph">
+<p>Il existe 2 solutions pour distribuer ces composants aux clients tiers :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>donner aux clients un lien sur le réseau de contenu (<em>CDN content delivery network</em>), pour téléchargement, par exemple <a href="http://code.jquery.com/jquery-3.3.1.js" class="bare">http://code.jquery.com/jquery-3.3.1.js</a></p>
+</li>
+<li>
+<p>servir ces composants à partir du serveur web de l&#8217;application (communication HTTP entre le serveur HTTP de l&#8217;application et les clients), par exemple <a href="http://monapplication.com/js/jquery-3.3.1.js" class="bare">http://monapplication.com/js/jquery-3.3.1.js</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Dans le cadre d&#8217;une application à faible diffusion, la deuxième solution peut être envisagée, de plus elle a le mérite d&#8217;assurer la disponibilité des composants (si l&#8217;application est disponible, alors ses composants le sont aussi), et, accessoirement, permet au développeur de travailler hors ligne.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_webjars_une_solution_java"><a class="anchor" href="#_webjars_une_solution_java"></a>4.2. webjars - une solution java</h3>
+<div class="paragraph">
+<p>Nous nous placons dans le cas où c&#8217;est l&#8217;application qui héberge les composants dont auront besoin ses tiers clients.</p>
+</div>
+<div class="paragraph">
+<p>Initialement, l&#8217;application devra donc les obtenir (elle utilisera CDN pour l&#8217;occasion). Elle pourrait pour cela utiliser des gestionnaires de version spécilisés comme <em>npm</em>, <em>yarn</em>, <em>bower</em>&#8230;&#8203;),
+mais il serait dommage de ne pas profiter du gestionnaire de version <em>maven</em> ! C&#8217;est ce que permet la solution <a href="http://www.webjars.org/">webjars</a>, qui encapsule les composants client dans un jar. Tout cela se passe côté serveur bien entendu.</p>
+</div>
+<div class="paragraph">
+<p>Les WebJars sont des librairies à destination des clients-web (par exemple jQuery &amp; Bootstrap), packagées dans un fichier JAR (Java Archive), et disponible via divers gestionnaires d&#8217;automatisation de taches, comme <em>maven</em> par exemple.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.webjars.org/documentation#springboot" class="bare">https://www.webjars.org/documentation#springboot</a></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/webjars-bt.png" alt="webjars-bt">
+</div>
+</div>
+<div class="paragraph">
+<p>La définition de la dépendance devra être copiée dans le fichier <strong>pom.xml</strong> du projet. C&#8217;est à partir de cette référence que <strong>maven</strong> téléchargera dans son dépot local les fichiers en question, et rendra accessibles ces fichiers en les plaçant dans le <em>CLASSPATH</em> du projet (ce qui les rendra accessible à l&#8217;IDE).</p>
+</div>
+<div class="paragraph">
+<p>Pour connaître les instructions de dépendances de composants, aller ici : <a href="https://mvnrepository.com/artifact/org.webjars" class="bare">https://mvnrepository.com/artifact/org.webjars</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_webjars_cas_bootstrap"><a class="anchor" href="#_webjars_cas_bootstrap"></a>4.3. webjars - cas bootstrap</h3>
+<div class="listingblock">
+<div class="title">Exemple pom.xml</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">  [...]
+
+&lt;dependencies&gt;
+&lt;!--making dependencies version agnostic
+@see https://www.webjars.org/documentation#springboot --&gt;
+ &lt;dependency&gt;
+        &lt;groupId&gt;org.webjars&lt;/groupId&gt;
+        &lt;artifactId&gt;webjars-locator-core&lt;/artifactId&gt; <i class="conum" data-value="1"></i><b>(1)</b>
+        &lt;version&gt;0.52&lt;/version&gt;
+ &lt;/dependency&gt;
+
+ &lt;!-- https://mvnrepository.com/artifact/org.webjars/bootstrap --&gt;
+ &lt;dependency&gt;
+    &lt;groupId&gt;org.webjars&lt;/groupId&gt;
+    &lt;artifactId&gt;bootstrap&lt;/artifactId&gt; <i class="conum" data-value="2"></i><b>(2)</b>
+    &lt;version&gt;5.2.2&lt;/version&gt;
+ &lt;/dependency&gt;
+
+&lt;/dependencies&gt;</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Ce composant permet de ne pas renseigner la version des composants dans les instructions d&#8217;inclusion du template html. C&#8217;est ce document qui se charge de cela.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>La dernière version du composant bootstrap (octobre 2022)</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Ces déclarations de dépendances, lorsqu&#8217;elle seront évaluées par <em>maven</em>, provoqueront le rapatriement, sur la machine hôte, des ressources inscrites dans le <em>webjars</em>.</p>
+</div>
+<div class="paragraph">
+<p>Ces ressources seront alors accessibles au projet, via l&#8217;IDE, au même titre que des librairies java.</p>
+</div>
+<div class="paragraph">
+<p>Le développeur pourra donc y faire références à la conception des vues.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_layout_cas_thymeleaf"><a class="anchor" href="#_layout_cas_thymeleaf"></a>4.4. layout - cas thymeleaf</h3>
+<div class="paragraph">
+<p>Avec <em>thymeleaf</em>, la conception d&#8217;un modèle de présentation (<strong>layout</strong> ou <strong>template</strong>)
+est basée sur la décomposition du modèle en <strong>fragments</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Voici une organisation typique de ressources liées à la logique de présentation:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>├── application.properties
+├── static
+│   └── css
+│       └── main.css <i class="conum" data-value="1"></i><b>(1)</b>
+└── templates
+    ├── admin <i class="conum" data-value="2"></i><b>(2)</b>
+    │   └── index.html <i class="conum" data-value="3"></i><b>(3)</b>
+    ├── error
+    │   └── 403.html
+    ...
+    ├── fragments
+    │   ├── footer.html <i class="conum" data-value="4"></i><b>(4)</b>
+    │   └── header.html
+    └─ index.html</pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>pour la redéfinition de règles héritées, propre à l&#8217;application</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>en référence au rôle utilisateur prioritairement concerné (ici un <code>admin</code>)</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>les vues des controleurs sont placées dans un dossier portant le nom racine d&#8217;un contrôleur (AdminController)</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>les fichiers déclarant des <strong>fragments</strong> (parties réutilisées par les vues) sont logés dans le dossier <em>fragments</em></td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Les différentes pages partagent toutes les mêmes parties <code>header</code> (parties &lt;head&gt; et menu) et <code>footer</code>.</p>
+</div>
+<div class="paragraph">
+<p>Voici un exemple d&#8217;utilisation :</p>
+</div>
+<div class="listingblock">
+<div class="title">admin/index.html</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-html hljs" data-lang="html">&lt;!DOCTYPE HTML&gt;
+&lt;html xmlns:th="http://www.thymeleaf.org"&gt;
+&lt;head&gt;
+    &lt;title&gt;Page Admin&lt;/title&gt;
+    &lt;div th:replace="fragments/header :: header-css (title='Admin')"/&gt; <i class="conum" data-value="1"></i><b>(1)</b>
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div th:replace="fragments/header :: header"/&gt; <i class="conum" data-value="2"></i><b>(2)</b>
+
+&lt;div class="container"&gt;
+
+     &lt;h1&gt;Admin index&lt;/h1&gt;
+
+&lt;/div&gt;
+&lt;!-- /.container --&gt;
+
+&lt;div th:replace="fragments/footer:: footer"/&gt; <i class="conum" data-value="3"></i><b>(3)</b>
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>insertion du fragment <em>header-css</em> (définit dans le fichier <em>header.html</em>)</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>insertion du fragment <em>header</em> (définit dans le fichier <em>header.html</em>)</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>insertion du fragment <em>footer</em> (définit dans le fichier <em>footer.html</em>)</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Voyons maintenant des exemples de composants <em>fragment</em></p>
+</div>
+<div class="listingblock">
+<div class="title">footer.html</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-html hljs" data-lang="html">&lt;html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"&gt;
+&lt;head&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div th:fragment="footer"&gt; <i class="conum" data-value="1"></i><b>(1)</b>
+  &lt;div class="container"&gt;
+    &lt;footer&gt;
+        &amp;copy; 2022 myapplication.com
+    &lt;/footer&gt;
+
+    &lt;script type="text/javascript"
+            src="/webjars/bootstrap/5.2.2/js/bootstrap.min.js" <i class="conum" data-value="2"></i><b>(2)</b>
+            th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"&gt; <i class="conum" data-value="3"></i><b>(3)</b>
+    &lt;/script&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Un composant est en fait le body d&#8217;une page HTML particulière, comportant une déclaration de fragment.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Ceci est un exemple (la doc thymleaf parle de <em>prototype</em>). Sous IntelliJ, pensez à utiliser la complétion automatique (ctrl+ esp) pour l&#8217;expression de chemin.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>C&#8217;est la valeur <em>src</em> qui sera appliquée. Les expressions thymleaf de chemin ou de lien sont encadrées  par <code>@{ &#8230;&#8203; }</code>. On notera que nous ne faisons pas appel à une version particulière du composant car c&#8217;est <code>webjars-locator-core</code> qui s&#8217;en charge.</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="title">header.html</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-html hljs" data-lang="html">&lt;html xmlns:th="http://www.thymeleaf.org"&gt;
+&lt;head&gt;
+   &lt;th:block th:fragment="header-css"&gt; <i class="conum" data-value="1"></i><b>(1)</b>
+      &lt;link rel="stylesheet" type="text/css"
+        href="/webjars/bootstrap/5.2.2/css/bootstrap.min.css" <i class="conum" data-value="2"></i><b>(2)</b>
+        th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" /&gt; <i class="conum" data-value="3"></i><b>(3)</b>
+
+      &lt;link rel="stylesheet" th:href="@{/css/main.css}" <i class="conum" data-value="4"></i><b>(4)</b>
+        href="../static/css/main.css" /&gt;
+
+      &lt;title th:text="${title ?: 'Default title'}"&gt;&lt;/title&gt; <i class="conum" data-value="5"></i><b>(5)</b>
+
+   &lt;/th:block&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div th:fragment="header"&gt; <i class="conum" data-value="6"></i><b>(6)</b>
+    &lt;nav class="navbar navbar-inverse"&gt;
+        &lt;div class="container"&gt;
+            &lt;div class="navbar-header"&gt;
+                &lt;a class="navbar-brand" th:href="@{/}"&gt;Spring Boot&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div id="navbar" class="collapse navbar-collapse"&gt;
+                &lt;ul class="nav navbar-nav"&gt;
+                    &lt;li class="active"&gt;&lt;a th:href="@{/}"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/nav&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>déclaration d&#8217;un fragment nommé <em>header-css</em></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>prototype de lien bootstrap</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>expression du lien th:href pour déclaration de l&#8217;inclusion</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>le fichier CSS pour les redéfinitions propres à l&#8217;application (ne pas faire référence au dossier <code>static</code>)</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>définition de la valeur de <code>&lt;title&gt;</code> avec valeur par défaut (opérateur elvis)</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="6"></i><b>6</b></td>
+<td>déclaration d&#8217;un autre fragment dans le même fichier</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_controleur"><a class="anchor" href="#_controleur"></a>4.5. Controleur</h3>
+<div class="paragraph">
+<p>Voici un exemple de mise en oeuvre, à minima :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java"> // AdminController
+
+  @GetMapping("/admin")
+  public String admin() {
+     return "/admin/index";
+  }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Nous avons ici rangé les vues dans des dossiers
+portant le nom du rôle prioritairement concerné, un parti pris.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_documentation"><a class="anchor" href="#_documentation"></a>4.6. Documentation</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Documentation générale :  <a href="https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html">thymeleaf documenataion</a></p>
+</li>
+<li>
+<p>Ne pas passer à côté des classes utilitaires : <a href="https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#appendix-b-expression-utility-objects">classes utilitaires - avec exemples</a></p>
+</li>
+<li>
+<p>Différentes façons d&#8217;inclure un fragment : <a href="http://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#including-template-fragments">thymeleaf:insclusion de fragments</a></p>
+</li>
+<li>
+<p>Paramétrer un fragment : <a href="http://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#parameterizable-fragment-signatures">fragment paramétré</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_travaux_pratiques_2"><a class="anchor" href="#_travaux_pratiques_2"></a>4.7. Travaux pratiques</h3>
+<div class="sect3">
+<h4 id="_exercice_1"><a class="anchor" href="#_exercice_1"></a>4.7.1. Exercice 1</h4>
+<div class="paragraph">
+<p>Intégrer bootstrap dans votre application existante, avec le modèle <code>navbar-static</code> disponible ici : <a href="https://getbootstrap.com/docs/5.2/examples/navbar-static/" class="bare">https://getbootstrap.com/docs/5.2/examples/navbar-static/</a></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="_images/sbfirst-webjars-bootstrap-nav.png" alt="sbfirst-webjars-bootstrap-nav.png"></span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_introduction_à_jpa"><a class="anchor" href="#_introduction_à_jpa"></a>5. Introduction à JPA</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_présentation_2"><a class="anchor" href="#_présentation_2"></a>5.1. Présentation</h3>
+<div class="paragraph">
+<p>JPA est une interface de programmation permettant d&#8217;utiliser un modèle objet
+au-dessus d&#8217;une base de données relationnelle.</p>
+</div>
+<div class="paragraph">
+<p>JPA associe un graphe de classes Java aux tables d&#8217;une base de données
+relationnelle par le biais :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>de fichiers de configuration xml</p>
+</li>
+<li>
+<p>d&#8217;annotations depuis Java 5 (c&#8217;est la méthode préférée)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Pour la suite nous utiliserons le modèle suivant :</p>
+</div>
+<div class="imageblock kroki">
+<div class="content">
+<img src="_images/diag-6bc95bedd85382606cc822993a6d0bed8485a434.svg" alt="Modèle d&#8217;analyse du domaine">
+</div>
+<div class="title">Figure 3. Modèle d&#8217;analyse du domaine</div>
+</div>
+<div class="paragraph">
+<p>Dans ce modèle une personne peut écrire plusieurs articles (liste de type <code>Article</code>), et un article est crédité par une seule source (de type <code>Person</code>).</p>
+</div>
+<div class="paragraph">
+<p>Une application JPA se divise en deux parties :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Définir le modèle de données (graphe d&#8217;objets)</p>
+</li>
+<li>
+<p>Gérer l&#8217;accès aux données (créer, récupérer, modifier et supprimer les données)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_définir_le_modèle"><a class="anchor" href="#_définir_le_modèle"></a>5.2. Définir le modèle</h3>
+<div class="sect3">
+<h4 id="_une_traduction_de_lanalyse"><a class="anchor" href="#_une_traduction_de_lanalyse"></a>5.2.1. Une traduction de l&#8217;analyse</h4>
+<div class="paragraph">
+<p>Le modèle qui nous intéresse ici est celui centré sur la logique métier du client, les données qu&#8217;ils manipulent. Ces données sont regroupées en <strong>entités</strong>, qui, dans le code, sont représentées par des <strong>classes</strong>, dites <strong>métier</strong>, parfois stéréotypées &lt;&lt;entity&gt;&gt; dans les diagrammes d&#8217;analyse.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Il est fort pratique de représenter l&#8217;analyse sous la forme d&#8217;un diagramme de classes UML, car, en conception (design), l&#8217;analyse permet au développeur de se consacrer sur les détails des entités sans perdre le fil de leurs relations.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_associer_une_table_à_une_classe_les_entités_entities"><a class="anchor" href="#_associer_une_table_à_une_classe_les_entités_entities"></a>5.2.2. Associer une table à une classe, les entités (entities)</h4>
+<div class="listingblock">
+<div class="title">Classe Person associée à la table <code>Person</code> (sans référence à d&#8217;autres entités)</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">@Entity <i class="conum" data-value="1"></i><b>(1)</b>
+@Table(name = "Person") <i class="conum" data-value="2"></i><b>(2)</b>
+class Person(
+
+    @Column(name = "login", unique = true, nullable = false, length = 20) <i class="conum" data-value="3"></i><b>(3)</b>
+    var login: String, <i class="conum" data-value="4"></i><b>(4)</b>
+
+    @Column(name = "firstname", nullable = false)
+    var firstname: String,
+
+    @Column(name = "lastname", nullable = false)
+    var lastname: String,
+
+    @Column(columnDefinition="TEXT")
+    var description: String? = null,
+
+    @Id <i class="conum" data-value="5"></i><b>(5)</b>
+    @GeneratedValue(strategy = GenerationType.IDENTITY) <i class="conum" data-value="6"></i><b>(6)</b>
+    @Column(name = "id", nullable = false)
+    var id: Long? = null) <i class="conum" data-value="7"></i><b>(7)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td><code>@Entity</code> déclare la classe comme un objet persistant
+associé par défaut à la table de même nom (à la casse près).</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td><code>@Table</code> déclare le nom de la table associée à la classe, indispensable
+si les deux noms diffèrent (ce n&#8217;est pas le cas ici).</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td><code>@Column</code> permet d&#8217;établir la correspondance entre la propriété de la classe
+et la colonne de la table, ainsi que certaines règles de validation comme
+l&#8217;interdiction de nullité, la longueur, le type&#8230;&#8203;</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>La propriété associée à la colonne de la table (valeur d&#8217;attribut).</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td><code>@Id</code> déclare l&#8217;attibut comme clé primaire, au moins un attribut doit
+être marqué par cette annotation</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="6"></i><b>6</b></td>
+<td><code>@GeneratedValue</code> indique que la valeur est générée automatiquement</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="7"></i><b>7</b></td>
+<td>Bien que la colonne associée soit déclarée non nullable (c&#8217;est une PK), la propriété <code>id</code> l&#8217;est ! (son type est <code>Long?</code>) En effet, à la création d&#8217;un <strong>nouvel</strong> objet en mémoire, alors qu&#8217;il n&#8217;est pas encore persisté (associé à aucune ligne dans la table), l&#8217;objet n&#8217;a pas encore de valeur d&#8217;identifiant de base de données. Cette valeur lui sera attribuée par le SGBD lors de sa sauvegarde dans la base (donc dans un second temps)</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Le mécanisme qui assure la correspondance entre une Classe Entity et une Table d&#8217;une base de données est appelé <strong>ORM</strong> (<em>Object Relational Mapping</em>)</p>
+</div>
+<div class="paragraph">
+<p><em>Un mapping objet-relationnel (en anglais object-relational mapping ou ORM) est un type de programme informatique qui se place en interface entre un programme applicatif et une base de données relationnelle pour simuler une base de données orientée objet. Ce programme définit des correspondances entre les schémas de la base de données et les classes du programme applicatif. On pourrait le désigner par là, « comme une couche d&#8217;abstraction entre le monde objet et monde relationnel ». Du fait de sa fonction, on retrouve ce type de programme dans un grand nombre de frameworks sous la forme de composant ORM qui a été soit développé, soit intégré depuis une solution externe.</em> source : <a href="https://fr.wikipedia.org/wiki/Mapping_objet-relationnel" class="bare">https://fr.wikipedia.org/wiki/Mapping_objet-relationnel</a></p>
+</div>
+<div class="paragraph">
+<p>Ainsi, à une <strong>instance</strong> d&#8217;une classe Entity correspond une <strong>ligne</strong> d&#8217;une table d&#8217;une base de données relationnelle.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_gérer_les_associations_manytoone_et_onetomany"><a class="anchor" href="#_gérer_les_associations_manytoone_et_onetomany"></a>5.2.3. Gérer les associations (<code>ManyToOne</code> et <code>OneToMany</code>)</h4>
+<div class="paragraph">
+<p>Dans ce modèle un Person peut écrire plusieurs articles, et un article est crédité par une seule personne.</p>
+</div>
+<div class="imageblock kroki">
+<div class="content">
+<img src="_images/diag-1b574a48cc6c0cc67546c1176e0a8f5f0d2a79b2.svg" alt="Modèle d&#8217;analyse du domaine">
+</div>
+<div class="title">Figure 4. Modèle d&#8217;analyse du domaine</div>
+</div>
+<div class="paragraph">
+<p>L&#8217;association de <code>Article</code> vers <code>Person</code> est de type <code>ManyToOne</code>. Cette même association vue côté <code>Person</code> est de type <code>OneToMany</code> vers <code>Article</code>.</p>
+</div>
+<div class="paragraph">
+<p>Si l&#8217;association est bidirectionnelle, la classe côté <code>ManyToOne</code> (dans notre cas <code>Article</code>) est dite propriétaire (<em>owner</em>) de l&#8217;association car sa table associée détient la clé étrangère de la relation. Le côté non propriétaire, ici <code>Person</code>, doit utiliser l&#8217;élément <em>mappedBy</em> de l&#8217;annotation pour spécifier l&#8217;attribut du côté propriétaire. Pour les données en base, le système assure la cohérence des liens entre objets en mémoire. Par contre, en cas gestion mémoire de ces liens par la logique applicative, la cohérence est du ressort du développeur.</p>
+</div>
+<div class="listingblock">
+<div class="title">La classe Article</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">@Entity
+class Article(
+    var title: String,
+    var headline: String,
+    var content: String,
+
+    @ManyToOne <i class="conum" data-value="1"></i><b>(1)</b>
+    @JoinColumn(name = "credited_to_id") <i class="conum" data-value="2"></i><b>(2)</b>
+    var creditedTo: Person, <i class="conum" data-value="3"></i><b>(3)</b>
+
+    var slug: String = title.toSlug(),
+    var addedAt: LocalDateTime = LocalDateTime.now(),
+    @Id @GeneratedValue var id: Long? = null)</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>L&#8217;annotation <code>@ManyToOne</code> permet de savoir que l&#8217;objet annoté doit être retrouvé dans une autre table. Le paramètre <code>FetchType</code> permet de savoir s&#8217;il faut immédiatement retrouver l&#8217;objet lié (<code>EAGER</code>) ou s&#8217;il faut le retrouver seulement lorsqu&#8217;il est accédé dans l&#8217;application (<code>LAZY</code>). La deuxième option diffère la requête SQL jusqu&#8217;à ce que l&#8217;application cherche à accéder à l&#8217;objet Person</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>L&#8217;annotation <code>@JoinColumn</code> permet à l&#8217;application de déterminer quelle colonne dans la table sert de clé étrangère pour retrouver l&#8217;objet lié</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Si <code>credited_to_id</code> est une clé étrangère et un entier, la propriété associée, nommée <code>creditedTo</code>, est de type <code><strong>Person</strong></code>.</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Ne pas confondre clé étrangère et propriété de l&#8217;association.</p>
+</div>
+<div class="paragraph">
+<p><code>credited_to_id</code> est le nom de la colonne dans la table (une clé étrangère), la propriété <code>creditedTo</code> lie une instance d'`Article` à une instance de <code>Person</code>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Avec JPA le développeur gère un graphe d&#8217;objets, pas une base de données SQL.</strong></p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="title">Classe Person et associaton bidirectionnelle avec Article</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">@Entity
+class Person(
+
+    @Column(name = "login", unique = true, nullable = false, length = 20)
+    var login: String,
+
+    @Column(name = "firstname", nullable = false)
+    var firstname: String,
+
+    @Column(name = "lastname", nullable = false)
+    var lastname: String,
+
+    @Column(columnDefinition="TEXT")
+    var description: String? = null,
+
+    @OneToMany(mappedBy = "creditedTo", cascade = [CascadeType.ALL]) <i class="conum" data-value="1"></i><b>(1)</b>
+    var articles: MutableList&lt;Article&gt; = mutableListOf(), <i class="conum" data-value="2"></i><b>(2)</b>
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
+    var id: Long? = null)</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td><code>@OneToMany</code> indique qu&#8217;une instance de <code>Person</code> peut être liée à plusieurs instances de <code>Article</code>, en tant qu&#8217;auteur, c&#8217;est la propriété <code>creditedTo</code> dans <code>Article</code> qui représente ce lien</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Une personne pouvant réaliser plusieurs articles, les références à ses articles sont stockés dans une collection mutable, qui peut être vide.</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_gérer_laccès_aux_données_les_dépôts_repositories"><a class="anchor" href="#_gérer_laccès_aux_données_les_dépôts_repositories"></a>5.3. Gérer l&#8217;accès aux données, les dépôts (repositories)</h3>
+<div class="sect3">
+<h4 id="_présentation_3"><a class="anchor" href="#_présentation_3"></a>5.3.1. Présentation</h4>
+<div class="paragraph">
+<p>Si les classes Entity permettent de définir les structures de données et la façon dont les objets sont liés aux tables SQL, elles ne permettent pas de manipuler les tables : créer, lire, mettre à jour ou supprimer des données. En anglais ces actions sont connues sous le nom de <code>CRUD</code> (<em>Create</em>, <em>Read</em>, <em>Update</em>, <em>Delete</em>). Les objets qui permettent de faire des opérations de type <code>CRUD</code> sur une base de données sont appelés des DAO (Data Access Object).</p>
+</div>
+<div class="paragraph">
+<p>Créer des DAOs est une tâche répétitive et ingrate, 90% du code est
+similaire d&#8217;un DAO à l&#8217;autre. Spring propose une méthode standard pour
+gérer les DAOs au travers d&#8217;objets, ou plutôt d&#8217;interfaces, de type
+<code>CrudRepository</code>, <code>PagingAndSortingRepository
+` ou `JpaRepository</code> qui hérite de la classe précédente. Dans les cas simples <code>CrudRepository</code> suffit largement.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_linterface_crudrepository"><a class="anchor" href="#_linterface_crudrepository"></a>5.3.2. L&#8217;interface CrudRepository</h4>
+<div class="paragraph">
+<p>Permet d&#8217;effectuer toutes les opérations de base d&#8217;un DAO :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>long count()</code> : compte le nombre d&#8217;entités disponibles</p>
+</li>
+<li>
+<p><code>void delete(T entity)</code> : supprime l&#8217;entité passée en paramètre</p>
+</li>
+<li>
+<p><code>void deleteAll()</code> : supprime toutes les entités</p>
+</li>
+<li>
+<p><code>void deleteById(ID id)</code> : supprime une entité avec l&#8217;id passé en paramètre</p>
+</li>
+<li>
+<p><code>void existsById(ID id)</code> : retourne vrai si une entité avec l&#8217;id passé en paramètre existe</p>
+</li>
+<li>
+<p><code>Iterable&lt;T&gt; findAll()</code> : retourne toutes les instances du type</p>
+</li>
+<li>
+<p><code>Iterable&lt;T&gt; findAllById(Iterable&lt;ID&gt; id)</code> :</p>
+</li>
+<li>
+<p><code>Optional&lt;T&gt; findById(ID id)</code> : retrouve une entité par son id</p>
+</li>
+<li>
+<p><code>&lt;S extends T&gt; S save(S entity)</code> : sauvegarde une entité donnée</p>
+</li>
+<li>
+<p><code>&lt;S extends T&gt; Iterable&lt;S&gt; saveAll(Iterable&lt;S&gt; entities)</code> : sauvegarde toutes les entités passées en paramètre.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Ci-dessous un exemple de CrudRepository :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">package com.example.demo.repository
+
+import com.example.demo.model.Person
+import org.springframework.data.repository.CrudRepository
+
+interface PersonRepository : CrudRepository&lt;Person, Long&gt; {
+
+}</code></pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+L&#8217;implémentation de l&#8217;interface est réalisée <strong>automatiquement</strong> par le framework.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_exemple_de_configuration_dun_projet_spring_boot_avec_jpa"><a class="anchor" href="#_exemple_de_configuration_dun_projet_spring_boot_avec_jpa"></a>5.4. Exemple de configuration d&#8217;un projet Spring Boot avec JPA</h3>
+<div class="listingblock">
+<div class="title">Exemple avec H2 (src/main/resources/application.properties)</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties"># Connexion à la base de données
+spring.datasource.url=jdbc:h2:file:c:/db/blog;AUTO_SERVER=true <i class="conum" data-value="1"></i><b>(1)</b>
+#spring.datasource.url=jdbc:h2:file:~/db/blog;AUTO_SERVER=true <i class="conum" data-value="2"></i><b>(2)</b>
+spring.datasource.driver-class-name=org.h2.Driver <i class="conum" data-value="3"></i><b>(3)</b>
+spring.datasource.username=sa <i class="conum" data-value="4"></i><b>(4)</b>
+spring.datasource.password= <i class="conum" data-value="5"></i><b>(5)</b>
+spring.jpa.hibernate.ddl-auto=create-drop <i class="conum" data-value="6"></i><b>(6)</b>
+spring.datasource.initialization-mode=always <i class="conum" data-value="7"></i><b>(7)</b>
+spring.h2.console.enabled=true <i class="conum" data-value="8"></i><b>(8)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Chaîne JDBC de connexion à la base de données, version Windows</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>La même version Linux ou Mac. <code>;AUTO_SERVER=true</code> permet une connexion par des tiers comme intellij&#8230;&#8203; (H2 mixed mode)</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Driver JDBC à utiliser</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>Utilisateur pour accéder à la source de données JDBC</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>Mot de passe de l&#8217;utlisateur</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="6"></i><b>6</b></td>
+<td>Le schéma de la base de données est généré à partir des entités JPA, à chaque exécution de l&#8217;application les tables sont supprimées et recrées, l&#8217;option <code>create-drop</code> n&#8217;est valable que pour la phase de développement, en production on utilise l&#8217;option <code>none</code></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="7"></i><b>7</b></td>
+<td>Si un fichier `data.sql`est présent, il est automatiquement utilisé pour importer les données qu&#8217;il contient dans la base de données</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="8"></i><b>8</b></td>
+<td>Propre à <code>H2</code> (driver par défaut). Permet d&#8217;accéder à la console H2, une fois que l&#8217;application lancée, à l&#8217;URL <code><a href="http://localhost:8080/h2-console" class="bare">http://localhost:8080/h2-console</a></code>, il s&#8217;agit d&#8217;une application web intégrée au moteur H2 permettant de manipuler la base de données.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Voici un exemple avec MysSql : <a href="https://spring.io/guides/gs/accessing-data-mysql/" class="bare">https://spring.io/guides/gs/accessing-data-mysql/</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_travaux_pratiques_3"><a class="anchor" href="#_travaux_pratiques_3"></a>5.5. Travaux pratiques</h3>
+<div class="paragraph">
+<p>Vous étudiez un début d&#8217;application web, structurée en couches minimales, et vous réalisez les travaux attendus.</p>
+</div>
+<div class="paragraph">
+<p>Les explications et le travail à faire se trouvent dans le README.adoc du projet.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://github.com/ldv-melun/app-spring-boot-kotlin-jpa-first" class="bare">https://github.com/ldv-melun/app-spring-boot-kotlin-jpa-first</a></p>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. D&#8217;autres protocoles sont disponibles, comme WebDAV, WebSockets&#8230;&#8203;
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Un projet edu <a href="https://ldv-melun.github.io/sio-slam/">SIO SLAM</a> - build on Antora MPL-2.0 license.</p>
+</footer>
+<script src="../_/js/site.js"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

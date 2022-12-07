@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="288px" preserveAspectRatio="none" style="width:395px;height:288px;background:#FFFFFF;" version="1.1" viewBox="0 0 395 288" width="395px" zoomAndPan="magnify"><defs/><g><rect fill="none" height="26.2969" id="_title" style="stroke:none;stroke-width:1.0;" width="214" x="89.75" y="10"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="204" x="94.75" y="27.9951">(architecture 3 tiers web)</text><rect fill="#DDDDDD" height="232.6953" style="stroke:#181818;stroke-width:0.5;" width="207" x="88" y="43.2969"/><rect fill="#FFFFFF" height="111.1328" style="stroke:#181818;stroke-width:1.0;" width="10" x="242" y="123.7266"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="30" x2="30" y1="78.5938" y2="281.9922"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="142" x2="142" y1="78.5938" y2="281.9922"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="247" x2="247" y1="78.5938" y2="281.9922"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="364.5" x2="364.5" y1="78.5938" y2="281.9922"/><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="51" x="5" y="47.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="37" x="12" y="67.292">client</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="101" x="92" y="47.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="87" x="99" y="67.292">serveur_http</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="88" x="203" y="47.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="74" x="210" y="67.292">application</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="49" x="340.5" y="47.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="35" x="347.5" y="67.292">sgbd</text><rect fill="#FFFFFF" height="111.1328" style="stroke:#181818;stroke-width:1.0;" width="10" x="242" y="123.7266"/><polygon fill="#181818" points="130.5,105.7266,140.5,109.7266,130.5,113.7266,134.5,109.7266" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="30.5" x2="136.5" y1="109.7266" y2="109.7266"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="86" x="37.5" y="104.6606">requête HTTP</text><polygon fill="#181818" points="230,119.7266,240,123.7266,230,127.7266,234,123.7266" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="142.5" x2="236" y1="123.7266" y2="123.7266"/><line style="stroke:#181818;stroke-width:1.0;" x1="252" x2="294" y1="137.7266" y2="137.7266"/><line style="stroke:#181818;stroke-width:1.0;" x1="294" x2="294" y1="137.7266" y2="150.7266"/><line style="stroke:#181818;stroke-width:1.0;" x1="253" x2="294" y1="150.7266" y2="150.7266"/><polygon fill="#181818" points="263,146.7266,253,150.7266,263,154.7266,259,150.7266" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="353,175.8594,363,179.8594,353,183.8594,357,179.8594" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="252" x2="359" y1="179.8594" y2="179.8594"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="89" x="259" y="174.7935">requêtes (x)ql</text><polygon fill="#181818" points="263,189.8594,253,193.8594,263,197.8594,259,193.8594" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="257" x2="364" y1="193.8594" y2="193.8594"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="252" x2="294" y1="207.8594" y2="207.8594"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="294" x2="294" y1="207.8594" y2="220.8594"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="253" x2="294" y1="220.8594" y2="220.8594"/><polygon fill="#181818" points="263,216.8594,253,220.8594,263,224.8594,259,220.8594" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="153.5,230.8594,143.5,234.8594,153.5,238.8594,149.5,234.8594" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="147.5" x2="246" y1="234.8594" y2="234.8594"/><polygon fill="#181818" points="41.5,259.9922,31.5,263.9922,41.5,267.9922,37.5,263.9922" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="35.5" x2="141.5" y1="263.9922" y2="263.9922"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="88" x="47.5" y="258.9263">réponse HTTP</text><!--MD5=[2d2ed26d2aaaa3b9a72e922f26876444]
+@startuml
+skinparam {
+shadowing false
+monochrome false
+}
+hide footbox
+title (architecture 3 tiers web)
+
+client - -> serveur_http : requête HTTP
+box
+	participant serveur_http
+	participant application
+end box
+
+serveur_http  - -> application
+activate application
+application->application
+application - -> sgbd : requêtes (x)ql
+application <- - sgbd
+application - -> application
+application - -> serveur_http
+deactivate application
+serveur_http  - -> client : réponse HTTP
+@enduml
+
+PlantUML version 1.2022.12(Sun Oct 23 18:12:26 GMT 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

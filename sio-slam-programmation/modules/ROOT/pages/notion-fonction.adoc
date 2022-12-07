@@ -25,7 +25,7 @@ En retour, cette fonction nous retournera un entier
 
 Le *type abstrait* de la fonction est donc :**`Int X Int -> Int`** (se lit _Int croix Int dans Int_)
 
-`Int X Int` représente le https://fr.wikipedia.org/wiki/Produit_cart%C3%A9sien[produit cartésien] de deux entiers, soit l'ensemble possible de tous les couples `(Int, Int)`
+`Int X Int` représente le https://fr.wikipedia.org/wiki/Produit_cart%C3%A9sien[produit cartésien] de deux entiers, soit l'ensemble possible de tous les couples d'entiers `(Int, Int)`. Dans le cadre d'une fonction simple (pas une méthode), l'ensemble des paramètres constitue le *domaine de départ* de la fonction. Ainsi une fonction se caratérise par son domaine de départ et son domaine d'arrivé (le type de la valeur de retour de la fonction)
 
 `Int X Int` est le domaine de départ et `Int` le domaine d'arrivé.
 
@@ -182,7 +182,9 @@ Exemple
 
 ====
 
-La méthode `transfert` reçoit 1 référence à un  compte. En retour, elle ne retourne rien, mais réalise 2 effets de bords : la référence à l'instance de compte à partir de laquelle la fonction a été appelée (référencé par **this** dans le corps de méthode) ainsi que son paramètre ont été modifiés par la méthode !
+La méthode `transfert` reçoit 1 référence à un  compte. En retour, elle ne retourne rien, mais réalise *2 effets de bords* : la référence à l'instance de compte à partir de laquelle la fonction a été appelée (référencé par **this** dans le corps de méthode) ainsi que son paramètre ont été modifiés par la méthode, comme le montre le test ci-après!
+
+<<<<
 
 .Exemple d'appel
 [source,kotlin]
@@ -201,3 +203,60 @@ La méthode `transfert` reçoit 1 référence à un  compte. En retour, elle ne 
 
 <1> Un seul argument de type `Compte` en paramètre (le premier argument de la version précédente a été placé en préfixe de l'appel)
 
+== Le contrat de la fonction
+
+Connu aussi sous la dénomination _documentation de l'API_
+
+Le contrat d'utilisation précise le rôle des éléments du domaine de départ et celui d'arrivé. Dans les langages courants, le contrat est représenté par un commentaire technique structuré (_JavaDoc_, _PhpDoc_, _KDoc_, etc.)
+
+La documentation technique démarre par une courte description du rôle de la fonction. On peut y placer des exemples d'utilisation.
+
+Puis, paramètre(s) et retour de fonction sont commentés, ainsi que les exceptions éventuelles et leurs conditions de déclenchement.
+
+.Exemple de déclaration de contrat
+[source,kotlin]
+----
+/**
+* Réalise le transfert d'une somme donnée du compte à un autre compte
+*
+* @param destinataire celui qui bénéficie du transmfert
+* @param montant le montant à transférer
+* @throws IllegalOperationException si crédit de this insuffisant
+*/
+@Throws(IllegalOperationException)
+fun transfert(destinataire: Int, montant: Double) {
+   if (debitPossible(montant) == false)
+       throw IllegalOperationException("solde insuffisant pour le tranfert")
+   // sinon on réalise les opérations demandées
+   // ...
+}
+----
+
+=== Tester le contrat
+
+Le contrat est de bonne inspiration pour la définition des tests unitaires.
+
+.Exemple d'un test unitaire qui contrôle le bon déclenchement d'une exception
+[source,kotlin]
+----
+  @Test
+    fun testTransfertImpossible() {
+        val source = Compte("Mezigue", 10.0)
+        val destinataire = Compte("Tezigue", 12.0)
+
+        try {
+           // test un transfert interdit
+           source.transfert(destinataire, 42.0)
+           // si on arrive ici, c'est que l'exception ne s'est pas déclenchée !
+           fail("Exception attendue !")
+        } catch (e: IllegalOperationException) {
+           // ok
+        }
+        // les comptes n'ont pas bougés
+        assertEquals(10.0, source.solde)
+        assertEquals(12.0, destinataire.solde)
+    }
+
+----
+
+IMPORTANT: Dorénavant, dans vos projet, veuillez inscrire le contrat d'utilisation de toutes vos fonctions et méthodes.

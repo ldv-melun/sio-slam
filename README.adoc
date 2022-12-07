@@ -1,6 +1,13 @@
-= utilisation d'antora (juillet 2022)
+= Support pédagogique SIO SLAM
 
-== projet sio-slam
+Le rendu est ici : https://ldv-melun.github.io/sio-slam/
+
+'''
+'''
+
+La suite est une documentation technique à destination des auteurs-collaborateurs-usagers de cette ressource pédagogique (asciidoc et antora).
+
+== utilisation d'antora (juillet 2022) projet sio-slam
 
 Pour factoriser/harmoniser les ressources pédagogiques éditées en AsciiDoc pour l'enseignement de SIO SLAM deuxième année.
 
@@ -39,15 +46,17 @@ Dans `antora-playbook.yml` :
 [code]
 ----
 asciidoc:
-  extensions:
-   - ./custom-lib/extension
-   - asciidoctor-kroki
+extensions:
+- ./custom-lib/extension
+- asciidoctor-kroki
   attributes:
-     kroki-fetch-diagram: true
+  kroki-fetch-diagram: true
 
 ----
 
-NOTE: Le reste de ce document explique la configuration du template du site, qui est un projet à part entière pour Antora. Il peut être ignoré.
+IMPORTANT: Pensez à inclure dans votre `commit` les fichiers images générés localement (des `.svg`) et de faire un `push`, sinon les diagrammes `plantuml` n'auront pas de rendus.
+
+Le reste de ce document explique la configuration du template du site, qui est un projet à part entière pour Antora. Il peut être ignoré.
 
 == projet sio-ui
 
@@ -75,7 +84,7 @@ Dans le `playbook` de sio-slam
 
 [source, yml]
 ----
-  bundle:
+bundle:
 #    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable
     url: https://github.com/ldv-melun/sio-ui/blob/master/build/ui-bundle.zip?raw=true&v=1
 #    url: ./../sio-ui/build/ui-bundle.zip
@@ -107,10 +116,10 @@ Lisa Gunn @lsgunnlsgunn juin 03 2020 23:33
 
 Ce que j'ai fait :
 ----
- cp antora-asciidoctor-extensions/tabs-block/behavior.js p4guitar-ui/src/js/07-tabset.js
- cat antora-asciidoctor-extensions/tabs-block/styles.css >> p4guitar-ui/src/css/doc.css
- mkdir custom-l
- cp ../antora-asciidoctor-extensions/tabs-block/extension.js custom-lib/ib
+cp antora-asciidoctor-extensions/tabs-block/behavior.js p4guitar-ui/src/js/07-tabset.js
+cat antora-asciidoctor-extensions/tabs-block/styles.css >> p4guitar-ui/src/css/doc.css
+mkdir custom-l
+cp ../antora-asciidoctor-extensions/tabs-block/extension.js custom-lib/ib
 ----
 
 dans playbook de sio-slam :
@@ -133,7 +142,7 @@ Motoko::
 
 Rust::
 +
- // TODO example$counter.rs[]
+// TODO example$counter.rs[]
 
 ====
 ----
@@ -143,22 +152,22 @@ Rust::
 [source,css]
 ----
 .tabs li {
-  [...]
-  font-weight: bold;
-  height: 2rem;
-  background-color: white;
-  color: black;
+[...]
+font-weight: bold;
+height: 2rem;
+background-color: white;
+color: black;
 }
 
 .tabset.is-loading .tabs li:not(:first-child),
 .tabset:not(.is-loading) .tabs li:not(.is-active) {
-  background-color: lavenderblush;
-  color: black;
-  font-weight: normal;
+background-color: lavenderblush;
+color: black;
+font-weight: normal;
 }
 ----
 
-Exemple de rendu (copie écran) :
-image:sio-slam-backend/modules/ROOT/assets/images/exemple-tabs-html.png[rendu tabs]
+Exemple de rendu (copie écran)
 
+image::sio-slam-backend/modules/ROOT/assets/images/exemple-tabs-html.png[rendu tabs]
 

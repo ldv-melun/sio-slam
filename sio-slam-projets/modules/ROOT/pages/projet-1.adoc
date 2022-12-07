@@ -1,3 +1,13 @@
-= Projet 1
+= Projet Kot-Line
+
+Projet à réaliser en équipe.
+
+Durée de réalisation : 3 semaines (+1 semaine pour la cybersécurité)
+
+*2 livrables*  (phase d'analyse et phase de réalisation)
+
+Voir ici  : https://ldv-melun.github.io/projet-kot-line/
+
+
 
 
