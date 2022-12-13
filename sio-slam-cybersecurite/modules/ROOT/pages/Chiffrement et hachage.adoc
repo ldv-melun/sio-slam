@@ -1,0 +1,16 @@
+== Chiffrement et hachage
+
+* En cryptographie, le chiffrement désigne la conversion des données depuis un format lisible dans un format codé.
+
+* Les données chiffrées ne peuvent être lues ou traitées qu’après leur déchiffrement.
+
+* Le chiffrement est l’élément fondamental de la sécurité des données.
+
+* C’est le moyen le plus simple et le plus efficace de s’assurer que les informations du système informatique ne peuvent être ni volées ni lues par quelqu’un qui souhaite les utiliser à des fins malveillantes.
+
+* Ces informations peuvent inclure tout type de renseignements, des données de paiement aux informations personnelles.
+
+* Le logiciel de chiffrement des données, également appelé algorithme de chiffrement ou code, est utilisé pour développer un schéma de chiffrement qui, en théorie, ne peut être rompu que par une exceptionnelle puissance de calcul.
+
+Support de cours : Chiffrement et hachage
+xref:sio-component:ROOT:attachment$Chiffrement_Hachage.pdf[Chiffrement et hachage]

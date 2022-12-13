@@ -1,4 +1,6 @@
 * xref:intro-cybersecurite.adoc[Cybersecurite]
 ** xref:Activites.adoc[Activités]
+** xref:Chiffrement et hachage.adoc[Chiffrement et hachage]
+
 
 
