@@ -1,5 +1,6 @@
 site:
   title: sio-slam
+
 #  url:
   start_page: sio-component::index-sio-slam.adoc
 output:
