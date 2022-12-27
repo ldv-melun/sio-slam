@@ -1,6 +1,7 @@
 * xref:intro-cybersecurite.adoc[Cybersecurite]
 ** xref:Activites.adoc[Activités]
-** xref:Chiffrement et hachage.adoc[Chiffrement et hachage]
+** xref:Chiffrement_hachage.adoc[Chiffrement et hachage]
+** xref:_ch_spring_security.adoc[Spring Security]
 
 
 

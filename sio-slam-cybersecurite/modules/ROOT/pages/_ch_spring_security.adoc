@@ -1,0 +1,187 @@
+== Spring security
+
+=== Introduction
+
+De manière générale, votre application Spring est composée de plusieurs modules qui fonctionnent indépendamment les uns des autres.
+
+* Spring Security fait partie de ces modules. Les modules Spring ressemblent à des conteneurs fermés, permettant à d’autres modules Spring de fonctionner ensemble, sans aucun conflit.
+* L'ajout de Spring Security, vise comme premier objectif de protéger les requêtes HTTP traitées sur votre application.
+* Chaque fois qu’un utilisateur clique sur un bouton ou qu’une information est transférée d'un tiers vers l'autre d'une application web, une requête HTTP est envoyée. Elle doit être sécurisée.
+* Ces requêtes HTTP adressées à votre application web traversent différents niveaux de protection après l'installation de Spring Security :
+
+    ** Un pare-feu HTTP.
+    ** Un proxy.
+    ** Des filtres.
+
+=== Le pare-feu
+
+Le pare-feu HTTP se trouve en première ligne de toute infrastructure.
+
+C'est le dispositif qui filtre le flux de communication, en étant très sélectif sur les informations qui pénètrent dans l’application. 
+
+C'est un système permettant de filtrer les paquets de données échangés entre un réseau externe et l'application web. il s'agit ainsi d'une passerelle filtrante comportant au minimum les interfaces réseau suivante :
+
+* Une interface pour le réseau à protéger réseau interne de l'application
+* Une interface pour le réseau externe.
+
+image::parefeu.jpg[parefeu, 250, 250]
+
+=== Le proxy
+En deuxième lieu se trouve le proxy.
+Une autorité extérieure qui gère les accès à une source protégée : *votre application web.*
+
+
+Un pare-feu contient généralement un ensemble de règles prédéfinies permettant de :
+
+* D'autoriser la connexion (allow);
+* De bloquer la connexion (deny);
+* De rejeter la demande de connexion sans avertir l'émetteur (drop).
+
+Le filtrage applicatif permet de filtrer les communications application par application. Le filtrage applicatif opère donc au niveau 7 (couche application) du modèle OSI, contrairement au filtrage de paquets simple (niveau 4).
+
+Le filtrage applicatif suppose donc une connaissance des protocoles utilisés par chaque application.
+
+=== Les filtres
+
+Les filtres s’assurent que toutes les requêtes HTTP à destination de l'application web sont sécurisées.
+
+Chaque filtre (*rule*) fournit une configuration de sécurité que vous pouvez intégrer à votre application web.
+
+Cette collection de filtres servlet implantés est appelée *chaîne de filtres de Spring Security*.
+
+=== Liaison Proxy - Filter
+
+Grâce à la classe DelegatingFilterProxy (qui implémente le patron de conception proxy) la chaîne de filtres de Spring Security est intégré à votre application.
+Les filtres de sécurité sont ensuite ajoutés pour créer un moteur de sécurité pour l’application.
+Selon le niveau de complexité désiré par le développeur, les filtres peuvent fournir des configurations de sécurité simples ou avancées contre les attaques. De plus, le framework Spring permet de personnaliser la configuration des servlets nécessaires à l’application web.  
+
+Pour un filtre permettant de sécuriser vos informations de connexion, la requête depuis le front-end et passe le premier pare-feu, **DelegatingFilterProxy** s’occupe de classer le trafic HTTP, et de l’envoyer vers les filtres de la chaîne de Spring Security prenant en charge les informations de connexion.
+
+
+[IMPORTANT]
+Même si aucun filtre n'a été programmé, votre application disposera quand-même de fonctionnalités autoconfigurées et performantes de Spring Security, simplement grâce à l'ajout de ce dernier !
+
+
+=== Authentification et autorisation
+
+* Pour une connexion à un espace personnel sur le site de votre banque, l’application web doit vous authentifier, vérifie l'identité de l'utilisateur et accorde les autorisations appropriées.
+
+* L’authentification et l’autorisation constituent le cœur de Spring Security.
+
+* En sécurité, nous parlons de contrôle d’accès. Il s’agit de contrôler l’accès à une application web nécessitant un mécanisme de connexion.
+
+Le contrôle d’accès se compose de deux étapes. Vous avez deviné ? 
+
+
+[NOTE]
+On utilisera Spring Security pour gérer le contrôle d'accès : Authentification + Autorisation
+
+
+==== Focus sur l'authentification
+Il faut distinguer 3 scénarios d’authentification :
+
+* Les données des utilisateurs (identifiant + mot de passe) sont stockés dans une base de données à laquelle le développeur a accès : c’est le cas le plus courant, et celui qui sera détaillé ici.
+
+* L’application n’a pas directement accès à ces informations et doit passer par  exemple par un service REST tiers pour l’authentification.
+
+* L’authentification est effectuée via OAuth2 (cas d’un “login with Google” par exemple).
+
+=== Utilisation de spring security
+
+==== Injection de la dépendance dans le fichier *pom.xml* :
+
+image::injection.jpg[]
+
+=== La classe HttpSecurity
+
+Pour exploiter les ressources de Spring boot, on sollicite la classe HttpSecurity pour appliquer la chaîne de filtres de sécurité aux requêtes HTTP.
+
+Par défaut, un objet HttpSecurity assure les tâches suivantes :
+
+* Nécessite que l'accès à l'application se fait via une authentification
+* Les utilisateurs se connectent grâce à un formulaire de login
+* Les utilisateurs se fait en utilisant une authentification HTTP basique
+
+image::exe_filter_1.jpg[1000]
+
+image::fonctionnement_spring_secu.jpg[width=1950]
+
+1. L'utilisateur lance une requête HTTP /private pour laquelle il n'est pas autorisée
+2. Spring Security par le biais de FilterSpringInterceptor indique que l'accès est refusé
+3. Puisque l'utilisateur n'est pas authentifié, ExceptionTranslationFilter redirige vers la page login (Redirection effectuée)
+4. Le navigateur appelle la page de login
+5. Le contrôleur doit retourner la page de login
+
+
+[NOTE]
+Dès l'injection de Spring Security, un niveau de  sécurité minimum est mis en place exigeant une authentification avant d'accéder à l'application.
+Ce niveau permet de générer un mot de passe par défaut et une configuration initiale :
+
+    login :  user
+    mot de passe :
+
+image::auth_mdp.jpg[]
+
+==== Autorisation Spring Security
+
+image::autorisation_sps.jpg[width=1648]
+
+
+==== Exemples d'applications des autorisations
+Ces Beans sont à insérer dans le fichier de configuration spring security, créé de façon manuelle :
+
+image::autorisation_1.jpg[width=1723]
+
+image::autorisation_2.jpg[width=1723]
+
+image::autorisation_3.jpg[width=1950]
+
+image::autorisation_4.jpg[width=1950]
+
+==== Stockage de username/password
+Les mécanismes de stockage de la chaine de connexion à l'application sont décrits au niveau de l'URL suivante :
+
+https://docs.spring.io/spring-security/reference/servlet/authentication/passwords/storage.html[]
+
+=== "InMemory" Authentification
+Dans cet exemple, la configuration exige que l'utilisateur doit s'authentifier et doit avoir le rôle ROLE_USER.
+
+Elle définit une authentification de type "InMermoryAuthentication" pour un utilisateur ayant comme login : "user" et comme mot de passe "password".
+
+==== Exemple
+
+image::exe_filter_2.jpg[width=1500]
+
+image::login_1.jpg[width=250]
+
+==== Personnalisation de la chaine de connexion
+
+Pour personnaliser cet identifiant et le mot de mot passe, on utilisera le fichier resources : *application.properties*, en paramétrant les valeurs suivantes :
+====
+    spring.security.user.name=professeur
+    spring.security.user.password=azert123
+    spring.autoconfigure.exclude=disable
+====
+
+Cette solution reste basique, si on veut créer plusieurs utilisateurs avec des droits différents.
+La solution à mettre place consiste à créer une classe : #Configuration de la sécurité de l'application.#
+
+Pour cela on crée :
+
+Un package config
+Une classe nommée : **_SecuConfiguration_**
+
+=== UserDetails Authentification
+
+image::exe_userDetails.jpg[]
+
+Grâce à la classe HttpSecurity, on pourra instaurer plusieurs filtres pour contrôler l'accès à notre application.
+
+L'extrait de code suivant vous donne certains filtres usuellement utilisés :
+
+image::types_filtres.jpg[width=1950]
+
+==== Personnalisation de la fenêtre de connexion
+
+image::image-2022-12-27-13-30-57-748.jpg[width=1950]
+
