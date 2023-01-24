@@ -1,6 +1,5 @@
 = Angular
 
-
 ==  Prérequis
 
 On admet que vous disposez des outils nécessaires pour commencer la programmation Angular.
@@ -88,7 +87,7 @@ La commande a créé un dossier du nom du projet, et 2 sous-dossiers :
 
 * Le dossier `node_modules` contient les librairies JavaScript développées par des tiers (dont `Google`). Dans la version actuelle (2023) ce dossier contient 540 sous-dossiers...
 
-IMPORTANT: Vous ne devez jamais retoucher le code de ces librairies de `node_modules` !
+IMPORTANT: Vous ne devez jamais retoucher le code des librairies de `node_modules` !
 
 * Le dossier `src` (_source_). C'est là où vous mettrez le code de votre application.
 
@@ -209,7 +208,7 @@ image::premier-lancement.png[first]
 ====
 [start=1]
 
-. Faire en sorte que l'application ne présente que le message `Hello World` lorsqu'elle est lancée, à l'image de la capture écran ci-dessous.
+. Faire en sorte que l'application ne présente que le message `Hello World` lorsqu'elle est lancée, à l'image de la capture écran ci-dessous, c'est à dire en conservant l'image SVG de la fusée.
 
 .Exemple
 image::page-hello-world.png[hello world]
@@ -220,11 +219,3 @@ image::page-hello-world.png[hello world]
 
 . Faire en sorte que le texte de l'onglet du navigateur soit *Hello World* et non pas _Projet1_
 ====
-
-====
-[start=3]
-
-. Faire en sorte que la page affiche l'IP du client qui l'a sollicité.
-====
-
-
