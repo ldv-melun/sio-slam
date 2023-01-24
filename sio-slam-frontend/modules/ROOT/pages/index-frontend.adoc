@@ -1,24 +1,34 @@
-= SIO-SLAM
+= Frontend
 
-== Page Coordinates
+== Introduction
 
-page-component-name: {page-component-name}
+Une application _Frontend_ est une application qui s'exécute sur le client web, généralement en JavaScript.
 
-page-component-version: {page-component-version}
+== Structurer une application front
 
-page-module: {page-module}
+Il existe de nombreux frameworks JS qui aide à structurer les logiques d'une application frontend. Les principaux sont
 
-// page-relative: {page-relative}
+* Angular
+* React
+* VueJS
+* VanillaJS
 
-== A simple distributed component
+== Les outils nécessaires
 
-This is a simple example of a distributed component.
+Pour développer des applications Angular, vous aurez besoin de certains outils, notamment :
 
-* One content file is in source1 and one in source2.
-* One navigation file is in source1 and one in source2.
-* All the configuration for the component is in source1's `antora.yml`.
-* Antora errors if you have duplicated a navigation or content file across the multiple sources for the component.
-* Note the component selector (below the nav tree) has only one component listed.
-* The content is one component because the two `antora.yml` files have the same name and version attributes.
+**Node.js**: Il s'agit d'une plateforme d'exécution JavaScript qui permet d'exécuter du code JavaScript côté serveur. Angular utilise Node.js pour gérer les dépendances et lancer des tâches de développement.
 
-Here's a link to the content in the other part:
+**npm** (Node Package Manager) : Il s'agit d'un gestionnaire de paquets pour Node.js qui permet de télécharger et gérer les dépendances d'un projet Angular.
+
+**TypeScript** : Il s'agit d'un langage de programmation développé par Microsoft qui est utilisé pour écrire le code d'une application Angular. Il est fortement typé et permet de bénéficier d'une meilleure productivité et qualité de code.
+
+**Un éditeur de code** : Il est recommandé d'utiliser un éditeur de code qui prend en charge TypeScript, comme Visual Studio Code, WebStorm, Atom, etc. Ces éditeurs offrent des fonctionnalités comme la coloration syntaxique, la complétion de code, etc.
+
+**Un navigateur web** : Il est important d'avoir un navigateur web pour tester et déboguer l'application Angular. Les navigateurs web les plus couramment utilisés sont Google Chrome, Mozilla Firefox, et Microsoft Edge.
+
+**Un gestionnaire de version** : Git est le plus populaire.
+
+
+Il est important de noter que ces outils sont les principaux nécessaires pour développer des applications Angular. Il existe également d'autres outils ou bibliothèques que vous pourriez utiliser pour ajouter des fonctionnalités ou améliorer la qualité de votre application.
+

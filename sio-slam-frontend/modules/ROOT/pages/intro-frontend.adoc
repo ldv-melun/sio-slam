@@ -1,12 +1,230 @@
-= Frontend
+= Angular
 
-== What is ?
 
-=== Example 1
+==  Prérequis
 
-Vanilla js
+On admet que vous disposez des outils nécessaires pour commencer la programmation Angular.
 
-=== Example 2
+Afin d'aborder Angular, nous allons créer une application et étudier certains de ses particularités.
 
-Framework js
+**Angular CLI** (_Command Line Interface_) est un outil en ligne de commande pour Angular qui facilite, entre autres, la création et la configuration de nouveaux projets Angular, ainsi que la génération de composants, de services, et d'autres éléments de l'application.
+
+Angular CLI permet également d'exécuter des tâches de développement courantes, telles que la compilation, le débogage et le déploiement de l'application.).
+
+Bien que Angular CLI ne soit pas obligatoire, il facilite grandement le travail !
+
+=== Installation de Angular CLI
+
+En ligne de commande (ouvrir un terminal) tapper la commande qui installe Angular CLI sur votre compte utilisateur (inutile d'être en admin)
+
+[source, bash]
+----
+npm install -g @angular/cli
+----
+
+*Vérification*
+
+On demande la version actuelle de Angular CI par la commande `ng version`. Exemple.
+
+[source, bash]
+----
+ng version
+
+     _                      _                 ____ _     ___
+    / \   _ __   __ _ _   _| | __ _ _ __     / ___| |   |_ _|
+   / △ \ | '_ \ / _` | | | | |/ _` | '__|   | |   | |    | |
+  / ___ \| | | | (_| | |_| | | (_| | |      | |___| |___ | |
+ /_/   \_\_| |_|\__, |\__,_|_|\__,_|_|       \____|_____|___|
+                |___/
+
+
+Angular CLI: 15.1.2
+Node: 16.15.1
+Package Manager: npm 9.2.0
+OS: linux x64
+
+Angular:
+...
+
+Package                      Version
+------------------------------------------------------
+@angular-devkit/architect    0.1501.2 (cli-only)
+@angular-devkit/core         15.1.2 (cli-only)
+@angular-devkit/schematics   15.1.2 (cli-only)
+@schematics/angular          15.1.2 (cli-only)
+
+
+----
+
+== Création d’une première application
+
+Une application de type Frontend est de type mono-page, ou *SPA* (_Single Page Application_) qui s'exécute principalement dans le navigateur et qui communique avec le serveur qui l'a délivrée par des services web.
+
+Les avantages d’une SPA par rapport à une application web standard sont :
+
+* de fluidifier l’expérience utilisateur en évitant de charger une nouvelle page à chaque action de l’utilisateur ;
+* de permettre de s’exécuter localement sur le navigateur de l’utilisateur.
+
+Les frameworks servant de base à une application SPA sont généralement développés avec les technologies web classiques : HTML5, CSS3, Javascript ou Typescript.
+
+Création d'une application Angular en ligne de commande :
+
+[source, bash]
+----
+ng new projet1 --style=css --routing=false --strict
+----
+
+Les options indiquent le nom du projet (_projet1_), le type des fichiers de style (ici `css`), la non-application des routes de l’application, et active le mode strict selon les recommandations de la team TypeScript afin de limiter les bugs et de produire du code maintenable.
+
+La commande a créé un dossier du nom du projet, et 2 sous-dossiers :
+
+[source, bash]
+----
+.
+└── projet1
+    ├── node_modules
+    └── src
+----
+
+* Le dossier `node_modules` contient les librairies JavaScript développées par des tiers (dont `Google`). Dans la version actuelle (2023) ce dossier contient 540 sous-dossiers...
+
+IMPORTANT: Vous ne devez jamais retoucher le code de ces librairies de `node_modules` !
+
+* Le dossier `src` (_source_). C'est là où vous mettrez le code de votre application.
+
+Voici ce que contient le dossier `src`, à l'état initial (résultat de la commande CLI)
+
+.projet1/src
+[source, bash]
+----
+src/
+├── app
+│   ├── app.component.html
+│   ├── app.component.css
+│   ├── app.component.spec.ts
+│   ├── app.component.ts
+│   └── app.module.ts
+├── assets
+├── favicon.ico
+├── index.html
+├── main.ts
+└── styles.scss
+----
+
+`app` est le composant principal de l'application. Comme tout composant Angular, il est composé de 4 parties principales :
+
+* Le code du rendu visuel (.html)
+* Le code de la mise en page (.css ou .scss)
+* Le code du composant (.ts - une classe TypeScript _décorée_)
+* Le code des tests unitaires (.ts)
+
+=== Le composant principal
+
+.projet1/src/app/app.component.ts
+[source, typescript]
+----
+import { Component } from '@angular/core';
+
+@Component({ <1>
+  selector: 'app-root', <2>
+  templateUrl: './app.component.html', <3>
+  styleUrls: ['./app.component.css'] <4>
+})
+export class AppComponent { <5>
+  title = 'projet1';  <6>
+}
+----
+<1> Cette annotation (décorateur) s'applique à la classe déclarée dans ce fichier
+<2> Le sélecteur HTML qui identifie ce composant dans une page HTML
+<3> Le code HTML de la vue de ce composant
+<4> Le code CSS associé
+<5> Déclaration de la classe du composant (observez la convention de nommage)
+<6> La propriété `title` est définie ici.
+
+
+=== Le module du composant principal
+
+`app.module.ts` est un fichier qui déclare les dépendances et les relations entre les différents éléments de l'application pour un composant donné, il permet de structurer et organiser l'application pour une meilleure lisibilité et maintenabilité.
+
+.projet1/src/app/app.module.ts
+[source, typescript]
+----
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { AppComponent } from './app.component';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+----
+
+Les *imports* : Permettre d'importer les modules nécessaires pour ce module. Ici, on importe `NgModule` de @angular/core et `BrowserModule` de @angular/platform-browser. Ces modules sont nécessaires pour exécuter l'application dans un navigateur.
+
+Dans @NgModule:
+
+Les *déclarations* : Définir les composants (entre autres) qui appartiennent à ce module. Ici, on déclare `AppComponent` importé précédemment.
+
+Les *imports* : Les imports définissent les modules qui sont utilisés par ce module. Ici, on importe `BrowserModule` pour permettre l'exécution de l'application dans un navigateur.
+
+Les *fournisseurs* (_providers_): Les fournisseurs définissent les *services qui sont utilisés* par ce module. Ici, il n'y a pas de fournisseurs définis.
+
+Le *bootstrap* : Le bootstrap définit le composant qui sera utilisé comme *point d'entrée pour l'application*. Ici, on utilise `AppComponent` comme point d'entrée.
+
+à la fin L'*export* permet d'exporter le module pour qu'il puisse être utilisé par d'autres parties de l'application.
+
+_Ceci est un exemple d'un module de base, vous pourriez avoir besoin d'ajouter des déclarations, des imports, des fournisseurs ou des configurations supplémentaires selon les besoins de votre application._
+
+
+=== Construction de l'application
+
+La commande *`ng build`* est une commande d'Angular CLI qui permet de compiler et de construire l'application pour la production. Elle utilise la configuration de l'application définie dans le fichier `angular.json` pour compiler les sources TypeScript en JavaScript, optimiser les images et les fichiers de style, et générer les fichiers de sortie dans un format optimisé pour la production tels que les fichiers HTML, CSS et JavaScript minifiés. Le résultat est placé généralement dans un dossier appelé "*dist*" ou "*build*" et contient tous les fichiers nécessaires pour l'exécution de l'application par un navigateur.
+
+=== Lancer l'application
+
+Nous aurons besoin d'un serveur HTTP pour rendre disponible l'application à des navigateurs web. Angular CLI dispose d'une commande bien pratique, nommée `serve`.
+
+La commande `ng serve` compile (comme le `build`) le projet et lance un serveur HTTP qui se charge de servir l'application aux requestes des navigateurs web.  Il permet également de surveiller les modifications des fichiers et de relancer automatiquement le serveur lorsque des modifications sont détectées.
+
+.lancement
+[source, bash]
+----
+ng serve
+----
+
+.Exemple
+image::premier-lancement.png[first]
+
+
+== Travaux pratiques
+
+====
+[start=1]
+
+. Faire en sorte que l'application ne présente que le message `Hello World` lorsqu'elle est lancée, à l'image de la capture écran ci-dessous.
+
+.Exemple
+image::page-hello-world.png[hello world]
+====
+
+====
+[start=2]
+
+. Faire en sorte que le texte de l'onglet du navigateur soit *Hello World* et non pas _Projet1_
+====
+
+====
+[start=3]
+
+. Faire en sorte que la page affiche l'IP du client qui l'a sollicité.
+====
+
 
