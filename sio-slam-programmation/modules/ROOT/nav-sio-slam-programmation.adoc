@@ -1,4 +1,3 @@
-
 * Programmation
 
 ** xref:notion-fonction.adoc[Fonction - l'essentiel 1/2]

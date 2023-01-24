@@ -3,7 +3,6 @@
 
 == titre
 
-Blabla
 
 // https://docs.antora.org/antora/latest/page/attachments/
 

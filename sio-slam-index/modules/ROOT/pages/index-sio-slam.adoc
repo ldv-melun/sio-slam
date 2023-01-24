@@ -455,7 +455,7 @@ a| O.CAPUOZZO - R.LAROUSSI
 
 a| R.LAROUSSI
 
-* Cours :
+* Cours : Introdcution à spring security
 
 a| R.LAROUSSI (remplacé)
 
