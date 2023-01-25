@@ -377,9 +377,9 @@ image::InconnueIP.png[InconnueIp]
 ====
 [start=1]
 
-Il semblerait que la variable `{{ipAddress}}` dans la vue réceptionne la valeur par défaut de la variable. Trouvez un moyen pour corriger cela.
+Il semblerait que l'instruction `{{ipAddress}}` dans la vue nous donne la *valeur par défaut* de la propriété de même nom de la classe TypeScript du composant. Trouvez un moyen pour corriger cela.
 
-Il existe plusieurs façons d'opérer. Faites des recherches en utilisant les moyens que vous avez à disposition, en mode connecté à internet bien entendu.
+Il existe plusieurs façons d'opérer. Faites marcher votre logique en premier, puis, si cela ne suffit pas, passez en mode connecté internet.
 
 . Faire en sorte que l'application présente l'adresse IP du client sur la page principale, et non *Inconnue IP*.
 ]
