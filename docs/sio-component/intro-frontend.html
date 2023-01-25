@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Frontend :: sio-slam</title>
-    <meta name="generator" content="Antora 3.0.2">
+    <title>Angular :: sio-slam</title>
+    <meta name="generator" content="Antora 3.0.1">
     <link rel="stylesheet" href="../_/css/site.css">
     <script>var uiRootPath = '../_'</script>
     <link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
@@ -283,6 +283,9 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="index-spring-boot.html">Initiation à Spring Boot</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#_ch_spring_security.adoc">Spring security</a>
+  </li>
 </ul>
   </li>
 </ul>
@@ -334,27 +337,343 @@
     <li><a href="intro-frontend.html">Explain introduction</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///D:/SI6/sio-slam/sio-slam-frontend/modules/ROOT/pages/intro-frontend.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="file:///home/kpu/ldv/sio/antora-sio-slam/sio-slam/sio-slam-frontend/modules/ROOT/pages/intro-frontend.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Frontend</h1>
+<h1 class="page">Angular</h1>
 <div class="sect1">
-<h2 id="_what_is"><a class="anchor" href="#_what_is"></a>What is ?</h2>
+<h2 id="_prérequis"><a class="anchor" href="#_prérequis"></a>Prérequis</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="_example_1"><a class="anchor" href="#_example_1"></a>Example 1</h3>
 <div class="paragraph">
-<p>Vanilla js</p>
+<p>On admet que vous disposez des outils nécessaires pour commencer la programmation Angular.</p>
+</div>
+<div class="paragraph">
+<p>Afin d&#8217;aborder Angular, nous allons créer une application et étudier certains de ses particularités.</p>
+</div>
+<div class="paragraph">
+<p><strong>Angular CLI</strong> (<em>Command Line Interface</em>) est un outil en ligne de commande pour Angular qui facilite, entre autres, la création et la configuration de nouveaux projets Angular, ainsi que la génération de composants, de services, et d&#8217;autres éléments de l&#8217;application.</p>
+</div>
+<div class="paragraph">
+<p>Angular CLI permet également d&#8217;exécuter des tâches de développement courantes, telles que la compilation, le débogage et le déploiement de l&#8217;application.).</p>
+</div>
+<div class="paragraph">
+<p>Bien que Angular CLI ne soit pas obligatoire, il facilite grandement le travail !</p>
+</div>
+<div class="sect2">
+<h3 id="_installation_de_angular_cli"><a class="anchor" href="#_installation_de_angular_cli"></a>Installation de Angular CLI</h3>
+<div class="paragraph">
+<p>En ligne de commande (ouvrir un terminal) tapper la commande qui installe Angular CLI sur votre compte utilisateur (inutile d&#8217;être en admin)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">npm install -g @angular/cli</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Vérification</strong></p>
+</div>
+<div class="paragraph">
+<p>On demande la version actuelle de Angular CI par la commande <code>ng version</code>. Exemple.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">ng version
+
+     _                      _                 ____ _     ___
+    / \   _ __   __ _ _   _| | __ _ _ __     / ___| |   |_ _|
+   / △ \ | '_ \ / _` | | | | |/ _` | '__|   | |   | |    | |
+  / ___ \| | | | (_| | |_| | | (_| | |      | |___| |___ | |
+ /_/   \_\_| |_|\__, |\__,_|_|\__,_|_|       \____|_____|___|
+                |___/
+
+
+Angular CLI: 15.1.2
+Node: 16.15.1
+Package Manager: npm 9.2.0
+OS: linux x64
+
+Angular:
+...
+
+Package                      Version
+------------------------------------------------------
+@angular-devkit/architect    0.1501.2 (cli-only)
+@angular-devkit/core         15.1.2 (cli-only)
+@angular-devkit/schematics   15.1.2 (cli-only)
+@schematics/angular          15.1.2 (cli-only)</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_création_dune_première_application"><a class="anchor" href="#_création_dune_première_application"></a>Création d’une première application</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Une application de type Frontend est de type mono-page, ou <strong>SPA</strong> (<em>Single Page Application</em>) qui s&#8217;exécute principalement dans le navigateur et qui communique avec le serveur qui l&#8217;a délivrée par des services web.</p>
+</div>
+<div class="paragraph">
+<p>Les avantages d’une SPA par rapport à une application web standard sont :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>de fluidifier l’expérience utilisateur en évitant de charger une nouvelle page à chaque action de l’utilisateur ;</p>
+</li>
+<li>
+<p>de permettre de s’exécuter localement sur le navigateur de l’utilisateur.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Les frameworks servant de base à une application SPA sont généralement développés avec les technologies web classiques : HTML5, CSS3, Javascript ou Typescript.</p>
+</div>
+<div class="paragraph">
+<p>Création d&#8217;une application Angular en ligne de commande :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">ng new projet1 --style=css --routing=false --strict</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Les options indiquent le nom du projet (<em>projet1</em>), le type des fichiers de style (ici <code>css</code>), la non-application des routes de l’application, et active le mode strict selon les recommandations de la team TypeScript afin de limiter les bugs et de produire du code maintenable.</p>
+</div>
+<div class="paragraph">
+<p>La commande a créé un dossier du nom du projet, et 2 sous-dossiers :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">.
+└── projet1
+    ├── node_modules
+    └── src</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Le dossier <code>node_modules</code> contient les librairies JavaScript développées par des tiers (dont <code>Google</code>). Dans la version actuelle (2023) ce dossier contient 540 sous-dossiers&#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Vous ne devez jamais retoucher le code des librairies de <code>node_modules</code> !
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Le dossier <code>src</code> (<em>source</em>). C&#8217;est là où vous mettrez le code de votre application.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Voici ce que contient le dossier <code>src</code>, à l&#8217;état initial (résultat de la commande CLI)</p>
+</div>
+<div class="listingblock">
+<div class="title">projet1/src</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">src/
+├── app
+│   ├── app.component.html
+│   ├── app.component.css
+│   ├── app.component.spec.ts
+│   ├── app.component.ts
+│   └── app.module.ts
+├── assets
+├── favicon.ico
+├── index.html
+├── main.ts
+└── styles.scss</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>app</code> est le composant principal de l&#8217;application. Comme tout composant Angular, il est composé de 4 parties principales :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Le code du rendu visuel (.html)</p>
+</li>
+<li>
+<p>Le code de la mise en page (.css ou .scss)</p>
+</li>
+<li>
+<p>Le code du composant (.ts - une classe TypeScript <em>décorée</em>)</p>
+</li>
+<li>
+<p>Le code des tests unitaires (.ts)</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_le_composant_principal"><a class="anchor" href="#_le_composant_principal"></a>Le composant principal</h3>
+<div class="listingblock">
+<div class="title">projet1/src/app/app.component.ts</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { Component } from '@angular/core';
+
+@Component({ <i class="conum" data-value="1"></i><b>(1)</b>
+  selector: 'app-root', <i class="conum" data-value="2"></i><b>(2)</b>
+  templateUrl: './app.component.html', <i class="conum" data-value="3"></i><b>(3)</b>
+  styleUrls: ['./app.component.css'] <i class="conum" data-value="4"></i><b>(4)</b>
+})
+export class AppComponent { <i class="conum" data-value="5"></i><b>(5)</b>
+  title = 'projet1';  <i class="conum" data-value="6"></i><b>(6)</b>
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Cette annotation (décorateur) s&#8217;applique à la classe déclarée dans ce fichier</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Le sélecteur HTML qui identifie ce composant dans une page HTML</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Le code HTML de la vue de ce composant</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>Le code CSS associé</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>Déclaration de la classe du composant (observez la convention de nommage)</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="6"></i><b>6</b></td>
+<td>La propriété <code>title</code> est définie ici.</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_example_2"><a class="anchor" href="#_example_2"></a>Example 2</h3>
+<h3 id="_le_module_du_composant_principal"><a class="anchor" href="#_le_module_du_composant_principal"></a>Le module du composant principal</h3>
 <div class="paragraph">
-<p>Framework js</p>
+<p><code>app.module.ts</code> est un fichier qui déclare les dépendances et les relations entre les différents éléments de l&#8217;application pour un composant donné, il permet de structurer et organiser l&#8217;application pour une meilleure lisibilité et maintenabilité.</p>
+</div>
+<div class="listingblock">
+<div class="title">projet1/src/app/app.module.ts</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { AppComponent } from './app.component';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Les <strong>imports</strong> : Permettre d&#8217;importer les modules nécessaires pour ce module. Ici, on importe <code>NgModule</code> de @angular/core et <code>BrowserModule</code> de @angular/platform-browser. Ces modules sont nécessaires pour exécuter l&#8217;application dans un navigateur.</p>
+</div>
+<div class="paragraph">
+<p>Dans @NgModule:</p>
+</div>
+<div class="paragraph">
+<p>Les <strong>déclarations</strong> : Définir les composants (entre autres) qui appartiennent à ce module. Ici, on déclare <code>AppComponent</code> importé précédemment.</p>
+</div>
+<div class="paragraph">
+<p>Les <strong>imports</strong> : Les imports définissent les modules qui sont utilisés par ce module. Ici, on importe <code>BrowserModule</code> pour permettre l&#8217;exécution de l&#8217;application dans un navigateur.</p>
+</div>
+<div class="paragraph">
+<p>Les <strong>fournisseurs</strong> (<em>providers</em>): Les fournisseurs définissent les <strong>services qui sont utilisés</strong> par ce module. Ici, il n&#8217;y a pas de fournisseurs définis.</p>
+</div>
+<div class="paragraph">
+<p>Le <strong>bootstrap</strong> : Le bootstrap définit le composant qui sera utilisé comme <strong>point d&#8217;entrée pour l&#8217;application</strong>. Ici, on utilise <code>AppComponent</code> comme point d&#8217;entrée.</p>
+</div>
+<div class="paragraph">
+<p>à la fin L'<strong>export</strong> permet d&#8217;exporter le module pour qu&#8217;il puisse être utilisé par d&#8217;autres parties de l&#8217;application.</p>
+</div>
+<div class="paragraph">
+<p><em>Ceci est un exemple d&#8217;un module de base, vous pourriez avoir besoin d&#8217;ajouter des déclarations, des imports, des fournisseurs ou des configurations supplémentaires selon les besoins de votre application.</em></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_construction_de_lapplication"><a class="anchor" href="#_construction_de_lapplication"></a>Construction de l&#8217;application</h3>
+<div class="paragraph">
+<p>La commande <strong><code>ng build</code></strong> est une commande d&#8217;Angular CLI qui permet de compiler et de construire l&#8217;application pour la production. Elle utilise la configuration de l&#8217;application définie dans le fichier <code>angular.json</code> pour compiler les sources TypeScript en JavaScript, optimiser les images et les fichiers de style, et générer les fichiers de sortie dans un format optimisé pour la production tels que les fichiers HTML, CSS et JavaScript minifiés. Le résultat est placé généralement dans un dossier appelé "<strong>dist</strong>" ou "<strong>build</strong>" et contient tous les fichiers nécessaires pour l&#8217;exécution de l&#8217;application par un navigateur.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_lancer_lapplication"><a class="anchor" href="#_lancer_lapplication"></a>Lancer l&#8217;application</h3>
+<div class="paragraph">
+<p>Nous aurons besoin d&#8217;un serveur HTTP pour rendre disponible l&#8217;application à des navigateurs web. Angular CLI dispose d&#8217;une commande bien pratique, nommée <code>serve</code>.</p>
+</div>
+<div class="paragraph">
+<p>La commande <code>ng serve</code> compile (comme le <code>build</code>) le projet et lance un serveur HTTP qui se charge de servir l&#8217;application aux requestes des navigateurs web.  Il permet également de surveiller les modifications des fichiers et de relancer automatiquement le serveur lorsque des modifications sont détectées.</p>
+</div>
+<div class="listingblock">
+<div class="title">lancement</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">ng serve</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/premier-lancement.png" alt="first">
+</div>
+<div class="title">Figure 1. Exemple</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_travaux_pratiques"><a class="anchor" href="#_travaux_pratiques"></a>Travaux pratiques</h2>
+<div class="sectionbody">
+<div class="exampleblock">
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic" start="1">
+<li>
+<p>Faire en sorte que l&#8217;application ne présente que le message <code>Hello World</code> lorsqu&#8217;elle est lancée, à l&#8217;image de la capture écran ci-dessous, c&#8217;est à dire en conservant l&#8217;image SVG de la fusée.</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/page-hello-world.png" alt="hello world">
+</div>
+<div class="title">Figure 2. Exemple</div>
+</div>
+</div>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic" start="2">
+<li>
+<p>Faire en sorte que le texte de l&#8217;onglet du navigateur soit <strong>Hello World</strong> et non pas <em>Projet1</em></p>
+</li>
+</ol>
+</div>
 </div>
 </div>
 </div>

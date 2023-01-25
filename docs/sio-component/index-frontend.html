@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>SIO-SLAM :: sio-slam</title>
-    <meta name="generator" content="Antora 3.0.2">
+    <title>Frontend :: sio-slam</title>
+    <meta name="generator" content="Antora 3.0.1">
     <link rel="stylesheet" href="../_/css/site.css">
     <script>var uiRootPath = '../_'</script>
     <link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
@@ -283,6 +283,9 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="index-spring-boot.html">Initiation à Spring Boot</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#_ch_spring_security.adoc">Spring security</a>
+  </li>
 </ul>
   </li>
 </ul>
@@ -334,58 +337,72 @@
     <li><a href="index-frontend.html">Home Page</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///D:/SI6/sio-slam/sio-slam-frontend/modules/ROOT/pages/index-frontend.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="file:///home/kpu/ldv/sio/antora-sio-slam/sio-slam/sio-slam-frontend/modules/ROOT/pages/index-frontend.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">SIO-SLAM</h1>
+<h1 class="page">Frontend</h1>
 <div class="sect1">
-<h2 id="_page_coordinates"><a class="anchor" href="#_page_coordinates"></a>Page Coordinates</h2>
+<h2 id="_introduction"><a class="anchor" href="#_introduction"></a>Introduction</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>page-component-name: sio-component</p>
-</div>
-<div class="paragraph">
-<p>page-component-version: </p>
-</div>
-<div class="paragraph">
-<p>page-module: ROOT</p>
+<p>Une application <em>Frontend</em> est une application qui s&#8217;exécute sur le client web, généralement en JavaScript.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_a_simple_distributed_component"><a class="anchor" href="#_a_simple_distributed_component"></a>A simple distributed component</h2>
+<h2 id="_structurer_une_application_front"><a class="anchor" href="#_structurer_une_application_front"></a>Structurer une application front</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This is a simple example of a distributed component.</p>
+<p>Il existe de nombreux frameworks JS qui aide à structurer les logiques d&#8217;une application frontend. Les principaux sont</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>One content file is in source1 and one in source2.</p>
+<p>Angular</p>
 </li>
 <li>
-<p>One navigation file is in source1 and one in source2.</p>
+<p>React</p>
 </li>
 <li>
-<p>All the configuration for the component is in source1&#8217;s <code>antora.yml</code>.</p>
+<p>VueJS</p>
 </li>
 <li>
-<p>Antora errors if you have duplicated a navigation or content file across the multiple sources for the component.</p>
-</li>
-<li>
-<p>Note the component selector (below the nav tree) has only one component listed.</p>
-</li>
-<li>
-<p>The content is one component because the two <code>antora.yml</code> files have the same name and version attributes.</p>
+<p>VanillaJS</p>
 </li>
 </ul>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_les_outils_nécessaires"><a class="anchor" href="#_les_outils_nécessaires"></a>Les outils nécessaires</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>Here&#8217;s a link to the content in the other part:</p>
+<p>Pour développer des applications Angular, vous aurez besoin de certains outils, notamment :</p>
+</div>
+<div class="paragraph">
+<p><strong>Node.js</strong>: Il s&#8217;agit d&#8217;une plateforme d&#8217;exécution JavaScript qui permet d&#8217;exécuter du code JavaScript côté serveur. Angular utilise Node.js pour gérer les dépendances et lancer des tâches de développement.</p>
+</div>
+<div class="paragraph">
+<p><strong>npm</strong> (Node Package Manager) : Il s&#8217;agit d&#8217;un gestionnaire de paquets pour Node.js qui permet de télécharger et gérer les dépendances d&#8217;un projet Angular.</p>
+</div>
+<div class="paragraph">
+<p><strong>TypeScript</strong> : Il s&#8217;agit d&#8217;un langage de programmation développé par Microsoft qui est utilisé pour écrire le code d&#8217;une application Angular. Il est fortement typé et permet de bénéficier d&#8217;une meilleure productivité et qualité de code.</p>
+</div>
+<div class="paragraph">
+<p><strong>Un éditeur de code</strong> : Il est recommandé d&#8217;utiliser un éditeur de code qui prend en charge TypeScript, comme Visual Studio Code, WebStorm, Atom, etc. Ces éditeurs offrent des fonctionnalités comme la coloration syntaxique, la complétion de code, etc.</p>
+</div>
+<div class="paragraph">
+<p><strong>Un navigateur web</strong> : Il est important d&#8217;avoir un navigateur web pour tester et déboguer l&#8217;application Angular. Les navigateurs web les plus couramment utilisés sont Google Chrome, Mozilla Firefox, et Microsoft Edge.</p>
+</div>
+<div class="paragraph">
+<p><strong>Un gestionnaire de version</strong> : Git est le plus populaire.</p>
+</div>
+<div class="paragraph">
+<p>Il est important de noter que ces outils sont les principaux nécessaires pour développer des applications Angular. Il existe également d&#8217;autres outils ou bibliothèques que vous pourriez utiliser pour ajouter des fonctionnalités ou améliorer la qualité de votre application.</p>
 </div>
 </div>
 </div>
