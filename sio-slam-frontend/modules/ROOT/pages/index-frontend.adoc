@@ -2,7 +2,7 @@
 
 == Introduction
 
-Une application _Frontend_ est une application qui s'exécute sur le client web, généralement en JavaScript.
+Une application _Frontend_ est une application qui s'exécute sur le client web, généralement en JavaScript, HTML, CSS.
 
 == Structurer une application front
 

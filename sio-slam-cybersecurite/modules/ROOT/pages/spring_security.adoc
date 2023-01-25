@@ -120,7 +120,7 @@ Ce niveau permet de générer un mot de passe par défaut et une configuration i
     login :  user
     mot de passe :
 
-image::auth_mdp.jpg[]
+image::auth_mdp_bis.jpg[]
 
 ==== Autorisation Spring Security
 
