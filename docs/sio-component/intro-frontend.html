@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Angular :: sio-slam</title>
-    <meta name="generator" content="Antora 3.0.1">
+    <meta name="generator" content="Antora 3.0.2">
     <link rel="stylesheet" href="../_/css/site.css">
     <script>var uiRootPath = '../_'</script>
     <link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
@@ -121,10 +121,10 @@
     <span class="nav-text">Frontend</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="index-frontend.html">Home Page</a>
+    <a class="nav-link" href="index-frontend.html">Intro</a>
   </li>
   <li class="nav-item is-current-page" data-depth="2">
-    <a class="nav-link" href="intro-frontend.html">Explain introduction</a>
+    <a class="nav-link" href="intro-frontend.html">Intro Angular</a>
   </li>
 </ul>
   </li>
@@ -283,9 +283,6 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="index-spring-boot.html">Initiation à Spring Boot</a>
   </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="#_ch_spring_security.adoc">Spring security</a>
-  </li>
 </ul>
   </li>
 </ul>
@@ -334,10 +331,10 @@
   <ul>
     <li><a href="index-glossaire.html">SIO-SLAM</a></li>
     <li>Frontend</li>
-    <li><a href="intro-frontend.html">Explain introduction</a></li>
+    <li><a href="intro-frontend.html">Intro Angular</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///home/kpu/ldv/sio/antora-sio-slam/sio-slam/sio-slam-frontend/modules/ROOT/pages/intro-frontend.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="file:///D:/SI6/sio-slam/sio-slam-frontend/modules/ROOT/pages/intro-frontend.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -363,8 +360,11 @@
 <div class="paragraph">
 <p>Bien que Angular CLI ne soit pas obligatoire, il facilite grandement le travail !</p>
 </div>
-<div class="sect2">
-<h3 id="_installation_de_angular_cli"><a class="anchor" href="#_installation_de_angular_cli"></a>Installation de Angular CLI</h3>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_installation_de_angular_cli"><a class="anchor" href="#_installation_de_angular_cli"></a>Installation de Angular CLI</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>En ligne de commande (ouvrir un terminal) tapper la commande qui installe Angular CLI sur votre compte utilisateur (inutile d&#8217;être en admin)</p>
 </div>
@@ -405,7 +405,6 @@ Package                      Version
 @angular-devkit/core         15.1.2 (cli-only)
 @angular-devkit/schematics   15.1.2 (cli-only)
 @schematics/angular          15.1.2 (cli-only)</code></pre>
-</div>
 </div>
 </div>
 </div>
@@ -519,8 +518,11 @@ Vous ne devez jamais retoucher le code des librairies de <code>node_modules</cod
 </li>
 </ul>
 </div>
-<div class="sect2">
-<h3 id="_le_composant_principal"><a class="anchor" href="#_le_composant_principal"></a>Le composant principal</h3>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_le_composant_principal"><a class="anchor" href="#_le_composant_principal"></a>Le composant principal</h2>
+<div class="sectionbody">
 <div class="listingblock">
 <div class="title">projet1/src/app/app.component.ts</div>
 <div class="content">
@@ -565,8 +567,10 @@ export class AppComponent { <i class="conum" data-value="5"></i><b>(5)</b>
 </table>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_le_module_du_composant_principal"><a class="anchor" href="#_le_module_du_composant_principal"></a>Le module du composant principal</h3>
+</div>
+<div class="sect1">
+<h2 id="_le_module_du_composant_principal"><a class="anchor" href="#_le_module_du_composant_principal"></a>Le module du composant principal</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p><code>app.module.ts</code> est un fichier qui déclare les dépendances et les relations entre les différents éléments de l&#8217;application pour un composant donné, il permet de structurer et organiser l&#8217;application pour une meilleure lisibilité et maintenabilité.</p>
 </div>
@@ -616,14 +620,18 @@ export class AppModule { }</code></pre>
 <p><em>Ceci est un exemple d&#8217;un module de base, vous pourriez avoir besoin d&#8217;ajouter des déclarations, des imports, des fournisseurs ou des configurations supplémentaires selon les besoins de votre application.</em></p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_construction_de_lapplication"><a class="anchor" href="#_construction_de_lapplication"></a>Construction de l&#8217;application</h3>
+</div>
+<div class="sect1">
+<h2 id="_construction_de_lapplication"><a class="anchor" href="#_construction_de_lapplication"></a>Construction de l&#8217;application</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>La commande <strong><code>ng build</code></strong> est une commande d&#8217;Angular CLI qui permet de compiler et de construire l&#8217;application pour la production. Elle utilise la configuration de l&#8217;application définie dans le fichier <code>angular.json</code> pour compiler les sources TypeScript en JavaScript, optimiser les images et les fichiers de style, et générer les fichiers de sortie dans un format optimisé pour la production tels que les fichiers HTML, CSS et JavaScript minifiés. Le résultat est placé généralement dans un dossier appelé "<strong>dist</strong>" ou "<strong>build</strong>" et contient tous les fichiers nécessaires pour l&#8217;exécution de l&#8217;application par un navigateur.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_lancer_lapplication"><a class="anchor" href="#_lancer_lapplication"></a>Lancer l&#8217;application</h3>
+</div>
+<div class="sect1">
+<h2 id="_lancement_de_lapplication"><a class="anchor" href="#_lancement_de_lapplication"></a>Lancement de l&#8217;application</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Nous aurons besoin d&#8217;un serveur HTTP pour rendre disponible l&#8217;application à des navigateurs web. Angular CLI dispose d&#8217;une commande bien pratique, nommée <code>serve</code>.</p>
 </div>
@@ -640,8 +648,7 @@ export class AppModule { }</code></pre>
 <div class="content">
 <img src="_images/premier-lancement.png" alt="first">
 </div>
-<div class="title">Figure 1. Exemple</div>
-</div>
+<div class="title">Figure 1. Exemple (extrait) d&#8217;exécution dans le navigateur</div>
 </div>
 </div>
 </div>
@@ -653,7 +660,7 @@ export class AppModule { }</code></pre>
 <div class="olist arabic">
 <ol class="arabic" start="1">
 <li>
-<p>Faire en sorte que l&#8217;application ne présente que le message <code>Hello World</code> lorsqu&#8217;elle est lancée, à l&#8217;image de la capture écran ci-dessous, c&#8217;est à dire en conservant l&#8217;image SVG de la fusée.</p>
+<p>Faire en sorte que l&#8217;application ne présente <strong>que</strong> le message <code>Hello World</code> lorsqu&#8217;elle est lancée, <strong>à l&#8217;image de la capture écran ci-dessous</strong>, c&#8217;est à dire en conservant l&#8217;image SVG de la fusée.</p>
 </li>
 </ol>
 </div>
@@ -670,7 +677,244 @@ export class AppModule { }</code></pre>
 <div class="olist arabic">
 <ol class="arabic" start="2">
 <li>
-<p>Faire en sorte que le texte de l&#8217;onglet du navigateur soit <strong>Hello World</strong> et non pas <em>Projet1</em></p>
+<p>Faire en sorte, sans changer le nom du projet, que le texte de l&#8217;onglet du navigateur soit <strong>Hello World</strong> et non pas <code>Projet1</code></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ajout_dun_service"><a class="anchor" href="#_ajout_dun_service"></a>Ajout d&#8217;un service</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Nous allons faire en sorte que l&#8217;adresse IP du client soit affichée sur la page du composant principal.</p>
+</div>
+<div class="paragraph">
+<p>Cette valeur peut être déterminée</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>par le serveur qui a servi l&#8217;application au client.</p>
+</li>
+<li>
+<p>par l&#8217;application client (JS)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Nous retiendrons la deuxième version, qui a le mérite d&#8217;être dynamique (le client peut changer d&#8217;IP, ce qui ne serait pas connu du serveur)</p>
+</div>
+<div class="paragraph">
+<p>Par défaut, le client ne peut exploiter les ressources systèmes de la machine sur lequel la navigateur est excécuté. Il devra donc demander son IP publique à un service internet (une application web).</p>
+</div>
+<div class="paragraph">
+<p>Exemple de service pour connaître sin IP (n&#8217;hésitez pas à le tester):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>http://api.ipify.org/?format=json</pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_création_du_service"><a class="anchor" href="#_création_du_service"></a>Création du service</h3>
+<div class="paragraph">
+<p>On appelle <em>service</em> une classe qui propose des fonctionnalités utilisables par différents composants.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+L&#8217;application actuelle n&#8217;a qu&#8217;un seul composant. Nous pourrions donc nous dispenser de créer un service et coder ce service dans la classe du composant. Mais faire ainsi n&#8217;est pas dans les bonne pratiques, car on chargerait ainsi notre composant de trop de responsabilités.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>L&#8217;odre suivant permet de créer un service :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>ng generate service service/Ip</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Le service <code>src/app/service/ip.service.ts (138 bytes)</code> est alors créé.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class IpServiceService {
+
+  constructor() { }
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>L&#8217;instance de ce service est <em>injectable</em> dans d&#8217;autres composants par simple déclaration.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+C&#8217;est une application du principe d&#8217;IOC (<em>Inversion Of Control</em>). Voir <a href="https://fr.wikipedia.org/wiki/Inversion_de_contr%C3%B4le" class="bare">https://fr.wikipedia.org/wiki/Inversion_de_contr%C3%B4le</a>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Nous allons spécialiser ce service (actuellement il ne fait rien).</p>
+</div>
+<div class="paragraph">
+<p>Ce service a besoin de lancer des requêtes HTTP vers <code>api.ipify.org</code>. Pour cela nous allons utilser un autre service dédié à cette tache : <code>HttpClient</code> du module intégré à angular : <code>@angular/common/http</code>.</p>
+</div>
+<div class="paragraph">
+<p>Cette dépendance doit être déclarée au niveau global, dans le fichier <strong><code>app.module.ts</code></strong> vu précédemment.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>import { HttpClientModule } from "@angular/common/http";
+...
+
+imports: [
+    BrowserModule,
+    HttpClientModule
+]
+
+...</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#8658; On vient d&#8217;ajouter le service <code>HttpClientModule</code> aux services importés.</p>
+</div>
+<div class="listingblock">
+<div class="title">src/app/service/ip.service.ts</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { Injectable } from '@angular/core';
+import { HttpClient  } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class IpService  {
+  constructor(private http:HttpClient) { }  <i class="conum" data-value="1"></i><b>(1)</b>
+
+  public getIPAddress() : Observable&lt;any&gt; <i class="conum" data-value="2"></i><b>(2)</b>
+  {
+    return this.http.get("http://api.ipify.org/?format=json") <i class="conum" data-value="3"></i><b>(3)</b>
+  }
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>La propriété nommée <code>http</code> est déclarée et sera automatiquement valorisée à la création d&#8217;une instance de cette classe. C&#8217;est une syntaxe courte (un sucre syntaxique).</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Déclaration d&#8217;une méthode qui retourne une référence vers un objet <code>Observable</code>, qui est le type de retour de la méthode <code>get</code> utilisée ici.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td><code>this.http</code> fait référence à la propriété de l&#8217;instance (celle déclarée en paramètre du constructeur)</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Voilà, nous venons de créer une classe de type service. Nous allons maintenant en faire usage.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_utilisation_du_service"><a class="anchor" href="#_utilisation_du_service"></a>Utilisation du service</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Nous allons intégrer ce service dans <code>app.component.ts</code>. Cela passe par une importation (déclaration de dépendance) et une injection d&#8217;une instance de notre service dans le constructeur.</p>
+</div>
+<div class="paragraph">
+<p>Dans la foulée, nous implémentons la méthode <code>getIpAddress()</code> :</p>
+</div>
+<div class="listingblock">
+<div class="title">src/app/app.component.ts</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { Component } from '@angular/core';
+import { IpService } from './service/ip.service';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  constructor(private ipService:IpService){}
+
+  title: string = 'projet titre';
+
+  ipAddress: string = 'Inconnue IP'
+
+  getIP()
+  {
+    this.ipService.getIPAddress().subscribe((res:any)=&gt;{
+      this.ipAddress=res.ip;
+    });
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Il ne nous reste qu&#8217;à lier la variable <code>ipAddress</code> à la vue :</p>
+</div>
+<div class="listingblock">
+<div class="title">src/app/app.component.html</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">...
+ &lt;h2&gt;{{ ipAddress }}&lt;/h2&gt;
+...</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Ce qui donne.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/InconnueIP.png" alt="InconnueIp">
+</div>
+<div class="title">Figure 3. localhost:4200</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_travaux_pratiques_2"><a class="anchor" href="#_travaux_pratiques_2"></a>Travaux pratiques</h2>
+<div class="sectionbody">
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>Il semblerait que l&#8217;instruction <code>{{ipAddress}}</code> dans la vue nous donne la <strong>valeur par défaut</strong> de la propriété de même nom de la classe TypeScript du composant. Trouvez un moyen pour corriger cela.</p>
+</div>
+<div class="paragraph">
+<p>Il existe plusieurs façons d&#8217;opérer. Faites marcher votre logique en premier, puis, si cela ne suffit pas, passez en mode connecté internet.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Faire en sorte que l&#8217;application présente l&#8217;adresse IP du client sur la page principale, et non <strong>Inconnue IP</strong>.
+]</p>
 </li>
 </ol>
 </div>
