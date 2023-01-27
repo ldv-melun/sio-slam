@@ -249,8 +249,9 @@ On appelle _service_ une classe qui propose des fonctionnalités utilisables par
 
 TIP: L'application actuelle n'a qu'un seul composant. Nous pourrions donc nous dispenser de créer un service et coder ce service dans la classe du composant. Mais faire ainsi n'est pas dans les bonne pratiques, car on chargerait ainsi notre composant de trop de responsabilités.
 
-L'odre suivant permet de créer un service :
+La commande suivante permet de créer un service (rappel, se placer à la racine de l'application) :
 
+[source, bash]
 ----
 ng generate service service/Ip
 ----
@@ -348,7 +349,7 @@ export class AppComponent {
 
   title: string = 'projet titre';
 
-  ipAddress: string = 'Inconnue IP'
+  ipAddress: string = 'Inconnue IP';
 
   getIP()
   {
@@ -363,7 +364,7 @@ export class AppComponent {
 Il ne nous reste qu'à lier la variable `ipAddress` à la vue :
 
 .src/app/app.component.html
-[source, typescript]
+[source, html]
 ----
 ...
  <h2>{{ ipAddress }}</h2>

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Angular :: sio-slam</title>
-    <meta name="generator" content="Antora 3.0.2">
+    <meta name="generator" content="Antora 3.0.1">
     <link rel="stylesheet" href="../_/css/site.css">
     <script>var uiRootPath = '../_'</script>
     <link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
@@ -334,7 +334,7 @@
     <li><a href="intro-frontend.html">Intro Angular</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///D:/SI6/sio-slam/sio-slam-frontend/modules/ROOT/pages/intro-frontend.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="file:///home/kpu/ldv/sio/antora-sio-slam/sio-slam/sio-slam-frontend/modules/ROOT/pages/intro-frontend.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -346,16 +346,20 @@
 <h2 id="_prérequis"><a class="anchor" href="#_prérequis"></a>Prérequis</h2>
 <div class="sectionbody">
 <div class="paragraph">
+<p>Le site de référence est <a href="https://angular.io/" class="bare">https://angular.io/</a></p>
+</div>
+<div class="paragraph">
 <p>On admet que vous disposez des outils nécessaires pour commencer la programmation Angular.</p>
 </div>
 <div class="paragraph">
-<p>Afin d&#8217;aborder Angular, nous allons créer une application et étudier certains de ses particularités.</p>
+<p>Afin d&#8217;aborder Angular, nous allons créer une application et étudier certains de ses particularités. L&#8217;usage courant consiste à utiliser la ligne de commande, en particulier pour bénéficier de la génération automatique de code. L&#8217;outil adapté est <strong>Angular CLI</strong> (<em>Command Line Interface</em>).</p>
 </div>
 <div class="paragraph">
-<p><strong>Angular CLI</strong> (<em>Command Line Interface</em>) est un outil en ligne de commande pour Angular qui facilite, entre autres, la création et la configuration de nouveaux projets Angular, ainsi que la génération de composants, de services, et d&#8217;autres éléments de l&#8217;application.</p>
+<p><a href="https://angular.io/cli" class="bare">https://angular.io/cli</a></p>
 </div>
 <div class="paragraph">
-<p>Angular CLI permet également d&#8217;exécuter des tâches de développement courantes, telles que la compilation, le débogage et le déploiement de l&#8217;application.).</p>
+<p><strong>Angular CLI</strong> (<em>Command Line Interface</em>) est un outil en ligne de commande pour Angular qui facilite, entre autres, la création et la configuration de nouveaux projets Angular, ainsi que la génération de composants, de services, et d&#8217;autres éléments de l&#8217;application.
+Angular CLI permet également d&#8217;exécuter des tâches de développement courantes, telles que la compilation, le débogage et le déploiement de l&#8217;application.).</p>
 </div>
 <div class="paragraph">
 <p>Bien que Angular CLI ne soit pas obligatoire, il facilite grandement le travail !</p>
@@ -577,44 +581,55 @@ export class AppComponent { <i class="conum" data-value="5"></i><b>(5)</b>
 <div class="listingblock">
 <div class="title">projet1/src/app/app.module.ts</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { NgModule } from '@angular/core';
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { NgModule } from '@angular/core'; <i class="conum" data-value="1"></i><b>(1)</b>
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 
-@NgModule({
-  declarations: [
+@NgModule({ <i class="conum" data-value="2"></i><b>(2)</b>
+  declarations: [ <i class="conum" data-value="3"></i><b>(3)</b>
     AppComponent
   ],
-  imports: [
+  imports: [ <i class="conum" data-value="4"></i><b>(4)</b>
     BrowserModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [], <i class="conum" data-value="5"></i><b>(5)</b>
+  bootstrap: [AppComponent] <i class="conum" data-value="6"></i><b>(6)</b>
 })
-export class AppModule { }</code></pre>
+export class AppModule { } <i class="conum" data-value="7"></i><b>(7)</b></code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>Les <strong>imports</strong> : Permettre d&#8217;importer les modules nécessaires pour ce module. Ici, on importe <code>NgModule</code> de @angular/core et <code>BrowserModule</code> de @angular/platform-browser. Ces modules sont nécessaires pour exécuter l&#8217;application dans un navigateur.</p>
-</div>
-<div class="paragraph">
-<p>Dans @NgModule:</p>
-</div>
-<div class="paragraph">
-<p>Les <strong>déclarations</strong> : Définir les composants (entre autres) qui appartiennent à ce module. Ici, on déclare <code>AppComponent</code> importé précédemment.</p>
-</div>
-<div class="paragraph">
-<p>Les <strong>imports</strong> : Les imports définissent les modules qui sont utilisés par ce module. Ici, on importe <code>BrowserModule</code> pour permettre l&#8217;exécution de l&#8217;application dans un navigateur.</p>
-</div>
-<div class="paragraph">
-<p>Les <strong>fournisseurs</strong> (<em>providers</em>): Les fournisseurs définissent les <strong>services qui sont utilisés</strong> par ce module. Ici, il n&#8217;y a pas de fournisseurs définis.</p>
-</div>
-<div class="paragraph">
-<p>Le <strong>bootstrap</strong> : Le bootstrap définit le composant qui sera utilisé comme <strong>point d&#8217;entrée pour l&#8217;application</strong>. Ici, on utilise <code>AppComponent</code> comme point d&#8217;entrée.</p>
-</div>
-<div class="paragraph">
-<p>à la fin L'<strong>export</strong> permet d&#8217;exporter le module pour qu&#8217;il puisse être utilisé par d&#8217;autres parties de l&#8217;application.</p>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Les <strong>imports</strong> permettre d&#8217;importer les modules nécessaires pour ce module. Ici, on importe <code>NgModule</code> de @angular/core et <code>BrowserModule</code> de @angular/platform-browser. Ces modules sont nécessaires pour exécuter l&#8217;application dans un navigateur.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Le décorateur (une annotation) <code>@NgModule</code> de la class <code>AppMoudle</code> est paramétrable :</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td><strong>déclarations</strong> définit les composants (entre autres) qui appartiennent à ce module. Ici, on déclare <code>AppComponent</code> importé précédemment.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td><strong>imports</strong> définit les modules qui sont utilisés par ce module. Ici, on importe <code>BrowserModule</code> pour permettre l&#8217;exécution de l&#8217;application dans un navigateur.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td><strong>providers</strong> (fournisseurs): définit les <strong>services qui sont utilisés</strong> par ce module. Ici, il n&#8217;y a pas de fournisseurs définis.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="6"></i><b>6</b></td>
+<td>bootstrap* définit le composant qui sera utilisé comme <strong>point d&#8217;entrée pour l&#8217;application</strong>. Ici, on utilise <code>AppComponent</code> comme point d&#8217;entrée.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="7"></i><b>7</b></td>
+<td><strong>export</strong> permet d&#8217;exporter le module pour qu&#8217;il puisse être utilisé par d&#8217;autres parties de l&#8217;application.</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p><em>Ceci est un exemple d&#8217;un module de base, vous pourriez avoir besoin d&#8217;ajouter des déclarations, des imports, des fournisseurs ou des configurations supplémentaires selon les besoins de votre application.</em></p>
@@ -736,11 +751,11 @@ L&#8217;application actuelle n&#8217;a qu&#8217;un seul composant. Nous pourrion
 </table>
 </div>
 <div class="paragraph">
-<p>L&#8217;odre suivant permet de créer un service :</p>
+<p>La commande suivante permet de créer un service (rappel, se placer à la racine de l&#8217;application) :</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>ng generate service service/Ip</pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">ng generate service service/Ip</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -753,7 +768,7 @@ L&#8217;application actuelle n&#8217;a qu&#8217;un seul composant. Nous pourrion
 @Injectable({
   providedIn: 'root'
 })
-export class IpServiceService {
+export class IpService {
 
   constructor() { }
 }</pre>
@@ -866,7 +881,7 @@ export class AppComponent {
 
   title: string = 'projet titre';
 
-  ipAddress: string = 'Inconnue IP'
+  ipAddress: string = 'Inconnue IP';
 
   getIP()
   {
@@ -883,7 +898,7 @@ export class AppComponent {
 <div class="listingblock">
 <div class="title">src/app/app.component.html</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">...
+<pre class="highlightjs highlight"><code class="language-html hljs" data-lang="html">...
  &lt;h2&gt;{{ ipAddress }}&lt;/h2&gt;
 ...</code></pre>
 </div>

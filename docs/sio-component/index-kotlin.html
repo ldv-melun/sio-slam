@@ -6,7 +6,7 @@
     <title>Le Langage  :: sio-slam</title>
     <meta name="description" content="Découverte et prise en main du langage Kotlin">
     <meta name="keywords" content="Kotlin langage programmation">
-    <meta name="generator" content="Antora 3.0.2">
+    <meta name="generator" content="Antora 3.0.1">
     <link rel="stylesheet" href="../_/css/site.css">
     <script>var uiRootPath = '../_'</script>
     <link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
@@ -433,84 +433,148 @@
 </li>
 </ul>
 </li>
-<li><a href="#_la_p_o_o_programmation_orientée_objet">5. La P.O.O. (Programmation Orientée Objet)</a>
+<li><a href="#_les_structuresexpressions_conditionnelles">5. Les structures/expressions conditionnelles</a>
 <ul class="sectlevel2">
-<li><a href="#_les_classes">5.1. Les classes</a>
+<li><a href="#_introduction_aux_expressions_et_structures_conditionnelles">5.1. Introduction aux Expressions et Structures Conditionnelles</a></li>
+<li><a href="#_syntaxe_des_expressions_conditionnelles_ifelse_en_kotlin">5.2. Syntaxe des expressions conditionnelles if/else en Kotlin</a></li>
+<li><a href="#_expression_conditionnelle_when">5.3. Expression conditionnelle when</a></li>
+<li><a href="#_expression_conditionnelle_when_avec_des_plages">5.4. Expression conditionnelle when avec des plages</a></li>
+</ul>
+</li>
+<li><a href="#_les_structures_itératives">6. Les structures itératives</a>
+<ul class="sectlevel2">
+<li><a href="#_généralités_sur_les_structures_itératives_en_kotlin">6.1. Généralités sur les structures itératives en Kotlin</a></li>
+<li><a href="#_boucle_while">6.2. Boucle while</a></li>
+<li><a href="#_boucle_do_while">6.3. Boucle do while</a></li>
+<li><a href="#_boucle_forin">6.4. Boucle for(&#8230;&#8203;in&#8230;&#8203;)</a></li>
+<li><a href="#_boucle_foreach">6.5. Boucle forEach</a></li>
+<li><a href="#_choix_entre_forin_et_foreach">6.6. Choix entre for(&#8230;&#8203;in&#8230;&#8203;) et forEach</a></li>
+</ul>
+</li>
+<li><a href="#_programmation_procédurale">7. Programmation procédurale</a>
+<ul class="sectlevel2">
+<li><a href="#_définition_appel_dune_fonction">7.1. Définition &amp; appel d&#8217;une fonction</a>
 <ul class="sectlevel3">
-<li><a href="#_généralités">5.1.1. Généralités</a></li>
-<li><a href="#_définition_déclaration_et_instanciation_dune_classe">5.1.2. Définition, déclaration et instanciation d&#8217;une classe</a></li>
-<li><a href="#_définition_du_constructeur_primaire_dune_classe">5.1.3. Définition du constructeur primaire d&#8217;une classe</a>
+<li><a href="#_avant_propos_2">7.1.1. Avant propos</a></li>
+<li><a href="#_en_tête_de_la_fonction">7.1.2. En-tête de la fonction</a>
+<ul class="sectlevel4">
+<li><a href="#_en_tête_de_base">En-tête de base</a></li>
+<li><a href="#_en_tête_avec_argument_par_défaut">En-tête avec argument par défaut</a></li>
+<li><a href="#_en_tête_avec_nombre_darguments_variable">En-tête avec nombre d&#8217;arguments variable :</a></li>
+<li><a href="#_mutabilité_des_paramètres_dune_fonction">Mutabilité des paramètres d&#8217;une fonction</a></li>
+</ul>
+</li>
+<li><a href="#_corps_de_la_fonction">7.1.3. Corps de la fonction</a>
+<ul class="sectlevel4">
+<li><a href="#_corps_dune_fonction_de_base">Corps d&#8217;une fonction de base</a></li>
+<li><a href="#_les_fonctions_expressions">Les fonctions expressions</a></li>
+</ul>
+</li>
+<li><a href="#_appel_des_fonctions">7.1.4. Appel des fonctions</a></li>
+<li><a href="#_les_fonctions_higher_order_functions_fonction_dordre_supérieur">7.1.5. Les fonctions "Higher-order functions" (fonction d&#8217;ordre supérieur)</a>
+<ul class="sectlevel4">
+<li><a href="#_définition_dune_fonction_dordre_supérieur">Définition d&#8217;une fonction d&#8217;ordre supérieur</a></li>
+<li><a href="#_appel_dune_fonction_dordre_supérieur">Appel d&#8217;une fonction d&#8217;ordre supérieur</a></li>
+</ul>
+</li>
+<li><a href="#_les_fonctions_lambdas_et_les_fonctions_anonymes">7.1.6. Les fonctions lambdas et les fonctions anonymes :</a>
+<ul class="sectlevel4">
+<li><a href="#_les_lambdas">Les lambdas</a></li>
+<li><a href="#_utilisation_du_paramètre_it">Utilisation du paramètre it :</a></li>
+<li><a href="#_les_fonctions_anonymes">Les fonctions anonymes</a></li>
+</ul>
+</li>
+<li><a href="#_visibilité_des_fonctions">7.1.7. Visibilité des fonctions</a></li>
+<li><a href="#_le_smartcast_transtypage_intelligent">7.1.8. Le smartCast (transtypage intelligent)</a>
+<ul class="sectlevel4">
+<li><a href="#_illustration_du_besoin_de_transtypage">Illustration du besoin de transtypage :</a></li>
+<li><a href="#_test_dun_type_et_smartcast_avec_is">Test d&#8217;un type et smartCast avec is</a></li>
+<li><a href="#_transtypage_avec_as">Transtypage avec as</a></li>
+</ul>
+</li>
+<li><a href="#_les_fonctions_génériques">7.1.9. Les fonctions génériques</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_la_p_o_o_programmation_orientée_objet">8. La P.O.O. (Programmation Orientée Objet)</a>
+<ul class="sectlevel2">
+<li><a href="#_les_classes">8.1. Les classes</a>
+<ul class="sectlevel3">
+<li><a href="#_généralités">8.1.1. Généralités</a></li>
+<li><a href="#_définition_déclaration_et_instanciation_dune_classe">8.1.2. Définition, déclaration et instanciation d&#8217;une classe</a></li>
+<li><a href="#_définition_du_constructeur_primaire_dune_classe">8.1.3. Définition du constructeur primaire d&#8217;une classe</a>
 <ul class="sectlevel4">
 <li><a href="#_philosophie_dapproche_de_la_poo_avec_kotlin">Philosophie d&#8217;approche de la POO avec Kotlin</a></li>
 <li><a href="#_le_constructeur_primaire">Le constructeur primaire</a></li>
 </ul>
 </li>
-<li><a href="#_les_constructeurs_secondaires">5.1.4. Les constructeurs secondaires</a>
+<li><a href="#_les_constructeurs_secondaires">8.1.4. Les constructeurs secondaires</a>
 <ul class="sectlevel4">
-<li><a href="#_avant_propos_2">Avant propos</a></li>
+<li><a href="#_avant_propos_3">Avant propos</a></li>
 <li><a href="#_ordre_dappel_des_constructeurs">Ordre d&#8217;appel des constructeurs</a></li>
 </ul>
 </li>
-<li><a href="#_structure_dune_classe_avec_constructeurs_secondaires">5.1.5. Structure d&#8217;une classe avec constructeurs secondaires</a></li>
+<li><a href="#_structure_dune_classe_avec_constructeurs_secondaires">8.1.5. Structure d&#8217;une classe avec constructeurs secondaires</a></li>
 </ul>
 </li>
-<li><a href="#_les_attributs_méthodes_de_classe_les_objets_compagnons">5.2. Les attributs &amp; méthodes de classe (Les objets compagnons)</a></li>
-<li><a href="#_lhéritage">5.3. L&#8217;héritage</a>
+<li><a href="#_les_attributs_méthodes_de_classe_les_objets_compagnons">8.2. Les attributs &amp; méthodes de classe (Les objets compagnons)</a></li>
+<li><a href="#_lhéritage">8.3. L&#8217;héritage</a>
 <ul class="sectlevel3">
-<li><a href="#_principes_de_base_de_lhéritage_en_kotlin">5.3.1. Principes de base de l&#8217;héritage en Kotlin</a></li>
-<li><a href="#_ouvrir_une_classe_à_lhéritage">5.3.2. Ouvrir une classe à l&#8217;héritage</a></li>
-<li><a href="#_héritage_dune_classe_de_base_vers_une_classe_dérivée">5.3.3. Héritage d&#8217;une classe de base vers une classe dérivée</a>
+<li><a href="#_principes_de_base_de_lhéritage_en_kotlin">8.3.1. Principes de base de l&#8217;héritage en Kotlin</a></li>
+<li><a href="#_ouvrir_une_classe_à_lhéritage">8.3.2. Ouvrir une classe à l&#8217;héritage</a></li>
+<li><a href="#_héritage_dune_classe_de_base_vers_une_classe_dérivée">8.3.3. Héritage d&#8217;une classe de base vers une classe dérivée</a>
 <ul class="sectlevel4">
 <li><a href="#_mise_en_relation_dune_classe_dérivée_avec_une_classe_de_base_ayant_un_constructeur_sans_arguments">Mise en relation d&#8217;une classe dérivée avec une classe de base ayant un constructeur SANS arguments</a></li>
 </ul>
 </li>
-<li><a href="#_mise_en_relation_dune_classe_dérivée_avec_une_classe_de_base_ayant_un_constructeur_avec_arguments">5.3.4. Mise en relation d&#8217;une classe dérivée avec une classe de base ayant un constructeur AVEC arguments</a></li>
-<li><a href="#_enrichissement_dune_classe_dérivée_ajout_dattributs_et_de_méthodes">5.3.5. Enrichissement d&#8217;une classe dérivée : Ajout d&#8217;attributs et de méthodes</a></li>
-<li><a href="#_redéfinition_des_attributs_etou_méthodes_dune_classe_de_base">5.3.6. Redéfinition des attributs et/ou méthodes d&#8217;une classe de base</a>
+<li><a href="#_mise_en_relation_dune_classe_dérivée_avec_une_classe_de_base_ayant_un_constructeur_avec_arguments">8.3.4. Mise en relation d&#8217;une classe dérivée avec une classe de base ayant un constructeur AVEC arguments</a></li>
+<li><a href="#_enrichissement_dune_classe_dérivée_ajout_dattributs_et_de_méthodes">8.3.5. Enrichissement d&#8217;une classe dérivée : Ajout d&#8217;attributs et de méthodes</a></li>
+<li><a href="#_redéfinition_des_attributs_etou_méthodes_dune_classe_de_base">8.3.6. Redéfinition des attributs et/ou méthodes d&#8217;une classe de base</a>
 <ul class="sectlevel4">
 <li><a href="#_redéfinition_des_attributs">Redéfinition des attributs</a></li>
 <li><a href="#_redéfinition_des_méthodes">Redéfinition des méthodes</a></li>
 </ul>
 </li>
-<li><a href="#_utilisation_du_mot_clé_super">5.3.7. Utilisation du mot clé super</a>
+<li><a href="#_utilisation_du_mot_clé_super">8.3.7. Utilisation du mot clé super</a>
 <ul class="sectlevel4">
 <li><a href="#_accéder_à_une_méthodeattribut_redéfini">Accéder à une méthode/attribut redéfini</a></li>
 <li><a href="#_appel_des_constructeurs_secondaires">Appel des constructeurs secondaires</a></li>
 </ul>
 </li>
-<li><a href="#_les_classes_abstraites">5.3.8. Les classes abstraites</a>
+<li><a href="#_les_classes_abstraites">8.3.8. Les classes abstraites</a>
 <ul class="sectlevel4">
 <li><a href="#_règles_propriétés_des_classes_abstraites">Règles &amp; propriétés des classes abstraites</a></li>
 <li><a href="#_intérêt_des_classes_abstraites">Intérêt des classes abstraites</a></li>
 </ul>
 </li>
-<li><a href="#_les_interfaces">5.3.9. Les interfaces</a>
+<li><a href="#_les_interfaces">8.3.9. Les interfaces</a>
 <ul class="sectlevel4">
 <li><a href="#_objectifs_et_principes_des_interfaces">Objectifs et principes des interfaces</a></li>
 <li><a href="#_règles_propriétés_des_interfaces">Règles &amp; propriétés des interfaces</a></li>
 </ul>
 </li>
-<li><a href="#_définition_dune_interface_en_kotlin">5.3.10. Définition d&#8217;une interface en Kotlin</a></li>
+<li><a href="#_définition_dune_interface_en_kotlin">8.3.10. Définition d&#8217;une interface en Kotlin</a></li>
 </ul>
 </li>
-<li><a href="#_les_extensions">5.4. Les extensions</a>
+<li><a href="#_les_extensions">8.4. Les extensions</a>
 <ul class="sectlevel3">
-<li><a href="#_objectifs_des_extensions">5.4.1. Objectifs des extensions</a></li>
-<li><a href="#_principe_de_limplémentation_des_extensions">5.4.2. Principe de l&#8217;implémentation des extensions</a></li>
+<li><a href="#_objectifs_des_extensions">8.4.1. Objectifs des extensions</a></li>
+<li><a href="#_principe_de_limplémentation_des_extensions">8.4.2. Principe de l&#8217;implémentation des extensions</a></li>
 </ul>
 </li>
-<li><a href="#_allons_plus_loin_avec_les_classes">5.5. Allons plus loin avec les Classes</a>
+<li><a href="#_allons_plus_loin_avec_les_classes">8.5. Allons plus loin avec les Classes</a>
 <ul class="sectlevel3">
-<li><a href="#_redéfinition_de_la_méthode_tostring_de_la_classe_any">5.5.1. Redéfinition de la méthode toString() de la classe Any</a></li>
-<li><a href="#_les_data_class_classe_de_données">5.5.2. Les Data Class (classe de données)</a></li>
-<li><a href="#_classes_anonymes_expressions_objets">5.5.3. Classes anonymes (expressions objets)</a>
+<li><a href="#_redéfinition_de_la_méthode_tostring_de_la_classe_any">8.5.1. Redéfinition de la méthode toString() de la classe Any</a></li>
+<li><a href="#_les_data_class_classe_de_données">8.5.2. Les Data Class (classe de données)</a></li>
+<li><a href="#_classes_anonymes_expressions_objets">8.5.3. Classes anonymes (expressions objets)</a>
 <ul class="sectlevel4">
 <li><a href="#_principe">Principe</a></li>
 <li><a href="#_utilisation_du_mot_clé_object_définition_à_la_volée_dune_classe_from_scratch">Utilisation du mot clé object (définition à la volée d&#8217;une classe/ "from scratch")</a></li>
 <li><a href="#_définition_à_la_volée_dune_classe_héritant_dune_classe_etou_interface">Définition à la volée d&#8217;une classe héritant d&#8217;une classe et/ou interface</a></li>
 </ul>
 </li>
-<li><a href="#_les_énumérations">5.5.4. Les énumérations</a>
+<li><a href="#_les_énumérations">8.5.4. Les énumérations</a>
 <ul class="sectlevel4">
 <li><a href="#_principe_des_énumérations">Principe des énumérations</a></li>
 <li><a href="#_définition_exploitation_des_énumérations">Définition &amp; exploitation des énumérations</a>
@@ -528,19 +592,19 @@
 <li><a href="#_utilisation_de_lhéritage_dinterfaces_avec_les_énumérations">Utilisation de l&#8217;héritage d&#8217;interfaces avec les énumérations</a></li>
 </ul>
 </li>
-<li><a href="#_les_classes_scellées">5.5.5. Les classes scellées</a></li>
-<li><a href="#_la_surcharge_dopérateurs">5.5.6. La surcharge d&#8217;opérateurs</a>
+<li><a href="#_les_classes_scellées">8.5.5. Les classes scellées</a></li>
+<li><a href="#_la_surcharge_dopérateurs">8.5.6. La surcharge d&#8217;opérateurs</a>
 <ul class="sectlevel4">
 <li><a href="#_principe_2">Principe</a></li>
 <li><a href="#_surcharge_dopérateurs_unaires">Surcharge d&#8217;opérateurs unaires</a></li>
 </ul>
 </li>
-<li><a href="#_surcharge_des_opérateurs_dincrémentationdécrémentation">5.5.7. Surcharge des opérateurs d&#8217;incrémentation/décrémentation</a>
+<li><a href="#_surcharge_des_opérateurs_dincrémentationdécrémentation">8.5.7. Surcharge des opérateurs d&#8217;incrémentation/décrémentation</a>
 <ul class="sectlevel4">
 <li><a href="#_surcharge_dopérateurs_binaires">Surcharge d&#8217;opérateurs binaires</a></li>
 </ul>
 </li>
-<li><a href="#_les_classes_génériques">5.5.8. Les classes génériques</a></li>
+<li><a href="#_les_classes_génériques">8.5.8. Les classes génériques</a></li>
 </ul>
 </li>
 </ul>
@@ -2363,12 +2427,983 @@ Process finished with exit code 0</pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_la_p_o_o_programmation_orientée_objet"><a class="anchor" href="#_la_p_o_o_programmation_orientée_objet"></a>5. La P.O.O. (Programmation Orientée Objet)</h2>
+<h2 id="_les_structuresexpressions_conditionnelles"><a class="anchor" href="#_les_structuresexpressions_conditionnelles"></a>5. Les structures/expressions conditionnelles</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_les_classes"><a class="anchor" href="#_les_classes"></a>5.1. Les classes</h3>
+<h3 id="_introduction_aux_expressions_et_structures_conditionnelles"><a class="anchor" href="#_introduction_aux_expressions_et_structures_conditionnelles"></a>5.1. Introduction aux Expressions et Structures Conditionnelles</h3>
+<div class="paragraph">
+<p>Kotlin n&#8217;utilise pas des structures conditionnelles mais des expressions conditionnelles. Les deux concepts sont très proches mais également subtilement différents. Prenons un petit moment pour les expliquer.</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><strong>Définition d&#8217;une structure conditionnelle :</strong> Une structure conditionnelle conditionne une instruction ou un bloc d&#8217;instructions selon qu&#8217;une  ou plusieurs condition(s) logique(s) (prédicat(s)) soit vérifiée(s) ou non (proposition vraie ou fausse).<br>
+La condition logique peut être par exemple l&#8217;état d&#8217;une variable booléenne, le résultat d&#8217;une expression logique, l&#8217;état d&#8217;une entrée logique d&#8217;un système.</p>
+</div>
+</div>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><strong>Définition d&#8217;une expression conditionnelle :</strong> Une expression conditionnelle conditionne une le résultat d&#8217;une valeur selon l&#8217;état d&#8217;une ou plusieurs condition(s) logique(s).</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>En d&#8217;autres termes, une expression conditionnelle pourra être placée en argument d&#8217;une fonction ou à l&#8217;affectation d&#8217;une variable par exemple.</p>
+</div>
+<div class="paragraph">
+<p>Une expression conditionnelle peut également être utilisée en remplacement d&#8217;une structure conditionnelle alors que la réciproque n&#8217;est pas vraie.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_syntaxe_des_expressions_conditionnelles_ifelse_en_kotlin"><a class="anchor" href="#_syntaxe_des_expressions_conditionnelles_ifelse_en_kotlin"></a>5.2. Syntaxe des expressions conditionnelles if/else en Kotlin</h3>
+<div class="paragraph">
+<p>Les mots clés utilisés sont identiques que dans les langages de type C/C++/Java : <strong class="red">if</strong> /<strong class="red">else</strong></p>
+</div>
+<div class="paragraph">
+<p>Voici un exemple illustrant la différent entre une expression et une structure conditionnelle :</p>
+</div>
+<div class="listingblock">
+<div class="title">Structure conditionnelle :</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Kotlin hljs" data-lang="Kotlin">    val decision: Boolean = false
+    // Structure conditionnelle :
+    if(decision){
+        println("Oui !")
+    }
+    else{
+        println("Non !")
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Ici nous avons une structure conditionnelle classique, avec le choix de 2 instructions <strong>println("Oui !")</strong> ou <strong>println("Non !")</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Nous pouvons remplacer cette structure conditionnelle par une expression conditionnelle :</p>
+</div>
+<div class="listingblock">
+<div class="title">Expression conditionnelle :</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Kotlin hljs" data-lang="Kotlin">    // Expression conditionnelle :
+    val decision: Boolean = false
+    println(if(decision) "Oui !" else "Non!")</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>La version en expression conditionnelle est plus élégante. En effet ici l&#8217;élément variant est bien la chaîne de caractère <strong>"Oui !"</strong>/<strong>"Non !"</strong>. La fonction <strong>println()</strong> est redondante dans la version structure conditionnelle.</p>
+</div>
+<div class="paragraph">
+<p>Une expression conditionnelle peut également comporter plusieurs instructions regroupées en bloc. Il faut juste que la dernière instruction corresponde à une expression.</p>
+</div>
+<div class="listingblock">
+<div class="title">Expression conditionnelle avec bloc d&#8217;instructions :</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Kotlin hljs" data-lang="Kotlin">    var a = 1
+    var b = 2
+
+    var resultat = if (a &lt; b){
+        a = b
+        2 * b
+    }
+    else{
+        b = a
+        2 * a
+    }
+    println(resultat)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_expression_conditionnelle_when"><a class="anchor" href="#_expression_conditionnelle_when"></a>5.3. Expression conditionnelle when</h3>
+<div class="paragraph">
+<p>L&#8217;expression conditionnelle remplace la structure conditionnelle switch case que nous retrouvions dans de nombreux langage.
+On obtient le même résultat avec une syntaxe plus concise.</p>
+</div>
+<div class="listingblock">
+<div class="title">Exemple :</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Kotlin hljs" data-lang="Kotlin">    var varCandidate: String =  when(y){
+        1 -&gt; "un"
+        2 -&gt; "deux"
+        7 -&gt; "sept"
+
+        else -&gt;{    // Le else est obligatoire et se place dans le bloc du when.
+            "On ne sait pas !"
+        }
+    }
+    print("varCandidate = $varCandidate")</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_expression_conditionnelle_when_avec_des_plages"><a class="anchor" href="#_expression_conditionnelle_when_avec_des_plages"></a>5.4. Expression conditionnelle when avec des plages</h3>
+<div class="paragraph">
+<p>Kotlin introduit une instruction nommée plage qui permet de réaliser des itérations avec une boucle (voir structures itératives), mais également de définir des intervalles comme conditions.
+Nous pouvons également mixer valeurs et plages.</p>
+</div>
+<div class="listingblock">
+<div class="title">Exemple :</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Kotlin hljs" data-lang="Kotlin">    var cible = -8
+
+    var resultat = when(cible) {
+        in -10..-5 -&gt; "Trop négatif"
+        in -4..-1 -&gt; "Faiblement négatif"
+        0 -&gt; "Nul"
+        in 1..5 -&gt; "Faiblement positif"
+        in 6..10 -&gt; "Trop positif"
+        else -&gt; {"Hors valeurs !"}  // Attention le else est dans le bloc principal du when
+    }
+    println(resultat)</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_les_structures_itératives"><a class="anchor" href="#_les_structures_itératives"></a>6. Les structures itératives</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_généralités_sur_les_structures_itératives_en_kotlin"><a class="anchor" href="#_généralités_sur_les_structures_itératives_en_kotlin"></a>6.1. Généralités sur les structures itératives en Kotlin</h3>
+<div class="paragraph">
+<p>Kotlin propose plusieurs possibilités pour réaliser des structures itératives. On retrouve les instructions suivantes :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>La boucle <strong class="red">while</strong> et <strong class="red">do while</strong> (boucle non bornée) : Kotlin ne propose pas d&#8217;innovation, c&#8217;est une classique boucle dont la fin dépend d&#8217;une proposition logique.</p>
+</li>
+<li>
+<p>La boucle <strong class="red">for(&#8230;&#8203;in&#8230;&#8203;)</strong> : C&#8217;est une boucle de type <strong>for each</strong> qui permet d&#8217;itérer sur des collections et des plages par exemple. Par contre la boucle bornée for(int = 0; i &lt; n; i++) disparait et est remplacée par l&#8217;utilisation de la boucle for avec une plage.</p>
+</li>
+<li>
+<p>La boucle <strong class="red">forEach</strong> : C&#8217;est une boucle spécifique pour les <strong>collections</strong>, on peut aussi l&#8217;utiliser avec des plages.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_boucle_while"><a class="anchor" href="#_boucle_while"></a>6.2. Boucle while</h3>
+<div class="paragraph">
+<p>Rien de particulier pour ce type de structure itérative. La syntaxe est conventionnelle :</p>
+</div>
+<div class="listingblock">
+<div class="title">Syntaxe de la boucle while :</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Kotlin hljs" data-lang="Kotlin">    while(condition){
+        // Instructions à itérer
+    }</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Exemple d&#8217;une boucle de comptage :</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Kotlin hljs" data-lang="Kotlin">    var i: Int = 0
+    while( i &lt; 10) {
+        println("Iteration while n°$i")
+        i++
+    }</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_boucle_do_while"><a class="anchor" href="#_boucle_do_while"></a>6.3. Boucle do while</h3>
+<div class="paragraph">
+<p>On reste encore classique au niveau de la syntaxe :</p>
+</div>
+<div class="listingblock">
+<div class="title">Syntaxe de la boucle do while :</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Kotlin hljs" data-lang="Kotlin">    do{
+        // Instruction à itérer...
+    }while (condition)</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Exemple d&#8217;une boucle de comptage avec do while :</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Kotlin hljs" data-lang="Kotlin">    var i: Int = 0
+    do{
+        println("Iteration do while n°$i")
+        i++
+    } while (i &lt; 10)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_boucle_forin"><a class="anchor" href="#_boucle_forin"></a>6.4. Boucle for(&#8230;&#8203;in&#8230;&#8203;)</h3>
+<div class="paragraph">
+<p>C&#8217;est la boucle de prélidiction pour réaliser des itérations bornées. On peut également l&#8217;appliquer au contenu de collections, mais dans ce cadre le boucle forEach offre de meilleures performances.</p>
+</div>
+<div class="listingblock">
+<div class="title">Syntaxe de la boucle for(&#8230;&#8203;in&#8230;&#8203;) :</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Kotlin hljs" data-lang="Kotlin">    for(item in itérable){
+        // Instruction à itérer
+    }</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Exemples sur des collections (List, Map et Set)</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Kotlin hljs" data-lang="Kotlin">    val liste = listOf(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
+    val ensemble = setOf(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
+    val tabAssociatif = mapOf(1 to "un", 2 to "deux", 3 to "trois", 4 to "quatre")
+
+    for (elmt in liste) {
+        println(elmt)
+    }
+    for (elmt in ensemble){
+        println(elmt)
+    }
+
+    for(elmt in tabAssociatif){
+        println(elmt)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Nous pouvons appliquer la boucle for(&#8230;&#8203;in&#8230;&#8203;) à une plage.</p>
+</div>
+<div class="listingblock">
+<div class="title">Exemple de boucles for(&#8230;&#8203;in&#8230;&#8203;) sur une plage :</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Kotling hljs" data-lang="Kotling">    for(i in 0..10){print(i)}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_boucle_foreach"><a class="anchor" href="#_boucle_foreach"></a>6.5. Boucle forEach</h3>
+<div class="paragraph">
+<p>La boucle forEach est particulièrement intéressante avec les collections.</p>
+</div>
+<div class="listingblock">
+<div class="title">Syntaxe de forEach</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Kotlin hljs" data-lang="Kotlin">    iterable.foreach{lambda}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Exemples sur des collections :</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Kotlin hljs" data-lang="Kotlin">    val liste = listOf(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
+    val ensemble = setOf(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
+    val tabAssociatif = mapOf(1 to "un", 2 to "deux", 3 to "trois", 4 to "quatre")
+
+    liste.forEach { println(it) }
+    ensemble.forEach { println(it) }
+    tabAssociatif.forEach { println(it) }</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Exemple sur une plage :</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Kotlin hljs" data-lang="Kotlin">    (0..10).forEach { println(it) }</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_choix_entre_forin_et_foreach"><a class="anchor" href="#_choix_entre_forin_et_foreach"></a>6.6. Choix entre for(&#8230;&#8203;in&#8230;&#8203;) et forEach</h3>
+<div class="paragraph">
+<p>La boucle forEach offre de meilleures performances pour réaliser des itération sur des collections. Par contre pour réaliser des boucles à partir d&#8217;une plage c&#8217;est la boucle for(&#8230;&#8203;in&#8230;&#8203;) qui est plus intéressante en terme de performance.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_programmation_procédurale"><a class="anchor" href="#_programmation_procédurale"></a>7. Programmation procédurale</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_définition_appel_dune_fonction"><a class="anchor" href="#_définition_appel_dune_fonction"></a>7.1. Définition &amp; appel d&#8217;une fonction</h3>
 <div class="sect3">
-<h4 id="_généralités"><a class="anchor" href="#_généralités"></a>5.1.1. Généralités</h4>
+<h4 id="_avant_propos_2"><a class="anchor" href="#_avant_propos_2"></a>7.1.1. Avant propos</h4>
+<div class="paragraph">
+<p>Nous avons pris le parti de segmenter en 3 parties les composantes de la programmation procédurales :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>En-tête d&#8217;une fonction</p>
+</li>
+<li>
+<p>Corps d&#8217;une fonction</p>
+</li>
+<li>
+<p>Appel d&#8217;une fonction</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Cette présentation permet de mettre en avant les éléments classiques que nous pouvons retrouver dans d&#8217;autres langages : Java, C, C++, Python, etc. et de mettre en avant les éléments plus spécifiques ou du moins originaux de Kotlin comme par exemple :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Les fonctions expressions</p>
+</li>
+<li>
+<p>Les fonction génériques</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Kotlin s&#8217;inspire pour ne pas dire impose des éléments de la programmation "fonctionnelle". Les fonctions et procédures sont utilisées pour réduire le nombre d&#8217;instructions à rédiger en appliquant des fondements de la programmation fonctionnelle.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_en_tête_de_la_fonction"><a class="anchor" href="#_en_tête_de_la_fonction"></a>7.1.2. En-tête de la fonction</h4>
+<div class="sect4">
+<h5 id="_en_tête_de_base"><a class="anchor" href="#_en_tête_de_base"></a>En-tête de base</h5>
+<div class="paragraph">
+<p>L&#8217;en-tête contient les principales informations de la fonction :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Identifiant;</p>
+</li>
+<li>
+<p>Paramètres et types associés (éventuellement des valeurs par défaut);</p>
+</li>
+<li>
+<p>Le type retourné par la fonction.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Syntaxe de l&#8217;en-tête avec retour :</strong></p>
+</div>
+<div class="paragraph">
+<p>L&#8217;en-tête commence par le mot clé <strong class="yellow">fun</strong>, suivi par les éventuels paramètres placés entre parenthèse et en fin de ligne l&#8217;éventuel type retourné.</p>
+</div>
+<div class="listingblock">
+<div class="title">Syntaxe en-tête AVEC retour :</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Kotlin hljs" data-lang="Kotlin">fun idFonction(idArg01: typeArg01, idArg02: typeArg02, ...): typeRetour</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Exemple de l&#8217;en-tête d&#8217;une fonction somme()</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Kotlin hljs" data-lang="Kotlin">fun somme(operandeGauche: Double, operandeDroit: Double): Double</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Si la fonction ne retourne rien (procédure), alors on ne renseigne rien pour le type de retour.</p>
+</div>
+<div class="listingblock">
+<div class="title">Syntaxe en-tête SANS retour :</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Kotlin hljs" data-lang="Kotlin">fun idFonction(idArg01: typeArg01, idArg02: typeArg02, ...)</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Exemple de l&#8217;en-tête d&#8217;une procédure</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Kotlin hljs" data-lang="Kotlin">fun procedure(message: String)</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+En réalité une procédure en Kotlin est une fonction qui retourne un type particulier <strong>Unit</strong>. Nous avons par besoin de spécifier dans l&#8217;en-tête le retour de type <strong>Unit</strong> le compilateur s&#8217;en charge à notre place. A ce stade on peut considérer que <strong>Unit</strong> est l&#8217;équivalent de <strong>void</strong> que nous pouvons retrouver dans d&#8217;autres langages comme Java.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_en_tête_avec_argument_par_défaut"><a class="anchor" href="#_en_tête_avec_argument_par_défaut"></a>En-tête avec argument par défaut</h5>
+<div class="paragraph">
+<p>Kotlin permet de fournir des valeurs par défaut pour l&#8217;initialisation des paramètres. Si un argument est donné pour le paramètre, alors l&#8217;argument fourni est utilisé pour initialiser le paramètre. Par contre en absence d&#8217;argument, c&#8217;est la valeur par défaut qui sera utilisée.</p>
+</div>
+<div class="paragraph">
+<p>La syntaxe est très simple, il suffit d&#8217;indiquer la valeur par défaut au niveau de l&#8217;en-tête :</p>
+</div>
+<div class="listingblock">
+<div class="title">Syntaxe de l&#8217;en-tête d&#8217;une fonction avec valeur</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Kotlin hljs" data-lang="Kotlin">fun idFonction(idArg01: typeArg01 = valDefaut01: , idArg02: typeArg02 = valDefaut02, ...)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>On peut naturellement mixer des paramètres avec et sans valeur par défaut.</p>
+</div>
+<div class="listingblock">
+<div class="title">Exemple de l&#8217;en-tête d&#8217;une fonction produit prenant 2 arguments :</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Kotlin hljs" data-lang="Kotlin">fun produit(x: Double = 2.0, y: Double = 4.0) : Double {</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_en_tête_avec_nombre_darguments_variable"><a class="anchor" href="#_en_tête_avec_nombre_darguments_variable"></a>En-tête avec nombre d&#8217;arguments variable :</h5>
+<div class="paragraph">
+<p>Il y a des situations où le nombre d&#8217;arguments qui sera fourni n&#8217;est pas connu à l&#8217;avance. Il est possible de définir des fonctions qui recevrons un nombre variable d&#8217;arguments.</p>
+</div>
+<div class="paragraph">
+<p>La mise en oeuvre est assez aisée, il suffit d&#8217;utiliser le mot clé <strong class="red">vararg</strong></p>
+</div>
+<div class="listingblock">
+<div class="title">Syntaxe de l&#8217;en-tête d&#8217;une fonction avec un nombre variable d&#8217;arguments :</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Kotlin hljs" data-lang="Kotlin">fun idFonction(vararg idVar: typeArguments): typeRetour</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Prenons en exemple une fonction somme qui réalisera la somme des arguments fournis à l&#8217;appel de la fonction :</p>
+</div>
+<div class="listingblock">
+<div class="title">Exemple de la fonction somme dont le nombre d&#8217;arguments est libre :</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Kotlin hljs" data-lang="Kotlin">fun somme(vararg termes: Double): Double</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_mutabilité_des_paramètres_dune_fonction"><a class="anchor" href="#_mutabilité_des_paramètres_dune_fonction"></a>Mutabilité des paramètres d&#8217;une fonction</h5>
+<div class="paragraph">
+<p>Nous pouvons constater que nous n&#8217;avons pas préciser dans les différentes en-têtes le status de "mutabilité" des paramètres de la fonction&#8230;&#8203; En Kotlin :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>les paramètres d&#8217;une fonction <strong>SONT TOUJOURS IMMUABLES</strong>;</p>
+</li>
+<li>
+<p>Il n&#8217;est pas possible d&#8217;utiliser les modificateurs <strong class="red">val</strong> et <strong class="red">var</strong> sur les paramètres.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Ce mode de comportement sur les paramètres d&#8217;une fonction permet de limiter les effets de bords, du moins pour des types simples. Pour des types structurés il sera toujours possible de modifier les valeurs de la structure de données si cette dernière n&#8217;a pas été initialisée comme immuable.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_corps_de_la_fonction"><a class="anchor" href="#_corps_de_la_fonction"></a>7.1.3. Corps de la fonction</h4>
+<div class="sect4">
+<h5 id="_corps_dune_fonction_de_base"><a class="anchor" href="#_corps_dune_fonction_de_base"></a>Corps d&#8217;une fonction de base</h5>
+<div class="paragraph">
+<p>Kotlin en prime abord utilise une forme conventionnelle pour la forme du corps des fonctions, on retrouve donc les éléments classiques :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Une accolade ouvrante <strong class="red">{</strong> pour marquer le début du bloc d&#8217;instructions et une accolade fermante <strong class="red">}</strong> pour signaler la fin du bloc d&#8217;instruction.</p>
+</li>
+<li>
+<p>Le mot clé <strong class="red">return</strong> pour les éventuels retours. Si la fonction ne retourne rien, il suffit de ne rien indiquer.</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="title">Syntaxe :</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Kotlin hljs" data-lang="Kotlin">fun idFonction(idArg01: Type01 = valDefaut01, vararg idVar: typeArguments): typeRetour{
+    // Corps de la fonction contenant l'ensemble des instructions.
+    return varRetour</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Exemple :</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Kotlin hljs" data-lang="Kotlin">fun exemple(mot1: String = "Bonjour", vararg mots: String): String{
+    var phrase: String = mot1
+    for (mot in mots)
+        phrase += " " + mot
+    return phrase
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Appel de la fonction exemple :</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Kotlin hljs" data-lang="Kotlin">fun main(){
+    println(exemple("Coucou", "comment", "allez-vous ?"))
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Affichage dans la console :</div>
+<div class="content">
+<pre>Coucou comment allez-vous ?
+
+Process finished with exit code 0</pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_les_fonctions_expressions"><a class="anchor" href="#_les_fonctions_expressions"></a>Les fonctions expressions</h5>
+<div class="paragraph">
+<p>Kotlin propose une alternative pour rédiger les corps des fonctions tout particulièrement quand le corps est constitué d&#8217;une seule ligne d&#8217;instruction. En effet, il ser alors possible de placer sur la même ligne l&#8217;en-tête suivi de l&#8217;expression réalisée par la fonction.</p>
+</div>
+<div class="listingblock">
+<div class="title">Syntaxe :</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Kotlin hljs" data-lang="Kotlin">fun idFoncExpression(arg01: Type01,...): TypeRetour = expression</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Exemple :</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Kotlin hljs" data-lang="Kotlin">fun produit(facteurGauche: Double, facteurDroit: Double): Double = facteurGauche * facteurDroit</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Appel :</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Kotlin hljs" data-lang="Kotlin">fun main(){
+    println(produit(3.0, 15.0))
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_appel_des_fonctions"><a class="anchor" href="#_appel_des_fonctions"></a>7.1.4. Appel des fonctions</h4>
+<div class="paragraph">
+<p>Pas de difficultés particulière pour l&#8217;appel des fonctions. La formulation est classique, on utilise l&#8217;identifiant de la fonction et nous fournissons les arguments entre une paire de parenthèses.</p>
+</div>
+<div class="listingblock">
+<div class="title">Exemple d&#8217;appel d&#8217;une fonction :</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Kotlin hljs" data-lang="Kotlin">fun somme(operandeGauche: Double, operandeDroit: Double): Double{
+    return operandeGauche + operandeDroit
+}
+
+fun main(){
+    var resultat = somme(5.0, -2.0)
+    println(resultat)
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Affichage console :</div>
+<div class="content">
+<pre>3.0
+
+Process finished with exit code 0</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>L&#8217;uilisation du nom des paramètres permet de passer les arguments dans n&#8217;importe quel ordre et sourtout de laisser les valeurs par défaut pour les arguments qui ne sont pas renseignés !</p>
+</div>
+<div class="listingblock">
+<div class="title">Exemple d&#8217;appel d&#8217;une fonction en utilisant le nom des paramètres :</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Kotlin hljs" data-lang="Kotlin">fun exemple(mot1: String = "Bonjour", vararg mots: String): String {
+    var phrase: String = mot1
+    for (mot in mots)
+        phrase += " " + mot
+    return phrase
+}
+
+fun main(){
+    var retour = exemple(mots = arrayOf("tout", "le", "monde !"))
+    println(retour)
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Résultat :</div>
+<div class="content">
+<pre>Bonjour tout le monde !
+
+Process finished with exit code 0</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_les_fonctions_higher_order_functions_fonction_dordre_supérieur"><a class="anchor" href="#_les_fonctions_higher_order_functions_fonction_dordre_supérieur"></a>7.1.5. Les fonctions "Higher-order functions" (fonction d&#8217;ordre supérieur)</h4>
+<div class="sect4">
+<h5 id="_définition_dune_fonction_dordre_supérieur"><a class="anchor" href="#_définition_dune_fonction_dordre_supérieur"></a>Définition d&#8217;une fonction d&#8217;ordre supérieur</h5>
+<div class="paragraph">
+<p>Les <strong><em>Higher-order function</em></strong> que nous pouvons traduire comme "fonctions d&#8217;odre supérieur" sont des fonctions qui vont justement prendre en argument une fonction ou en retourner une.<br>
+Ce sont donc des fonctions où l&#8217;on pourra passer des fonctions lambdas. Nous allons voir ici comment les construire.</p>
+</div>
+<div class="paragraph">
+<p>Pour les définir nous aurons besoins de caractériser la fonction paramètre, pour ce faire nous utiliserons une paire de parenthèse <strong class="red">( )</strong> pour signaler que l&#8217;argument attendu est la référence d&#8217;une fonction. Nous devrons préciser les types des éventuels arguments de la fonction passé en argument à l&#8217;intérieur des parenthèses. On devra impérativement préciser le type retourné par la fonction donnée en argument. On utiliser le mot clé <strong class="red">Unit</strong> si la fonction ne retourne rien.</p>
+</div>
+<div class="listingblock">
+<div class="title">Syntaxe d&#8217;une fonction d&#8217;ordre supérieur prenant en argument une fonction sans argument et sans retour :</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Kotlin hljs" data-lang="Kotlin">fun idFoncOrdreSup(argFonc: () -&gt; Unit): typeRetour{
+    // Corps de la fonction...
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Syntaxe d&#8217;une fonction d&#8217;ordre supérieur prenant en argument une fonction sans argument mais avec retour :</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Kotlin hljs" data-lang="Kotlin">fun idFoncOrdreSup(argFonc: () -&gt; typeRetour): typeRetour{
+    // Corps de la fonction...
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Syntaxe d&#8217;une fonction d&#8217;ordre supérieur prenant en argument une fonction avec argument et retour :</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Kotlin hljs" data-lang="Kotlin">fun idFoncOrdreSup(argFonc: (typeRetour) -&gt; typeRetour): typeRetour{
+    // Corps de la fonction...
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Exemple de définition de 3 fonctions d&#8217;odre supérieur :</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Kotlin hljs" data-lang="Kotlin">fun fonctionOrdreSuperieur_01(argFonc: () -&gt; Unit){
+    argFonc()
+}
+
+fun fonctionOrdreSuperieur_02(argFonc: () -&gt; String): String{
+    return argFonc()
+}
+
+fun fonctionOrdreSuperieur_03(argFonc: (String) -&gt; String): String{
+    return argFonc("Hello")
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_appel_dune_fonction_dordre_supérieur"><a class="anchor" href="#_appel_dune_fonction_dordre_supérieur"></a>Appel d&#8217;une fonction d&#8217;ordre supérieur</h5>
+<div class="paragraph">
+<p>Une fonction d&#8217;odre supérieur prendra en argument une fonction prédéfinie. Cette fonction peut être :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Une fonction lambda</strong> : nous expliquons dans la partie suivante la définition et l&#8217;utilisation d&#8217;une fonction lambda comme paramètre d&#8217;une fonction d&#8217;ordre supérieur.</p>
+</li>
+<li>
+<p><strong>Une fonction régulière</strong> : Le passage de la référence comme argument requiert l&#8217;utilisation du symbole <strong class="red">::</strong></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="title">Syntaxe de l&#8217;appel d&#8217;une fonction d&#8217;ordre supérieur prenant une fonction régulière en argument :</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Kotlin hljs" data-lang="Kotlin">idFoncSuperieur(::idArgFonc)</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Exemple :</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Kotlin hljs" data-lang="Kotlin">// Définition d'une fonction d'ordre supérieur :
+fun cobaye(argFonc: (String) -&gt;String): String{
+    return argFonc("Message original")
+}
+// Définition d'une fonction argument :
+fun argument(mot: String): String = mot + " (Ok, message lu)"
+
+fun main(){
+    var retour: String
+    retour = cobaye(::argument) // Le passage de la référence s'accompagne des ::
+    println(retour)
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Affichage console :</div>
+<div class="content">
+<pre>Message original (Ok, message lu)
+
+Process finished with exit code 0</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_les_fonctions_lambdas_et_les_fonctions_anonymes"><a class="anchor" href="#_les_fonctions_lambdas_et_les_fonctions_anonymes"></a>7.1.6. Les fonctions lambdas et les fonctions anonymes :</h4>
+<div class="sect4">
+<h5 id="_les_lambdas"><a class="anchor" href="#_les_lambdas"></a>Les lambdas</h5>
+<div class="paragraph">
+<p>Pour rappel une fonction lambda est une fonction qui peut être définie et appelée sans identifiant. Typiquement l&#8217;instruction d&#8217;une fonction lambda sera utilisée dans un paramètre d&#8217;une autre fonction/méthode.<br>
+Les lambdas permettent du gagner du temps en nous évitant de définir spécifiquement une fonction régulière qui ne sera utilisée qu&#8217;une seule fois ou très ponctuellement et dont le corps se réduit le plus souvent à une simple expression.</p>
+</div>
+<div class="paragraph">
+<p>La syntaxe est la suivante :</p>
+</div>
+<div class="listingblock">
+<div class="title">Syntaxe d&#8217;une fonction lambda :</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Kotlin hljs" data-lang="Kotlin">{arg01: typeArg01, arg02: typeArg02, ...-&gt; expression}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Exemples :</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Koltlin hljs" data-lang="Koltlin">fun main() {
+
+    fonctionOrdreSuperieur_01({println("Appel de lambda_01")})
+    println( fonctionOrdreSuperieur_02( {"Appel de lambda_02"} ) )
+    println( fonctionOrdreSuperieur_03 ( { chaine: String -&gt;  chaine + " Fin !" } ) )
+    // Utilisation d'une référence :
+    val f = { chaine: String -&gt;  chaine + " Ok !" }
+    println(  fonctionOrdreSuperieur_03(f))
+}
+// Définition des fonctions d'ordre supérieur
+fun fonctionOrdreSuperieur_01(argFonc: () -&gt; Unit){
+    argFonc()
+}
+fun fonctionOrdreSuperieur_02(argFonc: () -&gt; String): String{
+    return argFonc()
+}
+fun fonctionOrdreSuperieur_03(argFonc: (String) -&gt; String): String{
+    return argFonc("Exécution de la fonction d'ordre supérieur n°3")</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Résultat dans la console :</div>
+<div class="content">
+<pre>Appel de lambda_01
+Appel de lambda_02
+Exécution de la fonction d'ordre supérieur n°3 Fin !
+Exécution de la fonction d'ordre supérieur n°3 Ok !
+
+Process finished with exit code 0</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Variante syntaxique :</strong></p>
+</div>
+<div class="paragraph">
+<p>Si une fonction lambda est placée comme <strong>DERNIER (ou unique)</strong> paramètre d&#8217;une fonction d&#8217;ordre supérieur, il est alors possible de placer la fonction lambda <strong>JUSTE APRES</strong> la fonction d&#8217;ordre supérieur.</p>
+</div>
+<div class="listingblock">
+<div class="title">Application sur l&#8217;exemple précédent :</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Kotlin hljs" data-lang="Kotlin">    fonctionOrdreSuperieur_01() {println("Appel de lambda_01")}
+    println( fonctionOrdreSuperieur_02() {"Appel de lambda_02"} )
+    println( fonctionOrdreSuperieur_03 () { chaine: String -&gt;  chaine + " Fin !" } )</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_utilisation_du_paramètre_it"><a class="anchor" href="#_utilisation_du_paramètre_it"></a>Utilisation du paramètre it :</h5>
+<div class="paragraph">
+<p>Kotlin met à disposition un paramètre <strong class="red">it</strong> qui nous épargne de déclarer justement un paramètre dans une fonction lambda. Cela est possible seulement si la fonction lambda requiert un seul paramètre.</p>
+</div>
+<div class="listingblock">
+<div class="title">Exemple d&#8217;utilisation du paramètre it :</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Kotlin hljs" data-lang="Kotlin">// Définition de la fonction d'ordre supérieur :
+fun doublerValeur(valeur: Double, lambda: (Double) -&gt; Double) {println("Le double de $valeur = ${lambda(valeur)}")}
+
+fun main(){
+    // Appels de la fonction d'ordre supérieur avec une fonction lambda :
+    doublerValeur(16.0, {x: Double -&gt; 2 * x}) // Forme complète avec la déclaration du paramètre
+    doublerValeur(16.0, {2 * it})              // Forme utilisant le paramètre it</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_les_fonctions_anonymes"><a class="anchor" href="#_les_fonctions_anonymes"></a>Les fonctions anonymes</h5>
+<div class="paragraph">
+<p>Les fonction anonymes sont au niveau de leur syntaxe et utilisation un mix entre les fonctions lambdas et les fonctions expressions.<br>
+Outre la différence syntaxique, il y a également une différence à la compilation. Le type de retour n&#8217;est pas préciser pour une fonction lambda, c&#8217;est le compilateur qui met en oeuvre le mécanisme d&#8217;inférence pour fournir le type d&#8217;une fonction lambda. Dans une fonction anonyme nous pourrons préciser le type retourné.</p>
+</div>
+<div class="listingblock">
+<div class="title">Syntaxes d&#8217;une fonction anonyme :</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Kotlin hljs" data-lang="Kotlin">// Syntaxe sous forme d'expression :
+val anoynyme01  = fun(arg01: Type01, arg02: Type02, ...): typeRetour = expression
+
+// Syntaxe avec bloc d'instructions :
+val anoynyme02  = fun(arg01: Type01, arg02: Type02, ...): typeRetour {// Bloc d'instructions avec return}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Exemple :</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Kotlin hljs" data-lang="Kotlin">// Définition de 2 fonctions anonymes selon 2 variantes syntaxiques :
+val somme01 = fun(x: Double, y: Double): Double {return x + y} // Cette variante peut s'écrire sur plusieurs lignes
+val somme02 = fun(x: Double, y: Double): Double =  x + y // Doit s'écrire sur 1 ligne.
+
+// Fonction d'ordre supérieur :
+fun fonctionOrdreSup(x: Double, y: Double, somme: (Double, Double) -&gt; Double) = println("$x + $y = ${somme(x, y)}")
+
+// Fonction principale :
+fun main(){
+    fonctionOrdreSup(5.0, 3.0, somme01)
+    fonctionOrdreSup(-10.0, 7.0, somme02)
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Console :</div>
+<div class="content">
+<pre>5.0 + 3.0 = 8.0
+-10.0 + 7.0 = -3.0
+
+Process finished with exit code 0</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_visibilité_des_fonctions"><a class="anchor" href="#_visibilité_des_fonctions"></a>7.1.7. Visibilité des fonctions</h4>
+<div class="paragraph">
+<p>Par défaut toutes les fonctions sont visibles par tous. Pour rendre inaccessibles nos fonctions il faut de rajouter au début de leur en-tête le mot clé <strong>private</strong>.</p>
+</div>
+<div class="listingblock">
+<div class="title">Syntaxe de l&#8217;en-tête d&#8217;une fonction privée :</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Kotlin hljs" data-lang="Kotlin">private fun idFonction(idArg01: typeArg01, idArg02: typeArg02, ...): typeRetour</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_le_smartcast_transtypage_intelligent"><a class="anchor" href="#_le_smartcast_transtypage_intelligent"></a>7.1.8. Le smartCast (transtypage intelligent)</h4>
+<div class="sect4">
+<h5 id="_illustration_du_besoin_de_transtypage"><a class="anchor" href="#_illustration_du_besoin_de_transtypage"></a>Illustration du besoin de transtypage :</h5>
+<div class="paragraph">
+<p>Avant de détailler les posibilités de transtypage intelligent de Kotlin, illustrons nos besoin avec la fonction <strong>somme()</strong> que nous avons vu en début :</p>
+</div>
+<div class="listingblock">
+<div class="title">Fonction somme() :</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Kotlin hljs" data-lang="Kotlin">fun somme(operandeGauche: Double, operandeDroit: Double): Double{
+    return operandeGauche + operandeDroit
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Cette fonction est peu commode à l&#8217;usage car nous devons impérativement fournir 2 arguments de type <strong>Double</strong>. L&#8217;usage du type <strong>Int</strong> se solde par un échec !</p>
+</div>
+<div class="listingblock">
+<div class="title">Appel de la fonction somme() avec 2 arguments du type Int</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Kotlin hljs" data-lang="Kotlin">fun main() {
+    println(somme(2, 3))
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Erreur affichée :</div>
+<div class="content">
+<pre>Kotlin: The integer literal does not conform to the expected type Double</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Pour donner plus de souplesse, nous allons modifier le type des paramètres de la fonction <strong>somme()</strong>. Nous allons utiliser le type <strong>Number</strong>. En effet avec le système d&#8217;héritage, touts les types numériques (Float, Double, etc&#8230;&#8203;) de Kotlin héritent du type <strong>Number</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Par contre la somme de deux variables du type <strong>Number</strong> n&#8217;est pas autorisée. Il faut donc procéder à un transtypage vers le type <strong>Double</strong> par exemple pour pouvoir réaliser la somme.</p>
+</div>
+<div class="listingblock">
+<div class="title">Solution :</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Kotlin hljs" data-lang="Kotlin">private fun somme(operandeGauche: Number, operandeDroit: Number): Double{
+    return operandeGauche.toDouble() + operandeDroit.toDouble()</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_test_dun_type_et_smartcast_avec_is"><a class="anchor" href="#_test_dun_type_et_smartcast_avec_is"></a>Test d&#8217;un type et smartCast avec is</h5>
+<div class="paragraph">
+<p>Nous serons mener à déterminer le type d&#8217;un objet afin d&#8217;agir en conséquence. Le mot clé <strong class="red">is</strong> nous permet de tester le type d&#8217;une donnée. Illustons cela avec l&#8217;exemple suivant :
+La fonction <strong>taille(Any)</strong> ci-dessous prend en argument un objet et retourne sa taille si l&#8217;objet est une <strong>Collection</strong> (<strong>List</strong>, <strong>Set</strong> ou <strong>Map</strong>) ou une chaîne de caractères <strong>String</strong>.</p>
+</div>
+<div class="listingblock">
+<div class="title">Exemple de l&#8217;utilisation de <strong>is</strong> :</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Kotlin hljs" data-lang="Kotlin">fun taille(argObj: Any): Int{
+    if (argObj is Collection&lt;*&gt;) return argObj.size
+    if (argObj is String) return  argObj.length
+    return 0
+}
+
+fun main(){
+    val listeTest = listOf(0, 1 ,2, 3)
+    val setTest = setOf(4, 5, 6)
+    val texte = "Kotlin"
+
+    println("Taille de listeTest : ${taille(listeTest)}")
+    println("Taille de setTest : ${taille(setTest)}")
+    println("Taille de texte : ${taille(texte)}")
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Affichage console :</div>
+<div class="content">
+<pre>Taille de listeTest : 4
+Taille de setTest : 3
+Taille de texte : 6
+
+Process finished with exit code 0</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>On parle <strong>smartCast</strong> car dans d&#8217;autres langages la ligne suivante : <span class="blue">if (argObj is String) return  argObj.length</span> aurait dû s&#8217;écrire <span class="blue">if (argObj is String) return  argObj.<strong>toString()</strong>.length</span>
+Ici c&#8217;est Kotlin qui a pris en charge la transtypage après l&#8217;utilisation de <strong>is</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Le code reste tout de même un poil rébarbatif avec l&#8217;utilisation du <strong class="red">if</strong>, on est succeptible de conduire un certain nombre de tests suivant les types visés. Une structure/expression avec <strong class="red">when</strong> devrait être plus optimal&#8230;&#8203; Et c&#8217;est la cas, voici ce que cela donne :</p>
+</div>
+<div class="listingblock">
+<div class="title">Amélioration du code, utilisation conjointe du <strong>is</strong> avec <strong>when</strong> :</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Kotlin hljs" data-lang="Kotlin">fun taille(argObj: Any) = when(argObj){
+    is Collection&lt;*&gt; -&gt; argObj.size
+    is String -&gt; argObj.length
+    else -&gt; 0
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_transtypage_avec_as"><a class="anchor" href="#_transtypage_avec_as"></a>Transtypage avec as</h5>
+<div class="paragraph">
+<p>Avec <strong class="red">is</strong> nous procédions à un test et à une conversion à la volée en cas de succès d&#8217;appartenance au type ciblé.
+Avec <strong class="red">as</strong> l&#8217;approche est différente, nous allons procéder à une conversion sans procéder à un test préalable.
+Mais attention il faut que le type de destination soit cohérent</p>
+</div>
+<div class="listingblock">
+<div class="title">Exemples sur l&#8217;instruction as :</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Kotlin hljs" data-lang="Kotlin">    var y: Number = 3L // La constante affectée est un Long
+    var z: Long = y as Long
+
+    var k: Number = 3 // La constante affectée est un Int
+    var l: Int = k as Int
+
+    var bidule: Any = "Kotlin" // La constante affectée est un String
+    var texte: String = bidule as String</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_les_fonctions_génériques"><a class="anchor" href="#_les_fonctions_génériques"></a>7.1.9. Les fonctions génériques</h4>
+
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_la_p_o_o_programmation_orientée_objet"><a class="anchor" href="#_la_p_o_o_programmation_orientée_objet"></a>8. La P.O.O. (Programmation Orientée Objet)</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_les_classes"><a class="anchor" href="#_les_classes"></a>8.1. Les classes</h3>
+<div class="sect3">
+<h4 id="_généralités"><a class="anchor" href="#_généralités"></a>8.1.1. Généralités</h4>
 <div class="paragraph">
 <p>Les classes en Kotlin disposent d&#8217;un constructeur dit primaire dont la syntaxe à la particularité d&#8217;être intégré dans l&#8217;en-tête de la classe. Cette manière de faire permet de faciliter la déclaration des attributs. Les accesseurs (getters) et mutateurs (setters) sont par ailleurs générés automatiquement. D&#8217;autres constructeurs dits secondaires peuvent également être déclarés. C&#8217;est leur signature (nombre et types des arguments) qui permet de sélectionner le constructeur idoine pour la phase d&#8217;instanciation.</p>
 </div>
@@ -2403,7 +3438,7 @@ Process finished with exit code 0</pre>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_définition_déclaration_et_instanciation_dune_classe"><a class="anchor" href="#_définition_déclaration_et_instanciation_dune_classe"></a>5.1.2. Définition, déclaration et instanciation d&#8217;une classe</h4>
+<h4 id="_définition_déclaration_et_instanciation_dune_classe"><a class="anchor" href="#_définition_déclaration_et_instanciation_dune_classe"></a>8.1.2. Définition, déclaration et instanciation d&#8217;une classe</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -2449,7 +3484,7 @@ class IdClasse
 </div>
 </div>
 <div class="sect3">
-<h4 id="_définition_du_constructeur_primaire_dune_classe"><a class="anchor" href="#_définition_du_constructeur_primaire_dune_classe"></a>5.1.3. Définition du constructeur primaire d&#8217;une classe</h4>
+<h4 id="_définition_du_constructeur_primaire_dune_classe"><a class="anchor" href="#_définition_du_constructeur_primaire_dune_classe"></a>8.1.3. Définition du constructeur primaire d&#8217;une classe</h4>
 <div class="sect4">
 <h5 id="_philosophie_dapproche_de_la_poo_avec_kotlin"><a class="anchor" href="#_philosophie_dapproche_de_la_poo_avec_kotlin"></a>Philosophie d&#8217;approche de la POO avec Kotlin</h5>
 <div class="paragraph">
@@ -2834,9 +3869,9 @@ Process finished with exit code 0</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_les_constructeurs_secondaires"><a class="anchor" href="#_les_constructeurs_secondaires"></a>5.1.4. Les constructeurs secondaires</h4>
+<h4 id="_les_constructeurs_secondaires"><a class="anchor" href="#_les_constructeurs_secondaires"></a>8.1.4. Les constructeurs secondaires</h4>
 <div class="sect4">
-<h5 id="_avant_propos_2"><a class="anchor" href="#_avant_propos_2"></a>Avant propos</h5>
+<h5 id="_avant_propos_3"><a class="anchor" href="#_avant_propos_3"></a>Avant propos</h5>
 <div class="paragraph">
 <p>Avant d&#8217;aborder l&#8217;héritage, nous allons étudier le fonctionnement des constructeurs secondaires dans une classe de base (sans héritage).</p>
 </div>
@@ -2935,7 +3970,7 @@ Process finished with exit code 0</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_structure_dune_classe_avec_constructeurs_secondaires"><a class="anchor" href="#_structure_dune_classe_avec_constructeurs_secondaires"></a>5.1.5. Structure d&#8217;une classe avec constructeurs secondaires</h4>
+<h4 id="_structure_dune_classe_avec_constructeurs_secondaires"><a class="anchor" href="#_structure_dune_classe_avec_constructeurs_secondaires"></a>8.1.5. Structure d&#8217;une classe avec constructeurs secondaires</h4>
 <div class="paragraph">
 <p>Nous vous proposons ici un exemple de classe avec des constructeurs secondaires.</p>
 </div>
@@ -2995,7 +4030,7 @@ La combinaison des mots clés <strong class="red">private set</strong> permetten
 </div>
 </div>
 <div class="sect2">
-<h3 id="_les_attributs_méthodes_de_classe_les_objets_compagnons"><a class="anchor" href="#_les_attributs_méthodes_de_classe_les_objets_compagnons"></a>5.2. Les attributs &amp; méthodes de classe (Les objets compagnons)</h3>
+<h3 id="_les_attributs_méthodes_de_classe_les_objets_compagnons"><a class="anchor" href="#_les_attributs_méthodes_de_classe_les_objets_compagnons"></a>8.2. Les attributs &amp; méthodes de classe (Les objets compagnons)</h3>
 <div class="paragraph">
 <p>Dans des langages purement orientés objets comme Java nous somme obligés de déclarer des méthodes statiques pour accéder à la méthode sans passer par une instance de la classe définissant la méthode.<br>
 Ce type de méthodes accessiblent directement d&#8217;une classe sont communément désignées des <strong>méthodes de classe</strong>.<br>
@@ -3049,9 +4084,9 @@ Process finished with exit code 0</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_lhéritage"><a class="anchor" href="#_lhéritage"></a>5.3. L&#8217;héritage</h3>
+<h3 id="_lhéritage"><a class="anchor" href="#_lhéritage"></a>8.3. L&#8217;héritage</h3>
 <div class="sect3">
-<h4 id="_principes_de_base_de_lhéritage_en_kotlin"><a class="anchor" href="#_principes_de_base_de_lhéritage_en_kotlin"></a>5.3.1. Principes de base de l&#8217;héritage en Kotlin</h4>
+<h4 id="_principes_de_base_de_lhéritage_en_kotlin"><a class="anchor" href="#_principes_de_base_de_lhéritage_en_kotlin"></a>8.3.1. Principes de base de l&#8217;héritage en Kotlin</h4>
 <div class="paragraph">
 <p>L&#8217;héritage est un concept puissant notamment pour factoriser du code. Cependant cela peut égalementconduire à des dérives. En effet des sous-classes (classes filles) peuvent avec le mot clé <strong class="red">override</strong> redéfinir des méthodes de la classe parente. Or cette redéfinition n&#8217;est pas forcément cohérente ou ne respecte pas les comportements initialement attendus. Cela est en contradiction avec les principes de la POO. Ainsi il est conseillé de <strong>fermer</strong> à l&#8217;héritage des classes qui ne sont pas pensées pour cet objectif.</p>
 </div>
@@ -3060,7 +4095,7 @@ Process finished with exit code 0</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_ouvrir_une_classe_à_lhéritage"><a class="anchor" href="#_ouvrir_une_classe_à_lhéritage"></a>5.3.2. Ouvrir une classe à l&#8217;héritage</h4>
+<h4 id="_ouvrir_une_classe_à_lhéritage"><a class="anchor" href="#_ouvrir_une_classe_à_lhéritage"></a>8.3.2. Ouvrir une classe à l&#8217;héritage</h4>
 <div class="paragraph">
 <p>Comme expliqué précédement, par défaut il n&#8217;est pas possible d&#8217;utiliser l&#8217;héritage sur une classe ne le permettant pas. Il faut que la classe l&#8217;autorise explicitement avec le mot clé <strong class="red">open</strong>.</p>
 </div>
@@ -3103,7 +4138,7 @@ Process finished with exit code 0</pre>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_héritage_dune_classe_de_base_vers_une_classe_dérivée"><a class="anchor" href="#_héritage_dune_classe_de_base_vers_une_classe_dérivée"></a>5.3.3. Héritage d&#8217;une classe de base vers une classe dérivée</h4>
+<h4 id="_héritage_dune_classe_de_base_vers_une_classe_dérivée"><a class="anchor" href="#_héritage_dune_classe_de_base_vers_une_classe_dérivée"></a>8.3.3. Héritage d&#8217;une classe de base vers une classe dérivée</h4>
 <div class="sect4">
 <h5 id="_mise_en_relation_dune_classe_dérivée_avec_une_classe_de_base_ayant_un_constructeur_sans_arguments"><a class="anchor" href="#_mise_en_relation_dune_classe_dérivée_avec_une_classe_de_base_ayant_un_constructeur_sans_arguments"></a>Mise en relation d&#8217;une classe dérivée avec une classe de base ayant un constructeur SANS arguments</h5>
 <div class="paragraph">
@@ -3132,7 +4167,7 @@ class Derive(): Base(){
 </div>
 </div>
 <div class="sect3">
-<h4 id="_mise_en_relation_dune_classe_dérivée_avec_une_classe_de_base_ayant_un_constructeur_avec_arguments"><a class="anchor" href="#_mise_en_relation_dune_classe_dérivée_avec_une_classe_de_base_ayant_un_constructeur_avec_arguments"></a>5.3.4. Mise en relation d&#8217;une classe dérivée avec une classe de base ayant un constructeur AVEC arguments</h4>
+<h4 id="_mise_en_relation_dune_classe_dérivée_avec_une_classe_de_base_ayant_un_constructeur_avec_arguments"><a class="anchor" href="#_mise_en_relation_dune_classe_dérivée_avec_une_classe_de_base_ayant_un_constructeur_avec_arguments"></a>8.3.4. Mise en relation d&#8217;une classe dérivée avec une classe de base ayant un constructeur AVEC arguments</h4>
 <div class="paragraph">
 <p>Notre exemple précédent était très basique car le constructeur de la classe de base ne prennait aucun argument. Cela nous permettait de mettre en avant le principe de mise en relation d&#8217;une classe de base avec sa classe dérivée.</p>
 </div>
@@ -3170,7 +4205,7 @@ Le constructeur de la classe <strong>Derive</strong> comporte 2 paramètres qui 
 </div>
 </div>
 <div class="sect3">
-<h4 id="_enrichissement_dune_classe_dérivée_ajout_dattributs_et_de_méthodes"><a class="anchor" href="#_enrichissement_dune_classe_dérivée_ajout_dattributs_et_de_méthodes"></a>5.3.5. Enrichissement d&#8217;une classe dérivée : Ajout d&#8217;attributs et de méthodes</h4>
+<h4 id="_enrichissement_dune_classe_dérivée_ajout_dattributs_et_de_méthodes"><a class="anchor" href="#_enrichissement_dune_classe_dérivée_ajout_dattributs_et_de_méthodes"></a>8.3.5. Enrichissement d&#8217;une classe dérivée : Ajout d&#8217;attributs et de méthodes</h4>
 <div class="paragraph">
 <p>Sans ajout d&#8217;attributs et/ou de méthodes à une classe dérivée, l&#8217;héritage n&#8217;a aucun intérêt. Il n&#8217;y a pas de difficultés particulières, il suffit de déclarer nos méthodes et attributs dans la classe dérivée exactement comme nous pourrions le faire dans une classe de base.</p>
 </div>
@@ -3235,7 +4270,7 @@ Il faut évidement que les identifiants des attributs et méthodes soient distin
 </div>
 </div>
 <div class="sect3">
-<h4 id="_redéfinition_des_attributs_etou_méthodes_dune_classe_de_base"><a class="anchor" href="#_redéfinition_des_attributs_etou_méthodes_dune_classe_de_base"></a>5.3.6. Redéfinition des attributs et/ou méthodes d&#8217;une classe de base</h4>
+<h4 id="_redéfinition_des_attributs_etou_méthodes_dune_classe_de_base"><a class="anchor" href="#_redéfinition_des_attributs_etou_méthodes_dune_classe_de_base"></a>8.3.6. Redéfinition des attributs et/ou méthodes d&#8217;une classe de base</h4>
 <div class="admonitionblock important">
 <table>
 <tr>
@@ -3349,7 +4384,7 @@ class Derive(arg01: Int, arg02: Int, val attrib03: Int): Base(arg01, arg02){
 </div>
 </div>
 <div class="sect3">
-<h4 id="_utilisation_du_mot_clé_super"><a class="anchor" href="#_utilisation_du_mot_clé_super"></a>5.3.7. Utilisation du mot clé super</h4>
+<h4 id="_utilisation_du_mot_clé_super"><a class="anchor" href="#_utilisation_du_mot_clé_super"></a>8.3.7. Utilisation du mot clé super</h4>
 <div class="paragraph">
 <p>Le mot clé <strong class="red">super</strong> à l&#8217;image du mot clé <strong class="red">this</strong> permet de lever l&#8217;ambiguïté sur des références d&#8217;éléments hérités et redéfinis localement dans la classe dérivée.</p>
 </div>
@@ -3439,7 +4474,7 @@ class Derive: Base{
 </div>
 </div>
 <div class="sect3">
-<h4 id="_les_classes_abstraites"><a class="anchor" href="#_les_classes_abstraites"></a>5.3.8. Les classes abstraites</h4>
+<h4 id="_les_classes_abstraites"><a class="anchor" href="#_les_classes_abstraites"></a>8.3.8. Les classes abstraites</h4>
 <div class="sect4">
 <h5 id="_règles_propriétés_des_classes_abstraites"><a class="anchor" href="#_règles_propriétés_des_classes_abstraites"></a>Règles &amp; propriétés des classes abstraites</h5>
 <div class="ulist">
@@ -3646,7 +4681,7 @@ Process finished with exit code 0</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_les_interfaces"><a class="anchor" href="#_les_interfaces"></a>5.3.9. Les interfaces</h4>
+<h4 id="_les_interfaces"><a class="anchor" href="#_les_interfaces"></a>8.3.9. Les interfaces</h4>
 <div class="sect4">
 <h5 id="_objectifs_et_principes_des_interfaces"><a class="anchor" href="#_objectifs_et_principes_des_interfaces"></a>Objectifs et principes des interfaces</h5>
 <div class="paragraph">
@@ -3685,7 +4720,7 @@ Lorsque le processus d&#8217;héritage est suffisamment poussé nous aboutissons
 </div>
 </div>
 <div class="sect3">
-<h4 id="_définition_dune_interface_en_kotlin"><a class="anchor" href="#_définition_dune_interface_en_kotlin"></a>5.3.10. Définition d&#8217;une interface en Kotlin</h4>
+<h4 id="_définition_dune_interface_en_kotlin"><a class="anchor" href="#_définition_dune_interface_en_kotlin"></a>8.3.10. Définition d&#8217;une interface en Kotlin</h4>
 <div class="paragraph">
 <p>Nous allons illustrer la définition des interfaces en Kotlin à travers de l&#8217;exemple des figures géométriques (exemple utilisé également dans le cadre des classes abstraites).</p>
 </div>
@@ -3853,16 +4888,16 @@ Process finished with exit code 0</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_les_extensions"><a class="anchor" href="#_les_extensions"></a>5.4. Les extensions</h3>
+<h3 id="_les_extensions"><a class="anchor" href="#_les_extensions"></a>8.4. Les extensions</h3>
 <div class="sect3">
-<h4 id="_objectifs_des_extensions"><a class="anchor" href="#_objectifs_des_extensions"></a>5.4.1. Objectifs des extensions</h4>
+<h4 id="_objectifs_des_extensions"><a class="anchor" href="#_objectifs_des_extensions"></a>8.4.1. Objectifs des extensions</h4>
 <div class="paragraph">
 <p>Kotlin ré-utilise les bibliothèques et frameworks déjà disponibles en Java. Il n&#8217;était pas possible de réécrire toutes ces sources en Kotlin.
 Afin de permettre d&#8217;enrichir ces éléments existants sans pour autant repartir de zéro, Kotlin intègre un nouveau concept, les extensions. Les extensions permettent de rajouter des méthodes et des attributs à des classes existantes.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_principe_de_limplémentation_des_extensions"><a class="anchor" href="#_principe_de_limplémentation_des_extensions"></a>5.4.2. Principe de l&#8217;implémentation des extensions</h4>
+<h4 id="_principe_de_limplémentation_des_extensions"><a class="anchor" href="#_principe_de_limplémentation_des_extensions"></a>8.4.2. Principe de l&#8217;implémentation des extensions</h4>
 <div class="paragraph">
 <p>Le principe est très simple on utilisera la notation pointée pour étendre une classe existante avec nos propres éléments.</p>
 </div>
@@ -3913,9 +4948,9 @@ Process finished with exit code 0</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_allons_plus_loin_avec_les_classes"><a class="anchor" href="#_allons_plus_loin_avec_les_classes"></a>5.5. Allons plus loin avec les Classes</h3>
+<h3 id="_allons_plus_loin_avec_les_classes"><a class="anchor" href="#_allons_plus_loin_avec_les_classes"></a>8.5. Allons plus loin avec les Classes</h3>
 <div class="sect3">
-<h4 id="_redéfinition_de_la_méthode_tostring_de_la_classe_any"><a class="anchor" href="#_redéfinition_de_la_méthode_tostring_de_la_classe_any"></a>5.5.1. Redéfinition de la méthode toString() de la classe Any</h4>
+<h4 id="_redéfinition_de_la_méthode_tostring_de_la_classe_any"><a class="anchor" href="#_redéfinition_de_la_méthode_tostring_de_la_classe_any"></a>8.5.1. Redéfinition de la méthode toString() de la classe Any</h4>
 <div class="paragraph">
 <p>Comme nous l&#8217;avions déjà précisé, tous les objets de Kotlin vont hériter de la classe Any. Any implémente une méthode <strong class="red">toString()</strong>. Cette méthode est automatiquement appelée lorsque nous désirons convertir un objet en chaîne de caractères. La conversion est implicite lorsque nous passons un objet en argument de la fonction <strong class="red">print()</strong>.</p>
 </div>
@@ -3968,7 +5003,7 @@ Process finished with exit code 0</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_les_data_class_classe_de_données"><a class="anchor" href="#_les_data_class_classe_de_données"></a>5.5.2. Les Data Class (classe de données)</h4>
+<h4 id="_les_data_class_classe_de_données"><a class="anchor" href="#_les_data_class_classe_de_données"></a>8.5.2. Les Data Class (classe de données)</h4>
 <div class="paragraph">
 <p>Kotlin propose un type de classe spécialisée pour mémoriser des données.
 C&#8217;est le mot clé préfixe <strong class="red">data</strong> qui nous permet de définir ce type de classe.</p>
@@ -4140,7 +5175,7 @@ Process finished with exit code 0</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_classes_anonymes_expressions_objets"><a class="anchor" href="#_classes_anonymes_expressions_objets"></a>5.5.3. Classes anonymes (expressions objets)</h4>
+<h4 id="_classes_anonymes_expressions_objets"><a class="anchor" href="#_classes_anonymes_expressions_objets"></a>8.5.3. Classes anonymes (expressions objets)</h4>
 <div class="sect4">
 <h5 id="_principe"><a class="anchor" href="#_principe"></a>Principe</h5>
 <div class="paragraph">
@@ -4224,7 +5259,7 @@ Process finished with exit code 0</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_les_énumérations"><a class="anchor" href="#_les_énumérations"></a>5.5.4. Les énumérations</h4>
+<h4 id="_les_énumérations"><a class="anchor" href="#_les_énumérations"></a>8.5.4. Les énumérations</h4>
 <div class="sect4">
 <h5 id="_principe_des_énumérations"><a class="anchor" href="#_principe_des_énumérations"></a>Principe des énumérations</h5>
 <div class="paragraph">
@@ -4653,11 +5688,11 @@ enum class JoursSemaine(var numJour: Int, var nomString: String): Jour{
 </div>
 </div>
 <div class="sect3">
-<h4 id="_les_classes_scellées"><a class="anchor" href="#_les_classes_scellées"></a>5.5.5. Les classes scellées</h4>
+<h4 id="_les_classes_scellées"><a class="anchor" href="#_les_classes_scellées"></a>8.5.5. Les classes scellées</h4>
 
 </div>
 <div class="sect3">
-<h4 id="_la_surcharge_dopérateurs"><a class="anchor" href="#_la_surcharge_dopérateurs"></a>5.5.6. La surcharge d&#8217;opérateurs</h4>
+<h4 id="_la_surcharge_dopérateurs"><a class="anchor" href="#_la_surcharge_dopérateurs"></a>8.5.6. La surcharge d&#8217;opérateurs</h4>
 <div class="sect4">
 <h5 id="_principe_2"><a class="anchor" href="#_principe_2"></a>Principe</h5>
 <div class="paragraph">
@@ -4728,7 +5763,7 @@ Process finished with exit code 0</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_surcharge_des_opérateurs_dincrémentationdécrémentation"><a class="anchor" href="#_surcharge_des_opérateurs_dincrémentationdécrémentation"></a>5.5.7. Surcharge des opérateurs d&#8217;incrémentation/décrémentation</h4>
+<h4 id="_surcharge_des_opérateurs_dincrémentationdécrémentation"><a class="anchor" href="#_surcharge_des_opérateurs_dincrémentationdécrémentation"></a>8.5.7. Surcharge des opérateurs d&#8217;incrémentation/décrémentation</h4>
 <div class="paragraph">
 <p>Nous retrouvons le même mode de fonctionnement avec les opérateur ++ et - -</p>
 </div>
@@ -4864,7 +5899,7 @@ Process finished with exit code 0</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_les_classes_génériques"><a class="anchor" href="#_les_classes_génériques"></a>5.5.8. Les classes génériques</h4>
+<h4 id="_les_classes_génériques"><a class="anchor" href="#_les_classes_génériques"></a>8.5.8. Les classes génériques</h4>
 <div class="paragraph">
 <p>Les fonctions et les classes peuvent être formulée génériquement, c&#8217;est-à-dire que le type des paramètres n&#8217;est pas spécifié.</p>
 </div>
