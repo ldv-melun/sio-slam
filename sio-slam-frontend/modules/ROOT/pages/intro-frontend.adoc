@@ -2,12 +2,16 @@
 
 ==  Prérequis
 
+Le site de référence est https://angular.io/
+
 On admet que vous disposez des outils nécessaires pour commencer la programmation Angular.
 
-Afin d'aborder Angular, nous allons créer une application et étudier certains de ses particularités.
+Afin d'aborder Angular, nous allons créer une application et étudier certains de ses particularités. L'usage courant consiste à utiliser la ligne de commande, en particulier pour bénéficier de la génération automatique de code. L'outil adapté est **Angular CLI** (_Command Line Interface_).
+
+https://angular.io/cli
+
 
 **Angular CLI** (_Command Line Interface_) est un outil en ligne de commande pour Angular qui facilite, entre autres, la création et la configuration de nouveaux projets Angular, ainsi que la génération de composants, de services, et d'autres éléments de l'application.
-
 Angular CLI permet également d'exécuter des tâches de développement courantes, telles que la compilation, le débogage et le déploiement de l'application.).
 
 Bien que Angular CLI ne soit pas obligatoire, il facilite grandement le travail !
@@ -148,37 +152,37 @@ export class AppComponent { <5>
 .projet1/src/app/app.module.ts
 [source, typescript]
 ----
-import { NgModule } from '@angular/core';
+import { NgModule } from '@angular/core'; <1>
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 
-@NgModule({
-  declarations: [
+@NgModule({ <2>
+  declarations: [ <3>
     AppComponent
   ],
-  imports: [
+  imports: [ <4>
     BrowserModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [], <5>
+  bootstrap: [AppComponent] <6>
 })
-export class AppModule { }
+export class AppModule { } <7>
 ----
 
-Les *imports* : Permettre d'importer les modules nécessaires pour ce module. Ici, on importe `NgModule` de @angular/core et `BrowserModule` de @angular/platform-browser. Ces modules sont nécessaires pour exécuter l'application dans un navigateur.
+<1> Les *imports* permettre d'importer les modules nécessaires pour ce module. Ici, on importe `NgModule` de @angular/core et `BrowserModule` de @angular/platform-browser. Ces modules sont nécessaires pour exécuter l'application dans un navigateur.
 
-Dans @NgModule:
+<2> Le décorateur (une annotation) `@NgModule` de la class `AppMoudle` est paramétrable :
 
-Les *déclarations* : Définir les composants (entre autres) qui appartiennent à ce module. Ici, on déclare `AppComponent` importé précédemment.
+<3> *déclarations* définit les composants (entre autres) qui appartiennent à ce module. Ici, on déclare `AppComponent` importé précédemment.
 
-Les *imports* : Les imports définissent les modules qui sont utilisés par ce module. Ici, on importe `BrowserModule` pour permettre l'exécution de l'application dans un navigateur.
+<4> *imports* définit les modules qui sont utilisés par ce module. Ici, on importe `BrowserModule` pour permettre l'exécution de l'application dans un navigateur.
 
-Les *fournisseurs* (_providers_): Les fournisseurs définissent les *services qui sont utilisés* par ce module. Ici, il n'y a pas de fournisseurs définis.
+<5> *providers* (fournisseurs): définit les *services qui sont utilisés* par ce module. Ici, il n'y a pas de fournisseurs définis.
 
-Le *bootstrap* : Le bootstrap définit le composant qui sera utilisé comme *point d'entrée pour l'application*. Ici, on utilise `AppComponent` comme point d'entrée.
+<6> bootstrap* définit le composant qui sera utilisé comme *point d'entrée pour l'application*. Ici, on utilise `AppComponent` comme point d'entrée.
 
-à la fin L'*export* permet d'exporter le module pour qu'il puisse être utilisé par d'autres parties de l'application.
+<7> *export* permet d'exporter le module pour qu'il puisse être utilisé par d'autres parties de l'application.
 
 _Ceci est un exemple d'un module de base, vous pourriez avoir besoin d'ajouter des déclarations, des imports, des fournisseurs ou des configurations supplémentaires selon les besoins de votre application._
 
@@ -260,7 +264,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class IpServiceService {
+export class IpService {
 
   constructor() { }
 }
@@ -385,7 +389,4 @@ Il existe plusieurs façons d'opérer. Faites marcher votre logique en premier, 
 ]
 ====
 
-
-// ressource à exploiter :
-// https://www.c-sharpcorner.com/article/how-to-get-the-client-ip-address-in-angular-application/
 

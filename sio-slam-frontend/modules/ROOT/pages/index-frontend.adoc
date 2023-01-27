@@ -6,7 +6,7 @@ Une application _Frontend_ est une application qui s'exécute sur le client web,
 
 == Structurer une application front
 
-Il existe de nombreux frameworks JS qui aide à structurer les logiques d'une application frontend. Les principaux sont
+Il existe de nombreux frameworks JS qui aident à structurer les logiques d'une application frontend. Les principaux sont
 
 * Angular
 * React
@@ -23,7 +23,7 @@ Pour développer des applications Angular, vous aurez besoin de certains outils,
 
 **TypeScript** : Il s'agit d'un langage de programmation développé par Microsoft qui est utilisé pour écrire le code d'une application Angular. Il est fortement typé et permet de bénéficier d'une meilleure productivité et qualité de code.
 
-**Un éditeur de code** : Il est recommandé d'utiliser un éditeur de code qui prend en charge TypeScript, comme Visual Studio Code, WebStorm, Atom, etc. Ces éditeurs offrent des fonctionnalités comme la coloration syntaxique, la complétion de code, etc.
+**Un éditeur de code** : L'usage d'un IDE (_Integrated Development Environment_) est plus que recommandé, et doit prendre en charge TypeScript, comme Visual Studio Code, WebStorm, Atom, etc. Ces éditeurs offrent des fonctionnalités comme la coloration syntaxique, la complétion de code, le débogage, etc.
 
 **Un navigateur web** : Il est important d'avoir un navigateur web pour tester et déboguer l'application Angular. Les navigateurs web les plus couramment utilisés sont Google Chrome, Mozilla Firefox, et Microsoft Edge.
 
