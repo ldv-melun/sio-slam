@@ -1,0 +1,317 @@
+= Table de multiplication
+:toc-title: Table des matières
+:toclevels: 4
+:toc: top
+
+
+
+== L'idée
+
+== L'analyse
+
+== Initialisation de l'application (CLI)
+
+ ng new table-mult-app --routing --defaults
+
+les dépendances
+
+Installation des modules bootstrap
+
+ npm install --save bootstrap
+ mybooks$ npm install --save bootstrap-icons
+
+L’option `save` indique que le paquetage s’installe uniquement dans le projet et non globalement.
+
+Intégration du module bootstrap pour angular (https://ng-bootstrap.github.io/#/home)
+
+ ng add @ng-bootstrap/ng-bootstrap
+
+Ajouter les dépendances dans `angular.json` :
+
+  [...]
+  "styles": [
+     "node_modules/bootstrap/dist/css/bootstrap.min.css",
+     "node_modules/bootstrap-icons/font/bootstrap-icons.css",
+     "src/styles.css"
+   ],
+   "scripts": [
+     "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+   ]
+  [...]
+
+== Les composants
+
+L'application proposera plusieurs "pages" qui devront toutes présenter la même structure.
+Nous allons donc *factoriser* le format par une entête et un pied de page, chacun étant représenté par un composant.
+
+=== Création du composant Header
+
+ ng g component component/header
+
+Nous prendrons un template classique de la documentation bootstrap.
+
+./src/app/compoment/header/header.component.html
+[source, html]
+----
+<nav class="navbar navbar-expand-xl navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <h1>MyApp</h1>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+----
+
+=== Intégration
+
+Nous ajoutons maintenant ce composant à notre composant principal
+
+.app.component.html
+[source, html]
+----
+<app-header></app-header>
+<router-outlet></router-outlet>
+----
+
+=== Test
+
+À ce niveau là, l'application devrait être opérationnelle :
+
+ ng serve
+
+Réglez les problèmes éventuels avant de poursuivre.
+
+== Création du composant PageTableMultComponent
+
+ ng generate component pageTableMult
+
+=== Configuration des routes
+
+Le fichier `app-routing-module.ts` a été lors de la création de l'application (paramètre `--routing`).
+
+Nous allons déclarer notre composant `TableMultiplication` comme *cible* d'une route, que nous nommons 'table-multiplication'.
+
+./src/app/app-routing-module.ts
+[source,typescript]
+----
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { PageTableMultComponent } from './page-table-mult/page-table-mult.component';
+
+const routes: Routes = [
+  {path: 'table-multiplication', component: PageTableMultComponent }
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
+----
+
+Nous pouvons maintenant faire référence à cette route dans le header.
+
+.extrait /src/app/compoment/header/header.component.html
+[source, html]
+----
+[...]
+
+<li class="nav-item">
+   <a class="nav-link active" aria-current="page" href="#">Home</a>
+</li>
+
+<li class="nav-item">
+   <a class="nav-link" ariaCurrentWhenActive="page"
+      routerLink="/table-multiplication"
+      routerLinkActive="active">
+    Table Multiplication
+   </a>
+</li>
+
+[...]
+----
+
+=== Test
+
+À ce niveau là, le lien  *Table Multiplication* dans la barre de menu de l'application devrait être opérationnel.
+
+Réglez les problèmes éventuels avant de poursuivre.
+
+== Travaux pratiques
+
+====
+[start=1]
+
+. Ajouter au template de votre application une partie `footer`. On attend de vous que vous ajoutiez un nouveau composant dédié à cette fonction.
+
+====
+
+== Conception du composant TableMultiplication
+
+Le composant 'page' que nous venons de créer va exploiter un composant _métier_ que nous appellerons `TableMultiplication`. Ce composant aura la responsabilité de présenter une table de multiplication. Créons-le.
+
+Création du composant
+
+  ng g component component/TableMultiplication
+
+=== La vue du composant
+
+[source, html]
+----
+<div class="box center-div">
+    <ul class="align-left">
+        <li>Table de : {{n}}</li> <1>
+        <li> <pre>---------</pre> </li>
+        <li *ngFor="let item of [].constructor(10); let i = index"> <2>
+          <span class="nmulti">{{n}}</span>
+          <span>&nbsp;&nbsp;x </span>
+          <span>{{i+1}}</span>
+          <span> = </span>
+          <span>{{n*(i+1)}}</span>
+        </li>
+    </ul>
+</div>
+
+----
+
+<1> La variable _n_ est une des propriétés définies dans la classe du composant. C'est Angular qui permet de lier des variables de vue avec des propriétés de la classe TypeScript liée au composant. Un changement de valeur d'une telle propriété entraine une mise à jour de la vue du composant.
+
+<2> `ngFor` est une expression de boucle d'Angular. C'est une des directives structurelles possibles avec `ngIf`, `ngSwitch` : https://angular.io/guide/structural-directives
+
+=== Le code du composant
+
+Dans l'état actuel, le composant ne compile pas car la propriété _n_ n'est pas déclarée dans la classe du composant. C'est ce que nous allons faire.
+
+.table-multiplication.component.ts
+[source, typescript]
+----
+
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-table-multiplication',
+  templateUrl: './table-multiplication.component.html',
+  styleUrls: ['./table-multiplication.component.css']
+})
+export class TableMultiplicationComponent {
+
+   n: number = 2; <1>
+
+}
+
+----
+
+<1> Une déclaration *et* initialisation d'une propriété, nommée _n_ de type `number`, dans la plus simple expression.
+
+=== Le composant en action
+
+Il est temps de tester le composant. Pour cela nous allons l'intégrer dans la vue du composant PageTableMult.
+
+./src/app/page-table-mult/page-table-mult.component.html
+[source, html]
+----
+<p>page-table-mult works!</p>
+<app-table-multiplication></app-table-multiplication>
+
+----
+
+.route : /table-multiplication
+image::composantTM.png[vue du composant]
+
+== Amélioration du composant TableMultiplication
+
+//
+Dans son état actuel, le composant affichera toujours la table de multiplication par 2. Nous allons le paramétrer afin de pouvoir lui faire afficher une table de multiplication à la demande.
+
+.table-multiplication.ts
+[source, typescript]
+----
+
+import { Component, Input } from '@angular/core';
+
+@Component({
+  selector: 'app-table-multiplication',
+  templateUrl: './table-multiplication.component.html',
+  styleUrls: ['./table-multiplication.component.css']
+})
+export class TableMultiplicationComponent {
+
+  @Input() n: number = 2; <1>
+
+}
+
+----
+
+<1> La directive `@Input()`, lorsqu'elle est placée devant le nom d'une propriété, permet de paramétrer le composant.
+
+Tentons de passer une autre valeur que 2 à la propriété _n_ de notre composant.
+
+./src/app/page-table-mult/page-table-mult.component.html
+[source, html]
+----
+<p>page-table-mult works!</p>
+<app-table-multiplication [n]="3"></app-table-multiplication>
+
+----
+
+Vérifions ce travail.
+
+image::tableMultipl3.png[Table Mult par 3]
+
+Explication : Dans la balise ouvrante du composant nous passons la valeur 3 que l'on souhaite attribuer à la propriété _n_ du composant (décorée par `@Input`, pour que ça marche) : On remarquera la syntaxe qui utilise le crochet :  `<app-table-multiplication [n]="3"></app-table-multiplication>`
+
+== Travaux pratiques
+
+====
+[start=1]
+
+. Ajouter la possibilité de permettre à l'utilisateur de saisir une valeur de _n_ (prévoir u champ `input` dans la vue du composant `page-table-mult`)
+====
+
+====
+[start=2]
+
+. Ajouter une nouvelle page (et nouvelle route et nouveau lien dans la barre de menu) qui présente la *table des tables de multiplication*.
+====
+
+====
+[start=3]
+. Ajouter la possibilité de permettre à l'utilisateur de saisir le nombre de tables qu'il souhaite voir dans la table des tables de multiplication.
+
+====
+
+
+
+//La suite > xref:sio-component:ROOT:_ch02-hackers.adoc[app Hackers]

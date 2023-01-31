@@ -1,4 +1,7 @@
 = Angular
+:toc-title: Table des matières
+:toclevels: 4
+:toc: top
 
 ==  Prérequis
 
@@ -61,7 +64,7 @@ Package                      Version
 
 == Création d’une première application
 
-Une application de type Frontend est de type mono-page, ou *SPA* (_Single Page Application_) qui s'exécute principalement dans le navigateur et qui communique avec le serveur qui l'a délivrée par des services web.
+Une application de type Frontend est souvent qualifiée de mono-page, ou *SPA* (_Single Page Application_). Elle s'exécute principalement dans le navigateur et qui communique gééralement avec le serveur qui l'a délivrée, via des services web.
 
 Les avantages d’une SPA par rapport à une application web standard sont :
 
@@ -79,7 +82,7 @@ ng new projet1 --style=css --routing=false --strict
 
 Les options indiquent le nom du projet (_projet1_), le type des fichiers de style (ici `css`), la non-application des routes de l’application, et active le mode strict selon les recommandations de la team TypeScript afin de limiter les bugs et de produire du code maintenable.
 
-La commande a créé un dossier du nom du projet, et 2 sous-dossiers :
+La commande a créé un dossier du nom du _projet1_, et 2 sous-dossiers :
 
 [source, bash]
 ----
@@ -101,12 +104,12 @@ Voici ce que contient le dossier `src`, à l'état initial (résultat de la comm
 [source, bash]
 ----
 src/
-├── app
-│   ├── app.component.html
-│   ├── app.component.css
-│   ├── app.component.spec.ts
-│   ├── app.component.ts
-│   └── app.module.ts
+├── app <1>
+│   ├── app.component.html <2>
+│   ├── app.component.css <3>
+│   ├── app.component.spec.ts <4>
+│   ├── app.component.ts <5>
+│   └── app.module.ts <6>
 ├── assets
 ├── favicon.ico
 ├── index.html
@@ -114,12 +117,12 @@ src/
 └── styles.scss
 ----
 
-`app` est le composant principal de l'application. Comme tout composant Angular, il est composé de 4 parties principales :
+<1> `app` est le *composant principal* de l'application. Comme tout composant Angular, il est composé de 4 parties principales :
 
-* Le code du rendu visuel (.html)
-* Le code de la mise en page (.css ou .scss)
-* Le code du composant (.ts - une classe TypeScript _décorée_)
-* Le code des tests unitaires (.ts)
+<2> Le code du rendu visuel (.html)
+<3> Le code de la mise en page (.css ou .scss)
+<4> Le code de la classe du composant (.ts - une classe TypeScript _décorée_)
+<5> Le code des tests unitaires (.ts)
 
 == Le composant principal
 
@@ -191,11 +194,33 @@ _Ceci est un exemple d'un module de base, vous pourriez avoir besoin d'ajouter d
 
 La commande *`ng build`* est une commande d'Angular CLI qui permet de compiler et de construire l'application pour la production. Elle utilise la configuration de l'application définie dans le fichier `angular.json` pour compiler les sources TypeScript en JavaScript, optimiser les images et les fichiers de style, et générer les fichiers de sortie dans un format optimisé pour la production tels que les fichiers HTML, CSS et JavaScript minifiés. Le résultat est placé généralement dans un dossier appelé "*dist*" ou "*build*" et contient tous les fichiers nécessaires pour l'exécution de l'application par un navigateur.
 
+./dist
+[source, bash]
+----
+dist/projet1/
+├── 3rdpartylicenses.txt
+├── assets
+│   └── images
+│       ├── logo.png
+│       └── tortoro.png
+├── favicon.ico
+├── index.html <1>
+├── main.cf9d357b51189202.js <2>
+├── polyfills.ae26d754bd3db637.js
+├── runtime.91eea6741d616f29.js
+└── styles.8392c6a69aec60ad.css <3>
+----
+
+<1> Le point d'entrée de l'application
+<2> Le code js et les bibliothèques utilisées par l'application. Il n'y a plus de code typescript, et `polyfills` se charge de d'implémenter les fonctions absentes sur certaines machines.
+<3> Les feuilles de script sont regroupée en un seul fichier.
+
+
 == Lancement de l'application
 
 Nous aurons besoin d'un serveur HTTP pour rendre disponible l'application à des navigateurs web. Angular CLI dispose d'une commande bien pratique, nommée `serve`.
 
-La commande `ng serve` compile (comme le `build`) le projet et lance un serveur HTTP qui se charge de servir l'application aux requestes des navigateurs web.  Il permet également de surveiller les modifications des fichiers et de relancer automatiquement le serveur lorsque des modifications sont détectées.
+La commande `ng serve` compile (comme le `build`, mais en mémoire) le projet et lance un serveur HTTP qui se charge de servir l'application aux requêtes des navigateurs web.  Il permet également de surveiller les modifications des fichiers et de relancer automatiquement le serveur lorsque des modifications sont détectées.
 
 .lancement
 [source, bash]
@@ -212,7 +237,7 @@ image::premier-lancement.png[first]
 ====
 [start=1]
 
-. Faire en sorte que l'application ne présente *que* le message `Hello World` lorsqu'elle est lancée, *à l'image de la capture écran ci-dessous*, c'est à dire en conservant l'image SVG de la fusée.
+. Faire en sorte que l'application ne présente *que* le message `Hello World` lorsqu'elle est lancée, *à l'image de la capture écran ci-dessous*, tout en conservant l'image SVG de la fusée et son texte (modifié pour l'occasion)
 
 .Exemple
 image::page-hello-world.png[hello world]
@@ -230,14 +255,14 @@ Nous allons faire en sorte que l'adresse IP du client soit affichée sur la page
 
 Cette valeur peut être déterminée
 
-- par le serveur qui a servi l'application au client.
-- par l'application client (JS)
+- par le serveur qui a servi l'application au client (en réponse à une requête HTTP du client)
+- par l'application client elle-même (JS)
 
 Nous retiendrons la deuxième version, qui a le mérite d'être dynamique (le client peut changer d'IP, ce qui ne serait pas connu du serveur)
 
 Par défaut, le client ne peut exploiter les ressources systèmes de la machine sur lequel la navigateur est excécuté. Il devra donc demander son IP publique à un service internet (une application web).
 
-Exemple de service pour connaître sin IP (n'hésitez pas à le tester):
+Exemple de service pour connaître son IP (n'hésitez pas à le tester):
 
 ----
 http://api.ipify.org/?format=json
@@ -386,8 +411,6 @@ Il semblerait que l'instruction `{{ipAddress}}` dans la vue nous donne la *valeu
 
 Il existe plusieurs façons d'opérer. Faites marcher votre logique en premier, puis, si cela ne suffit pas, passez en mode connecté internet.
 
-. Faire en sorte que l'application présente l'adresse IP du client sur la page principale, et non *Inconnue IP*.
-]
+. Faire en sorte que l'application présente l'*adresse IP du client web* sur la page principale, et non *Inconnue IP*.
+
 ====
-
-
