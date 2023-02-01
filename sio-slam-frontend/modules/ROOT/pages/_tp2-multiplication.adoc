@@ -141,11 +141,28 @@ Réglez les problèmes éventuels avant de poursuivre.
 
  ng generate component pageTableMult
 
+ La classe du composant ainsi crée donne :
+
+./page-table-mult.component.ts
+[source, typescript]
+----
+import { Component } from '@angular/core';
+
+@Component({
+selector: 'app-page-table-mult',
+templateUrl: './page-table-mult.component.html',
+styleUrls: ['./page-table-mult.component.css']
+})
+export class PageTableMultComponent {
+
+}
+----
+
 === Configuration des routes
 
 Le fichier `app-routing-module.ts` a été lors de la création de l'application (paramètre `--routing`).
 
-Nous allons déclarer notre composant `TableMultiplication` comme *cible* d'une route, que nous nommons 'table-multiplication'.
+Nous allons déclarer notre composant `PageTableMult` comme *cible* d'une route, que nous nommons 'table-multiplication'.
 
 ./src/app/app-routing-module.ts
 [source,typescript]
@@ -200,18 +217,43 @@ Réglez les problèmes éventuels avant de poursuivre.
 
 . Ajouter au template de votre application une partie `footer`. On attend de vous que vous ajoutiez un nouveau composant dédié à cet usage.
 
+
+[plantuml,  format=png]
+....
+@startuml
+
+class Root
+class Header
+class Router
+class Footer
+class PageTableMult
+
+Root --> Header
+Root --> Router
+Root --> Footer
+Router --> PageTableMult
+
+hide circle
+hide method
+@enduml
+....
+
+
 ====
 
 == Conception du composant TableMultiplication
 
-Le composant 'page' que nous venons de créer va exploiter un composant _métier_ que nous appellerons `TableMultiplication`. Ce composant aura la responsabilité de présenter une table de multiplication. Créons-le.
+Le composant 'page' que nous venons de créer va exploiter un composant _métier_ que nous appellerons `TableMultiplication`.
 
-Création du composant
+Ce composant aura la responsabilité de présenter une table de multiplication. Créons-le.
 
   ng g component component/TableMultiplication
 
 === La vue du composant
 
+Voici une première version de la vue de ce composant.
+
+.src/app/component/table-multiplication/table-multiplication.component.html
 [source, html]
 ----
 <div class="box center-div">
@@ -232,7 +274,7 @@ Création du composant
 
 <1> La variable _n_ est une des propriétés définies dans la classe du composant. C'est Angular qui permet de lier des variables de vue avec des propriétés de la classe TypeScript liée au composant. Un changement de valeur d'une telle propriété entraine une mise à jour de la vue du composant.
 
-<2> `ngFor` est une expression de boucle d'Angular. C'est une des directives structurelles possibles avec `ngIf`, `ngSwitch` : https://angular.io/guide/structural-directives
+<2> `ngFor` est une expression de boucle d'Angular. `item` et `i` sont des variables de boucle. `ngFor` est une des directives structurelles d'Angular avec `ngIf`, `ngSwitch` : https://angular.io/guide/structural-directives
 
 === Le code du composant
 
@@ -261,7 +303,37 @@ export class TableMultiplicationComponent {
 
 === Le composant en action
 
-Il est temps de tester le composant. Pour cela nous allons *l'intégrer dans la vue du composant `PageTableMult`*.
+Nous allons faire en sorte que le composant de type page `PageTableMult` intègre dans sa vue le nouveau componsant dont le selecteur est `app-table-multiplication`.
+
+Nous augmentons ainsi la hiérarchie des composants de notre application.
+
+
+[plantuml,  format=png]
+....
+@startuml
+
+class Root
+class Header
+class Router
+class Footer
+
+class TableMult
+class PageTableMult
+
+
+Root --> Header
+Root --> Router
+Root --> Footer
+Router --> PageTableMult
+
+PageTableMult -->"1  " TableMult
+
+hide circle
+hide method
+@enduml
+....
+
+Cette intégration se réalise dans la vue du composant page.
 
 ./src/app/page-table-mult/page-table-mult.component.html
 [source, html]
@@ -270,6 +342,8 @@ Il est temps de tester le composant. Pour cela nous allons *l'intégrer dans la 
 <app-table-multiplication></app-table-multiplication>
 
 ----
+
+Testons le résultat :
 
 .route : /table-multiplication
 image::composantTM.png[vue du composant]
@@ -320,33 +394,34 @@ On remarquera la syntaxe qui, côté parent, utilise le *crochet* pour désigner
 
 `<app-table-multiplication [n]="3"></app-table-multiplication>`
 
-== Vue hiérarchique des composants
-
-[plantuml,  format=png]
-....
-@startuml
-
-class Root
-class Header
-class Router
-class Footer
-
-class TableMult
-class PageTableMult
-class PageTablesMult
-
-Root --> Header
-Root --> Router
-Root --> Footer
-Router --> PageTableMult
-Router --> PageTablesMult
-PageTableMult --> TableMult
-PageTablesMult --> "*" TableMult
-
-hide circle
-hide method
-@enduml
-....
+//
+//== Vue hiérarchique des composants
+//
+//[plantuml,  format=png]
+//....
+//@startuml
+//
+//class Root
+//class Header
+//class Router
+//class Footer
+//
+//class TableMult
+//class PageTableMult
+//class PageTablesMult
+//
+//Root --> Header
+//Root --> Router
+//Root --> Footer
+//Router --> PageTableMult
+//Router --> PageTablesMult
+//PageTableMult -->"1  " TableMult
+//PageTablesMult --> "   * " TableMult
+//
+//hide circle
+//hide method
+//@enduml
+//....
 
 == Travaux pratiques
 
@@ -359,7 +434,36 @@ hide method
 ====
 [start=2]
 
-. Ajouter une nouvelle page (et nouvelle route et nouveau lien dans la barre de menu) qui présente la *table des tables de multiplication, de 1 à 10*. Pour y arriver, vous mettrez en application ce qui a été vu précédemment.
+. Ajouter une nouvelle page (et nouvelle route et nouveau lien dans la barre de menu) qui présente *les tables de multiplication, de 1 à 10*. Pour y arriver, vous mettrez en application ce qui a été vu précédemment.
+
+Vous produirez une nouvelle version de l'arbre hiérarchique de composants. Le source _plantuml_ de l'arbre actuel est :
+
+[source, plantuml]
+----
+@startuml
+
+class Root
+class Header
+class Router
+class Footer
+
+class TableMult
+class PageTableMult
+
+
+Root --> Header
+Root --> Router
+Root --> Footer
+Router --> PageTableMult
+
+PageTableMult -->"1  " TableMult
+
+hide circle
+hide method
+@enduml
+
+----
+
 ====
 
 ====
