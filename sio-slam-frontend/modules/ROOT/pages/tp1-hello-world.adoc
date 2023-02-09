@@ -407,7 +407,9 @@ image::InconnueIP.png[InconnueIp]
 ====
 [start=1]
 
-Il semblerait que l'instruction `{{ipAddress}}` dans la vue nous donne la *valeur par défaut* de la propriété de même nom de la classe TypeScript du composant. Trouvez un moyen pour corriger cela.
+//https://docs.asciidoctor.org/asciidoc/latest/subs/prevent/
+
+Il semblerait que l'instruction `{\{ipAddress}}` dans la vue nous donne la *valeur par défaut* de la propriété de même nom de la classe TypeScript du composant. Trouvez un moyen pour corriger cela.
 
 Il existe plusieurs façons d'opérer. Faites marcher votre logique en premier, puis, si cela ne suffit pas, passez en mode connecté internet.
 

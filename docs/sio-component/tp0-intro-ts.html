@@ -3,8 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Faites vos comptes :: sio-slam</title>
-    <meta name="description" content="Exercice initiation TU et POO Kotlin">
+    <title>TypeScript :: sio-slam</title>
     <meta name="generator" content="Antora 3.0.1">
     <link rel="stylesheet" href="../_/css/site.css">
     <script>var uiRootPath = '../_'</script>
@@ -124,7 +123,7 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="index-frontend.html">Intro</a>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="tp0-intro-ts.html">Premiers pas en TypeScript</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -334,272 +333,229 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index-glossaire.html">SIO-SLAM</a></li>
-    <li><a href="exercice-premiers-pas-POO-TU-Kotlin.html">Faites vos comptes</a></li>
+    <li>Frontend</li>
+    <li><a href="tp0-intro-ts.html">Premiers pas en TypeScript</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///home/kpu/ldv/sio/antora-sio-slam/sio-slam/sio-slam-controles-exercices/modules/ROOT/pages/exercice-premiers-pas-POO-TU-Kotlin.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="file:///home/kpu/ldv/sio/antora-sio-slam/sio-slam/sio-slam-frontend/modules/ROOT/pages/tp0-intro-ts.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Faites vos comptes</h1>
+<h1 class="page">TypeScript</h1>
 <div id="toc" class="toc">
 <div id="toctitle">Table des matières</div>
 <ul class="sectlevel1">
-<li><a href="#_analyse">Analyse</a></li>
-<li><a href="#_conception">Conception</a></li>
-<li><a href="#_implémentation">Implémentation</a>
+<li><a href="#_présentation">Présentation</a></li>
+<li><a href="#_premiers_pas">Premiers pas</a>
 <ul class="sectlevel2">
-<li><a href="#_création_du_projet_avec_lide">Création du projet avec l&#8217;IDE</a></li>
-<li><a href="#_conception_implémentation_de_la_classe_compte">Conception / Implémentation de la classe <code>Compte</code></a></li>
-<li><a href="#_ajout_dune_classe_de_test">Ajout d&#8217;une classe de test</a></li>
-<li><a href="#_exemple_dun_test">Exemple d&#8217;un test</a></li>
-<li><a href="#_exécution_dun_test">Exécution d&#8217;un test</a></li>
+<li><a href="#_installation_du_compilateur_typescript">Installation du compilateur typescript</a></li>
+<li><a href="#_création_dun_projet">Création d&#8217;un projet</a></li>
+<li><a href="#_ajout_du_fichier_de_configuration">Ajout du fichier de configuration</a></li>
+<li><a href="#_ajout_du_code_ts">Ajout du code ts</a></li>
+<li><a href="#_compilation">Compilation</a></li>
+<li><a href="#_exécution_avec_node">Exécution avec node</a></li>
 </ul>
 </li>
-<li><a href="#_a_vous_de_jouer">A vous de jouer</a></li>
+<li><a href="#_travaux_pratiques">Travaux pratiques</a></li>
 </ul>
 </div>
-<div id="preamble">
+<div class="sect1">
+<h2 id="_présentation"><a class="anchor" href="#_présentation"></a>Présentation</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Nous allons simuler la représentation du concept de "compte client" d&#8217;une banque.</p>
+<p>TypeScript est un langage de programmation libre et open source développé par Microsoft qui a pour but d&#8217;améliorer et de sécuriser la production de code JavaScript. Il s&#8217;agit d&#8217;un <strong>sur-ensemble syntaxique</strong>  strict de JavaScript (c&#8217;est-à-dire que tout code JavaScript correct peut être utilisé avec TypeScript).</p>
+</div>
+<div class="paragraph">
+<p>Une fois le code TypeScript transcompilé en JavaScript (compilateur source-à-source), il peut être interprété par n&#8217;importe quel navigateur web ou moteur JavaScript. Anders Hejlsberg, principal architecte de C#, a cocréé TypeScript. (source : <a href="https://fr.wikipedia.org/wiki/TypeScript" class="bare">https://fr.wikipedia.org/wiki/TypeScript</a>)</p>
+</div>
+<div class="paragraph">
+<p>TypeScript permet un <strong>typage statique</strong> optionnel des variables et des fonctions, a création de classes et d&#8217;interfaces. Il supporte la spécification ECMAScript 6 (normalisation).</p>
+</div>
+<div class="paragraph">
+<p>En savoir plus sur TypeScript : <a href="https://www.typescriptlang.org/play#show-examples" class="bare">https://www.typescriptlang.org/play#show-examples</a></p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_analyse"><a class="anchor" href="#_analyse"></a>Analyse</h2>
+<h2 id="_premiers_pas"><a class="anchor" href="#_premiers_pas"></a>Premiers pas</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Définissons les caractéristiques d&#8217;un compte</p>
+<p>Nous utiliserons l&#8217;IDE Visual Studio Code.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>Attaché à un client</p>
-</li>
-<li>
-<p>Dispose d&#8217;un solde (positif ou négatif)</p>
-</li>
-<li>
-<p>Dispose ou non d&#8217;un découvert possible</p>
-</li>
-</ul>
+<div class="sect2">
+<h3 id="_installation_du_compilateur_typescript"><a class="anchor" href="#_installation_du_compilateur_typescript"></a>Installation du compilateur typescript</h3>
+<div class="paragraph">
+<p>Suivre les instructions : <a href="https://code.visualstudio.com/docs/typescript/typescript-compiling#_install-the-typescript-compiler">installation du compilateur typescript avec npm</a></p>
 </div>
 <div class="paragraph">
-<p>Les services attendus (comprendre ce que l&#8217;on peut faire avec un compte)</p>
+<p>Tester votre installation dans un terminal. Exemple (une version de février 2023)</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>Connaitre le nom du client</p>
-</li>
-<li>
-<p>Pouvoir débiter une somme donnée (extrait de l&#8217;argent du compte)</p>
-</li>
-<li>
-<p>Pouvoir créditer une somme donnée (ajouter une somme au solde)</p>
-</li>
-<li>
-<p>Connaître si un débit est possible ou non</p>
-</li>
-<li>
-<p>Connaitre le solde actuel</p>
-</li>
-<li>
-<p>(optionnel) Faire un transfert d&#8217;une somme d&#8217;un compte à un autre</p>
-</li>
-<li>
-<p>(optionnel) Connaître la liste des opérations passées sur ce compte</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_conception"><a class="anchor" href="#_conception"></a>Conception</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>La conception de notre classe, à minima :</p>
-</div>
-<div class="imageblock kroki">
+<div class="literalblock">
 <div class="content">
-<img src="_images/diag-003c8a36d352e71432031542cc3bf46422f09e41.svg" alt="Diagram">
+<pre>tsc --version
+Version 4.9.5</pre>
 </div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_implémentation"><a class="anchor" href="#_implémentation"></a>Implémentation</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_création_du_projet_avec_lide"><a class="anchor" href="#_création_du_projet_avec_lide"></a>Création du projet avec l&#8217;IDE</h3>
-<div class="paragraph">
-<p>Sous Inellij, <code>File/New/Project</code>.</p>
-</div>
-<div class="paragraph">
-<p>Sélectionner les mêmes options (langage Kotlin, Build IntelliJ, JDK 17)</p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="_images/kotlin-new-projet-compte-banquaire.png" alt="Creation projet CompteBancaire"></span></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_conception_implémentation_de_la_classe_compte"><a class="anchor" href="#_conception_implémentation_de_la_classe_compte"></a>Conception / Implémentation de la classe <code>Compte</code></h3>
+<h3 id="_création_dun_projet"><a class="anchor" href="#_création_dun_projet"></a>Création d&#8217;un projet</h3>
 <div class="paragraph">
-<p>Dans le dossier <code>src/main/kotlin</code>, création de la classe <code>Compte</code>.</p>
+<p>Créer un dossier vide et l&#8217;ouvrir avec visual studio code.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ajout_du_fichier_de_configuration"><a class="anchor" href="#_ajout_du_fichier_de_configuration"></a>Ajout du fichier de configuration</h3>
+<div class="quoteblock">
+<blockquote>
+<em>Typically the first step in any new TypeScript project is to add a tsconfig.json file. A tsconfig.json file defines the TypeScript project settings, such as the compiler options and the files that should be included. To do this, open up the folder where you want to store your source and add a new file named tsconfig.json</em>
+</blockquote>
+<div class="attribution">
+&#8212; <a href="https://code.visualstudio.com/docs/typescript/typescript-compiling#_install-the-typescript-compiler" class="bare">https://code.visualstudio.com/docs/typescript/typescript-compiling#_install-the-typescript-compiler</a>
+</div>
+</div>
+<div class="paragraph">
+<p>À la racine du projet, créer le fichier <code>tsconfig.json</code>. et placer y ce contenu :</p>
 </div>
 <div class="listingblock">
+<div class="title">tsconfig.json</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">package com.banque
-
-class Compte constructor(val nomClient: String) {
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "compilerOptions": {
+    "target": "ES5", <i class="conum" data-value="1"></i><b>(1)</b>
+    "module": "commonjs", <i class="conum" data-value="2"></i><b>(2)</b>
+    "sourceMap": true, <i class="conum" data-value="3"></i><b>(3)</b>
+    "outDir": "out" <i class="conum" data-value="4"></i><b>(4)</b>
+  }
 }</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_ajout_dune_classe_de_test"><a class="anchor" href="#_ajout_dune_classe_de_test"></a>Ajout d&#8217;une classe de test</h3>
-<div class="paragraph">
-<p>À partir de l&#8217;IDE, faire un clic droit sur le nom de la classe, puis <code>Generate&#8230;&#8203;/test</code></p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="_images/clic-droit-generate-test.png" alt="Generate test menu"></span></p>
-</div>
-<div class="paragraph">
-<p>Une boite de dialogue vous permet de paramétrer l&#8217;action. Le système ne voit pas la librairie <code>Junit5</code> (un framework en fait). Sélectionner <code>Fix</code> pour permettre à l&#8217;IDE de gérer ce problème lui-même (download de Junit, puis intégration au système)</p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="_images/create-test-1.png" alt="create test 1"></span></p>
-</div>
-<div class="paragraph">
-<p>Une fois le problème fixé, sélectionner les options <code>setUp, Member getNomClient()</code>. Cette dernière méthode est implicite dans la classe (mécanisme des <em>properties</em>)</p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="_images/create-test-2.png" alt="create test 2"></span></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_exemple_dun_test"><a class="anchor" href="#_exemple_dun_test"></a>Exemple d&#8217;un test</h3>
-<div class="paragraph">
-<p>Suite à la dernière action, la classe <code>CompteTest</code> a été crée dans la branche <code>test</code>.</p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="_images/arbo-branch-test.png" alt="arbo branch test"></span></p>
-</div>
-<div class="paragraph">
-<p>Voici le squelette du code généré :</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">import org.junit.jupiter.api.BeforeEach
-import org.junit.jupiter.api.Test
-
-import org.junit.jupiter.api.Assertions.*
-
-internal class CompteTest {
-
-    @BeforeEach
-    fun setUp() {
-    }
-
-    @Test
-    fun getNomClient() {
-    }
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Nous allons maintenant programmer des tests unitaires portant sur  la classe <code>Compte</code> par l&#8217;intermédiaire de ses instances (comprendre des <strong>objets</strong> de cette classe)</p>
-</div>
-<div class="paragraph">
-<p>On utilisera les méthodes <code>assertTrue</code>, <code>assertFalse</code>, <code>assertEquals</code> de <code>JUnit̀</code>.</p>
-</div>
-<div class="paragraph">
-<p>Exemple d&#8217;un test unitaire automatisé qui vérifie, sur la base d&#8217;un scénario imaginé pour l&#8217;occasion, un bon comportement de la méthode <code>getNomClient</code>.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">    @Test
-    fun getNomClient() {
-        val c = Compte("Mezigue") <i class="conum" data-value="1"></i><b>(1)</b>
-        assertEquals("Mezigue", c.nomClient) <i class="conum" data-value="2"></i><b>(2)</b>
-    }</code></pre>
 </div>
 </div>
 <div class="colist arabic">
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>C&#8217;est l&#8217;objet à tester (déclaration et l&#8217;instanciation)</td>
+<td>La version du JS généré par le compilateur (<a href="https://www.w3schools.com/js/js_es5.asp">ES5</a> - ce n&#8217;est pas la dernière)</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td><code>assertEquals</code> est une fonction qui teste une assertion. Ici cette assertion vérifie que la <strong>valeur attendue</strong> (premier argument = <code>̀"Mezigue"</code>), et bien <strong>égale</strong> au deuxième argument (une valeur rendue par l&#8217;expression <code>c.nomClient</code> )</td>
+<td>Le type de gestion des modules JS</td>
 </tr>
-</table>
-</div>
-<div class="admonitionblock note">
-<table>
 <tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Contrairement à ce que l&#8217;on pourrait s&#8217;attendre, les fonctions d&#8217;assertion de <code>JUnit</code> ne sont pas des fonctions booléennes.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public static void assertEquals(byte expected,
-                                byte actual)
-// Asserts that expected and actual are equal.
-
-public static void assertTrue(boolean condition)
-// Asserts that the supplied condition is true.
-
-public static void assertFalse(boolean condition)
-// Asserts that the supplied condition is not true.</code></pre>
-</div>
-</div>
-</td>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Pour une lecture aisée du JS généré (mode dev)</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>Dossier de destination des fichiers compilés</td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>C&#8217;est <code>JUnit</code> qui réceptionnera le résultat de toutes les assertions de test, puis en fera un rapport, comme nous allons le voir maintenant.</p>
+<p>Comme on le verra plus loin, ce fichier sera passé en argument du compilateur <code>tsc</code>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_exécution_dun_test"><a class="anchor" href="#_exécution_dun_test"></a>Exécution d&#8217;un test</h3>
+<h3 id="_ajout_du_code_ts"><a class="anchor" href="#_ajout_du_code_ts"></a>Ajout du code ts</h3>
 <div class="paragraph">
-<p>Après avoir vérifié que nos tests sont sans erreurs de syntaxe, nous pouvons les lancer (demander leur compilation et exécution).</p>
+<p>Ajouter (créer) un fichier nommé <code>Game.ts</code>.</p>
 </div>
-<div class="paragraph">
-<p>Le lancement des tests unitaires peut se faire directement dans l&#8217;IDE (vrai pour tout IDE)</p>
-</div>
-<div class="paragraph">
-<p>Faire un <code>̀Clic droit</code> sur le nom de la méthode.</p>
-</div>
-<div class="imageblock">
+<div class="listingblock">
+<div class="title">Game.ts</div>
 <div class="content">
-<img src="_images/lancement-test-unitaire-1.png" alt="lancement test unitaire 1">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">enum Force { <i class="conum" data-value="1"></i><b>(1)</b>
+    FORCE_ZERO = 0,
+    FORCE_PETITE = 20,
+    FORCE_MOYENNE = 50,
+    FORCE_GRANDE = 80
+}
+
+class Personnage {
+    private _force: Force <i class="conum" data-value="2"></i><b>(2)</b>
+
+    public constructor(forceInitiale: Force = Force.FORCE_ZERO) {
+        this._force = forceInitiale
+    }
+
+    public getForce(): Force {
+        return this._force
+    }
+
+    public setForce(force: Force): void {
+        if (this._force !== force) {
+            this._force = force
+        }
+    }
+}
+
+// Main pour les tests
+let p1 = new Personnage(80) <i class="conum" data-value="3"></i><b>(3)</b>
+console.log("La force du premier personnage est : " + p1.getForce()) <i class="conum" data-value="4"></i><b>(4)</b></code></pre>
 </div>
-<div class="title">Figure 1. Lancement de l&#8217;exécution d&#8217;un test</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Nous définissons un type personnalisé, nommé <code>Force</code>, composé de 4 constantes (formalisme <em>SNAKE_CASE</em>)</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Déclaration d&#8217;un <strong>attribut d&#8217;instance privé</strong> de type <code>Force</code> dans la classe <code>Personnage</code> (le underscore en préfixe est une convention courante pour signaler l&#8217;attribut comme privé, mais pas forcément respectée par tous)</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Création d&#8217;un objet de la classe <code>Personnage</code> (instanciation)</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>Affichage de la valeur de la force de l&#8217;objet référencé par <em>p1</em>.</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
-<p>Lancer le test, puis contrôler le résultat dans la fenêtre, ou le volet, ouverte pour l&#8217;occasion par l&#8217;IDE.</p>
+<p>Le fait que TypeScript soit statiquement typé, vous prémunit de mauvais usages de variable typée,  "détecté à la conception" et non à l&#8217;exécution. Ceci rend le code plus sûr, facilite le développement (meilleure cohérence) et accélère le développement.</p>
 </div>
-<div class="imageblock">
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Vous pouvez activer le mode <code>strict</code> pour renforcer l&#8217;usage de type.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_compilation"><a class="anchor" href="#_compilation"></a>Compilation</h3>
+<div class="paragraph">
+<p>Sous Visual Studion Code, ouvrir un terminal, puis lancer la commande qui compile le projet :</p>
+</div>
+<div class="literalblock">
 <div class="content">
-<img src="_images/resultat-lancement-test-unitaire.png" alt="resultat lancement test unitaire">
+<pre>tsc</pre>
 </div>
-<div class="title">Figure 2. Exemple de rapport de test</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Le fichier de configuration <code>tsconfig.json</code> est automatiquement exploité par le compilateur <code>tsc</code>.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
-<p>Nous constatons que le test est passé avec succès, ce qui est bon signe.</p>
+<p>Après une compilation réussie, le résultat <code>js</code> se trouve dans <code>out/</code> (conformément à l&#8217;instruction dans <code>tsconfig.json</code>)</p>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -609,61 +565,113 @@ public static void assertFalse(boolean condition)
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Les différents états possibles d&#8217;un test sont</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>En erreur (<strong>ERROR</strong>). C&#8217;est un bug dans l&#8217;écriture même du test</p>
-</li>
-<li>
-<p>En échec (<strong>FAILURE</strong>). Le test ne passe pas. C&#8217;est bon signe car il a détecté un bug dans le code testé par le test.</p>
-</li>
-<li>
-<p>En succès (<strong>PASSED</strong>). L&#8217;nensemble des assertions dans le test sont passés avec succès. Le comportement du code testé est conforme à ce qui est attendu par le test unitaire.</p>
-</li>
-</ul>
+<p><strong>Une erreur de compilation dans un fichier .ts ne produit pas un nouveau fichier .js.</strong></p>
 </div>
 </td>
 </tr>
 </table>
 </div>
+</div>
+<div class="sect2">
+<h3 id="_exécution_avec_node"><a class="anchor" href="#_exécution_avec_node"></a>Exécution avec node</h3>
 <div class="paragraph">
-<p>La suite vous appartient&#8230;&#8203;</p>
+<p>Toujours dans le terminal de VSC, vous pouvez lancer l&#8217;exécution via la commande.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">kpu@x1-G9:~/ldv/2022-2023/TS-TPs$ node out/Game.js
+La force du premier personnage est : 80</code></pre>
+</div>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_a_vous_de_jouer"><a class="anchor" href="#_a_vous_de_jouer"></a>A vous de jouer</h2>
+<h2 id="_travaux_pratiques"><a class="anchor" href="#_travaux_pratiques"></a>Travaux pratiques</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>La <strong>méthode de développement</strong> consiste à</p>
-</div>
+<div class="exampleblock">
+<div class="content">
 <div class="olist arabic">
-<ol class="arabic">
+<ol class="arabic" start="1">
 <li>
-<p>Concevoir un scénario de test (par exemple <em>"si je crédite le compte de 50€, je vérifie que le solde de ce compte a bien été augmenté d&#8217;autant"</em>)</p>
+<p>(d&#8217;après un contrôle donné en 2022)</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Forcer le mode strict (tsconfig.json  - voir les options disponibles avec CTRL + ESPACE)</p>
 </li>
 <li>
-<p>Concevoir un test unitaire centré sur ce scénario</p>
+<p>Ajouter à <code>Personnage</code> un attribut d&#8217;instance nommé <code>nom</code> de type <code>string</code>. Recompiler, corriger les erreurs (car il y a des modifications à opérer), exécuter, autant de fois que nécessaire.</p>
 </li>
 <li>
-<p>Lancer le test qui vérifier que la méthode <code>crediter</code> fonctionne comme attendu</p>
+<p>Dans la partie <em>Main</em> de <code>Game.ts</code>, créer une autre instance de Personnage avec 0 comme valeur de force initiale, référencée par une variable nommée p2.</p>
 </li>
 <li>
-<p>Si ce n&#8217;est pas le cas (le test à échoué), intervenir sur la méthode <code>crediter</code> (branche <code>src/</code>), puis revenir au point 2</p>
+<p>Afficher de la force du personnage référencé par p2.</p>
 </li>
 <li>
-<p>Si le test est passé, concevoir un nouveau scénario (revenir au point 1)</p>
+<p>Donner à p2 la force 20, puis ajouter à p2 la force de p1 (attention, abus de langage)</p>
+</li>
+<li>
+<p>Afficher de la force du personnage référencé par p1.</p>
+</li>
+<li>
+<p>Afficher de la force du personnage référencé par p2.</p>
+</li>
+<li>
+<p>Faire en sorte que p1 référence le même objet que p2</p>
+</li>
+<li>
+<p>Modifier la force de p1 en 50</p>
+</li>
+<li>
+<p>Afficher de la force du personnage référencé par p1.</p>
+</li>
+<li>
+<p>Afficher de la force du personnage référencé par p2.</p>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p>Vous avez 2 heures pour mener à bien ce travail. C&#8217;est à dire, vérifier et implémenter les services attendus de la classe <code>Compte</code>, tels qu&#8217;ils sont définis dans l' <a href="#_analyse">Analyse</a>.</p>
+</li>
+<li>
+<p>Donner les valeurs affichées aux étapes <strong>1.d, 1.f, 1.g, 1.j, 1.k</strong></p>
+</li>
+<li>
+<p>Que se passe-t-il si l’on tente de créer une instance de Personnage avec 30 comme force initiale ?   <strong>réponse argumentée attendue</strong></p>
+</li>
+</ol>
 </div>
+</div>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic" start="4">
+<li>
+<p>On souhaite qu&#8217;un <code>Personnage</code> puisse avoir sa force augmentée ou diminuée en cas d&#8217;impact avec des objets, que l&#8217;on nommera <code>Chose</code> (pour éviter toute confusion avec les termes de la POO).</p>
 <div class="paragraph">
-<p>Bon développement !</p>
+<p>Parmi les choses, il y a les choses bienveillantes et les choses hostiles. Chaque chose a un potentiel d&#8217;impact (valeur positive pour les bienveillants et négatives pour les autres).</p>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Concevoir un diagramme de classe qui tient compte de l&#8217;évolution attendue.</p>
+</li>
+<li>
+<p>Faire évoluer <code>Game.ts</code> en conséquence (conception de nouvelles classes)</p>
+</li>
+<li>
+<p>Ajouter une méthode d&#8217;instance à la classe <code>Personnage</code>, que nous nommerons <code>impact</code>, qui accepte en paramètre une référence à une chose. Trouver une idée (une règle de jeu) qui fasse descendre ou augmenter sa force après une série d&#8217;impacts. L&#8217;implémenter.</p>
+</li>
+<li>
+<p>Proposer (coder) un jeu d&#8217;essai</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
 </div>
 </div>
 </div>

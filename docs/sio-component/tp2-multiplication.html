@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Table de multiplication :: sio-slam</title>
+    <meta name="generator" content="Antora 3.0.1">
+    <link rel="stylesheet" href="../_/css/site.css">
+    <script>var uiRootPath = '../_'</script>
+    <link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="..">
+        <span> <img style="vertical-align: middle" src="../_/img/logo-sio-slam.png" alt="logo"> &nbsp;
+        sio-slam
+        </span>
+      </a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+<!--        <div class="navbar-item has-dropdown is-hoverable">-->
+<!--          <a class="navbar-link" href="#">Products</a>-->
+<!--          <div class="navbar-dropdown">-->
+<!--            <a class="navbar-item" href="#">Product A</a>-->
+<!--            <a class="navbar-item" href="#">Product B</a>-->
+<!--            <a class="navbar-item" href="#">Product C</a>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="navbar-item has-dropdown is-hoverable">-->
+<!--          <a class="navbar-link" href="#">Services</a>-->
+<!--          <div class="navbar-dropdown">-->
+<!--            <a class="navbar-item" href="#">Service A</a>-->
+<!--            <a class="navbar-item" href="#">Service B</a>-->
+<!--            <a class="navbar-item" href="#">Service C</a>-->
+<!--          </div>-->
+<!--        </div>-->
+        <a class="navbar-item" href="index-sio-slam.html">Année en cours</a>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download ?</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="sio-component" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index-glossaire.html">SIO-SLAM</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Présentation</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="index-sio-slam.html">index sio slam</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="axe-directeur-2022-2023.html">schéma directeur</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Backend</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="todo-page.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="todo-page.html">Principles</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="todo-page.html">Exemple</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="todo-page.html">Exercices</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Sous-categorie A</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="todo-page.html">item A.1</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="todo-page.html">item A.2</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="todo-page.html">item A.3</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Frontend</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="index-frontend.html">Intro</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="tp0-intro-ts.html">Premiers pas en TypeScript</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="tp1-hello-world.html">Angular Hello World</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Programmation</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="notion-fonction.html">Fonction - l&#8217;essentiel 1/2</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="index-qualite.html">Facteurs de qualité</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Analyse</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="index-analyse.html">Conduire une analyse</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="index-sql.html">SQL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="index-nosql.html">NoSQL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">UML (Unified Modeling Language)</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="index-uml.html">Présentation Générale</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="d_uc.html">Diagrammes UML</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="d_uc.html">Diagramme des cas d&#8217;utilisation</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="d_classe.html">Diagramme de classes</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">TP et activités</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="dc_tp1.html">TP N°1</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="_attachments/TP1_CORR.pdf">Corrigé TP1</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Projets</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="projet-0.html">Projet 0</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="projet-1.html">Projet 1</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="projet-2.html">Projet 2</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="projet-3.html">Projet 3</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Épreuves professionnelles</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="intro-epreuves.html">Présentation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="E4-CCF.html">E4 - CCF</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="E5-CCF.html">E5 - CCF</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="E6.html">E6 - épreuve nationale</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="intro-cybersecurite.html">Cybersecurite</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Activites.html">Activités</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Chiffrement_hachage.html">Chiffrement et hachage</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="spring_security.html">Spring Security</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Kotlin</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="index-kotlin.html">Les bases de Kotlin</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Spring Boot Kotlin</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="index-spring-boot.html">Initiation à Spring Boot</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="index-controles-exercices.html">Contrôles &amp; Exercices</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="index-glossaire.html">Glossaire</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">SIO-SLAM</span>
+    <span class="version">default</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="index-glossaire.html">SIO-SLAM</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index-glossaire.html">default</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="index-sio-slam.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index-glossaire.html">SIO-SLAM</a></li>
+    <li><a href="tp2-multiplication.html">Table de multiplication</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="file:///home/kpu/ldv/sio/antora-sio-slam/sio-slam/sio-slam-frontend/modules/ROOT/pages/tp2-multiplication.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Table de multiplication</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table des matières</div>
+<ul class="sectlevel1">
+<li><a href="#_lidée">L&#8217;idée</a></li>
+<li><a href="#_lanalyse">L&#8217;analyse</a></li>
+<li><a href="#_initialisation_de_lapplication_cli">Initialisation de l&#8217;application (CLI)</a></li>
+<li><a href="#_les_composants">Les composants</a>
+<ul class="sectlevel2">
+<li><a href="#_création_du_composant_header">Création du composant Header</a></li>
+<li><a href="#_intégration">Intégration</a></li>
+<li><a href="#_test">Test</a></li>
+</ul>
+</li>
+<li><a href="#_création_du_composant_pagetablemultcomponent">Création du composant PageTableMultComponent</a>
+<ul class="sectlevel2">
+<li><a href="#_configuration_des_routes">Configuration des routes</a></li>
+<li><a href="#_test_2">Test</a></li>
+</ul>
+</li>
+<li><a href="#_travaux_pratiques">Travaux pratiques</a></li>
+<li><a href="#_conception_du_composant_tablemultiplication">Conception du composant TableMultiplication</a>
+<ul class="sectlevel2">
+<li><a href="#_la_vue_du_composant">La vue du composant</a></li>
+<li><a href="#_le_code_du_composant">Le code du composant</a></li>
+<li><a href="#_le_composant_en_action">Le composant en action</a></li>
+</ul>
+</li>
+<li><a href="#_amélioration_du_composant_tablemultiplication">Amélioration du composant TableMultiplication</a></li>
+<li><a href="#_travaux_pratiques_2">Travaux pratiques</a></li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="_lidée"><a class="anchor" href="#_lidée"></a>L&#8217;idée</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>On souhaite concevoir une application web qui affiche une table de multiplication (1 à 10), selon une valeur soumise par l’utilisateur.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Une table de multiplication affiche dans les lignes et colonnes le résultat de la multiplication des petits nombres entiers naturels. Le terme usité du Moyenge au XVIe siècle était « livret ».</p>
+</div>
+</blockquote>
+<div class="attribution">
+&#8212; Table de multiplication<br>
+<cite><a href="https://fr.wikipedia.org/wiki/Table_de_multiplication" class="bare">https://fr.wikipedia.org/wiki/Table_de_multiplication</a></cite>
+</div>
+</div>
+<div class="paragraph">
+<p>Le système de numération décimale de position permet d’effectuer la multiplication de deux nombres quelconques à l’aide de la seule connaissance des produits des nombres de 0 à 9 entre eux.</p>
+</div>
+<div class="paragraph">
+<p>C’est à l’école primaire que s’effectue l’apprentissage des tables qui récapitulent tous ces produits.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+La tradition a longtemps exigé la connaissance des tables de multiplication portant jusqu’à 12 ou 13 au lieu de 9. (source : wikipedia)
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_lanalyse"><a class="anchor" href="#_lanalyse"></a>L&#8217;analyse</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>On concevra une application qui présentera deux pages : une page présentant une table de multiplication</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/maquette-table-de-1.png" alt="maquette table de 1">
+</div>
+</div>
+<div class="paragraph">
+<p>et une autre page présentant les tables de multiplication.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/maquette-les-tables-de-multiplication.png" alt="maquette les tables de multiplication">
+</div>
+</div>
+<div class="paragraph">
+<p>Outre les 2 composants de type page, l&#8217;application comportera deux autres composants : <code>TableMultiplication</code>, qui  aura pour rôle de présenter <strong>une</strong> table de multiplication et <code>TablesMultiplication</code> pour représenter les tables de multiplication.</p>
+</div>
+<div class="paragraph">
+<p>Ces composants seront paramétrés.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_initialisation_de_lapplication_cli"><a class="anchor" href="#_initialisation_de_lapplication_cli"></a>Initialisation de l&#8217;application (CLI)</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>ng new table-mult-app --routing --defaults</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>les dépendances</p>
+</div>
+<div class="paragraph">
+<p>Installation des modules bootstrap</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>npm install --save bootstrap
+mybooks$ npm install --save bootstrap-icons</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>L’option <code>save</code> indique que le paquetage s’installe uniquement dans le projet et non globalement.</p>
+</div>
+<div class="paragraph">
+<p>Pour nous simplifier le travail de présentation, nous utiliserons le module bootstrap pour angular (<a href="https://ng-bootstrap.github.io/#/home" class="bare">https://ng-bootstrap.github.io/#/home</a>)</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>ng add @ng-bootstrap/ng-bootstrap</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Ajouter les dépendances dans <code>angular.json</code> :</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>[...]
+"styles": [
+   "node_modules/bootstrap/dist/css/bootstrap.min.css",
+   "node_modules/bootstrap-icons/font/bootstrap-icons.css",
+   "src/styles.css"
+ ],
+ "scripts": [
+   "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+ ]
+[...]</pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Sous Visual Code, on gagnerait à installer l&#8217;extension <strong><em>IntelliSense for CSS class names in HTML</em></strong> pour profiter de la complétion des classes CSS.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_les_composants"><a class="anchor" href="#_les_composants"></a>Les composants</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>L&#8217;application proposera plusieurs "pages", qui devront présenter la même structure.</p>
+</div>
+<div class="paragraph">
+<p>Nous allons donc <strong>factoriser</strong> le format par une entête et un pied de page, chacun étant représenté par un composant.</p>
+</div>
+<div class="sect2">
+<h3 id="_création_du_composant_header"><a class="anchor" href="#_création_du_composant_header"></a>Création du composant Header</h3>
+<div class="literalblock">
+<div class="content">
+<pre>ng g component component/header</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Nous prendrons un template classique de la documentation bootstrap.</p>
+</div>
+<div class="listingblock">
+<div class="title">/src/app/compoment/header/header.component.html</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-html hljs" data-lang="html">&lt;nav class="navbar navbar-expand-xl navbar-light bg-light"&gt;
+    &lt;div class="container-fluid"&gt;
+      &lt;a class="navbar-brand" href="#"&gt;
+        &lt;h1&gt;MyApp&lt;/h1&gt;
+      &lt;/a&gt;
+      &lt;button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"&gt;
+        &lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;
+      &lt;/button&gt;
+      &lt;div class="collapse navbar-collapse" id="navbarSupportedContent"&gt;
+        &lt;ul class="navbar-nav me-auto mb-2 mb-lg-0"&gt;
+          &lt;li class="nav-item"&gt;
+            &lt;a class="nav-link active" aria-current="page" href="#"&gt;Home&lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li class="nav-item dropdown"&gt;
+            &lt;a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false"&gt;
+              Dropdown
+            &lt;/a&gt;
+            &lt;ul class="dropdown-menu" aria-labelledby="navbarDropdown"&gt;
+              &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Action&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Another action&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;
+                &lt;hr class="dropdown-divider"&gt;
+              &lt;/li&gt;
+              &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Something else here&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li class="nav-item"&gt;
+            &lt;a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"&gt;Disabled&lt;/a&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;form class="d-flex"&gt;
+          &lt;input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"&gt;
+          &lt;button class="btn btn-outline-success" type="submit"&gt;Search&lt;/button&gt;
+        &lt;/form&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/nav&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_intégration"><a class="anchor" href="#_intégration"></a>Intégration</h3>
+<div class="paragraph">
+<p>Nous ajoutons maintenant ce composant à notre composant principal</p>
+</div>
+<div class="listingblock">
+<div class="title">app.component.html</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-html hljs" data-lang="html">&lt;app-header&gt;&lt;/app-header&gt;
+&lt;router-outlet&gt;&lt;/router-outlet&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_test"><a class="anchor" href="#_test"></a>Test</h3>
+<div class="paragraph">
+<p>À ce niveau là, l&#8217;application devrait être opérationnelle :</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>ng serve</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Réglez les problèmes éventuels avant de poursuivre.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_création_du_composant_pagetablemultcomponent"><a class="anchor" href="#_création_du_composant_pagetablemultcomponent"></a>Création du composant PageTableMultComponent</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>ng generate component pageTableMult</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>La classe du composant ainsi crée donne :</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">/page-table-mult.component.ts</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { Component } from '@angular/core';
+
+@Component({
+selector: 'app-page-table-mult',
+templateUrl: './page-table-mult.component.html',
+styleUrls: ['./page-table-mult.component.css']
+})
+export class PageTableMultComponent {
+
+}</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_configuration_des_routes"><a class="anchor" href="#_configuration_des_routes"></a>Configuration des routes</h3>
+<div class="paragraph">
+<p>Le fichier <code>app-routing-module.ts</code> a été lors de la création de l&#8217;application (paramètre <code>--routing</code>).</p>
+</div>
+<div class="paragraph">
+<p>Nous allons déclarer notre composant <code>PageTableMult</code> comme <strong>cible</strong> d&#8217;une route, que nous nommons 'table-multiplication'.</p>
+</div>
+<div class="listingblock">
+<div class="title">/src/app/app-routing-module.ts</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { PageTableMultComponent } from './page-table-mult/page-table-mult.component';
+
+const routes: Routes = [
+  {path: 'table-multiplication', component: PageTableMultComponent }
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Nous pouvons maintenant faire référence à cette route dans le header.</p>
+</div>
+<div class="listingblock">
+<div class="title">extrait /src/app/compoment/header/header.component.html</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-html hljs" data-lang="html">[...]
+
+&lt;li class="nav-item"&gt;
+   &lt;a class="nav-link active" aria-current="page" href="#"&gt;Home&lt;/a&gt;
+&lt;/li&gt;
+
+&lt;li class="nav-item"&gt;
+   &lt;a class="nav-link" ariaCurrentWhenActive="page"
+      routerLink="/table-multiplication"
+      routerLinkActive="active"&gt;
+    Table Multiplication
+   &lt;/a&gt;
+&lt;/li&gt;
+
+[...]</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_test_2"><a class="anchor" href="#_test_2"></a>Test</h3>
+<div class="paragraph">
+<p>À ce niveau là, le lien  <strong>Table Multiplication</strong> dans la barre de menu de l&#8217;application devrait être opérationnel.</p>
+</div>
+<div class="paragraph">
+<p>Réglez les problèmes éventuels avant de poursuivre.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_travaux_pratiques"><a class="anchor" href="#_travaux_pratiques"></a>Travaux pratiques</h2>
+<div class="sectionbody">
+<div class="exampleblock">
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic" start="1">
+<li>
+<p>Ajouter au template de votre application une partie <code>footer</code>. On attend de vous que vous ajoutiez un nouveau composant dédié à cet usage.</p>
+</li>
+</ol>
+</div>
+<div class="imageblock kroki">
+<div class="content">
+<img src="_images/diag-0da781b1ac416a05df12cbf6e67d55d8210ad75a.png" alt="Diagram">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_conception_du_composant_tablemultiplication"><a class="anchor" href="#_conception_du_composant_tablemultiplication"></a>Conception du composant TableMultiplication</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Le composant 'page' que nous venons de créer va exploiter un composant <em>métier</em> que nous appellerons <code>TableMultiplication</code>.</p>
+</div>
+<div class="paragraph">
+<p>Ce composant aura la responsabilité de présenter une table de multiplication. Créons-le.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>ng g component component/TableMultiplication</pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_la_vue_du_composant"><a class="anchor" href="#_la_vue_du_composant"></a>La vue du composant</h3>
+<div class="paragraph">
+<p>Voici une première version de la vue de ce composant.</p>
+</div>
+<div class="listingblock">
+<div class="title">src/app/component/table-multiplication/table-multiplication.component.html</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-html hljs" data-lang="html">&lt;div class="box center-div"&gt;
+    &lt;ul class="align-left"&gt;
+        &lt;li&gt;Table de : {{n}}&lt;/li&gt; <i class="conum" data-value="1"></i><b>(1)</b>
+        &lt;li&gt; &lt;pre&gt;---------&lt;/pre&gt; &lt;/li&gt;
+        &lt;li *ngFor="let item of [].constructor(10); let i = index"&gt; <i class="conum" data-value="2"></i><b>(2)</b>
+          &lt;span class="nmulti"&gt;{{n}}&lt;/span&gt;
+          &lt;span&gt;&amp;nbsp;&amp;nbsp;x &lt;/span&gt;
+          &lt;span&gt;{{i+1}}&lt;/span&gt;
+          &lt;span&gt; = &lt;/span&gt;
+          &lt;span&gt;{{n*(i+1)}}&lt;/span&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>La variable <em>n</em> est une des propriétés définies dans la classe du composant. C&#8217;est Angular qui permet de lier des variables de vue avec des propriétés de la classe TypeScript liée au composant. Un changement de valeur d&#8217;une telle propriété entraine une mise à jour de la vue du composant.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td><code>ngFor</code> est une expression de boucle d&#8217;Angular. <code>item</code> et <code>i</code> sont des variables de boucle. <code>ngFor</code> est une des directives structurelles d&#8217;Angular avec <code>ngIf</code>, <code>ngSwitch</code> : <a href="https://angular.io/guide/structural-directives" class="bare">https://angular.io/guide/structural-directives</a></td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_le_code_du_composant"><a class="anchor" href="#_le_code_du_composant"></a>Le code du composant</h3>
+<div class="paragraph">
+<p>Dans l&#8217;état actuel, le composant ne compile pas car la propriété <em>n</em> n&#8217;est pas déclarée dans la classe du composant. C&#8217;est ce que nous allons faire.</p>
+</div>
+<div class="listingblock">
+<div class="title">table-multiplication.component.ts</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-table-multiplication',
+  templateUrl: './table-multiplication.component.html',
+  styleUrls: ['./table-multiplication.component.css']
+})
+export class TableMultiplicationComponent {
+
+   n: number = 2; <i class="conum" data-value="1"></i><b>(1)</b>
+
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Une déclaration <strong>et</strong> initialisation d&#8217;une propriété, nommée <em>n</em> de type <code>number</code>, dans la plus simple expression.</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_le_composant_en_action"><a class="anchor" href="#_le_composant_en_action"></a>Le composant en action</h3>
+<div class="paragraph">
+<p>Nous allons faire en sorte que le composant de type page <code>PageTableMult</code> intègre dans sa vue le nouveau componsant dont le selecteur est <code>app-table-multiplication</code>.</p>
+</div>
+<div class="paragraph">
+<p>Nous augmentons ainsi la hiérarchie des composants de notre application.</p>
+</div>
+<div class="imageblock kroki">
+<div class="content">
+<img src="_images/diag-793fc8ce55e577767e6850fa32f05930b073300a.png" alt="Diagram">
+</div>
+</div>
+<div class="paragraph">
+<p>Cette intégration se réalise dans la vue du composant page.</p>
+</div>
+<div class="listingblock">
+<div class="title">/src/app/page-table-mult/page-table-mult.component.html</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-html hljs" data-lang="html">&lt;p&gt;page-table-mult works!&lt;/p&gt;
+&lt;app-table-multiplication&gt;&lt;/app-table-multiplication&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Testons le résultat :</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/composantTM.png" alt="vue du composant">
+</div>
+<div class="title">Figure 1. route : /table-multiplication</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_amélioration_du_composant_tablemultiplication"><a class="anchor" href="#_amélioration_du_composant_tablemultiplication"></a>Amélioration du composant TableMultiplication</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Dans son état actuel, le composant affichera toujours la table de multiplication par 2. Nous allons le paramétrer afin de pouvoir lui faire afficher une table de multiplication à la demande.</p>
+</div>
+<div class="listingblock">
+<div class="title">table-multiplication.ts</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { Component, Input } from '@angular/core';
+
+@Component({
+  selector: 'app-table-multiplication',
+  templateUrl: './table-multiplication.component.html',
+  styleUrls: ['./table-multiplication.component.css']
+})
+export class TableMultiplicationComponent {
+
+  @Input() n: number = 2; <i class="conum" data-value="1"></i><b>(1)</b>
+
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>La directive <code>@Input()</code>, lorsqu&#8217;elle est placée devant le nom d&#8217;une propriété, permet de paramétrer le composant.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Tentons de passer une autre valeur que 2 à la propriété <em>n</em> de notre composant.</p>
+</div>
+<div class="listingblock">
+<div class="title">/src/app/page-table-mult/page-table-mult.component.html</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-html hljs" data-lang="html">&lt;p&gt;page-table-mult works!&lt;/p&gt;
+&lt;app-table-multiplication [n]="3"&gt;&lt;/app-table-multiplication&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Vérifions ce travail.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/tableMultipl3.png" alt="Table Mult par 3">
+</div>
+</div>
+<div class="paragraph">
+<p>Explication : Dans la balise ouvrante du composant nous passons la valeur 3 que l&#8217;on souhaite attribuer à la propriété <em>n</em> du composant (décorée par <code>@Input</code>, pour que ça marche).</p>
+</div>
+<div class="paragraph">
+<p>On remarquera la syntaxe qui, côté parent, utilise le <strong>crochet</strong> pour désigner la propriété à valoriser (<em>n</em>) du composant :</p>
+</div>
+<div class="paragraph">
+<p><code>&lt;app-table-multiplication [n]="3"&gt;&lt;/app-table-multiplication&gt;</code></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_travaux_pratiques_2"><a class="anchor" href="#_travaux_pratiques_2"></a>Travaux pratiques</h2>
+<div class="sectionbody">
+<div class="exampleblock">
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic" start="1">
+<li>
+<p>Ajouter la possibilité de permettre à l&#8217;utilisateur de saisir une valeur de <em>n</em>. Pour cela, prévoir u champ <code>input</code> dans la vue du composant <code>page-table-mult</code>. Vous trouverez sur le net de nombreux exemples pour lier un <code>&lt;input&gt;</code> à une propriété d&#8217;un composant Angular.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic" start="2">
+<li>
+<p>Ajouter une nouvelle page (et nouvelle route et nouveau lien dans la barre de menu) qui présente <strong>les tables de multiplication, de 1 à 10</strong>. Pour y arriver, vous mettrez en application ce qui a été vu précédemment.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Vous produirez une nouvelle version de l&#8217;arbre hiérarchique de composants. Le source <em>plantuml</em> de l&#8217;arbre actuel est :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-plantuml hljs" data-lang="plantuml">@startuml
+
+class Root
+class Header
+class Router
+class Footer
+
+class TableMult
+class PageTableMult
+
+
+Root --&gt; Header
+Root --&gt; Router
+Root --&gt; Footer
+Router --&gt; PageTableMult
+
+PageTableMult --&gt;"1  " TableMult
+
+hide circle
+hide method
+@enduml</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic" start="3">
+<li>
+<p>Ajouter la possibilité de permettre à l&#8217;utilisateur de saisir le nombre de tables qu&#8217;il souhaite voir dans la table des tables de multiplication (ne pas le limiter à 10).</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Un projet edu <a href="https://ldv-melun.github.io/sio-slam/">SIO SLAM</a> - build on Antora MPL-2.0 license.</p>
+</footer>
+<script src="../_/js/site.js"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
