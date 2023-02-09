@@ -411,6 +411,13 @@ Il semblerait que l'instruction `{{ipAddress}}` dans la vue nous donne la *valeu
 
 Il existe plusieurs façons d'opérer. Faites marcher votre logique en premier, puis, si cela ne suffit pas, passez en mode connecté internet.
 
-. Faire en sorte que l'application présente l'*adresse IP du client web* sur la page principale, et non *Inconnue IP*.
+. Faire en sorte que l'application présente l'*adresse IP du client web* sur la page principale, et non *"Inconnue IP"*.
+
+====
+
+====
+[start=2]
+
+. Faire en sorte que la page principale présente à l'utilisateur la date, l'heure et la minute actuelle.
 
 ====

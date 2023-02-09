@@ -471,6 +471,49 @@ mode projet Kot-Line
 
 |===
 
+
+
+== Semaine 13 février 2023
+
+[frame=all]
+|===
+|Lundi am| Mardi am | Mardi pm | Mercredi am | Mercredi pm| Jeudi pm
+
+a|L.JULES - O.CAPUOZZO
+
+* Cours: Corr EDC PARTIE B + Intro TS
+* TP: TS + POO et Exercices
+
+
+a| O.CAPUOZZO - R.LAROUSSI
+
+* Cours : Angular : introduction
+* TP: https://ldv-melun.github.io/sio-slam/sio-component/intro-frontend.html
+
+a| R.LAROUSSI
+
+* Cours : Corr EDC PARTIE A & C + rappels concepts cyber
+
+a| R.LAROUSSI
+
+* Cours : Exercices Analyse/UML SQL (Révision + Triggers)
+
+a| O.CAPUOZZO - R.LAROUSSI
+
+* Cours : Corr EDC PARTIE D
+* TP : Tests unitaires avec TS
+
+a| L.JULES - O.CAPUOZZO - E.VIGNA
+
+1. Présentation du travail réalisé par des étudiants en stage
+
+2. Travail sur le portfolio en lien avec le travail réalisé en stage
+
+3. Check Attestations de stage
+|===
+
+
+
 ////
 
 == Semaine xx
