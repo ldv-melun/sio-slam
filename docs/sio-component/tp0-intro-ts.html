@@ -548,7 +548,12 @@ Vous pouvez activer le mode <code>strict</code> pour renforcer l&#8217;usage de 
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Le fichier de configuration <code>tsconfig.json</code> est automatiquement exploité par le compilateur <code>tsc</code>.</p>
+<p>Le fichier de configuration <code>tsconfig.json</code>, s&#8217;il existe, est automatiquement exploité par le compilateur <code>tsc</code>.  On peut également préciser le chemin du fichier de configuration, via le paramètre <code>-p</code>. Exemple.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>tsc -p [chemin]tsconfig.json</pre>
+</div>
 </div>
 </td>
 </tr>

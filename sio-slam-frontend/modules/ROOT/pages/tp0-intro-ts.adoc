@@ -110,7 +110,9 @@ Sous Visual Studion Code, ouvrir un terminal, puis lancer la commande qui compil
 
 [TIP]
 ====
-Le fichier de configuration `tsconfig.json` est automatiquement exploité par le compilateur `tsc`.
+Le fichier de configuration `tsconfig.json`, s'il existe, est automatiquement exploité par le compilateur `tsc`.  On peut également préciser le chemin du fichier de configuration, via le paramètre `-p`. Exemple.
+
+  tsc -p [chemin]tsconfig.json
 ====
 
 Après une compilation réussie, le résultat `js` se trouve dans `out/` (conformément à l'instruction dans `tsconfig.json`)
