@@ -1,3 +1,4 @@
 * Frontend
 ** xref:index-frontend.adoc[Intro]
-** xref:_tp1-hello-world.adoc[TP1 Hello World]
+** xref:_tp0-intro-ts.adoc[Premiers pas en TypeScript]
+** xref:_tp1-hello-world.adoc[Angular Hello World]

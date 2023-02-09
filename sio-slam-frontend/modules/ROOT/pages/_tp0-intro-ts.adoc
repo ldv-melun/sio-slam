@@ -1,0 +1,169 @@
+= TypeScript
+:toc-title: Table des matières
+:toclevels: 4
+:toc: top
+
+==  Présentation
+
+TypeScript est un langage de programmation libre et open source développé par Microsoft qui a pour but d'améliorer et de sécuriser la production de code JavaScript. Il s'agit d'un **sur-ensemble syntaxique**  strict de JavaScript (c'est-à-dire que tout code JavaScript correct peut être utilisé avec TypeScript).
+
+Une fois le code TypeScript transcompilé en JavaScript (compilateur source-à-source), il peut être interprété par n'importe quel navigateur web ou moteur JavaScript. Anders Hejlsberg, principal architecte de C#, a cocréé TypeScript. (source : https://fr.wikipedia.org/wiki/TypeScript)
+
+TypeScript permet un *typage statique* optionnel des variables et des fonctions, a création de classes et d'interfaces. Il supporte la spécification ECMAScript 6 (normalisation).
+
+En savoir plus sur TypeScript : https://www.typescriptlang.org/play#show-examples
+
+== Premiers pas
+
+Nous utiliserons l'IDE Visual Studio Code.
+
+=== Installation du compilateur typescript
+
+Suivre les instructions : https://code.visualstudio.com/docs/typescript/typescript-compiling#_install-the-typescript-compiler[installation du compilateur typescript avec npm]
+
+Tester votre installation dans un terminal. Exemple (une version de février 2023)
+
+ tsc --version
+ Version 4.9.5
+
+=== Création d'un projet
+
+Créer un dossier vide et l'ouvrir avec visual studio code.
+
+=== Ajout du fichier de configuration
+
+"_Typically the first step in any new TypeScript project is to add a tsconfig.json file. A tsconfig.json file defines the TypeScript project settings, such as the compiler options and the files that should be included. To do this, open up the folder where you want to store your source and add a new file named tsconfig.json_"
+-- https://code.visualstudio.com/docs/typescript/typescript-compiling#_install-the-typescript-compiler
+
+À la racine du projet, créer le fichier `tsconfig.json`. et placer y ce contenu :
+
+.tsconfig.json
+[source, json]
+----
+{
+  "compilerOptions": {
+    "target": "ES5", <1>
+    "module": "commonjs", <2>
+    "sourceMap": true, <3>
+    "outDir": "out" <4>
+  }
+}
+----
+<1> La version du JS généré par le compilateur (https://www.w3schools.com/js/js_es5.asp[ES5] - ce n'est pas la dernière)
+<2> Le type de gestion des modules JS
+<3> Pour une lecture aisée du JS généré (mode dev)
+<4> Dossier de destination des fichiers compilés
+
+Comme on le verra plus loin, ce fichier sera passé en argument du compilateur `tsc`.
+
+=== Ajout du code ts
+
+Ajouter (créer) un fichier nommé `Game.ts`.
+
+.Game.ts
+[source, typescript]
+----
+enum Force { <1>
+    FORCE_ZERO = 0,
+    FORCE_PETITE = 20,
+    FORCE_MOYENNE = 50,
+    FORCE_GRANDE = 80
+}
+
+class Personnage {
+    private _force: Force <2>
+
+    public constructor(forceInitiale: Force = Force.FORCE_ZERO) {
+        this._force = forceInitiale
+    }
+
+    public getForce(): Force {
+        return this._force
+    }
+
+    public setForce(force: Force): void {
+        if (this._force !== force) {
+            this._force = force
+        }
+    }
+}
+
+// Main pour les tests
+let p1 = new Personnage(80) <3>
+console.log("La force du premier personnage est : " + p1.getForce()) <4>
+----
+
+<1> Nous définissons un type personnalisé, nommé `Force`, composé de 4 constantes (formalisme _SNAKE_CASE_)
+<2> Déclaration d'un *attribut d'instance privé* de type `Force` dans la classe `Personnage` (le underscore en préfixe est une convention courante pour signaler l'attribut comme privé, mais pas forcément respectée par tous)
+<3> Création d'un objet de la classe `Personnage` (instanciation)
+<4> Affichage de la valeur de la force de l'objet référencé par _p1_.
+
+Le fait que TypeScript soit statiquement typé, vous prémunit de mauvais usages de variable typée,  "détecté à la conception" et non à l'exécution. Ceci rend le code plus sûr, facilite le développement (meilleure cohérence) et accélère le développement.
+
+TIP: Vous pouvez activer le mode `strict` pour renforcer l'usage de type.
+
+=== Compilation
+
+Sous Visual Studion Code, ouvrir un terminal, puis lancer la commande qui compile le projet :
+
+ tsc
+
+[TIP]
+====
+Le fichier de configuration `tsconfig.json` est automatiquement exploité par le compilateur `tsc`.
+====
+
+Après une compilation réussie, le résultat `js` se trouve dans `out/` (conformément à l'instruction dans `tsconfig.json`)
+
+[IMPORTANT]
+====
+*Une erreur de compilation dans un fichier .ts ne produit pas un nouveau fichier .js.*
+
+====
+
+
+=== Exécution avec node
+
+Toujours dans le terminal de VSC, vous pouvez lancer l'exécution via la commande.
+
+[source, bash]
+----
+kpu@x1-G9:~/ldv/2022-2023/TS-TPs$ node out/Game.js
+La force du premier personnage est : 80
+----
+
+== Travaux pratiques
+
+
+====
+[start=1]
+. (d'après un contrôle donné en 2022)
+.. Forcer le mode strict (tsconfig.json  - voir les options disponibles avec CTRL + ESPACE)
+.. Ajouter à `Personnage` un attribut d'instance nommé `nom` de type `string`. Recompiler, corriger les erreurs (car il y a des modifications à opérer), exécuter, autant de fois que nécessaire.
+.. Dans la partie _Main_ de `Game.ts`, créer une autre instance de Personnage avec 0 comme valeur de force initiale, référencée par une variable nommée p2.
+.. Afficher de la force du personnage référencé par p2.
+.. Donner à p2 la force 20, puis ajouter à p2 la force de p1 (attention, abus de langage)
+.. Afficher de la force du personnage référencé par p1.
+.. Afficher de la force du personnage référencé par p2.
+.. Faire en sorte que p1 référence le même objet que p2
+.. Modifier la force de p1 en 50
+.. Afficher de la force du personnage référencé par p1.
+.. Afficher de la force du personnage référencé par p2.
+
+. Donner les valeurs affichées aux étapes *1.d, 1.f, 1.g, 1.j, 1.k*
+. Que se passe-t-il si l’on tente de créer une instance de Personnage avec 30 comme force initiale ?   *réponse argumentée attendue*
+
+====
+
+====
+[start=4]
+. On souhaite qu'un `Personnage` puisse avoir sa force augmentée ou diminuée en cas d'impact avec des objets, que l'on nommera `Chose` (pour éviter toute confusion avec les termes de la POO).
++
+Parmi les choses, il y a les choses bienveillantes et les choses hostiles. Chaque chose a un potentiel d'impact (valeur positive pour les bienveillants et négatives pour les autres).
+
+.. Concevoir un diagramme de classe qui tient compte de l'évolution attendue.
+.. Faire évoluer `Game.ts` en conséquence (conception de nouvelles classes)
+.. Ajouter une méthode d'instance à la classe `Personnage`, que nous nommerons `impact`, qui accepte en paramètre une référence à une chose. Trouver une idée (une règle de jeu) qui fasse descendre ou augmenter sa force après une série d'impacts. L'implémenter.
+.. Proposer (coder) un jeu d'essai
+====
+
