@@ -36,10 +36,15 @@ Ces composants seront paramétrés.
 
 les dépendances
 
+On sdécide de s'appuyer sur bootstrap pour la mise en forme CSS.
+
 Installation des modules bootstrap
 
- npm install --save bootstrap
- mybooks$ npm install --save bootstrap-icons
+[source, bash]
+----
+(racine du projet)$ npm install --save bootstrap
+(racine du projet)$ npm install --save bootstrap-icons
+----
 
 L’option `save` indique que le paquetage s’installe uniquement dans le projet et non globalement.
 
@@ -66,7 +71,7 @@ TIP: Sous Visual Code, on gagnerait à installer l'extension *_IntelliSense for 
 
 L'application proposera plusieurs "pages", qui devront présenter la même structure.
 
-Nous allons donc *factoriser* le format par une entête et un pied de page, chacun étant représenté par un composant.
+Nous allons donc *factoriser* le modèle de présentation par une entête et un pied de page, chacun étant représenté par un composant.
 
 === Création du composant Header
 
@@ -141,7 +146,7 @@ Réglez les problèmes éventuels avant de poursuivre.
 
  ng generate component pageTableMult
 
- La classe du composant ainsi crée donne :
+La classe du composant ainsi crée donne :
 
 ./page-table-mult.component.ts
 [source, typescript]
@@ -165,7 +170,7 @@ Le fichier `app-routing-module.ts` a été lors de la création de l'application
 Nous allons déclarer notre composant `PageTableMult` comme *cible* d'une route, que nous nommons 'table-multiplication'.
 
 ./src/app/app-routing-module.ts
-[source,typescript]
+[source,js]
 ----
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -215,8 +220,7 @@ Réglez les problèmes éventuels avant de poursuivre.
 ====
 [start=1]
 
-. Ajouter au template de votre application une partie `footer`. On attend de vous que vous ajoutiez un nouveau composant dédié à cet usage.
-
+. Ajouter une partie `footer` au template de votre application. On attend de vous que vous ajoutiez un nouveau composant dédié à cet usage qui respecte la structure ci-dessous :
 
 [plantuml,  format=png]
 ....
@@ -238,8 +242,9 @@ hide method
 @enduml
 ....
 
-
 ====
+
+Réglez les problèmes éventuels avant de poursuivre.
 
 == Conception du composant TableMultiplication
 
@@ -272,16 +277,16 @@ Voici une première version de la vue de ce composant.
 
 ----
 
-<1> La variable _n_ est une des propriétés définies dans la classe du composant. C'est Angular qui permet de lier des variables de vue avec des propriétés de la classe TypeScript liée au composant. Un changement de valeur d'une telle propriété entraine une mise à jour de la vue du composant.
+<1> La variable _n_ (entre double accolades) est une des propriétés définies dans la classe du composant. C'est Angular qui permet de lier des variables de vue avec des propriétés de la classe TypeScript liée au composant. *Un changement de valeur d'une telle propriété entraine automatiquement une mise à jour de la vue du composant*.
 
-<2> `ngFor` est une expression de boucle d'Angular. `item` et `i` sont des variables de boucle. `ngFor` est une des directives structurelles d'Angular avec `ngIf`, `ngSwitch` : https://angular.io/guide/structural-directives
+<2> *`ngFor`* est une expression de boucle d'Angular. `item` et `i` sont des variables de boucle. `ngFor` est une des directives structurelles d'Angular avec `ngIf`, `ngSwitch` : https://angular.io/guide/structural-directives
 
 === Le code du composant
 
 Dans l'état actuel, le composant ne compile pas car la propriété _n_ n'est pas déclarée dans la classe du composant. C'est ce que nous allons faire.
 
 .table-multiplication.component.ts
-[source, typescript]
+[source, js]
 ----
 
 import { Component } from '@angular/core';
@@ -293,7 +298,7 @@ import { Component } from '@angular/core';
 })
 export class TableMultiplicationComponent {
 
-   n: number = 2; <1>
+   n: number = 2 <1>
 
 }
 
@@ -307,7 +312,6 @@ Nous allons faire en sorte que le composant de type page `PageTableMult` intègr
 
 Nous augmentons ainsi la hiérarchie des composants de notre application.
 
-
 [plantuml,  format=png]
 ....
 @startuml
@@ -319,7 +323,6 @@ class Footer
 
 class TableMult
 class PageTableMult
-
 
 Root --> Header
 Root --> Router
@@ -350,11 +353,10 @@ image::composantTM.png[vue du composant]
 
 == Amélioration du composant TableMultiplication
 
-//
 Dans son état actuel, le composant affichera toujours la table de multiplication par 2. Nous allons le paramétrer afin de pouvoir lui faire afficher une table de multiplication à la demande.
 
 .table-multiplication.ts
-[source, typescript]
+[source, js]
 ----
 
 import { Component, Input } from '@angular/core';
@@ -366,7 +368,7 @@ import { Component, Input } from '@angular/core';
 })
 export class TableMultiplicationComponent {
 
-  @Input() n: number = 2; <1>
+  @Input() n: number = 2 <1>
 
 }
 
@@ -377,7 +379,7 @@ export class TableMultiplicationComponent {
 Tentons de passer une autre valeur que 2 à la propriété _n_ de notre composant.
 
 ./src/app/page-table-mult/page-table-mult.component.html
-[source, html]
+[source, text]
 ----
 <p>page-table-mult works!</p>
 <app-table-multiplication [n]="3"></app-table-multiplication>
@@ -428,7 +430,7 @@ On remarquera la syntaxe qui, côté parent, utilise le *crochet* pour désigner
 ====
 [start=1]
 
-. Ajouter la possibilité de permettre à l'utilisateur de saisir une valeur de _n_. Pour cela, prévoir u champ `input` dans la vue du composant `page-table-mult`. Vous trouverez sur le net de nombreux exemples pour lier un `<input>` à une propriété d'un composant Angular.
+. Ajouter la possibilité de permettre à l'utilisateur de saisir une valeur de _n_. Pour cela, prévoir un élément html *`input`* dans la vue du composant `page-table-mult`. Vous trouverez sur le net de nombreux exemples pour lier un `<input>` à une propriété d'un composant Angular.
 ====
 
 ====
