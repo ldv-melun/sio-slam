@@ -604,7 +604,7 @@ export class AppComponent { <i class="conum" data-value="5"></i><b>(5)</b>
 <h2 id="_le_module_du_composant_principal"><a class="anchor" href="#_le_module_du_composant_principal"></a>Le module du composant principal</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><code>app.module.ts</code> est un fichier qui déclare les dépendances et les relations entre les différents éléments de l&#8217;application pour un composant donné, il permet de structurer et organiser l&#8217;application pour une meilleure lisibilité et maintenabilité.</p>
+<p><code>app.module.ts</code> est un fichier qui déclare les dépendances et les relations entre les différents éléments de l&#8217;application. Cette pratique, imposé par Angular, favorise la lisibilité et donc maintenance de l&#8217;application.</p>
 </div>
 <div class="listingblock">
 <div class="title">projet1/src/app/app.module.ts</div>
@@ -651,7 +651,7 @@ export class AppModule { } <i class="conum" data-value="7"></i><b>(7)</b></code>
 </tr>
 <tr>
 <td><i class="conum" data-value="6"></i><b>6</b></td>
-<td>bootstrap* définit le composant qui sera utilisé comme <strong>point d&#8217;entrée pour l&#8217;application</strong>. Ici, on utilise <code>AppComponent</code> comme point d&#8217;entrée.</td>
+<td><strong>bootstrap</strong> définit le composant qui sera utilisé comme <strong>point d&#8217;entrée pour l&#8217;application</strong>. Ici, on utilise <code>AppComponent</code> comme point d&#8217;entrée.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="7"></i><b>7</b></td>
@@ -773,7 +773,7 @@ export class AppModule { } <i class="conum" data-value="7"></i><b>(7)</b></code>
 <div class="ulist">
 <ul>
 <li>
-<p>par le serveur qui a servi l&#8217;application au client (en réponse à une requête HTTP du client)</p>
+<p>par le serveur HTTP qui a servi l&#8217;application au client (en réponse à une requête HTTP du client)</p>
 </li>
 <li>
 <p>par l&#8217;application client elle-même (JS)</p>
@@ -784,7 +784,7 @@ export class AppModule { } <i class="conum" data-value="7"></i><b>(7)</b></code>
 <p>Nous retiendrons la deuxième version, qui a le mérite d&#8217;être dynamique (le client peut changer d&#8217;IP, ce qui ne serait pas connu du serveur)</p>
 </div>
 <div class="paragraph">
-<p>Par défaut, le client ne peut exploiter les ressources systèmes de la machine sur lequel la navigateur est excécuté. Il devra donc demander son IP publique à un service internet (une application web).</p>
+<p>Par défaut, le client ne peut exploiter les ressources systèmes de la machine sur lequel le navigateur est excécuté. Il devra donc demander son IP publique à un service internet (une application web).</p>
 </div>
 <div class="paragraph">
 <p>Exemple de service pour connaître son IP (n&#8217;hésitez pas à le tester):</p>
@@ -806,7 +806,7 @@ export class AppModule { } <i class="conum" data-value="7"></i><b>(7)</b></code>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-L&#8217;application actuelle n&#8217;a qu&#8217;un seul composant. Nous pourrions donc nous dispenser de créer un service et coder ce service dans la classe du composant. Mais faire ainsi n&#8217;est pas dans les bonne pratiques, car on chargerait ainsi notre composant de trop de responsabilités.
+L&#8217;application actuelle n&#8217;a qu&#8217;un seul composant. Nous pourrions donc nous dispenser de créer un service et coder ce service dans la classe du composant. Mais faire ainsi n&#8217;est pas dans les bonnes pratiques, car on chargerait ainsi notre composant de trop de responsabilités.
 </td>
 </tr>
 </table>
@@ -819,6 +819,18 @@ L&#8217;application actuelle n&#8217;a qu&#8217;un seul composant. Nous pourrion
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">ng generate service service/Ip</code></pre>
 </div>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+En formualant le nom du servie avec une expression de chemin, <code>service/Ip</code>, on demande à Angular de placer le service <code>Ip</code> dans un dossier spécial (<code>src/app/service</code>) .
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>Le service <code>src/app/service/ip.service.ts (138 bytes)</code> est alors créé.</p>
 </div>
@@ -829,11 +841,19 @@ L&#8217;application actuelle n&#8217;a qu&#8217;un seul composant. Nous pourrion
 @Injectable({
   providedIn: 'root'
 })
-export class IpService {
+export class IpService { <i class="conum" data-value="1"></i><b>(1)</b>
 
   constructor() { }
 }</pre>
 </div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Notez la convention de nommage : Le suffixe <em>Service</em> a été ajouté automatiquement au nom du service (tout comme le suffixe <em>Component</em> précédemment)</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>L&#8217;instance de ce service est <em>injectable</em> dans d&#8217;autres composants par simple déclaration.</p>
@@ -875,6 +895,12 @@ imports: [
 <div class="paragraph">
 <p>&#8658; On vient d&#8217;ajouter le service <code>HttpClientModule</code> aux services importés.</p>
 </div>
+<div class="paragraph">
+<p>Intéressons-nous maintenant à notre nouveau service, car actuellement il ne fait rien ! Nous avons besoin d&#8217;il lance une requête HTTP sur un serveur extérieur afin d&#8217;obtenir l&#8217;adresse IP publique de la machine sur lequel il s&#8217;exécute.</p>
+</div>
+<div class="paragraph">
+<p>Nous ajoutons une méthode portant un nom qui témoigne de sa fonction : <strong><code>getIpAddress</code></strong>. Son type de retour n&#8217;est pas une string (ce qui aurait dû être en toute logique), car on ne sait pas combien de temps peut prendre un service web distant pour répondre. C&#8217;est pourquoi la méthode <code>get</code>  du composant <code>HttpClient</code> nous retourne un <code>Observable</code>, qui est un composant utilisé dans une logique de programmation réactive qui <strong>facilite</strong> la composition de code asynchrone ou basé sur des événements par callbacks (<a href="https://rxjs.dev/guide/overview" class="bare">https://rxjs.dev/guide/overview</a>).</p>
+</div>
 <div class="listingblock">
 <div class="title">src/app/service/ip.service.ts</div>
 <div class="content">
@@ -903,7 +929,7 @@ export class IpService  {
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>Déclaration d&#8217;une méthode qui retourne une référence vers un objet <code>Observable</code>, qui est le type de retour de la méthode <code>get</code> utilisée ici.</td>
+<td>Déclaration d&#8217;une méthode qui retourne une référence vers un objet <code>Observable</code>, qui est le type de retour de la méthode <code>get</code> utilisée ici.<code>Observable&lt;any&gt;</code>, <strong>any</strong> signifie que nous n&#8217;avons pas défini de type de données pour ce retour (pas très propre, mais on l&#8217;acceptera pour cette démo).</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="3"></i><b>3</b></td>

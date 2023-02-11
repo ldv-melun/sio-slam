@@ -150,7 +150,7 @@ export class AppComponent { <5>
 
 == Le module du composant principal
 
-`app.module.ts` est un fichier qui déclare les dépendances et les relations entre les différents éléments de l'application pour un composant donné, il permet de structurer et organiser l'application pour une meilleure lisibilité et maintenabilité.
+`app.module.ts` est un fichier qui déclare les dépendances et les relations entre les différents éléments de l'application. Cette pratique, imposé par Angular, favorise la lisibilité et donc maintenance de l'application.
 
 .projet1/src/app/app.module.ts
 [source, typescript]
@@ -183,7 +183,7 @@ export class AppModule { } <7>
 
 <5> *providers* (fournisseurs): définit les *services qui sont utilisés* par ce module. Ici, il n'y a pas de fournisseurs définis.
 
-<6> bootstrap* définit le composant qui sera utilisé comme *point d'entrée pour l'application*. Ici, on utilise `AppComponent` comme point d'entrée.
+<6> *bootstrap* définit le composant qui sera utilisé comme *point d'entrée pour l'application*. Ici, on utilise `AppComponent` comme point d'entrée.
 
 <7> *export* permet d'exporter le module pour qu'il puisse être utilisé par d'autres parties de l'application.
 
@@ -255,12 +255,12 @@ Nous allons faire en sorte que l'adresse IP du client soit affichée sur la page
 
 Cette valeur peut être déterminée
 
-- par le serveur qui a servi l'application au client (en réponse à une requête HTTP du client)
+- par le serveur HTTP qui a servi l'application au client (en réponse à une requête HTTP du client)
 - par l'application client elle-même (JS)
 
 Nous retiendrons la deuxième version, qui a le mérite d'être dynamique (le client peut changer d'IP, ce qui ne serait pas connu du serveur)
 
-Par défaut, le client ne peut exploiter les ressources systèmes de la machine sur lequel la navigateur est excécuté. Il devra donc demander son IP publique à un service internet (une application web).
+Par défaut, le client ne peut exploiter les ressources systèmes de la machine sur lequel le navigateur est excécuté. Il devra donc demander son IP publique à un service internet (une application web).
 
 Exemple de service pour connaître son IP (n'hésitez pas à le tester):
 
@@ -272,7 +272,7 @@ http://api.ipify.org/?format=json
 
 On appelle _service_ une classe qui propose des fonctionnalités utilisables par différents composants.
 
-TIP: L'application actuelle n'a qu'un seul composant. Nous pourrions donc nous dispenser de créer un service et coder ce service dans la classe du composant. Mais faire ainsi n'est pas dans les bonne pratiques, car on chargerait ainsi notre composant de trop de responsabilités.
+TIP: L'application actuelle n'a qu'un seul composant. Nous pourrions donc nous dispenser de créer un service et coder ce service dans la classe du composant. Mais faire ainsi n'est pas dans les bonnes pratiques, car on chargerait ainsi notre composant de trop de responsabilités.
 
 La commande suivante permet de créer un service (rappel, se placer à la racine de l'application) :
 
@@ -280,6 +280,8 @@ La commande suivante permet de créer un service (rappel, se placer à la racine
 ----
 ng generate service service/Ip
 ----
+
+TIP: En formualant le nom du servie avec une expression de chemin, `service/Ip`, on demande à Angular de placer le service `Ip` dans un dossier spécial (`src/app/service`) .
 
 Le service `src/app/service/ip.service.ts (138 bytes)` est alors créé.
 
@@ -290,12 +292,14 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class IpService {
+export class IpService { <1>
 
   constructor() { }
 }
 
 ----
+
+<1> Notez la convention de nommage : Le suffixe _Service_ a été ajouté automatiquement au nom du service (tout comme le suffixe _Component_ précédemment)
 
 L'instance de ce service est _injectable_ dans d'autres composants par simple déclaration.
 
@@ -322,6 +326,10 @@ imports: [
 
 => On vient d'ajouter le service `HttpClientModule` aux services importés.
 
+Intéressons-nous maintenant à notre nouveau service, car actuellement il ne fait rien ! Nous avons besoin d'il lance une requête HTTP sur un serveur extérieur afin d'obtenir l'adresse IP publique de la machine sur lequel il s'exécute.
+
+Nous ajoutons une méthode portant un nom qui témoigne de sa fonction : *`getIpAddress`*. Son type de retour n'est pas une string (ce qui aurait dû être en toute logique), car on ne sait pas combien de temps peut prendre un service web distant pour répondre. C'est pourquoi la méthode `get`  du composant `HttpClient` nous retourne un `Observable`, qui est un composant utilisé dans une logique de programmation réactive qui *facilite* la composition de code asynchrone ou basé sur des événements par callbacks (https://rxjs.dev/guide/overview).
+
 .src/app/service/ip.service.ts
 [source, typescript]
 ----
@@ -345,7 +353,7 @@ export class IpService  {
 ----
 <1> La propriété nommée `http` est déclarée et sera automatiquement valorisée à la création d'une instance de cette classe. C'est une syntaxe courte (un sucre syntaxique).
 
-<2> Déclaration d'une méthode qui retourne une référence vers un objet `Observable`, qui est le type de retour de la méthode `get` utilisée ici.
+<2> Déclaration d'une méthode qui retourne une référence vers un objet `Observable`, qui est le type de retour de la méthode `get` utilisée ici.`Observable<any>`, *any* signifie que nous n'avons pas défini de type de données pour ce retour (pas très propre, mais on l'acceptera pour cette démo).
 
 <3> `this.http` fait référence à la propriété de l'instance (celle déclarée en paramètre du constructeur)
 
