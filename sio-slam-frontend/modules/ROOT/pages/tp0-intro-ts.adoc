@@ -61,7 +61,7 @@ Comme on le verra plus loin, ce fichier sera passé en argument du compilateur `
 Ajouter (créer) un fichier nommé `Game.ts`.
 
 .Game.ts
-[source, typescript]
+[source, js]
 ----
 enum Force { <1>
     FORCE_ZERO = 0,
