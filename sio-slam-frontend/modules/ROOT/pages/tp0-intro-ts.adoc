@@ -141,7 +141,7 @@ La force du premier personnage est : 80
 [start=1]
 . (d'après un contrôle donné en 2022)
 .. Forcer le mode strict (tsconfig.json  - voir les options disponibles avec CTRL + ESPACE)
-.. Ajouter à `Personnage` un attribut d'instance nommé `nom` de type `string`. Recompiler, corriger les erreurs (car il y a des modifications à opérer), exécuter, autant de fois que nécessaire.
+.. *Ajouter à `Personnage` un attribut d'instance nommé _nom_ de type `string`*. Recompiler, corriger les erreurs (car il y a des modifications à opérer), exécuter, autant de fois que nécessaire.
 .. Dans la partie _Main_ de `Game.ts`, créer une autre instance de Personnage avec 0 comme valeur de force initiale, référencée par une variable nommée p2.
 .. Afficher de la force du personnage référencé par p2.
 .. Donner à p2 la force 20, puis ajouter à p2 la force de p1 (attention, abus de langage)

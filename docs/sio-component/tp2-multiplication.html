@@ -451,12 +451,15 @@ La tradition a longtemps exigé la connaissance des tables de multiplication por
 <p>les dépendances</p>
 </div>
 <div class="paragraph">
+<p>On sdécide de s&#8217;appuyer sur bootstrap pour la mise en forme CSS.</p>
+</div>
+<div class="paragraph">
 <p>Installation des modules bootstrap</p>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>npm install --save bootstrap
-mybooks$ npm install --save bootstrap-icons</pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">(racine du projet)$ npm install --save bootstrap
+(racine du projet)$ npm install --save bootstrap-icons</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -508,7 +511,7 @@ Sous Visual Code, on gagnerait à installer l&#8217;extension <strong><em>Intell
 <p>L&#8217;application proposera plusieurs "pages", qui devront présenter la même structure.</p>
 </div>
 <div class="paragraph">
-<p>Nous allons donc <strong>factoriser</strong> le format par une entête et un pied de page, chacun étant représenté par un composant.</p>
+<p>Nous allons donc <strong>factoriser</strong> le modèle de présentation par une entête et un pied de page, chacun étant représenté par un composant.</p>
 </div>
 <div class="sect2">
 <h3 id="_création_du_composant_header"><a class="anchor" href="#_création_du_composant_header"></a>Création du composant Header</h3>
@@ -602,10 +605,8 @@ Sous Visual Code, on gagnerait à installer l&#8217;extension <strong><em>Intell
 <pre>ng generate component pageTableMult</pre>
 </div>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>La classe du composant ainsi crée donne :</pre>
-</div>
+<div class="paragraph">
+<p>La classe du composant ainsi crée donne :</p>
 </div>
 <div class="listingblock">
 <div class="title">/page-table-mult.component.ts</div>
@@ -633,7 +634,7 @@ export class PageTableMultComponent {
 <div class="listingblock">
 <div class="title">/src/app/app-routing-module.ts</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { NgModule } from '@angular/core';
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PageTableMultComponent } from './page-table-mult/page-table-mult.component';
 
@@ -691,7 +692,7 @@ export class AppRoutingModule { }</code></pre>
 <div class="olist arabic">
 <ol class="arabic" start="1">
 <li>
-<p>Ajouter au template de votre application une partie <code>footer</code>. On attend de vous que vous ajoutiez un nouveau composant dédié à cet usage.</p>
+<p>Ajouter une partie <code>footer</code> au template de votre application. On attend de vous que vous ajoutiez un nouveau composant dédié à cet usage qui respecte la structure ci-dessous :</p>
 </li>
 </ol>
 </div>
@@ -701,6 +702,9 @@ export class AppRoutingModule { }</code></pre>
 </div>
 </div>
 </div>
+</div>
+<div class="paragraph">
+<p>Réglez les problèmes éventuels avant de poursuivre.</p>
 </div>
 </div>
 </div>
@@ -745,11 +749,11 @@ export class AppRoutingModule { }</code></pre>
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>La variable <em>n</em> est une des propriétés définies dans la classe du composant. C&#8217;est Angular qui permet de lier des variables de vue avec des propriétés de la classe TypeScript liée au composant. Un changement de valeur d&#8217;une telle propriété entraine une mise à jour de la vue du composant.</td>
+<td>La variable <em>n</em> (entre double accolades) est une des propriétés définies dans la classe du composant. C&#8217;est Angular qui permet de lier des variables de vue avec des propriétés de la classe TypeScript liée au composant. <strong>Un changement de valeur d&#8217;une telle propriété entraine automatiquement une mise à jour de la vue du composant</strong>.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td><code>ngFor</code> est une expression de boucle d&#8217;Angular. <code>item</code> et <code>i</code> sont des variables de boucle. <code>ngFor</code> est une des directives structurelles d&#8217;Angular avec <code>ngIf</code>, <code>ngSwitch</code> : <a href="https://angular.io/guide/structural-directives" class="bare">https://angular.io/guide/structural-directives</a></td>
+<td><strong><code>ngFor</code></strong> est une expression de boucle d&#8217;Angular. <code>item</code> et <code>i</code> sont des variables de boucle. <code>ngFor</code> est une des directives structurelles d&#8217;Angular avec <code>ngIf</code>, <code>ngSwitch</code> : <a href="https://angular.io/guide/structural-directives" class="bare">https://angular.io/guide/structural-directives</a></td>
 </tr>
 </table>
 </div>
@@ -762,7 +766,7 @@ export class AppRoutingModule { }</code></pre>
 <div class="listingblock">
 <div class="title">table-multiplication.component.ts</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { Component } from '@angular/core';
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-table-multiplication',
@@ -771,7 +775,7 @@ export class AppRoutingModule { }</code></pre>
 })
 export class TableMultiplicationComponent {
 
-   n: number = 2; <i class="conum" data-value="1"></i><b>(1)</b>
+   n: number = 2 <i class="conum" data-value="1"></i><b>(1)</b>
 
 }</code></pre>
 </div>
@@ -795,7 +799,7 @@ export class TableMultiplicationComponent {
 </div>
 <div class="imageblock kroki">
 <div class="content">
-<img src="_images/diag-793fc8ce55e577767e6850fa32f05930b073300a.png" alt="Diagram">
+<img src="_images/diag-f2ebc0593e3614ff92a8a378b98d7b9a2c1818af.png" alt="Diagram">
 </div>
 </div>
 <div class="paragraph">
@@ -829,7 +833,7 @@ export class TableMultiplicationComponent {
 <div class="listingblock">
 <div class="title">table-multiplication.ts</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { Component, Input } from '@angular/core';
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-table-multiplication',
@@ -838,7 +842,7 @@ export class TableMultiplicationComponent {
 })
 export class TableMultiplicationComponent {
 
-  @Input() n: number = 2; <i class="conum" data-value="1"></i><b>(1)</b>
+  @Input() n: number = 2 <i class="conum" data-value="1"></i><b>(1)</b>
 
 }</code></pre>
 </div>
@@ -857,7 +861,7 @@ export class TableMultiplicationComponent {
 <div class="listingblock">
 <div class="title">/src/app/page-table-mult/page-table-mult.component.html</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-html hljs" data-lang="html">&lt;p&gt;page-table-mult works!&lt;/p&gt;
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">&lt;p&gt;page-table-mult works!&lt;/p&gt;
 &lt;app-table-multiplication [n]="3"&gt;&lt;/app-table-multiplication&gt;</code></pre>
 </div>
 </div>
@@ -888,7 +892,7 @@ export class TableMultiplicationComponent {
 <div class="olist arabic">
 <ol class="arabic" start="1">
 <li>
-<p>Ajouter la possibilité de permettre à l&#8217;utilisateur de saisir une valeur de <em>n</em>. Pour cela, prévoir u champ <code>input</code> dans la vue du composant <code>page-table-mult</code>. Vous trouverez sur le net de nombreux exemples pour lier un <code>&lt;input&gt;</code> à une propriété d&#8217;un composant Angular.</p>
+<p>Ajouter la possibilité de permettre à l&#8217;utilisateur de saisir une valeur de <em>n</em>. Pour cela, prévoir un élément html <strong><code>input</code></strong> dans la vue du composant <code>page-table-mult</code>. Vous trouverez sur le net de nombreux exemples pour lier un <code>&lt;input&gt;</code> à une propriété d&#8217;un composant Angular.</p>
 </li>
 </ol>
 </div>
