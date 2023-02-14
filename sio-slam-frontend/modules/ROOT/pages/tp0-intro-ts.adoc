@@ -64,12 +64,11 @@ Ajouter (créer) un fichier nommé `Game.ts`.
 [source, js]
 ----
 type Force = <1>
-       typeof PersonnageBis.FORCE_ZERO
-     | typeof PersonnageBis.FORCE_PETITE
-     | typeof PersonnageBis.FORCE_MOYENNE
-     | typeof PersonnageBis.FORCE_GRANDE;
-
-
+       typeof Personnage.FORCE_ZERO
+     | typeof Personnage.FORCE_PETITE
+     | typeof Personnage.FORCE_MOYENNE
+     | typeof Personnage.FORCE_GRANDE;
+  
 class Personnage {
 
     static readonly FORCE_PETITE = 20;
