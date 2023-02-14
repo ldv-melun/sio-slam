@@ -470,7 +470,6 @@ Version 4.9.5</pre>
      | typeof Personnage.FORCE_MOYENNE
      | typeof Personnage.FORCE_GRANDE;
 
-
 class Personnage {
 
     static readonly FORCE_PETITE = 20;
@@ -659,9 +658,9 @@ La force du premier personnage est : 80</code></pre>
 <div class="olist arabic">
 <ol class="arabic" start="4">
 <li>
-<p>On souhaite qu&#8217;un <code>Personnage</code> puisse avoir sa force augmentée ou diminuée en cas d&#8217;impact avec des objets, que l&#8217;on nommera <code>Chose</code> (pour éviter toute confusion avec les termes de la POO).</p>
+<p>On souhaite qu&#8217;un <code>Personnage</code> puisse avoir sa force augmentée ou diminuée en cas de contact avec des objets, que l&#8217;on nommera <code>Chose</code> (pour éviter toute confusion avec les termes de la POO).</p>
 <div class="paragraph">
-<p>Parmi les choses, il y a les choses bienveillantes et les choses hostiles. Chaque chose a un potentiel d&#8217;impact (valeur positive pour les bienveillants et négatives pour les autres).</p>
+<p>Parmi les choses, il y a les choses bienveillantes et les choses hostiles. Chaque chose a un <em>potentiel de contact</em> (valeur positive pour les bienveillants et négatives pour les autres).</p>
 </div>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
@@ -672,7 +671,7 @@ La force du premier personnage est : 80</code></pre>
 <p>Faire évoluer <code>Game.ts</code> en conséquence (conception de nouvelles classes)</p>
 </li>
 <li>
-<p>Ajouter une méthode d&#8217;instance à la classe <code>Personnage</code>, que nous nommerons <code>impact</code>, qui accepte en paramètre une référence à une chose. Trouver une idée (une règle de jeu) qui fasse descendre ou augmenter sa force après une série d&#8217;impacts. L&#8217;implémenter.</p>
+<p>Ajouter une méthode d&#8217;instance à la classe <code>Personnage</code>, que nous nommerons <code>contact</code>, qui accepte en paramètre une référence à une chose. Trouver une idée (une règle de jeu) qui fasse descendre ou augmenter sa force après une série de contacts. L&#8217;implémenter.</p>
 </li>
 <li>
 <p>Proposer (coder) un jeu d&#8217;essai</p>

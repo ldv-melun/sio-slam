@@ -68,7 +68,7 @@ type Force = <1>
      | typeof Personnage.FORCE_PETITE
      | typeof Personnage.FORCE_MOYENNE
      | typeof Personnage.FORCE_GRANDE;
-  
+
 class Personnage {
 
     static readonly FORCE_PETITE = 20;
@@ -164,13 +164,13 @@ La force du premier personnage est : 80
 
 ====
 [start=4]
-. On souhaite qu'un `Personnage` puisse avoir sa force augmentée ou diminuée en cas d'impact avec des objets, que l'on nommera `Chose` (pour éviter toute confusion avec les termes de la POO).
+. On souhaite qu'un `Personnage` puisse avoir sa force augmentée ou diminuée en cas de contact avec des objets, que l'on nommera `Chose` (pour éviter toute confusion avec les termes de la POO).
 +
-Parmi les choses, il y a les choses bienveillantes et les choses hostiles. Chaque chose a un potentiel d'impact (valeur positive pour les bienveillants et négatives pour les autres).
+Parmi les choses, il y a les choses bienveillantes et les choses hostiles. Chaque chose a un _potentiel de contact_ (valeur positive pour les bienveillants et négatives pour les autres).
 
 .. Concevoir un diagramme de classe qui tient compte de l'évolution attendue.
 .. Faire évoluer `Game.ts` en conséquence (conception de nouvelles classes)
-.. Ajouter une méthode d'instance à la classe `Personnage`, que nous nommerons `impact`, qui accepte en paramètre une référence à une chose. Trouver une idée (une règle de jeu) qui fasse descendre ou augmenter sa force après une série d'impacts. L'implémenter.
+.. Ajouter une méthode d'instance à la classe `Personnage`, que nous nommerons `contact`, qui accepte en paramètre une référence à une chose. Trouver une idée (une règle de jeu) qui fasse descendre ou augmenter sa force après une série de contacts. L'implémenter.
 .. Proposer (coder) un jeu d'essai
 ====
 
