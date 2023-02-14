@@ -63,18 +63,28 @@ Ajouter (créer) un fichier nommé `Game.ts`.
 .Game.ts
 [source, js]
 ----
-enum Force { <1>
-    FORCE_ZERO = 0,
-    FORCE_PETITE = 20,
-    FORCE_MOYENNE = 50,
-    FORCE_GRANDE = 80
-}
+type Force = <1>
+       typeof PersonnageBis.FORCE_ZERO
+     | typeof PersonnageBis.FORCE_PETITE
+     | typeof PersonnageBis.FORCE_MOYENNE
+     | typeof PersonnageBis.FORCE_GRANDE;
+
 
 class Personnage {
+
+    static readonly FORCE_PETITE = 20;
+    static readonly FORCE_MOYENNE = 50;
+    static readonly FORCE_GRANDE = 80;
+    static readonly FORCE_ZERO = 0;
+
     private _force: Force <2>
 
-    public constructor(forceInitiale: Force = Force.FORCE_ZERO) {
+    // nouvelle propriété à demander à l'étudiant
+    private nom: String
+
+    public constructor(nomPersonnage: String, forceInitiale: Force = Personnage.FORCE_ZERO) {
         this._force = forceInitiale
+        this.nom = nomPersonnage
     }
 
     public getForce(): Force {

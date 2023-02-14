@@ -464,18 +464,28 @@ Version 4.9.5</pre>
 <div class="listingblock">
 <div class="title">Game.ts</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">enum Force { <i class="conum" data-value="1"></i><b>(1)</b>
-    FORCE_ZERO = 0,
-    FORCE_PETITE = 20,
-    FORCE_MOYENNE = 50,
-    FORCE_GRANDE = 80
-}
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">type Force = <i class="conum" data-value="1"></i><b>(1)</b>
+       typeof PersonnageBis.FORCE_ZERO
+     | typeof PersonnageBis.FORCE_PETITE
+     | typeof PersonnageBis.FORCE_MOYENNE
+     | typeof PersonnageBis.FORCE_GRANDE;
+
 
 class Personnage {
+
+    static readonly FORCE_PETITE = 20;
+    static readonly FORCE_MOYENNE = 50;
+    static readonly FORCE_GRANDE = 80;
+    static readonly FORCE_ZERO = 0;
+
     private _force: Force <i class="conum" data-value="2"></i><b>(2)</b>
 
-    public constructor(forceInitiale: Force = Force.FORCE_ZERO) {
+    // nouvelle propriété à demander à l'étudiant
+    private nom: String
+
+    public constructor(nomPersonnage: String, forceInitiale: Force = Personnage.FORCE_ZERO) {
         this._force = forceInitiale
+        this.nom = nomPersonnage
     }
 
     public getForce(): Force {
