@@ -79,12 +79,8 @@ class Personnage {
 
     private _force: Force <2>
 
-    // nouvelle propriété à demander à l'étudiant
-    private nom: String
-
-    public constructor(nomPersonnage: String, forceInitiale: Force = Personnage.FORCE_ZERO) {
+    public constructor(forceInitiale: Force = Personnage.FORCE_ZERO) {
         this._force = forceInitiale
-        this.nom = nomPersonnage
     }
 
     public getForce(): Force {
