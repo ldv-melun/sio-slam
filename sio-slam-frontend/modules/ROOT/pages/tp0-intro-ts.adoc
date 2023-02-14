@@ -144,7 +144,7 @@ La force du premier personnage est : 80
 .. *Ajouter à `Personnage` un attribut d'instance nommé _nom_ de type `string`*. Recompiler, corriger les erreurs (car il y a des modifications à opérer), exécuter, autant de fois que nécessaire.
 .. Dans la partie _Main_ de `Game.ts`, créer une autre instance de Personnage avec 0 comme valeur de force initiale, référencée par une variable nommée p2.
 .. Afficher de la force du personnage référencé par p2.
-.. Donner à p2 la force 20, puis ajouter à p2 la force de p1 (attention, abus de langage)
+.. Donner à p2 la force de p1 (attention, abus de langage)
 .. Afficher de la force du personnage référencé par p1.
 .. Afficher de la force du personnage référencé par p2.
 .. Faire en sorte que p1 référence le même objet que p2
