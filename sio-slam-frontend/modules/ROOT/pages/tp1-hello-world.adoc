@@ -285,6 +285,7 @@ TIP: En formualant le nom du servie avec une expression de chemin, `service/Ip`,
 
 Le service `src/app/service/ip.service.ts (138 bytes)` est alors créé.
 
+.src/app/service/ip.service.ts
 [source, js]
 ----
 import { Injectable } from '@angular/core';
@@ -311,6 +312,7 @@ Ce service a besoin de lancer des requêtes HTTP vers `api.ipify.org`. Pour cela
 
 Cette dépendance doit être déclarée au niveau global, dans le fichier *`app.module.ts`* vu précédemment.
 
+.src/app/app.module.ts (extrait)
 [source, js]
 ----
 import { HttpClientModule } from "@angular/common/http";

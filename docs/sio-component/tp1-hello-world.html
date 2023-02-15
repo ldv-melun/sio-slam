@@ -127,7 +127,10 @@
     <a class="nav-link" href="tp0-intro-ts.html">Premiers pas en TypeScript</a>
   </li>
   <li class="nav-item is-current-page" data-depth="2">
-    <a class="nav-link" href="tp1-hello-world.html">Angular Hello World</a>
+    <a class="nav-link" href="tp1-hello-world.html">Angular Hello World &amp; Client API</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="tp2-multiplication.html">Angular Parent&#8594;Enfant &amp; Router&#8594;Pages</a>
   </li>
 </ul>
   </li>
@@ -334,7 +337,7 @@
   <ul>
     <li><a href="index-glossaire.html">SIO-SLAM</a></li>
     <li>Frontend</li>
-    <li><a href="tp1-hello-world.html">Angular Hello World</a></li>
+    <li><a href="tp1-hello-world.html">Angular Hello World &amp; Client API</a></li>
   </ul>
 </nav>
   <div class="edit-this-page"><a href="file:///home/kpu/ldv/sio/antora-sio-slam/sio-slam/sio-slam-frontend/modules/ROOT/pages/tp1-hello-world.adoc">Edit this Page</a></div>
@@ -835,6 +838,7 @@ En formualant le nom du servie avec une expression de chemin, <code>service/Ip</
 <p>Le service <code>src/app/service/ip.service.ts (138 bytes)</code> est alors créé.</p>
 </div>
 <div class="listingblock">
+<div class="title">src/app/service/ip.service.ts</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">import { Injectable } from '@angular/core';
 
@@ -880,6 +884,7 @@ C&#8217;est une application du principe d&#8217;IOC (<em>Inversion Of Control</e
 <p>Cette dépendance doit être déclarée au niveau global, dans le fichier <strong><code>app.module.ts</code></strong> vu précédemment.</p>
 </div>
 <div class="listingblock">
+<div class="title">src/app/app.module.ts (extrait)</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">import { HttpClientModule } from "@angular/common/http";
 ...
