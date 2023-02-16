@@ -3,7 +3,13 @@
 :toclevels: 4
 :toc: top
 
-== L'idée
+== Objectif
+
+* Apprendre à concevoir une application front gérant plusieurs pages, via des routes distincts à l'image d'une application web classique.
+
+* Apprendre à paramétrer un composant : passage de valeurs à un composant via son sélecteur HTML (via ses  attributs)
+
+== L'idée de l'application
 
 On souhaite concevoir une application web qui affiche une table de multiplication (1 à 10), selon une valeur soumise par l’utilisateur.
 
