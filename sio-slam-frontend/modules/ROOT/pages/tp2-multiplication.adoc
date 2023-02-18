@@ -40,9 +40,9 @@ Ces composants seront paramétrés.
 
  ng new table-mult-app --routing --defaults
 
-les dépendances
+== Les dépendances
 
-On sdécide de s'appuyer sur bootstrap pour la mise en forme CSS.
+On décide de s'appuyer sur bootstrap pour la mise en forme CSS.
 
 Installation des modules bootstrap
 

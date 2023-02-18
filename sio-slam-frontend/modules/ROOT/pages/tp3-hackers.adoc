@@ -1,0 +1,589 @@
+= Liste IP Hackers
+:toc-title: Table des matières
+:toclevels: 4
+:toc: top
+
+== Objectif
+
+* Apprendre à concevoir une application front gérant un ensemble d'items + CRUD.
+* Apprendre à utiliser un formulaire structuré
+* Apprendre à mettre en place une communication entre composants (via event)
+* Apprendre à sauvegarder des données de l'application sur le client (localStorage)
+
+== L'idée de l'application
+
+On souhaite concevoir une application web qui gère une liste d'IP à l'origine de requêtes malveillantes et qui tente de les géolocaliser via l'appel à un service distant, avec clé d'authentification.
+
+== L'analyse
+
+On concevra une application qui présentera deux pages :
+
+* Une page `Home` présentant la liste des IP et un formulaire de modification/création.
+
+* Une page `About`
+
+== Initialisation de l'application (CLI)
+
+ ng new hackers-app --routing --defaults
+
+== Les dépendances
+
+On décide de s'appuyer sur bootstrap pour la mise en forme CSS.
+
+Installation des modules bootstrap
+
+[source, bash]
+----
+(racine du projet)$ npm install --save bootstrap
+(racine du projet)$ npm install --save bootstrap-icons
+----
+
+L’option `save` indique que le paquetage s’installe uniquement dans le projet et non globalement.
+
+Pour nous simplifier le travail de présentation, nous utiliserons le module bootstrap pour angular (https://ng-bootstrap.github.io/#/home)
+
+ ng add @ng-bootstrap/ng-bootstrap
+
+Ajouter les dépendances dans `angular.json` :
+
+  [...]
+  "styles": [
+     "node_modules/bootstrap/dist/css/bootstrap.min.css",
+     "node_modules/bootstrap-icons/font/bootstrap-icons.css",
+     "src/styles.css"
+   ],
+   "scripts": [
+     "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+   ]
+  [...]
+
+TIP: Sous Visual Code, on gagnerait à installer l'extension *_IntelliSense for CSS class names in HTML_* pour profiter de la complétion des classes CSS.
+
+== Les composants
+
+L'application proposera plusieurs "pages", qui devront présenter la même structure.
+
+Nous allons donc *factoriser* le modèle de présentation par une *entête* et un *pied de page*, chacun étant représenté par un composant.
+
+Nous allons avoir besoin de deux services. Un pour gérer l'appel à une API externe et un autre pour la gestion des sauvegardes des données sur le client (_local storage_)
+
+=== Création du composant Header
+
+ ng g component component/header
+
+Nous prendrons un template classique de la documentation bootstrap.
+
+./src/app/compoment/header/header.component.html
+[source, html]
+----
+<nav class="navbar navbar-expand-xl navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <h1>MyApp</h1>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+----
+
+Faire de même pour le footer.
+
+=== Conception des routes
+
+On se contente de définir la route par défaut (composant `Home`)
+
+.src/app/app-routing.modules.ts
+[source, js]
+----
+
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './component/home/home.component';
+
+const routes: Routes = [
+{path: '', component: HomeComponent}
+];
+
+@NgModule({
+imports: [RouterModule.forRoot(routes)],
+exports: [RouterModule]
+})
+export class AppRoutingModule { }
+----
+
+=== Intégration
+
+Nous ajoutons maintenant les composants de présentation à notre composant principal.
+
+.app.component.html
+[source, html]
+----
+<app-header></app-header>
+<router-outlet></router-outlet>
+<app-footer></app-footer>
+----
+
+=== Test
+
+À ce niveau, l'application devrait être opérationnelle :
+
+ ng serve
+
+Réglez les problèmes éventuels avant de poursuivre.
+
+Faire une pause.
+
+== Travaux pratiques
+
+====
+[start=1]
+
+. Ajouter une page `APropos` (associé à une route, avec un lien dans la barre de navigation) qui présente à l'utilisateur le lien vers ce document ainsi que le nom du ou des développeurs qui ont réalisé le travail demandé.
+
+====
+
+== Création des composants du domaine
+
+Nous définissons une structure de données qui caractérise un _hacker_ dans notre application (vous enrichirez cette représentation plus tard).
+Cela passe par la définition d'une interface (sens UML) et d'une classe qui l'implémente. Ainsi, si l'on modifie l'interface, le développeur sera dans l'obligation de retoucher la ou les classes qui l'implémentent.
+
+.Hacker dans le modèle
+[plantuml,  format=png]
+....
+@startuml
+
+class IHacker {
+    id?: string
+    ip: string
+    countryName: string
+    regionName: string
+    city: string
+}
+
+class Hacker
+IHacker <|.. Hacker
+
+hide circle
+hide method
+@enduml
+....
+
+Nous souhaitons obtenir l'arborescence provisoire suivante :
+
+.Arborescence partielle du projet
+[source, bash]
+----
+
+├src
+   ├── app
+   │   ├── component
+   │   │   ├── footer
+   │   │   ├── header
+   │   │   └── home
+   │   ├── models
+   │   │   ├── Hacker.ts
+   │   │   └── IHacker.ts
+   │   └── service
+   ├── assets
+----
+
+Créer le dossier `models`, ainsi que les 2 fichiers qui sont présentés dans l'arborescence ci-dessus. Voici leur implémentation.
+
+.src/app/models/iHacker.ts
+[source, js]
+----
+/**
+ * Représente la structure de données d'un Hacker
+ * L'id sera autogénéré par l'application (null si nouveau)
+ */
+export interface IHacker {
+    ip: string,
+    countryName: string,
+    regionName: string,
+    city: string,
+    id?: string
+}
+
+----
+
+et
+
+.src/app/models/Hacker.ts
+[source, js]
+----
+import { IHacker } from "./IHacker";
+
+export class Hacker implements IHacker {
+
+    constructor(
+        public countryName: string,
+        public regionName: string,
+        public city: string,
+        public ip: string,
+        public id?: string) {
+        // rien à faire de plus dans ce constructeur
+
+    }
+}
+
+----
+
+À ce niveau, l'application devrait être opérationnelle.
+Réglez les problèmes éventuels avant de poursuivre.
+
+== Création des services
+
+Nous allons créer deux services, l'un aura la responsabilité d'obtenir la géolocalisation d'une IP en appelant un service externe (déjà vu dans le TD Hello World), et l'autre de gérer l'enregistrement des données de _"hackers"_ sur le `localStorage` du client.
+
+TIP: En savoir plus sur le localStorage : https://developer.mozilla.org/fr/docs/Web/API/Window/localStorage
+
+Création des deux services (toujours à partir de la racine du projet)
+
+ ng generate service service/lookupIp
+ ng generate service service/managerHacker
+
+== API de géolocalisation
+
+Nous utiliserons le service https://ipstack.com/product dans sa version gratuite.
+
+Réaliser les actions co-dessous.
+
+. Créer un compte sur cette plateforme
+. Choisir une formule
+. Copier votre clé d'accès à l'API
+. Tester votre clé : http://api.ipstack.com/103.125.234.210?&output=json&access_key=VOTRE_CLE_ICI
+
+Exemple de résultat attendu.
+
+.103.125.234.210.png
+image::103.125.234.210.png[location IP]
+
+=> Remarquez la présence d'un lien vers le drapeau du pays (format vectoriel svg).
+
+== Intégration de la clé API dans l'environnement
+
+Nous allons stocker la clé API du développeur dans un fichier de ressource qui nous permettra de définir des variables d'environnement.
+
+Cette possibilité est intégrée à Angular.
+
+ (racine de l'application) ng generate environments
+ CREATE src/environments/environment.ts (31 bytes)
+ CREATE src/environments/environment.development.ts (31 bytes)
+ UPDATE angular.json (3171 bytes)
+
+Les données déclarées dans `environment.development.ts` ne seront accessibles qu'en mode dev.
+
+Intégrons à ce fichier quelques variables, dont la clé de l'API d'ipstack.com du développeur :
+
+.src/app/environments/environment.ts (production)
+[source, js]
+----
+export const environment = {
+  production: true,
+  apiBaseUrl: 'https://api.ipstack.com/',
+  keyAPI: 'A RENSEIGNER'
+};
+----
+
+.src/app/environments/environment.development.ts (dev)
+[source, js]
+----
+export const environment = {
+  production: false,
+  apiBaseUrl: 'http://api.ipstack.com/',
+  keyAPI: 'VOTRE CLE DE DEV'
+};
+----
+
+== Implémentation du service lookupIp
+
+Nous ajoutons une *méthode* que nous nommons `getGeoLocationIp` qui prend un paramètre nommé `ip` et retourne une référence à un objet de type  `Observable` (pour rafraichir votre mémoire, reportez-vous au premier TD HelloWorld)
+
+.src/app/service/lookup-ip.service.ts
+[source, js]
+----
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment'; <1>
+
+@Injectable({
+providedIn: 'root'
+})
+export class LookupIpService {
+
+  constructor(private http:HttpClient) { }
+
+  public getGeoLocationIp(ip: string) : any {
+    return this.http.get(environment.apiBaseUrl + ip + '&output=json&access_key=' + environment.keyAPI);
+  }
+}
+----
+
+<1> En phase de développement, le fichier `src/environments/environment.ts` est dynamiquement remplacé par `src/environments/environment.development.ts`.
++
+Ce mécanisme est inscrit dans le fichier `̀angular.json`. Voir dans le fichier `build/configuration/development/fileReplacements`.
++
+Merci Angular !
+
+
+À ce niveau, l'application devrait toujours être opérationnelle.
+Réglez les problèmes éventuels avant de poursuivre.
+
+
+
+== Maquette de home.component.html
+
+Nous souhaitons que la page principale présente à la fois la liste des hackers détenus par l'applicaton dans son `localStorage` *et* un formulaire pour l'*édition* et la *création*.
+
+Il est d'usage de réaliser une *maquette* avant de se lancer dans la création de la vue. Cette maquette peut être produite à la main, sur papier, ou via des logiciels spécialisés. *C'est rapide à réaliser, et on peut ainsi soumettre plus efficacement nos idées au client*.
+
+TIP: Voir ici le concept de : https://fr.wikipedia.org/wiki/Wireframe_%28design%29[maquette]
+
+
+[plantuml, png]
+----
+@startsalt
+{{^==Formulaire
+title Hackers
+header some header \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t
+footer some footer
+caption Maquette du composant Home
+
+{+
+  ip    | "103.125.234.210"|[Lookup]
+  Pays | "Japon     "
+  Région | "Tokyo   "
+  Ville  | "Tokyo   "
+  [Cancel] | [  Ajouter/Modifer   ]
+}}|
+{ } |
+{^<b>Liste
+  {
+    ^  IP    ^^ 1.2.3.4^ 1.2.3.4^^  |
+    ^Pays               ^^ item 1^^ item 2^ |
+    ^Ville               ^ item 1^ item 2^ |
+    ^Opérations    ^ modifier supprimer^ modifier supprimer^ |
+  }
+}
+}
+@endsalt
+
+----
+[TIP]
+====
+La conception de la maquette a été réalisée en utilisant https://plantuml.com/fr/salt[plantuml et salt]
+
+Vous trouverez le code de cette maquette ici : https://www.plantuml.com/plantuml/png/VLBHIiCm57tFLnpsAjIrcszE9e9CsN28-39NYEsTnhLDJDA7qVQ3zXtxCPDsHQRYkH0EvvwR72wP6ikrDJophAhYoUHMwhpCkD34hB0POSQJBMd3tecdf65aJZZo5_j_iOsKjf_fE4kuia8MMF3Fagmbf2KIcIjfU64nSqx6gZC620M76eDmE0h2w2A8HkCW2eU3UZMNSbkgDGEMV6UyvvuhTwV7mAcFX_sRVyCrdkHs9u_oiyWomazrTSEBXBArqrV0zOSiNSppXKp5XZI0DMkQcbLeuCxuylLgBemb1bGC3Z5mjsn9Z328Wb4m_YQkMNUkDkWfN5TOoX7s98fxTvVq5Btxb_b17VQQ-wMQpfVxxCBllLHAYvpqtvgVRvYlAHLf-mM-0000[code de la maquette]
+====
+
+== Composants inclus dans la page Home
+
+Nous allons créer 2 composants : `HackerFormComponent` et `HackerListComponent`
+
+=== Création des composants
+
+  ng generate component component/hackerForm
+  ng generate component component/hackerList
+
+=== Inclusion des composants dans Home
+
+On donne 1/3 de la page au formulaire et le reste à la liste (en bootstrap, la somme des colonnes est 12)
+
+.src/app/component/home/home.component.html
+[source, html]
+----
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <app-hacker-form></app-hacker-form>
+        </div>
+        <div class="col-md-8">
+            <app-hacker-list></app-hacker-list>
+        </div>
+    </div>
+</div>
+
+----
+
+
+À ce niveau, l'application devrait être opérationnelle.
+
+Exemple : image:maquette1.png[maquette1]
+
+Réglez les problèmes éventuels avant de poursuivre.
+
+
+== Conception du formulaire
+
+Il y a 2 façons d'implémenter les formulaires en Angular.
+
+- Les formulaires réactifs
+- Les formulaires pilotés par les templates
+
+Voir en détail ici : https://angular.io/guide/forms-overview
+
+Nous ferons usage des formulaires réactifs (approche plus structurée)
+
+Prenez le temps de consulter le guide officiel : https://angular.io/guide/reactive-forms
+
+=== Ajouter la dépendance à `ReactiveFormsModule`
+Commençons par ajouter une dépendance à notre projet (`ReactiveFormsModule`)
+
+.app.module.ts
+[source, js]
+----
+[...]
+import { ReactiveFormsModule } from '@angular/forms';
+
+ imports: [
+    [...],
+    ReactiveFormsModule
+  ],
+
+----
+
+=== Implémenter la classe du composant HackerFormComponent
+
+.app/component/hacker-form/hacker-form.component.ts
+[source, js]
+----
+import { Component } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { Hacker } from 'src/app/models/Hacker';
+
+@Component({
+  selector: 'app-hacker-form',
+  templateUrl: './hacker-form.component.html',
+  styleUrls: ['./hacker-form.component.css']
+})
+export class HackerFormComponent {
+
+  hacker: Hacker =  new Hacker('','','','')
+
+  hackerForm = new FormGroup({
+    ip: new FormControl(''),
+    countryName: new FormControl(''),
+    regionName: new FormControl(''),
+    city: new FormControl(''),
+    id: new FormControl(undefined)
+  })
+
+  onSubmit() {
+    console.log("Submit")
+    console.log(this.hackerForm.value)
+  }
+
+  clear() {
+    console.log("Cancel")
+    console.log(this.hackerForm.value);
+  }
+
+}
+
+----
+
+=== Implémenter le template du composant HackerFormComponent
+
+Conformément au guide d'angular, le formulaire fait référence à un `formGroup` de la classe.
+
+  <form [formGroup]="hackerForm"  ...>
+
+On fait usage des classes et icons de bootStrap (pour le choix des icones voir https://icons.getbootstrap.com/)
+
+
+[source, html]
+----
+<div>
+  <h4>Hacker</h4>
+
+  <form [formGroup]="hackerForm" (ngSubmit)="onSubmit()"> <1> <2>
+    <div class="form-group">
+        <i class="bi bi-person"></i>
+        <input class="form-control" formControlName="ip"
+            placeholder="IP du hacker" required>
+    </div>
+    <div class="form-group">
+        <i class="bi bi-globe"></i>
+        <input class="form-control" formControlName="countryName"
+            placeholder="Pays" required>
+    </div>
+    <div class="form-group">
+        <i class="bi bi-pentagon"></i>
+        <input class="form-control" formControlName="regionName"
+            placeholder="Région" required>
+    </div>
+    <div class="form-group">
+        <i class="bi bi-house"></i>
+        <input class="form-control" formControlName="city"
+            placeholder="Ville" required>
+    </div>
+    <div class="form-group visually-hidden">
+        <i class="bi bi-person"></i>
+        <input class="form-control" formControlName="id"
+            placeholder="id">
+    </div>
+
+    <div class="form-group pt-2">
+        <div class="form-group float-end">
+            <button type="button" class="btn btn-success m-2" (click)="clear()">Cancel</button> <3>
+            <button type="submit" class="btn btn-success" [disabled]="hackerForm.invalid">
+                <span>
+                    <i class="bi bi-plus"></i>
+                    Ajouter / Mettre à jour
+                </span>
+            </button>
+        </div>
+    </div>
+  </form>
+</div>
+
+----
+
+<1> "hackerForm" est le nom de la propriété de la classe du composant, de type FormGroup
+<2> (ngSubmit)="onSubmit()". ngSubmit est un événement généré par Angular lorsque l'utilisateur soumet le formulaire. onSubmit() est le nom de la méthode de la classe du composant qui sera appelée.
+<3> (click)="clear()", même logique que (2), sur le clic d'un bouton.
+
+
+== Travaux pratiques
+
+====
+[start=2]
+
+. Le bouton _Cancel_ n'engage aucune action. Faire en sorte qu'il réinitialise le formulaire.
+
+. Le bouton _submit_ du formulaire est actuellement labellisé "Ajouter / Mettre à jour".
++
+Modifier ce comportement afin d'afficher soit *Ajouter*  soit *Mettre à jour* pour ne pas tromper l'utilisateur.
+
+====
