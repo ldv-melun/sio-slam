@@ -423,19 +423,18 @@ On donne 1/3 de la page au formulaire et le reste à la liste (en bootstrap, la 
 .src/app/component/home/home.component.html
 [source, html]
 ----
-<div class="container">
+<div class="w-100 p-2 ">
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-3">
             <app-hacker-form></app-hacker-form>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-9">
             <app-hacker-list></app-hacker-list>
         </div>
     </div>
 </div>
 
 ----
-
 
 À ce niveau, l'application devrait être opérationnelle.
 
@@ -589,9 +588,9 @@ Consulter la console sur le client (F12, onglet Console) pour vérifier que les 
 ====
 [start=2]
 
-. En vous basant sur le travail réalisé dans le TD Hello World (`getIPAddress`), appeler le service `LookupIpService` sur le clic du bouton *Lookup* afin de valoriser automatiquement les valeurs des `input` du formulaire.
+. En vous basant sur le travail réalisé dans le TD Hello World (`getIPAddress`), appeler le service `LookupIpService` sur le clic du bouton *Lookup* afin de valoriser automatiquement les valeurs des `input` du formulaire. (une compétence normalement acquise, même si vous aurez besoin de consulter la documentation)
 
-. Faire en sorte que l'action sur le bouton _Cancel_ réinitialise le formulaire en totalité.
+. Faire en sorte que l'action sur le bouton _Cancel_ réinitialise le formulaire en totalité. (réalisable sans avoir besoin de chercher une solution sur le net. Observez bien le code actuel.)
 
 //
 // . Le bouton _submit_ du formulaire est actuellement labellisé "Ajouter / Mettre à jour".
@@ -599,3 +598,98 @@ Consulter la console sur le client (F12, onglet Console) pour vérifier que les 
 // Modifier ce comportement afin d'afficher soit *Ajouter*  soit *Mettre à jour* pour ne pas tromper l'utilisateur.
 
 ====
+
+== composant ManagerHackerService
+
+[source, js]
+----
+import { Injectable } from '@angular/core';
+import { Hacker } from '../models/Hacker';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class ManagerHackerService {
+
+  constructor() { }
+
+  /**
+   * Get hackers stored client side (localStorage)
+   * @returns list of Hackers
+   */
+  getAllHackers(): Hacker[] {
+    return JSON.parse(localStorage.getItem('badguys') || '[]');
+  }
+
+}
+
+----
+
+== composant HackerListComponent
+
+Ce composant présente à l'utilisateur la liste des hackers stockés sur le client.
+
+=== Conception de la classe du composant
+
+Le composant ne gère pas directement les données stockées dans le `localStrorage`, pour cela il passe par le service dédié à cette tâche : `ManagerHackerService`
+
+[source, js]
+----
+import { Component } from '@angular/core';
+import { Hacker } from 'src/app/models/Hacker';
+import { ManagerHackerService } from 'src/app/service/manager-hacker.service';
+
+@Component({
+  selector: 'app-hacker-list',
+  templateUrl: './hacker-list.component.html',
+  styleUrls: ['./hacker-list.component.css']
+})
+export class HackerListComponent {
+
+  hackers: Hacker[]
+
+  constructor(private managerHackerServie: ManagerHackerService) {
+    this.hackers = managerHackerServie.getAllHackers()
+  }
+
+}
+----
+=== Conception du template du composant
+
+
+[source, html]
+----
+<style>
+    table.center {
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+
+<table *ngIf="hackers.length > 0; else hackersEmpty" class="table is-striped center">
+    <thead>
+        <tr>
+            <th>IP</th>
+            <th>Pays</th>
+            <th>Région</th>
+            <th>Ville</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let hacker of hackers">
+            <td>{{ hacker.ip }}</td>
+            <td>{{ hacker.countryName }}</td>
+            <td>{{ hacker.regionName }}</td>
+            <td>{{ hacker.city }}</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <div style="font-weight:bold;">Nombre d'Hackers : {{ hackers.length }}</div>
+    </tfoot>
+</table>
+
+<ng-template #hackersEmpty>
+    <p>Pas de hackers ! </p>
+</ng-template>
+
+----
