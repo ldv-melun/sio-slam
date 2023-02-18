@@ -489,9 +489,9 @@ import { Hacker } from 'src/app/models/Hacker';
 })
 export class HackerFormComponent {
 
-  hacker: Hacker =  new Hacker('','','','')
+   hacker: Hacker =  new Hacker('','','','')
 
-  hackerForm = new FormGroup({
+  hackerForm = new FormGroup({ <1>
     ip: new FormControl(''),
     countryName: new FormControl(''),
     regionName: new FormControl(''),
@@ -504,14 +504,16 @@ export class HackerFormComponent {
     console.log(this.hackerForm.value)
   }
 
-  clear() {
-    console.log("Cancel")
-    console.log(this.hackerForm.value);
+   clear() {
+    this.hackerForm.controls.ip.setValue("IP à renseigner") <2>
+    console.log("cancel")
+    console.log(this.hackerForm.value)
   }
-
 }
 
 ----
+<1>  Cet objet permet de créer un formulaire réactif. Toute modification apportée dans le formulaire HTML sera répercutée sur ces objets. La structure de l'objet `FormGroup` reproduit la structure de données `IHacker` (un interface au sens UML).
+<2> La mise à jour de la valeur du contrôle sera répercutée sur la vue.
 
 === Implémenter le template du composant HackerFormComponent
 
@@ -528,11 +530,12 @@ On fait usage des classes et icons de bootStrap (pour le choix des icones voir h
   <h4>Hacker</h4>
 
   <form [formGroup]="hackerForm" (ngSubmit)="onSubmit()"> <1> <2>
-    <div class="form-group">
-        <i class="bi bi-person"></i>
-        <input class="form-control" formControlName="ip"
-            placeholder="IP du hacker" required>
-    </div>
+     <div class="form-group">
+         <i class="bi bi-person"></i>
+         <input class="d-inline" formControlName="ip" <3>
+                placeholder="IP du hacker" required>
+         <button type="button" class="btn btn-success m-2 d-inline">Lookup</button>
+     </div>
     <div class="form-group">
         <i class="bi bi-globe"></i>
         <input class="form-control" formControlName="countryName"
@@ -556,7 +559,7 @@ On fait usage des classes et icons de bootStrap (pour le choix des icones voir h
 
     <div class="form-group pt-2">
         <div class="form-group float-end">
-            <button type="button" class="btn btn-success m-2" (click)="clear()">Cancel</button> <3>
+            <button type="button" class="btn btn-success m-2" (click)="clear()">Cancel</button> <4>
             <button type="submit" class="btn btn-success" [disabled]="hackerForm.invalid">
                 <span>
                     <i class="bi bi-plus"></i>
@@ -572,7 +575,13 @@ On fait usage des classes et icons de bootStrap (pour le choix des icones voir h
 
 <1> "hackerForm" est le nom de la propriété de la classe du composant, de type FormGroup
 <2> (ngSubmit)="onSubmit()". ngSubmit est un événement généré par Angular lorsque l'utilisateur soumet le formulaire. onSubmit() est le nom de la méthode de la classe du composant qui sera appelée.
-<3> (click)="clear()", même logique que (2), sur le clic d'un bouton.
+<3> `formControlName="ip"`, il faut reporter ici le nom des variables de type `FormControl` de la classe du component (par exemple `ip`)
+<4> (click)="clear()", même logique que (2), sur le clic d'un bouton.
+
+À ce niveau, l'application est toujours opérationnelle.
+Réglez les problèmes éventuels avant de poursuivre.
+
+Consulter la console sur le client (F12, onglet Console) pour vérifier que les méthodes associées aux événements `submit` et `clic` fonctionnent.
 
 
 == Travaux pratiques
@@ -580,10 +589,13 @@ On fait usage des classes et icons de bootStrap (pour le choix des icones voir h
 ====
 [start=2]
 
-. Le bouton _Cancel_ n'engage aucune action. Faire en sorte qu'il réinitialise le formulaire.
+. En vous basant sur le travail réalisé dans le TD Hello World (`getIPAddress`), appeler le service `LookupIpService` sur le clic du bouton *Lookup* afin de valoriser automatiquement les valeurs des `input` du formulaire.
 
-. Le bouton _submit_ du formulaire est actuellement labellisé "Ajouter / Mettre à jour".
-+
-Modifier ce comportement afin d'afficher soit *Ajouter*  soit *Mettre à jour* pour ne pas tromper l'utilisateur.
+. Faire en sorte que l'action sur le bouton _Cancel_ réinitialise le formulaire en totalité.
+
+//
+// . Le bouton _submit_ du formulaire est actuellement labellisé "Ajouter / Mettre à jour".
+// +
+// Modifier ce comportement afin d'afficher soit *Ajouter*  soit *Mettre à jour* pour ne pas tromper l'utilisateur.
 
 ====
