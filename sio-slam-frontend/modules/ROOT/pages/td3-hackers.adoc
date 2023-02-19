@@ -755,9 +755,9 @@ Indice 2 : Pour l'implémtation voir : https://stackoverflow.com/questions/52836
 
  . Le bouton _submit_ du formulaire est actuellement labellisé "Ajouter / Mettre à jour".
 +
-Modifier *dynamiquement* (comprendre par du code, pas staitiquement) ce comportement afin d'afficher soit *Ajouter*  soit *Mettre à jour* pour mieux informer l'utilisateur (UX)
+Modifier *dynamiquement* (comprendre par du code, pas statiquement) ce comportement afin d'afficher soit *Ajouter*, soit *Mettre à jour*, pour mieux informer l'utilisateur (UX)
 
-. Ajouter le lien vers le drapeau du pays (obtenu par l'API externe) comme nouvelle propriété de la <<_structure_des_données>> d'un Hacker, et présenter le drapeau dans la liste et la vue formulaire.
+. Ajouter le lien vers le drapeau du pays (obtenu par l'API externe) comme nouvelle propriété à la <<_structure_des_données>> d'un Hacker, et présenter le drapeau dans la liste et la vue formulaire.
 
 ====
 
