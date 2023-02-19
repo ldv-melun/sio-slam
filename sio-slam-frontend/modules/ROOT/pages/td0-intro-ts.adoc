@@ -96,6 +96,14 @@ class Personnage {
 // Main pour les tests
 let p1 = new Personnage(80) <3>
 console.log("La force du premier personnage est : " + p1.getForce()) <4>
+
+// (en référence au travail à faire)
+
+// c coder votre réponse ci-dessous
+
+
+// d etc.
+
 ----
 
 <1> Nous définissons un type personnalisé, nommé `Force`, composé de 4 constantes (formalisme _SNAKE_CASE_)
