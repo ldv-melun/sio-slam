@@ -1,4 +1,4 @@
-= Liste IP Hackers
+= IP Hackers App
 :toc-title: Table des matières
 :toclevels: 4
 :toc: top
@@ -173,9 +173,10 @@ Faire une pause.
 
 ====
 
-== Création des composants du domaine
+== Structure des données
 
-Nous définissons une structure de données qui caractérise un _hacker_ dans notre application (vous enrichirez cette représentation plus tard).
+Il est temps de définir une structure de données qui caractérise un _hacker_ dans notre application (vous enrichirez cette représentation plus tard).
+
 Cela passe par la définition d'une interface (sens UML) et d'une classe qui l'implémente. Ainsi, si l'on modifie l'interface, le développeur sera dans l'obligation de retoucher la ou les classes qui l'implémentent.
 
 .Hacker dans le modèle
@@ -744,7 +745,9 @@ Indice 2 : Pour l'implémtation voir : https://stackoverflow.com/questions/52836
 
  . Le bouton _submit_ du formulaire est actuellement labellisé "Ajouter / Mettre à jour".
 +
-Modifier ce comportement afin d'afficher soit *Ajouter*  soit *Mettre à jour* pour mieux informer l'utilisateur (UX)
+Modifier *dynamiquement* (comprendre par du code, pas staitiquement) ce comportement afin d'afficher soit *Ajouter*  soit *Mettre à jour* pour mieux informer l'utilisateur (UX)
+
+. Ajouter le lien vers le drapeau du pays (obtenu par l'API externe) comme nouvelle propriété de la <<_structure_des_données>> d'un Hacker, et présenter le drapeau dans la liste et la vue formulaire.
 
 ====
 
