@@ -14,6 +14,10 @@
 
 On souhaite concevoir une application web qui gère une liste d'IP à l'origine de requêtes malveillantes et qui tente de les géolocaliser via l'appel à un service distant, avec clé d'authentification.
 
+Dans notre contexte, on appelle _Hacker_ une machine à l'origine d'une requête HTTP malveillante. Cela ne veut pas pour autant dire que l'action est intentionnelle, en référence aux machines zombies...
+
+NOTE: Machine zombie ? Voir ici https://fr.wikipedia.org/wiki/Machine_zombie[Machine zombie sur wikipedia]
+
 == L'analyse
 
 On concevra une application qui présentera deux pages :
