@@ -370,7 +370,6 @@ Il est d'usage de réaliser une *maquette* avant de se lancer dans la création 
 
 TIP: Voir ici le concept de : https://fr.wikipedia.org/wiki/Wireframe_%28design%29[maquette]
 
-
 [plantuml, png]
 ----
 @startsalt
@@ -727,4 +726,26 @@ export class HackerListComponent {
 
 ----
 
-<1> Template nommé. Très utile lorsque que l'on souhaite différencier certaine partie, comme ici en cas de liste vide (voir la balise ouvrante de `<table`...)
+<1> Template nommé. Très utile lorsque que l'on souhaite différencier certaines parties, comme ici en cas de liste vide (voir la balise ouvrante de `<table`...)
+
+
+== Travaux pratiques
+
+====
+[start=4]
+
+. Faire en sorte que le `ManagerHackerService` alloue un ID unique à un nouvel objet Hacker juste avant sa sauvegarde (déclenchée par l'utilisateur lorsqu'il actionne le bouton "Ajouter" du formulaire)
++
+Indice 1 : Cela fait référence au concept de https://fr.wikipedia.org/wiki/Universally_unique_identifier[UUID - wikipedia]
++
+Indice 2 : Pour l'implémtation voir : https://stackoverflow.com/questions/52836247/how-to-generate-uuid-in-angular
+
+. Dans la vue en liste, ajouter les opérations de modification et suppression d'un item (se référer à la  <<_maquette_de_home_component_html>>, mais placer des icones significatifs à la place des mots "modifier" et "supprimer")
+
+ . Le bouton _submit_ du formulaire est actuellement labellisé "Ajouter / Mettre à jour".
++
+Modifier ce comportement afin d'afficher soit *Ajouter*  soit *Mettre à jour* pour mieux informer l'utilisateur (UX)
+
+====
+
+That's all !!
