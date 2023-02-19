@@ -599,6 +599,27 @@ Consulter la console sur le client (F12, onglet Console) pour vérifier que les 
 
 ====
 
+== Enregistrer des données sur le client
+
+Il existe 2 solutions pour stocker des données sur le client.
+
+* *Web Storage API* une solution pour enregistrer et retrouver de "petites" données, une donnée est stockée sous la *forme de couple (clé, valeur)*.
+
+* *IndexedDB API* le navigateur dispose ici d'un système de base de de données pour stocker des données complexes comme des enregistrements de données structurés ou encore des flux/fichier audio ou video.
+
+Nous utiliserons la solution _Web Storage API_ (plus simple à mettre en oeuvre, quitte à transformer une structure "complexe" en JSON).
+
+=== Web Storage API
+
+Il y a 2 API, localStorage (persistant)  et sessionStorage (le temps d'une session de page).
+
+NOTE: La zone de stockage est dédiée à une _origin_ (nom de domaine, ip). Ainsi du code JS d'une application provenant d'un domaine, disons _domaineA.com_, ne peut exploiter les données stockées sur le client d'un autre domaine, comme _domaineB.com_ par exemple.
+
+"LocalStorage is similar to sessionStorage, except that while localStorage data has no expiration time, sessionStorage data gets cleared when the page session ends — that is, when the page is closed. (localStorage data for a document loaded in a "private browsing" or "incognito" session is cleared when the last "private" tab is closed.)"
+-- https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API[Web_Storage_API - dev mozilla]
+
+IMPORTANT: Ne jamais sauvegarder des données sensibles sur le client !
+
 == composant ManagerHackerService
 
 [source, js]
@@ -614,7 +635,7 @@ export class ManagerHackerService {
   constructor() { }
 
   /**
-   * Get hackers stored client side (localStorage)
+   * Get hackers stored locally on client side (localStorage)
    * @returns list of Hackers
    */
   getAllHackers(): Hacker[] {
@@ -624,6 +645,18 @@ export class ManagerHackerService {
 }
 
 ----
+
+Nous avons fait le choix de sauvegarder le tableau des Hackers sous la forme d'un tableau JSON au format texte, obtenu via la méthode *`JSON.stringify`*. C'est pourquoi nous utilisons ici la *fonction inverse* pour charger le tablea en mémoire :  *`JSON.parse`*
+
+[TIP]
+====
+Les données du localstorage sont consultables sur le navogateur en mode développeur.
+
+image:localstorage-consult.png[localstorage consult]
+
+
+====
+
 
 == composant HackerListComponent
 
@@ -688,8 +721,10 @@ export class HackerListComponent {
     </tfoot>
 </table>
 
-<ng-template #hackersEmpty>
+<ng-template #hackersEmpty> <1>
     <p>Pas de hackers ! </p>
 </ng-template>
 
 ----
+
+<1> Template nommé. Très utile lorsque que l'on souhaite différencier certaine partie, comme ici en cas de liste vide (voir la balise ouvrante de `<table`...)

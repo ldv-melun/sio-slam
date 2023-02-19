@@ -357,7 +357,7 @@ Testons le résultat :
 .route : /table-multiplication
 image::composantTM.png[vue du composant]
 
-== Amélioration du composant TableMultiplication
+== Paramétrer le composant TableMultiplication
 
 Dans son état actuel, le composant affichera toujours la table de multiplication par 2. Nous allons le paramétrer afin de pouvoir lui faire afficher une table de multiplication à la demande.
 
