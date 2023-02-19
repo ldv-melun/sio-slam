@@ -278,12 +278,15 @@ Création des deux services (toujours à partir de la racine du projet)
 
 Nous utiliserons le service https://ipstack.com/product dans sa version gratuite.
 
-Réaliser les actions co-dessous.
+Réaliser les actions ci-dessous.
 
 . Créer un compte sur cette plateforme
 . Choisir une formule
 . Copier votre clé d'accès à l'API
-. Tester votre clé : http://api.ipstack.com/103.125.234.210?&output=json&access_key=VOTRE_CLE_ICI
+. Tester votre clé :
++
+http://api.ipstack.com/103.125.234.210?&output=json&access_key=VOTRE_CLE_ICI
+
 
 Exemple de résultat attendu.
 
@@ -582,6 +585,9 @@ Réglez les problèmes éventuels avant de poursuivre.
 
 Consulter la console sur le client (F12, onglet Console) pour vérifier que les méthodes associées aux événements `submit` et `clic` fonctionnent.
 
+Voici ce que peut donner notre template lorsqu'il est interprété par un navigateur :
+
+image:ui-formulaire-hacker.png[]
 
 == Travaux pratiques
 
