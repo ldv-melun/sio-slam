@@ -251,15 +251,15 @@ import { IHacker } from "./IHacker";
 
 export class Hacker implements IHacker {
 
-    constructor(
-        public countryName: string,
-        public regionName: string,
-        public city: string,
-        public ip: string,
-        public id?: string) {
-        // rien à faire de plus dans ce constructeur
+   constructor(
+       public ip: string,
+       public countryName: string,
+       public regionName: string,
+       public city: string,
+       public id?: string) {
+       // rien à faire de plus ici
+   }
 
-    }
 }
 
 ----
@@ -495,7 +495,7 @@ import { Hacker } from 'src/app/models/Hacker';
 })
 export class HackerFormComponent {
 
-   hacker: Hacker =  new Hacker('','','','')
+  hacker: Hacker =  new Hacker('','','','')
 
   hackerForm = new FormGroup({ <1>
     ip: new FormControl(''),
@@ -632,6 +632,11 @@ IMPORTANT: Ne jamais sauvegarder des données sensibles sur le client !
 
 == composant ManagerHackerService
 
+Pour une bonne répartition des responsabilités, nous décidons de placer la logique de gestion de la persistance des données dans la classe de service `ManagerHackerService`.
+
+L'exemple ci-dessous implémente la fonction qui permet de placer les données des hackers dans la mémoire vive sous la forme d'un tableau d'objets.
+
+
 [source, js]
 ----
 import { Injectable } from '@angular/core';
@@ -656,7 +661,7 @@ export class ManagerHackerService {
 
 ----
 
-Nous avons fait le choix de sauvegarder le tableau des Hackers sous la forme d'un tableau JSON au format texte, obtenu via la méthode *`JSON.stringify`*. C'est pourquoi nous utilisons ici la *fonction inverse* pour charger le tablea en mémoire :  *`JSON.parse`*
+Nous avons fait le choix de sauvegarder le tableau des Hackers sous la forme d'un tableau JSON au format texte, obtenu via la méthode *`JSON.stringify`*. C'est pourquoi nous utilisons ici la *fonction inverse*  *`JSON.parse`* pour charger le tableau en mémoire.
 
 [TIP]
 ====
@@ -672,10 +677,15 @@ image:localstorage-consult.png[localstorage consult]
 
 Ce composant présente à l'utilisateur la liste des hackers stockés sur le client.
 
+Pour réaliser sa fonction, ce composant s'appuie sur une instance de `ManagerHackerService` transmise par Angular.
+
 === Conception de la classe du composant
 
-Le composant ne gère pas directement les données stockées dans le `localStrorage`, pour cela il passe par le service dédié à cette tâche : `ManagerHackerService`
+Nous déclarons une propriété de type `ManagerHackerService`, directement en tant que paramètres du constructeur (c'est un sucre syntaxique bien pratique).
 
+On en profite pour initialiser la propriété `hackers` de ce composant (en fait, c'est le rôle d'un constructeur d'initialiser les attributs d'instance)
+
+.hacker-list.component.ts
 [source, js]
 ----
 import { Component } from '@angular/core';
@@ -700,6 +710,7 @@ export class HackerListComponent {
 === Conception du template du composant
 
 
+.hacker-list.component.html
 [source, html]
 ----
 <style>
@@ -738,6 +749,80 @@ export class HackerListComponent {
 ----
 
 <1> Template nommé. Très utile lorsque que l'on souhaite différencier certaines parties, comme ici en cas de liste vide (voir la balise ouvrante de `<table`...)
+
+
+On vient de voir comment le composant hacker-list.component.ts obtient la liste des hackers enregistrés sur le poste client.
+
+Pour enregistrer un nouvel Hacker, composant HackerFormComponent fera également appel à `ManagerHackerService`, qui devra donc être injecté dans le composant HackerFormComponent.
+
+Par contre, comment le composant HackerFormComponent obtiendra-t-il l'objet Hacker à modifier ?
+
+D'après la  <<_maquette_de_home_component_html>>, un lien _modifier_ sera placé sur chaque ligne des hackers dans la liste. Ceci nous laisse penser que le HackerListComponent connait HackerFormComponent... Hum, ce n'est pas dans les bonnes pratiques de faire un tel couplage, car ces 2 composants n'ont pas à être en dépendance directe (les fait que les deux templates soient placés sur la même page n'est que de la logique de l'UI). La solution la plus propre consiste à passer par `ManagerHackerService`, qui est déjà le composant commun à ces 2 composants.
+
+
+
+
+== Retour sur le composant HackerFormComponent
+
+Ce composant aura la charge de permettre la création et la modification d'un Hacker.
+
+Pour cela il s'appuie sur 2 types de composants essentiels :
+
+. *FormControl* : Angular s'assure que ces objets sont synchronisés avec leur représentation dans le DOM (rendu et interaction avec l'utilisateur). Ces objets techniques peuvent être associés à des objets `Validators` (hos du champ de ce TD).
+
+. *ManagerHackerService* pour la persistance (lecture et écriture) de la liste des objets `Hacker`. On demande à Angular de nous injecter une instance de cette classe via le constructeur (comme pour `HackerListComponent`)
+
+Le composant `HackerFormComponent` va avoir besoin de transférer les données du formulaire dans les propriétés d'un objet Hacker et vice-versa. Nous décidons de représenter ces fonctions par 2 méthodes privées :
+
+
+.hacker-form.component.ts
+[source, js]
+----
+
+  /**
+   * Create instance of Hacker from hackerForm data
+   * @returns a ref to Hacker object
+   */
+  private hackerForm_to_hacker(): IHacker {
+    return new Hacker(
+      this.hackerForm.controls.ip.value ?? '', <1>
+      this.hackerForm.controls.countryName.value ?? '',
+      this.hackerForm.controls.regionName.value ?? '',
+      this.hackerForm.controls.city.value ?? '',
+      this.hackerForm.controls.id.value ?? undefined)
+  }
+
+  /**
+   * Initializes this.hackerForm from parameter hacker instance (object)
+   */
+  private hacker_to_hackerForm(hacker: IHacker): void {
+    this.hackerForm.patchValue({ <2>
+      ip: hacker.ip,
+      countryName: hacker.countryName,
+      regionName: hacker.regionName,
+      city: hacker.city,
+      id: hacker.id ?? ''
+    })
+  }
+----
+
+<1> <2> L'opérateur ?? nous permet de définir une valeur par défaut
+
+<2> La méthode `patchValue` permet de sélectionner les attributs à mettre à jour. Ici tous.
+
+
+
+
+Afin de Pour réaliser
+
+TODO expliquer que l'un des rôles de la classe du composant est de *placer les valeurs des propriétés* dans les `FormControler` et *inversement*. Nous appellerons ces fonctions hacker_to_form et form_to_hacker
+
+
+TODO Ajout d'une fonction d'enregistrement de la liste des hackers (TODO mettre sur la voie ?)
+
+TODO expliquer le role des objets FormControl :
+
+TODO TD Multiplication, donner l'arbre de hiérarchie aux étudiants...
 
 
 == Travaux pratiques
