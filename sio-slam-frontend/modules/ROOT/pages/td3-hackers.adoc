@@ -760,7 +760,15 @@ Par contre, comment le composant HackerFormComponent obtiendra-t-il l'objet Hack
 D'après la  <<_maquette_de_home_component_html>>, un lien _modifier_ sera placé sur chaque ligne des hackers dans la liste. Ceci nous laisse penser que le HackerListComponent connait HackerFormComponent... Hum, ce n'est pas dans les bonnes pratiques de faire un tel couplage, car ces 2 composants n'ont pas à être en dépendance directe (les fait que les deux templates soient placés sur la même page n'est que de la logique de l'UI). La solution la plus propre consiste à passer par `ManagerHackerService`, qui est déjà le composant commun à ces 2 composants.
 
 
+  ngOnInit(): void {
+    this.managerHackerService.editEvent
+      .subscribe((hacker: IHacker) => {
+        console.log('Event message editEvent')
+        this.hacker_to_hackerForm(hacker)
+      })
+  }
 
+TODO Demander aux étudiants de concevoir les fonctions de transfert
 
 == Retour sur le composant HackerFormComponent
 
