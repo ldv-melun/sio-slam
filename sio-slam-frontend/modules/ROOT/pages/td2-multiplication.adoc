@@ -481,4 +481,32 @@ hide method
 ====
 
 
+[plantuml,  format=png]
+....
+@startuml
+
+class Root
+class Header
+class Router
+class Footer
+
+class TableMult
+class PageTableMult
+class PageTablesDesMult
+
+Root --> Header
+Root --> Router
+Root --> Footer
+Router --> PageTableMult
+Router --> PageTablesDesMult
+
+PageTableMult -->"1  " TableMult
+PageTablesDesMult -->"    1..*  " TableMult
+
+hide circle
+hide method
+@enduml
+....
+
+
 //La suite > xref:sio-component:ROOT:_ch02-hackers.adoc[app Hackers]

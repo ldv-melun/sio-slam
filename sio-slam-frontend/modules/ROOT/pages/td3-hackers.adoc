@@ -707,6 +707,7 @@ export class HackerListComponent {
 
 }
 ----
+
 === Conception du template du composant
 
 
@@ -730,7 +731,7 @@ export class HackerListComponent {
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let hacker of hackers">
+        <tr *ngFor="let hacker of hackers"> <1>
             <td>{{ hacker.ip }}</td>
             <td>{{ hacker.countryName }}</td>
             <td>{{ hacker.regionName }}</td>
@@ -742,14 +743,14 @@ export class HackerListComponent {
     </tfoot>
 </table>
 
-<ng-template #hackersEmpty> <1>
+<ng-template #hackersEmpty> <2>
     <p>Pas de hackers ! </p>
 </ng-template>
 
 ----
+<1> Exploitation de la propriété `hackers` de la classe du composant (une itération sur l'ensemble des éléments de la collection)
 
-<1> Template nommé. Très utile lorsque que l'on souhaite différencier certaines parties, comme ici en cas de liste vide (voir la balise ouvrante de `<table`...)
-
+<2> Template nommé. Très utile lorsque que l'on souhaite différencier certaines parties, comme ici en cas de liste vide (voir la balise ouvrante de `<table`...)
 
 On vient de voir comment le composant hacker-list.component.ts obtient la liste des hackers enregistrés sur le poste client.
 
@@ -757,22 +758,169 @@ Pour enregistrer un nouvel Hacker, composant HackerFormComponent fera également
 
 Par contre, comment le composant HackerFormComponent obtiendra-t-il l'objet Hacker à modifier ?
 
-D'après la  <<_maquette_de_home_component_html>>, un lien _modifier_ sera placé sur chaque ligne des hackers dans la liste. Ceci nous laisse penser que le HackerListComponent connait HackerFormComponent... Hum, ce n'est pas dans les bonnes pratiques de faire un tel couplage, car ces 2 composants n'ont pas à être en dépendance directe (les fait que les deux templates soient placés sur la même page n'est que de la logique de l'UI). La solution la plus propre consiste à passer par `ManagerHackerService`, qui est déjà le composant commun à ces 2 composants.
+== Communication entre composants
+
+D'après la  <<_maquette_de_home_component_html>>, un lien _"modifier"_ sera placé sur chaque ligne des hackers de la liste. Ceci nous laisse penser que le HackerListComponent connait `HackerFormComponent`... Or, ce n'est pas dans les bonnes pratiques de faire un tel couplage, car ces 2 composants n'ont pas à être en dépendance directe. En effet, le fait que les deux templates soient placés sur la même page tient de la logique de l'UI seulement.
+
+La solution la plus propre consiste à passer par `ManagerHackerService`, qui est déjà le composant commun à ces 2 composants.
 
 
-  ngOnInit(): void {
-    this.managerHackerService.editEvent
-      .subscribe((hacker: IHacker) => {
-        console.log('Event message editEvent')
-        this.hacker_to_hackerForm(hacker)
-      })
+[plantuml,  format=png]
+....
+@startuml
+
+class HackerFormComponent
+class HackerListComponent
+class ManagerHackerService
+
+HackerFormComponent --> "1    " ManagerHackerService
+HackerListComponent --> "1" ManagerHackerService
+
+hide circle
+hide method
+@enduml
+....
+
+L'idée est de permettre à l'utilisateur de déclencher un événement (_Event_), par une action sur un lien par exemple, qui sera intercepté (exploité) par `HackerFormComponent`.
+
+Voyons cela en détail.
+
+Voici la nouvelle version de `hacker-list.component.html`
+
+.hacker-list.component.html
+[source, html]
+----
+<style>
+    table.center {
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+
+<table *ngIf="hackers.length > 0; else hackersEmpty" class="table is-striped center">
+    <thead>
+        <tr>
+            <th>IP</th>
+            <th>Pays</th>
+            <th>Région</th>
+            <th>Ville</th>
+            <th>Opérations</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let hacker of hackers">
+            <td>{{ hacker.ip }}</td>
+            <td>{{ hacker.countryName }}</td>
+            <td>{{ hacker.regionName }}</td>
+            <td>{{ hacker.city }}</td>
+            <td>
+              <i class="bi bi-pencil-square"
+                 (click)="editHacker(hacker)" <1>
+                 style="color: green; cursor: pointer;">
+              </i>
+            </td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <div style="font-weight:bold;">Nombre d'Hackers : {{ hackers.length }}</div>
+    </tfoot>
+</table>
+
+<ng-template #hackersEmpty>
+    <p>Pas de hackers ! </p>
+</ng-template>
+
+----
+<1> `editHacker(hacker)`, une nouvelle méthode du composant.
+
+Cette méthode soutraite au manager le travail demandé.
+
+.hacker-list.component.ts
+[source, js]
+----
+[...]
+  editHacker(hacker: Hacker) {
+    this.managerHackerService.editHacker(hacker)  <1>
+  }
+[...]
+----
+
+<1> Une nouvelle méthode de la classe `ManagerHackerService`
+
+Pour communiquer avec un composant, nous avons vu (TD Multiplication) qu'un composant parent peut contrôler ses composants enfants via leurs attributs (propriété décorée @Input dans la classe du composant).
+
+Nous voyons ici un autre façon d'opérer, plus générale, qui permet à 2 composants, et plus, de communiquer entre eux, sans nécessairement être liés par une relation parent-enfant. Cette façon de faire passe par la *gestion d'événements*, sorte de signaux transmis globalement dans l'arbre DOM.  C'est ainsi qu'un enfant pourrait passer des informations à son parent par exemple.
+
+Nous souhaitons que notre manager puisse lancer un événement relatif à la demande de modification (edition, update) d'un objet Hacker. Nous nommons `editHackerEvent` cet événement.
+
+.manager-hacker.service.ts
+[source, typescript]
+----
+import { EventEmitter, Injectable, Output } from '@angular/core';
+import { Hacker } from '../models/Hacker';
+import { IHacker } from '../models/IHacker';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class ManagerHackerService {
+
+  constructor() { }
+
+  @Output() editHackerEvent = new EventEmitter<IHacker>() <1>
+
+  editHacker(hacker: IHacker) {
+    this.editHackerEvent.emit(hacker)  <2>
   }
 
-TODO Demander aux étudiants de concevoir les fonctions de transfert
+  /**
+   * Get hackers stored locally on client side (localStorage)
+   * @returns list of Hackers
+   */
+  getAllHackers(): Hacker[] {
+    return JSON.parse(localStorage.getItem('badguys') || '[]');
+  }
+
+}
+
+----
+
+<1> Déclaration et initialisation d'un objet émetteur d'événements
+
+<2> Lancement d'un événement.
+
+L'événement est paramétré - d'après sa déclaration - ainsi la référence à un objet Hacker sera transmise à tous les objets qui se déclareront concernés par cet événement - dans notre cas, ce sera le formulaire (l'objet HackerFormComponent)
+
+Dans l'état, le projet devrait être stable.
+
+Gérer les problèmes éventuels avant de poursuivre.
 
 == Retour sur le composant HackerFormComponent
 
-Ce composant aura la charge de permettre la création et la modification d'un Hacker.
+Vous vous êtes rendu compte que l'événement lancé au déclenchement de l'édition d'un hacker ne génère aucune action visible ! et pour cause, l'événement est tout simplement ignoré par l'application ! Corrigeons cela.
+
+.hacker-form.component.ts
+[source, js]
+----
+[...]
+  ngOnInit(): void {
+    this.managerHackerService.editHackerEvent
+      .subscribe((hacker: IHacker) => { <1>
+        console.log('Event message editEvent')
+        this.hacker_to_hackerForm(hacker) <2>
+      })
+  }
+[...]
+----
+<1> L'instance de notre formulaire s'abonne aux événements _editHackerEvent_ du manger.
+<2> Ici l'opération réalisée consiste à placer les valeurs des propriétés de l'instance référencée par _hacker_ dans les champs de contrôle du formulaire.
+
+
+////
+TODO Demander aux étudiants de concevoir les fonctions de transfert ?
+////
+
+Le composant formulaire a la charge de permettre la création et la modification d'un Hacker.
 
 Pour cela il s'appuie sur 2 types de composants essentiels :
 
@@ -780,8 +928,7 @@ Pour cela il s'appuie sur 2 types de composants essentiels :
 
 . *ManagerHackerService* pour la persistance (lecture et écriture) de la liste des objets `Hacker`. On demande à Angular de nous injecter une instance de cette classe via le constructeur (comme pour `HackerListComponent`)
 
-Le composant `HackerFormComponent` va avoir besoin de transférer les données du formulaire dans les propriétés d'un objet Hacker et vice-versa. Nous décidons de représenter ces fonctions par 2 méthodes privées :
-
+Le composant `HackerFormComponent` va avoir besoin de transférer les données du formulaire dans les propriétés d'un objet Hacker et *vice-versa*. Nous décidons de représenter ces fonctions par 2 méthodes privées que nous nommons _hackerForm_to_hacker_ et _hacker_to_hackerForm_.
 
 .hacker-form.component.ts
 [source, js]
@@ -806,29 +953,23 @@ Le composant `HackerFormComponent` va avoir besoin de transférer les données d
   private hacker_to_hackerForm(hacker: IHacker): void {
     this.hackerForm.patchValue({ <2>
       ip: hacker.ip,
-      countryName: hacker.countryName,
-      regionName: hacker.regionName,
-      city: hacker.city,
-      id: hacker.id ?? ''
+      // à compléter !
     })
   }
 ----
 
 <1> <2> L'opérateur ?? nous permet de définir une valeur par défaut
 
-<2> La méthode `patchValue` permet de sélectionner les attributs à mettre à jour. Ici tous.
+<2> La méthode `patchValue` permet de sélectionner les attributs à mettre à jour. Ici tous doivent l'être.
+
+
+////
+
+Il existe des façons plus génériques de réaliser ce type d'opération, voir https://stackoverflow.com/questions/49997765/reactive-forms-correctly-convert-form-value-to-model-object
+////
 
 
 
-
-Afin de Pour réaliser
-
-TODO expliquer que l'un des rôles de la classe du composant est de *placer les valeurs des propriétés* dans les `FormControler` et *inversement*. Nous appellerons ces fonctions hacker_to_form et form_to_hacker
-
-
-TODO Ajout d'une fonction d'enregistrement de la liste des hackers (TODO mettre sur la voie ?)
-
-TODO expliquer le role des objets FormControl :
 
 TODO TD Multiplication, donner l'arbre de hiérarchie aux étudiants...
 
@@ -838,13 +979,16 @@ TODO TD Multiplication, donner l'arbre de hiérarchie aux étudiants...
 ====
 [start=4]
 
-. Faire en sorte que le `ManagerHackerService` alloue un ID unique à un nouvel objet Hacker juste avant sa sauvegarde (déclenchée par l'utilisateur lorsqu'il actionne le bouton "Ajouter" du formulaire)
+. Rendre opérationnel l'enregistrement d'un nouvel hacker
+. Rendre opérationnel la modification d'un hacker de la liste
+
+. Faire en sorte qu'au moment de la création d'un nouvel hacker, un ID unique lui soit alloué. C'est le `ManagerHackerService` qui se chargera de créer cet ID unique juste avant la sauvegarde (déclenchée par l'utilisateur lorsqu'il actionne le bouton "Ajouter" du formulaire)
 +
 Indice 1 : Cela fait référence au concept de https://fr.wikipedia.org/wiki/Universally_unique_identifier[UUID - wikipedia]
 +
 Indice 2 : Pour l'implémtation voir : https://stackoverflow.com/questions/52836247/how-to-generate-uuid-in-angular
 
-. Dans la vue en liste, ajouter les opérations de modification et suppression d'un item (se référer à la  <<_maquette_de_home_component_html>>, mais placer des icones significatifs à la place des mots "modifier" et "supprimer")
+. Dans la vue en liste, ajouter l'opérations de suppression d'un item (se référer à la  <<_maquette_de_home_component_html>>)
 
  . Le bouton _submit_ du formulaire est actuellement labellisé "Ajouter / Mettre à jour".
 +
