@@ -969,11 +969,6 @@ Il existe des façons plus génériques de réaliser ce type d'opération, voir 
 ////
 
 
-
-
-TODO TD Multiplication, donner l'arbre de hiérarchie aux étudiants...
-
-
 == Travaux pratiques
 
 ====
