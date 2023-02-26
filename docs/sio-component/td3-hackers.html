@@ -132,6 +132,9 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="td2-multiplication.html">Angular Parent&#8594;Enfant &amp; Router&#8594;Pages</a>
   </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="td3-hackers.html">Communication généralisée etre composants</a>
+  </li>
 </ul>
   </li>
 </ul>
@@ -336,7 +339,8 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index-glossaire.html">SIO-SLAM</a></li>
-    <li><a href="td3-hackers.html">IP Hackers App</a></li>
+    <li>Frontend</li>
+    <li><a href="td3-hackers.html">Communication généralisée etre composants</a></li>
   </ul>
 </nav>
   <div class="edit-this-page"><a href="file:///home/kpu/ldv/sio/antora-sio-slam/sio-slam/sio-slam-frontend/modules/ROOT/pages/td3-hackers.adoc">Edit this Page</a></div>
@@ -389,13 +393,15 @@
 <li><a href="#_web_storage_api">Web Storage API</a></li>
 </ul>
 </li>
-<li><a href="#_composant_managerhackerservice">composant ManagerHackerService</a></li>
-<li><a href="#_composant_hackerlistcomponent">composant HackerListComponent</a>
+<li><a href="#_composant_managerhackerservice">Composant ManagerHackerService</a></li>
+<li><a href="#_composant_hackerlistcomponent">Composant HackerListComponent</a>
 <ul class="sectlevel2">
 <li><a href="#_conception_de_la_classe_du_composant">Conception de la classe du composant</a></li>
 <li><a href="#_conception_du_template_du_composant">Conception du template du composant</a></li>
 </ul>
 </li>
+<li><a href="#_communication_entre_composants">Communication entre composants</a></li>
+<li><a href="#_exploitation_des_données_de_formulaire">Exploitation des données de formulaire</a></li>
 <li><a href="#_travaux_pratiques_3">Travaux pratiques</a></li>
 </ul>
 </div>
@@ -734,15 +740,15 @@ export interface IHacker {
 
 export class Hacker implements IHacker {
 
-    constructor(
-        public countryName: string,
-        public regionName: string,
-        public city: string,
-        public ip: string,
-        public id?: string) {
-        // rien à faire de plus dans ce constructeur
+   constructor(
+       public ip: string,
+       public countryName: string,
+       public regionName: string,
+       public city: string,
+       public id?: string) {
+       // rien à faire de plus ici
+   }
 
-    }
 }</code></pre>
 </div>
 </div>
@@ -1065,7 +1071,7 @@ import { Hacker } from 'src/app/models/Hacker';
 })
 export class HackerFormComponent {
 
-   hacker: Hacker =  new Hacker('','','','')
+  hacker: Hacker =  new Hacker('','','','')
 
   hackerForm = new FormGroup({ <i class="conum" data-value="1"></i><b>(1)</b>
     ip: new FormControl(''),
@@ -1277,8 +1283,14 @@ Ne jamais sauvegarder des données sensibles sur le client !
 </div>
 </div>
 <div class="sect1">
-<h2 id="_composant_managerhackerservice"><a class="anchor" href="#_composant_managerhackerservice"></a>composant ManagerHackerService</h2>
+<h2 id="_composant_managerhackerservice"><a class="anchor" href="#_composant_managerhackerservice"></a>Composant ManagerHackerService</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>Pour une bonne répartition des responsabilités, nous décidons de placer la logique de gestion de la persistance des données dans la classe de service <code>ManagerHackerService</code>.</p>
+</div>
+<div class="paragraph">
+<p>L&#8217;exemple ci-dessous implémente la fonction qui permet de placer les données des hackers dans la mémoire vive sous la forme d&#8217;un tableau d&#8217;objets.</p>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">import { Injectable } from '@angular/core';
@@ -1303,7 +1315,7 @@ export class ManagerHackerService {
 </div>
 </div>
 <div class="paragraph">
-<p>Nous avons fait le choix de sauvegarder le tableau des Hackers sous la forme d&#8217;un tableau JSON au format texte, obtenu via la méthode <strong><code>JSON.stringify</code></strong>. C&#8217;est pourquoi nous utilisons ici la <strong>fonction inverse</strong> pour charger le tablea en mémoire :  <strong><code>JSON.parse</code></strong></p>
+<p>Nous avons fait le choix de sauvegarder le tableau des Hackers sous la forme d&#8217;un tableau JSON au format texte, obtenu via la méthode <strong><code>JSON.stringify</code></strong>. C&#8217;est pourquoi nous utilisons ici la <strong>fonction inverse</strong>  <strong><code>JSON.parse</code></strong> pour charger le tableau en mémoire.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -1325,17 +1337,24 @@ export class ManagerHackerService {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_composant_hackerlistcomponent"><a class="anchor" href="#_composant_hackerlistcomponent"></a>composant HackerListComponent</h2>
+<h2 id="_composant_hackerlistcomponent"><a class="anchor" href="#_composant_hackerlistcomponent"></a>Composant HackerListComponent</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Ce composant présente à l&#8217;utilisateur la liste des hackers stockés sur le client.</p>
 </div>
+<div class="paragraph">
+<p>Pour réaliser sa fonction, ce composant s&#8217;appuie sur une instance de <code>ManagerHackerService</code> transmise par Angular.</p>
+</div>
 <div class="sect2">
 <h3 id="_conception_de_la_classe_du_composant"><a class="anchor" href="#_conception_de_la_classe_du_composant"></a>Conception de la classe du composant</h3>
 <div class="paragraph">
-<p>Le composant ne gère pas directement les données stockées dans le <code>localStrorage</code>, pour cela il passe par le service dédié à cette tâche : <code>ManagerHackerService</code></p>
+<p>Nous déclarons une propriété de type <code>ManagerHackerService</code>, directement en tant que paramètres du constructeur (c&#8217;est un sucre syntaxique bien pratique).</p>
+</div>
+<div class="paragraph">
+<p>On en profite pour initialiser la propriété <code>hackers</code> de ce composant (en fait, c&#8217;est le rôle d&#8217;un constructeur d&#8217;initialiser les attributs d&#8217;instance)</p>
 </div>
 <div class="listingblock">
+<div class="title">hacker-list.component.ts</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">import { Component } from '@angular/core';
 import { Hacker } from 'src/app/models/Hacker';
@@ -1361,6 +1380,7 @@ export class HackerListComponent {
 <div class="sect2">
 <h3 id="_conception_du_template_du_composant"><a class="anchor" href="#_conception_du_template_du_composant"></a>Conception du template du composant</h3>
 <div class="listingblock">
+<div class="title">hacker-list.component.html</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-html hljs" data-lang="html">&lt;style&gt;
     table.center {
@@ -1379,7 +1399,7 @@ export class HackerListComponent {
         &lt;/tr&gt;
     &lt;/thead&gt;
     &lt;tbody&gt;
-        &lt;tr *ngFor="let hacker of hackers"&gt;
+        &lt;tr *ngFor="let hacker of hackers"&gt; <i class="conum" data-value="1"></i><b>(1)</b>
             &lt;td&gt;{{ hacker.ip }}&lt;/td&gt;
             &lt;td&gt;{{ hacker.countryName }}&lt;/td&gt;
             &lt;td&gt;{{ hacker.regionName }}&lt;/td&gt;
@@ -1391,7 +1411,7 @@ export class HackerListComponent {
     &lt;/tfoot&gt;
 &lt;/table&gt;
 
-&lt;ng-template #hackersEmpty&gt; <i class="conum" data-value="1"></i><b>(1)</b>
+&lt;ng-template #hackersEmpty&gt; <i class="conum" data-value="2"></i><b>(2)</b>
     &lt;p&gt;Pas de hackers ! &lt;/p&gt;
 &lt;/ng-template&gt;</code></pre>
 </div>
@@ -1400,10 +1420,274 @@ export class HackerListComponent {
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Exploitation de la propriété <code>hackers</code> de la classe du composant (une itération sur l&#8217;ensemble des éléments de la collection)</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
 <td>Template nommé. Très utile lorsque que l&#8217;on souhaite différencier certaines parties, comme ici en cas de liste vide (voir la balise ouvrante de <code>&lt;table</code>&#8230;&#8203;)</td>
 </tr>
 </table>
 </div>
+<div class="paragraph">
+<p>On vient de voir comment le composant hacker-list.component.ts obtient la liste des hackers enregistrés sur le poste client.</p>
+</div>
+<div class="paragraph">
+<p>Pour enregistrer un nouvel Hacker, composant HackerFormComponent fera également appel à <code>ManagerHackerService</code>, qui devra donc être injecté dans le composant HackerFormComponent.</p>
+</div>
+<div class="paragraph">
+<p>Par contre, comment le composant HackerFormComponent obtiendra-t-il l&#8217;objet Hacker à modifier ?</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_communication_entre_composants"><a class="anchor" href="#_communication_entre_composants"></a>Communication entre composants</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>D&#8217;après la  <a href="#_maquette_de_home_component_html">Maquette de home.component.html</a>, un lien <em>"modifier"</em> sera placé sur chaque ligne des hackers de la liste. Ceci nous laisse penser que le HackerListComponent connait <code>HackerFormComponent</code>&#8230;&#8203; Or, ce n&#8217;est pas dans les bonnes pratiques de faire un tel couplage, car ces 2 composants n&#8217;ont pas à être en dépendance directe. En effet, le fait que les deux templates soient placés sur la même page tient de la logique de l&#8217;UI seulement.</p>
+</div>
+<div class="paragraph">
+<p>La solution la plus propre consiste à passer par <code>ManagerHackerService</code>, qui est déjà le composant commun à ces 2 composants.</p>
+</div>
+<div class="imageblock kroki">
+<div class="content">
+<img src="_images/diag-abde3af077a18716415b7c6edc956156020fbfd4.png" alt="Diagram">
+</div>
+</div>
+<div class="paragraph">
+<p>L&#8217;idée est de permettre à l&#8217;utilisateur de déclencher un événement (<em>Event</em>), par une action sur un lien par exemple, qui sera intercepté (exploité) par <code>HackerFormComponent</code>.</p>
+</div>
+<div class="paragraph">
+<p>Voyons cela en détail.</p>
+</div>
+<div class="paragraph">
+<p>Voici la nouvelle version de <code>hacker-list.component.html</code></p>
+</div>
+<div class="listingblock">
+<div class="title">hacker-list.component.html</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-html hljs" data-lang="html">&lt;style&gt;
+    table.center {
+        margin-left: auto;
+        margin-right: auto;
+    }
+&lt;/style&gt;
+
+&lt;table *ngIf="hackers.length &gt; 0; else hackersEmpty" class="table is-striped center"&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;IP&lt;/th&gt;
+            &lt;th&gt;Pays&lt;/th&gt;
+            &lt;th&gt;Région&lt;/th&gt;
+            &lt;th&gt;Ville&lt;/th&gt;
+            &lt;th&gt;Opérations&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr *ngFor="let hacker of hackers"&gt;
+            &lt;td&gt;{{ hacker.ip }}&lt;/td&gt;
+            &lt;td&gt;{{ hacker.countryName }}&lt;/td&gt;
+            &lt;td&gt;{{ hacker.regionName }}&lt;/td&gt;
+            &lt;td&gt;{{ hacker.city }}&lt;/td&gt;
+            &lt;td&gt;
+              &lt;i class="bi bi-pencil-square"
+                 (click)="editHacker(hacker)" <i class="conum" data-value="1"></i><b>(1)</b>
+                 style="color: green; cursor: pointer;"&gt;
+              &lt;/i&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+    &lt;tfoot&gt;
+        &lt;div style="font-weight:bold;"&gt;Nombre d'Hackers : {{ hackers.length }}&lt;/div&gt;
+    &lt;/tfoot&gt;
+&lt;/table&gt;
+
+&lt;ng-template #hackersEmpty&gt;
+    &lt;p&gt;Pas de hackers ! &lt;/p&gt;
+&lt;/ng-template&gt;</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td><code>editHacker(hacker)</code>, une nouvelle méthode du composant.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Cette méthode soutraite au manager le travail demandé.</p>
+</div>
+<div class="listingblock">
+<div class="title">hacker-list.component.ts</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">[...]
+  editHacker(hacker: Hacker) {
+    this.managerHackerService.editHacker(hacker)  <i class="conum" data-value="1"></i><b>(1)</b>
+  }
+[...]</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Une nouvelle méthode de la classe <code>ManagerHackerService</code></td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Pour communiquer avec un composant, nous avons vu (TD Multiplication) qu&#8217;un composant parent peut contrôler ses composants enfants via leurs attributs (propriété décorée @Input dans la classe du composant).</p>
+</div>
+<div class="paragraph">
+<p>Nous voyons ici un autre façon d&#8217;opérer, plus générale, qui permet à 2 composants, et plus, de communiquer entre eux, sans nécessairement être liés par une relation parent-enfant. Cette façon de faire passe par la <strong>gestion d&#8217;événements</strong>, sorte de signaux transmis globalement dans l&#8217;arbre DOM.  C&#8217;est ainsi qu&#8217;un enfant pourrait passer des informations à son parent par exemple.</p>
+</div>
+<div class="paragraph">
+<p>Nous souhaitons que notre manager puisse lancer un événement relatif à la demande de modification (edition, update) d&#8217;un objet Hacker. Nous nommons <code>editHackerEvent</code> cet événement.</p>
+</div>
+<div class="listingblock">
+<div class="title">manager-hacker.service.ts</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { EventEmitter, Injectable, Output } from '@angular/core';
+import { Hacker } from '../models/Hacker';
+import { IHacker } from '../models/IHacker';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class ManagerHackerService {
+
+  constructor() { }
+
+  @Output() editHackerEvent = new EventEmitter&lt;IHacker&gt;() <i class="conum" data-value="1"></i><b>(1)</b>
+
+  editHacker(hacker: IHacker) {
+    this.editHackerEvent.emit(hacker)  <i class="conum" data-value="2"></i><b>(2)</b>
+  }
+
+  /**
+   * Get hackers stored locally on client side (localStorage)
+   * @returns list of Hackers
+   */
+  getAllHackers(): Hacker[] {
+    return JSON.parse(localStorage.getItem('badguys') || '[]');
+  }
+
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Déclaration et initialisation d&#8217;un objet émetteur d&#8217;événements (@Output)</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Lancement d&#8217;un événement.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>L&#8217;événement est paramétré - d&#8217;après sa déclaration - ainsi la référence à un objet Hacker sera transmise à tous les objets qui se déclareront concernés par cet événement - dans notre cas, ce sera le formulaire (l&#8217;objet HackerFormComponent)</p>
+</div>
+<div class="paragraph">
+<p>Dans l&#8217;état, le projet devrait être stable.</p>
+</div>
+<div class="paragraph">
+<p>Gérer les problèmes éventuels avant de poursuivre.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_exploitation_des_données_de_formulaire"><a class="anchor" href="#_exploitation_des_données_de_formulaire"></a>Exploitation des données de formulaire</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Vous vous êtes rendu compte que l&#8217;événement lancé au déclenchement de l&#8217;édition d&#8217;un hacker ne génère aucune action visible ! et pour cause, l&#8217;événement est tout simplement ignoré par l&#8217;application ! Corrigeons cela.</p>
+</div>
+<div class="listingblock">
+<div class="title">hacker-form.component.ts</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">[...]
+  ngOnInit(): void {
+    this.managerHackerService.editHackerEvent
+      .subscribe((hacker: IHacker) =&gt; { <i class="conum" data-value="1"></i><b>(1)</b>
+        console.log('Event message editEvent')
+        this.hacker_to_hackerForm(hacker) <i class="conum" data-value="2"></i><b>(2)</b>
+      })
+  }
+[...]</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>L&#8217;instance de notre formulaire s&#8217;abonne aux événements <em>editHackerEvent</em> du manger.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Ici l&#8217;opération réalisée consiste à placer les valeurs des propriétés de l&#8217;instance référencée par <em>hacker</em> dans les champs de contrôle du formulaire.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Le composant formulaire a la charge de permettre la création et la modification d&#8217;un Hacker.</p>
+</div>
+<div class="paragraph">
+<p>Pour cela il s&#8217;appuie sur 2 types de composants essentiels :</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>FormControl</strong> : Angular s&#8217;assure que ces objets sont synchronisés avec leur représentation dans le DOM (rendu et interaction avec l&#8217;utilisateur). Ces objets techniques peuvent être associés à des objets <code>Validators</code> (hos du champ de ce TD).</p>
+</li>
+<li>
+<p><strong>ManagerHackerService</strong> pour la persistance (lecture et écriture) de la liste des objets <code>Hacker</code>. On demande à Angular de nous injecter une instance de cette classe via le constructeur (comme pour <code>HackerListComponent</code>)</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Le composant <code>HackerFormComponent</code> va avoir besoin de transférer les données du formulaire dans les propriétés d&#8217;un objet Hacker et <strong>vice-versa</strong>. Nous décidons de représenter ces fonctions par 2 méthodes privées que nous nommons <em>hackerForm_to_hacker</em> et <em>hacker_to_hackerForm</em>.</p>
+</div>
+<div class="listingblock">
+<div class="title">hacker-form.component.ts</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">  /**
+   * Create instance of Hacker from hackerForm data
+   * @returns a ref to Hacker object
+   */
+  private hackerForm_to_hacker(): IHacker {
+    return new Hacker(
+      this.hackerForm.controls.ip.value ?? '', <i class="conum" data-value="1"></i><b>(1)</b>
+      this.hackerForm.controls.countryName.value ?? '',
+      this.hackerForm.controls.regionName.value ?? '',
+      this.hackerForm.controls.city.value ?? '',
+      this.hackerForm.controls.id.value ?? undefined)
+  }
+
+  /**
+   * Initializes this.hackerForm from parameter hacker instance (object)
+   */
+  private hacker_to_hackerForm(hacker: IHacker): void {
+    this.hackerForm.patchValue({ <i class="conum" data-value="2"></i><b>(2)</b>
+      ip: hacker.ip,
+      // à compléter !
+    })
+  }</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>&lt;2&gt; L&#8217;opérateur ?? nous permet de définir une valeur par défaut</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>La méthode <code>patchValue</code> permet de sélectionner les attributs à mettre à jour. Ici tous doivent l&#8217;être.</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -1415,7 +1699,13 @@ export class HackerListComponent {
 <div class="olist arabic">
 <ol class="arabic" start="4">
 <li>
-<p>Faire en sorte que le <code>ManagerHackerService</code> alloue un ID unique à un nouvel objet Hacker juste avant sa sauvegarde (déclenchée par l&#8217;utilisateur lorsqu&#8217;il actionne le bouton "Ajouter" du formulaire)</p>
+<p>Rendre opérationnel l&#8217;enregistrement d&#8217;un nouvel hacker</p>
+</li>
+<li>
+<p>Rendre opérationnel la modification d&#8217;un hacker de la liste</p>
+</li>
+<li>
+<p>Faire en sorte qu&#8217;au moment de la création d&#8217;un nouvel hacker, un ID unique lui soit alloué. C&#8217;est le <code>ManagerHackerService</code> qui se chargera de créer cet ID unique juste avant la sauvegarde (déclenchée par l&#8217;utilisateur lorsqu&#8217;il actionne le bouton "Ajouter" du formulaire)</p>
 <div class="paragraph">
 <p>Indice 1 : Cela fait référence au concept de <a href="https://fr.wikipedia.org/wiki/Universally_unique_identifier">UUID - wikipedia</a></p>
 </div>
@@ -1424,7 +1714,7 @@ export class HackerListComponent {
 </div>
 </li>
 <li>
-<p>Dans la vue en liste, ajouter les opérations de modification et suppression d&#8217;un item (se référer à la  <a href="#_maquette_de_home_component_html">Maquette de home.component.html</a>, mais placer des icones significatifs à la place des mots "modifier" et "supprimer")</p>
+<p>Dans la vue en liste, ajouter l&#8217;opérations de suppression d&#8217;un item (se référer à la  <a href="#_maquette_de_home_component_html">Maquette de home.component.html</a>)</p>
 </li>
 <li>
 <p>Le bouton <em>submit</em> du formulaire est actuellement labellisé "Ajouter / Mettre à jour".</p>
