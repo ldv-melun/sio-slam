@@ -630,7 +630,7 @@ NOTE: La zone de stockage est dédiée à une _origin_ (nom de domaine, ip). Ain
 
 IMPORTANT: Ne jamais sauvegarder des données sensibles sur le client !
 
-== composant ManagerHackerService
+== Composant ManagerHackerService
 
 Pour une bonne répartition des responsabilités, nous décidons de placer la logique de gestion de la persistance des données dans la classe de service `ManagerHackerService`.
 
@@ -673,7 +673,7 @@ image:localstorage-consult.png[localstorage consult]
 ====
 
 
-== composant HackerListComponent
+== Composant HackerListComponent
 
 Ce composant présente à l'utilisateur la liste des hackers stockés sur le client.
 
@@ -885,7 +885,7 @@ export class ManagerHackerService {
 
 ----
 
-<1> Déclaration et initialisation d'un objet émetteur d'événements
+<1> Déclaration et initialisation d'un objet émetteur d'événements (@Output)
 
 <2> Lancement d'un événement.
 
@@ -895,7 +895,7 @@ Dans l'état, le projet devrait être stable.
 
 Gérer les problèmes éventuels avant de poursuivre.
 
-== Retour sur le composant HackerFormComponent
+== Exploitation des données de formulaire
 
 Vous vous êtes rendu compte que l'événement lancé au déclenchement de l'édition d'un hacker ne génère aucune action visible ! et pour cause, l'événement est tout simplement ignoré par l'application ! Corrigeons cela.
 

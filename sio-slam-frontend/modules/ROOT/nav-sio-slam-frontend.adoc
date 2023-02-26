@@ -3,3 +3,4 @@
 ** xref:td0-intro-ts.adoc[Premiers pas en TypeScript]
 ** xref:td1-hello-world.adoc[Angular Hello World & Client API]
 ** xref:td2-multiplication.adoc[Angular Parent->Enfant & Router->Pages]
+** xref:td3-hackers.adoc[Communication généralisée etre composants]
