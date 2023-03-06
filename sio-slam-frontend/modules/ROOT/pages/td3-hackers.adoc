@@ -121,7 +121,9 @@ Nous prendrons un template classique de la documentation bootstrap.
   </nav>
 ----
 
-Faire de même pour le `footer` et `home` (pour ce dernier composant, on présente un peu plus loin comment organiser son template, pour l'instant accepter le contenu par défaut)
+=== Conception d'autres composants
+
+Dans le même esprit, créer les composants `footer` et `home` (pour ce dernier composant, on présente un peu plus loin comment organiser son template, pour l'instant accepter le contenu par défaut)
 
 === Conception des routes
 
