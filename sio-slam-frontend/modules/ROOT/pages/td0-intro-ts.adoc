@@ -51,7 +51,7 @@ Créer un dossier vide et l'ouvrir avec visual studio code.
 ----
 <1> La version du JS généré par le compilateur (https://www.w3schools.com/js/js_es5.asp[ES5] - ce n'est pas la dernière)
 <2> Le type de gestion des modules JS
-<3> Pour une lecture aisée du JS généré (mode dev)
+<3> Pour permettre le debug du code JS généré à travers le code TS (mode dev)
 <4> Dossier de destination des fichiers compilés
 
 Comme on le verra plus loin, ce fichier sera passé en argument du compilateur `tsc`.

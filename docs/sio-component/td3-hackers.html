@@ -601,7 +601,7 @@ Sous Visual Code, on gagnerait à installer l&#8217;extension <strong><em>Intell
 </div>
 </div>
 <div class="paragraph">
-<p>Faire de même pour le footer.</p>
+<p>Faire de même pour le <code>footer</code> et <code>home</code> (pour ce dernier composant, on présente un peu plus loin comment organiser son template, pour l&#8217;instant accepter le contenu par défaut)</p>
 </div>
 </div>
 <div class="sect2">
@@ -872,6 +872,18 @@ UPDATE angular.json (3171 bytes)</pre>
 };</code></pre>
 </div>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Attention, avec ce service, en mode gratuit, seul le protocole http non sécurisé est possible (pas de https)
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -895,7 +907,7 @@ export class LookupIpService {
   constructor(private http:HttpClient) { }
 
   public getGeoLocationIp(ip: string) : any {
-    return this.http.get(environment.apiBaseUrl + ip + '&amp;output=json&amp;access_key=' + environment.keyAPI);
+    return this.http.get(environment.apiBaseUrl + ip + '?output=json&amp;access_key=' + environment.keyAPI);
   }
 }</code></pre>
 </div>

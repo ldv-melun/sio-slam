@@ -444,42 +444,7 @@ On remarquera la syntaxe qui, côté parent, utilise le *crochet* pour désigner
 
 . Ajouter une nouvelle page (et nouvelle route et nouveau lien dans la barre de menu) qui présente *les tables de multiplication, de 1 à 10*. Pour y arriver, vous mettrez en application ce qui a été vu précédemment.
 
-Vous produirez une nouvelle version de l'arbre hiérarchique de composants. Le source _plantuml_ de l'arbre actuel est :
-
-[source, plantuml]
-----
-@startuml
-
-class Root
-class Header
-class Router
-class Footer
-
-class TableMult
-class PageTableMult
-
-
-Root --> Header
-Root --> Router
-Root --> Footer
-Router --> PageTableMult
-
-PageTableMult -->"1  " TableMult
-
-hide circle
-hide method
-@enduml
-
-----
-
-====
-
-====
-[start=3]
-. Ajouter la possibilité de permettre à l'utilisateur de saisir le nombre de tables qu'il souhaite voir dans la table des tables de multiplication (ne pas le limiter à 10).
-
-====
-
+Voici la nouvelle version de l'arbre hiérarchique de composants à implémenter :
 
 [plantuml,  format=png]
 ....
@@ -507,6 +472,16 @@ hide circle
 hide method
 @enduml
 ....
+
+
+
+====
+
+====
+[start=3]
+. Ajouter la possibilité de permettre à l'utilisateur de saisir le nombre de tables qu'il souhaite voir dans la table des tables de multiplication (ne pas le limiter à 10).
+
+====
 
 
 //La suite > xref:sio-component:ROOT:_ch02-hackers.adoc[app Hackers]

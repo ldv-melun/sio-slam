@@ -121,7 +121,7 @@ Nous prendrons un template classique de la documentation bootstrap.
   </nav>
 ----
 
-Faire de même pour le footer.
+Faire de même pour le `footer` et `home` (pour ce dernier composant, on présente un peu plus loin comment organiser son template, pour l'instant accepter le contenu par défaut)
 
 === Conception des routes
 
@@ -334,6 +334,8 @@ export const environment = {
 };
 ----
 
+TIP: Attention, avec ce service, en mode gratuit, seul le protocole http non sécurisé est possible (pas de https)
+
 == Implémentation du service lookupIp
 
 Nous ajoutons une *méthode* que nous nommons `getGeoLocationIp` qui prend un paramètre nommé `ip` et retourne une référence à un objet de type  `Observable` (pour rafraichir votre mémoire, reportez-vous au premier TD HelloWorld)
@@ -353,7 +355,7 @@ export class LookupIpService {
   constructor(private http:HttpClient) { }
 
   public getGeoLocationIp(ip: string) : any {
-    return this.http.get(environment.apiBaseUrl + ip + '&output=json&access_key=' + environment.keyAPI);
+    return this.http.get(environment.apiBaseUrl + ip + '?output=json&access_key=' + environment.keyAPI);
   }
 }
 ----
