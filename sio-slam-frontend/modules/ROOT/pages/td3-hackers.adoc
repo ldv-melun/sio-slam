@@ -356,7 +356,7 @@ export class LookupIpService {
 
   constructor(private http:HttpClient) { }
 
-  public getGeoLocationIp(ip: string) : any {
+  public getGeoLocationIp(ip: string) : Observable<any> {
     return this.http.get(environment.apiBaseUrl + ip + '?output=json&access_key=' + environment.keyAPI);
   }
 }
@@ -415,7 +415,7 @@ caption Maquette du composant Home
 ====
 La conception de la maquette a été réalisée en utilisant https://plantuml.com/fr/salt[plantuml et salt]
 
-Vous trouverez le code de cette maquette ici : https://www.plantuml.com/plantuml/png/VLBHIiCm57tFLnpsAjIrcszE9e9CsN28-39NYEsTnhLDJDA7qVQ3zXtxCPDsHQRYkH0EvvwR72wP6ikrDJophAhYoUHMwhpCkD34hB0POSQJBMd3tecdf65aJZZo5_j_iOsKjf_fE4kuia8MMF3Fagmbf2KIcIjfU64nSqx6gZC620M76eDmE0h2w2A8HkCW2eU3UZMNSbkgDGEMV6UyvvuhTwV7mAcFX_sRVyCrdkHs9u_oiyWomazrTSEBXBArqrV0zOSiNSppXKp5XZI0DMkQcbLeuCxuylLgBemb1bGC3Z5mjsn9Z328Wb4m_YQkMNUkDkWfN5TOoX7s98fxTvVq5Btxb_b17VQQ-wMQpfVxxCBllLHAYvpqtvgVRvYlAHLf-mM-0000[code de la maquette]
+Vous trouverez le code de cette maquette ici : https://www.plantuml.com/plantuml/uml/VLBHIiCm57tFLnpsAjIrcszE9e9CsN28-39NYEsTnhLDJDA7qVQ3zXtxCPDsHQRYkH0EvvwR72wP6ikrDJophAhYoUHMwhpCkD34hB0POSQJBMd3tecdf65aJZZo5_j_iOsKjf_fE4kuia8MMF3Fagmbf2KIcIjfU64nSqx6gZC620M76eDmE0h2w2A8HkCW2eU3UZMNSbkgDGEMV6UyvvuhTwV7mAcFX_sRVyCrdkHs9u_oiyWomazrTSEBXBArqrV0zOSiNSppXKp5XZI0DMkQcbLeuCxuylLgBemb1bGC3Z5mjsn9Z328Wb4m_YQkMNUkDkWfN5TOoX7s98fxTvVq5Btxb_b17VQQ-wMQpfVxxCBllLHAYvpqtvgVRvYlAHLf-mM-0000[code de la maquette]
 ====
 
 == Composants inclus dans la page Home

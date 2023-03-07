@@ -910,7 +910,7 @@ export class LookupIpService {
 
   constructor(private http:HttpClient) { }
 
-  public getGeoLocationIp(ip: string) : any {
+  public getGeoLocationIp(ip: string) : Observable&lt;any&gt; {
     return this.http.get(environment.apiBaseUrl + ip + '?output=json&amp;access_key=' + environment.keyAPI);
   }
 }</code></pre>
@@ -973,7 +973,7 @@ Voir ici le concept de : <a href="https://fr.wikipedia.org/wiki/Wireframe_%28des
 <p>La conception de la maquette a été réalisée en utilisant <a href="https://plantuml.com/fr/salt">plantuml et salt</a></p>
 </div>
 <div class="paragraph">
-<p>Vous trouverez le code de cette maquette ici : <a href="https://www.plantuml.com/plantuml/png/VLBHIiCm57tFLnpsAjIrcszE9e9CsN28-39NYEsTnhLDJDA7qVQ3zXtxCPDsHQRYkH0EvvwR72wP6ikrDJophAhYoUHMwhpCkD34hB0POSQJBMd3tecdf65aJZZo5_j_iOsKjf_fE4kuia8MMF3Fagmbf2KIcIjfU64nSqx6gZC620M76eDmE0h2w2A8HkCW2eU3UZMNSbkgDGEMV6UyvvuhTwV7mAcFX_sRVyCrdkHs9u_oiyWomazrTSEBXBArqrV0zOSiNSppXKp5XZI0DMkQcbLeuCxuylLgBemb1bGC3Z5mjsn9Z328Wb4m_YQkMNUkDkWfN5TOoX7s98fxTvVq5Btxb_b17VQQ-wMQpfVxxCBllLHAYvpqtvgVRvYlAHLf-mM-0000">code de la maquette</a></p>
+<p>Vous trouverez le code de cette maquette ici : <a href="https://www.plantuml.com/plantuml/uml/VLBHIiCm57tFLnpsAjIrcszE9e9CsN28-39NYEsTnhLDJDA7qVQ3zXtxCPDsHQRYkH0EvvwR72wP6ikrDJophAhYoUHMwhpCkD34hB0POSQJBMd3tecdf65aJZZo5_j_iOsKjf_fE4kuia8MMF3Fagmbf2KIcIjfU64nSqx6gZC620M76eDmE0h2w2A8HkCW2eU3UZMNSbkgDGEMV6UyvvuhTwV7mAcFX_sRVyCrdkHs9u_oiyWomazrTSEBXBArqrV0zOSiNSppXKp5XZI0DMkQcbLeuCxuylLgBemb1bGC3Z5mjsn9Z328Wb4m_YQkMNUkDkWfN5TOoX7s98fxTvVq5Btxb_b17VQQ-wMQpfVxxCBllLHAYvpqtvgVRvYlAHLf-mM-0000">code de la maquette</a></p>
 </div>
 </td>
 </tr>
