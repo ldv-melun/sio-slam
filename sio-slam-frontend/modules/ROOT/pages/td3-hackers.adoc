@@ -995,9 +995,9 @@ Modifier *dynamiquement* (comprendre par du code, pas statiquement) ce comportem
 
 . Ajouter le lien vers le drapeau du pays (obtenu par l'API externe) comme nouvelle propriété à la <<_structure_des_données>> d'un Hacker, et présenter le drapeau dans la liste et la vue formulaire.
 
-. Vérifier que l'application ne soumet à l'API distant que des valeurs d'IP saisie par l'utilisateur qui soient au format *IPV4* ou *IPV6* (prévoir un filtre qui utilise la technologie des *expressions régultières*)
+. Vérifier que l'application ne soumet à l'API distant que des valeurs d'IP saisie par l'utilisateur qui soient au format *IPV4* ou *IPV6* (prévoir un filtre qui utilise la technologie des *expressions régulières*)
 
-. Ne pas soumettre non plus des adresses non routables. Voir : https://www.ibm.com/docs/fr/networkmanager/4.2.0?topic=translation-private-address-ranges[Adresses non routables]
+. Ne pas soumettre non plus des adresses *non routables*, car il est, dans ce cas, inutile de consommer du crédit API pour rien. Voir : https://www.ibm.com/docs/fr/networkmanager/4.2.0?topic=translation-private-address-ranges[Adresses non routables]
 
 ====
 

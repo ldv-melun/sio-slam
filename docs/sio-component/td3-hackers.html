@@ -1742,10 +1742,10 @@ export class ManagerHackerService {
 <p>Ajouter le lien vers le drapeau du pays (obtenu par l&#8217;API externe) comme nouvelle propriété à la <a href="#_structure_des_données">Structure des données</a> d&#8217;un Hacker, et présenter le drapeau dans la liste et la vue formulaire.</p>
 </li>
 <li>
-<p>Vérifier que l&#8217;application ne soumet à l&#8217;API distant que des valeurs d&#8217;IP saisie par l&#8217;utilisateur qui soient au format <strong>IPV4</strong> ou <strong>IPV6</strong> (prévoir un filtre qui utilise la technologie des <strong>expressions régultières</strong>)</p>
+<p>Vérifier que l&#8217;application ne soumet à l&#8217;API distant que des valeurs d&#8217;IP saisie par l&#8217;utilisateur qui soient au format <strong>IPV4</strong> ou <strong>IPV6</strong> (prévoir un filtre qui utilise la technologie des <strong>expressions régulières</strong>)</p>
 </li>
 <li>
-<p>Ne pas soumettre non plus des adresses non routables. Voir : <a href="https://www.ibm.com/docs/fr/networkmanager/4.2.0?topic=translation-private-address-ranges">Adresses non routables</a></p>
+<p>Ne pas soumettre non plus des adresses <strong>non routables</strong>, car il est, dans ce cas, inutile de consommer du crédit API pour rien. Voir : <a href="https://www.ibm.com/docs/fr/networkmanager/4.2.0?topic=translation-private-address-ranges">Adresses non routables</a></p>
 </li>
 </ol>
 </div>
