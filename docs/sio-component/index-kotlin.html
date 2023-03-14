@@ -224,9 +224,6 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="projet-2.html">Projet 2</a>
   </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="projet-3.html">Projet 3</a>
-  </li>
 </ul>
   </li>
 </ul>
@@ -3696,11 +3693,22 @@ fun main(){
 </li>
 </ul>
 </div>
-<div class="imageblock kroki">
+<div class="listingblock kroki-error">
+<div class="title">Classe Cercle :</div>
 <div class="content">
-<img src="_images/classe_Cercle_v1-5ec7436f496c6f84cdb1343789359a726157ec4a.png" alt="Classe Cercle :">
+<pre>skinparam classAttributeIconSize 0
+class Cercle{
++coordCentreX: Number
++coordCentreY: Number
++rayon: Number
++perimetre: Double
++surface: Double
++Cercle(coordCentreX: Number, coordCentreY: Number, rayon: Number)
+-calculerPerimetre(): Unit
+-caluclerSurface(): Unit
+}
+hide circle</pre>
 </div>
-<div class="title">Figure 3. Classe Cercle :</div>
 </div>
 <div class="paragraph">
 <p>En préalable, rajouter l&#8217;import de la constante <strong>PI</strong> et la méthode <strong>pow</strong> en rajoutant les instructions suivantes :</p>
@@ -3897,7 +3905,7 @@ Process finished with exit code 0</pre>
 <div class="content">
 <img src="_images/classe_constructeur_second-0267244ab502e0524ffcb4aad2f245f8bea82afd.png" alt="Classe avec 1 constructeur secondaire :">
 </div>
-<div class="title">Figure 4. Classe avec 1 constructeur secondaire :</div>
+<div class="title">Figure 3. Classe avec 1 constructeur secondaire :</div>
 </div>
 <div class="listingblock">
 <div class="title">Constructeur primaire non défini :</div>
@@ -3935,7 +3943,7 @@ Process finished with exit code 0</pre>
 <div class="content">
 <img src="_images/classe_constructeur_second_v2-f5394f9e57b3371c1c9a596f129c3ff38e533ced.png" alt="Classe avec 1 constructeur secondaire :">
 </div>
-<div class="title">Figure 5. Classe avec 1 constructeur secondaire :</div>
+<div class="title">Figure 4. Classe avec 1 constructeur secondaire :</div>
 </div>
 <div class="listingblock">
 <div class="title">Constructeur primaire défini : L&#8217;ajout de la paire de parenthèse  marque la définition du constructeur primaire.</div>
@@ -3987,7 +3995,7 @@ Process finished with exit code 0</pre>
 <div class="content">
 <img src="_images/classe_constructeur_second_v3-af30f699e0b25e9c660810963109820e7f15a0ad.png" alt="Classe avec 2 constructeurs secondaires :">
 </div>
-<div class="title">Figure 6. Classe avec 2 constructeurs secondaires :</div>
+<div class="title">Figure 5. Classe avec 2 constructeurs secondaires :</div>
 </div>
 <div class="listingblock">
 <div class="title">Classe complète :</div>
@@ -4054,7 +4062,7 @@ En effet Kotlin va utiliser des objets dits <strong>compagnon</strong> pour impl
 <div class="content">
 <img src="_images/classe_elmtStatiques_v1-7bc98da6cc548c942251985ebbbf25b456037d0b.png" alt="Classe avec éléments statiques :">
 </div>
-<div class="title">Figure 7. Classe avec éléments statiques :</div>
+<div class="title">Figure 6. Classe avec éléments statiques :</div>
 </div>
 <div class="listingblock">
 <div class="title">Exemple d&#8217;implémentation d&#8217;attributs et de méthodes de classe :</div>
@@ -4157,7 +4165,7 @@ Process finished with exit code 0</pre>
 <div class="content">
 <img src="_images/classe_heritage_v1-6948241f9c2998a8708142f5709bf25f4dd25123.png" alt="Héritage d&#8217;une classe dérivée à partir de sa classe de base :">
 </div>
-<div class="title">Figure 8. Héritage d&#8217;une classe dérivée à partir de sa classe de base :</div>
+<div class="title">Figure 7. Héritage d&#8217;une classe dérivée à partir de sa classe de base :</div>
 </div>
 <div class="listingblock">
 <div class="title">Instructions élémentaires pour l&#8217;héritage entre une classe dérivée et sa classe de base :</div>
@@ -4187,7 +4195,7 @@ class Derive(): Base(){
 <div class="content">
 <img src="_images/classe_heritage_v2-8b90363917b6cfa09d3ce5bf17e05d5757b3b4e4.png" alt="Héritage d&#8217;une classe dérivée à partir de sa classe de base :">
 </div>
-<div class="title">Figure 9. Héritage d&#8217;une classe dérivée à partir de sa classe de base :</div>
+<div class="title">Figure 8. Héritage d&#8217;une classe dérivée à partir de sa classe de base :</div>
 </div>
 <div class="listingblock">
 <div class="title">Instructions de passage des arguments de la classe dérivée vers sa classe de base :</div>
@@ -4222,7 +4230,7 @@ Le constructeur de la classe <strong>Derive</strong> comporte 2 paramètres qui 
 <div class="content">
 <img src="_images/classe_heritage_v3-853aa61b80b8c896438bdb67bb6a0622082765d5.png" alt="Héritage d&#8217;une classe dérivée à partir de sa classe de base :">
 </div>
-<div class="title">Figure 10. Héritage d&#8217;une classe dérivée à partir de sa classe de base :</div>
+<div class="title">Figure 9. Héritage d&#8217;une classe dérivée à partir de sa classe de base :</div>
 </div>
 <div class="listingblock">
 <div class="title">Exemples illustrant les instructions pour ajouter des méthodes et attributs à la classe dérivée :</div>
@@ -4315,7 +4323,7 @@ Le type peut être redéfini si les deux types sont compatibles (ex: de <strong>
 <div class="content">
 <img src="_images/classe_heritage_v4-2d8a9223cfb6e7c8e277501f3bb4e49b9ae4d562.png" alt="Héritage d&#8217;une classe dérivée à partir de sa classe de base :">
 </div>
-<div class="title">Figure 11. Héritage d&#8217;une classe dérivée à partir de sa classe de base :</div>
+<div class="title">Figure 10. Héritage d&#8217;une classe dérivée à partir de sa classe de base :</div>
 </div>
 <div class="listingblock">
 <div class="title">Utilisation de <strong>override</strong> pour modifier la valeur d&#8217;initialisation d&#8217;un attribut :</div>
@@ -4364,7 +4372,7 @@ class Derive(arg01: Int, arg02: Int, val attrib03: Int): Base(arg01, arg02){
 <div class="content">
 <img src="_images/classe_heritage_v5-9173cbbd81034ea8d1b327ff15a15f59faac985c.png" alt="Héritage d&#8217;une classe dérivée à partir de sa classe de base :">
 </div>
-<div class="title">Figure 12. Héritage d&#8217;une classe dérivée à partir de sa classe de base :</div>
+<div class="title">Figure 11. Héritage d&#8217;une classe dérivée à partir de sa classe de base :</div>
 </div>
 <div class="listingblock">
 <div class="title">Application sur l&#8217;exemple :</div>
@@ -4403,7 +4411,7 @@ class Derive(arg01: Int, arg02: Int, val attrib03: Int): Base(arg01, arg02){
 <div class="content">
 <img src="_images/classe_heritage_v6-b16383958cde5ffb02f21795e2148dae043a2b7a.png" alt="Héritage d&#8217;une classe dérivée à partir de sa classe de base :">
 </div>
-<div class="title">Figure 13. Héritage d&#8217;une classe dérivée à partir de sa classe de base :</div>
+<div class="title">Figure 12. Héritage d&#8217;une classe dérivée à partir de sa classe de base :</div>
 </div>
 <div class="listingblock">
 <div class="title">Exemple d&#8217;utilisation de <strong>super</strong> avec des attributs et méthodes redéfinis :</div>
@@ -4458,7 +4466,7 @@ On va ici se contenter d&#8217;illustrer leur usage sur du code purement en Kotl
 <div class="content">
 <img src="_images/classe_heritage_v7-6ffc0668a78e6dbdb047b14d2a03f56254a8b26f.png" alt="Héritage d&#8217;une classe dérivée à partir de sa classe de base :">
 </div>
-<div class="title">Figure 14. Héritage d&#8217;une classe dérivée à partir de sa classe de base :</div>
+<div class="title">Figure 13. Héritage d&#8217;une classe dérivée à partir de sa classe de base :</div>
 </div>
 <div class="listingblock">
 <div class="title">Exemple :</div>
@@ -4565,7 +4573,7 @@ Une méthode ou un attribut ne peuvent être déclarés comme <strong>abstract</
 <div class="content">
 <img src="_images/classe_abstraite_v1-435166348400b61ff55f6c143c6aa660b235ab51.png" alt="Exemple de classes abstraites :">
 </div>
-<div class="title">Figure 15. Exemple de classes abstraites :</div>
+<div class="title">Figure 14. Exemple de classes abstraites :</div>
 </div>
 <div class="listingblock">
 <div class="title">Héritage sur plusieurs niveaux :</div>
@@ -4635,7 +4643,7 @@ Process finished with exit code 0</pre>
 <div class="content">
 <img src="_images/classe_abstraite_v2-c904de415a29079354f0ddee1d19cd387763a9f0.png" alt="Exemple de classes abstraites :">
 </div>
-<div class="title">Figure 16. Exemple de classes abstraites :</div>
+<div class="title">Figure 15. Exemple de classes abstraites :</div>
 </div>
 <div class="listingblock">
 <div class="title">Héritage sur plusieurs niveaux :</div>
@@ -4755,7 +4763,7 @@ Pour mettre en avant les interfaces d&#8217;un point de vue pédagogique, nous a
 <div class="content">
 <img src="_images/classe_interface_v1-b3ea317e6b7dc1170bf5f075b88540f9c73211f6.png" alt="Représentation d&#8217;une interface en UML">
 </div>
-<div class="title">Figure 17. Représentation d&#8217;une interface en UML</div>
+<div class="title">Figure 16. Représentation d&#8217;une interface en UML</div>
 </div>
 <div class="listingblock">
 <div class="title">Exemple :</div>
@@ -4786,7 +4794,7 @@ class Cobaye(): Inter01, Inter02{
 <div class="content">
 <img src="_images/classe_interface_v2-5f071fe35c63771a3f7a60ba8ebf603f05f8ff59.png" alt="Représentation d&#8217;une interface en UML :">
 </div>
-<div class="title">Figure 18. Représentation d&#8217;une interface en UML :</div>
+<div class="title">Figure 17. Représentation d&#8217;une interface en UML :</div>
 </div>
 <div class="listingblock">
 <div class="title">Exemple :</div>
