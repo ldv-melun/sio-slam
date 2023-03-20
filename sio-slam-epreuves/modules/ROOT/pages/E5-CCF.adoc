@@ -69,12 +69,32 @@ Le dossier est constitué :
 Une fiche présente des éléments constitutifs de la réalisation professionnelle mise en œuvre par la
 personne candidate : description des ressources matérielles et logicielles utilisées, schémas explicatifs ou encore documentation utile.
 
+== Choix des situations professionnelles
+
+La présence au minimum d'une situation professionnelle réalisée en cours de formation (back-end ou front-end)
+
+Possibilité de proposer une situation professionnelle (SPExtra) réalisée hors contexte introduit par les équipes pédagogiques, à condition que celle-ci ait été validée par vos professeurs.
+
+La SPExtra doit être une situation professionnelle qui s'intègre dans un projet, avec une finalité clairement identifiée (projet personnel, projet réalisé en période de stage)
+
+=> le candidat doit alors présenter le contexte organisationnel et les structures technologiques à partir desquels la SPExtra s'appuie.
+
+Le contexte technologique de la SPExtra fait au minimum usage d'un framework applicatif, et de préférences, d'une gestion de versions et d'un outil de travail collaboratif.
+
+Le contexte technologique de la SPExtra est transposable dans le contexte technologique support des AP (salle C415 ou C416), dans le respect des règles de confidentialité liant le candidat à l'organisation d'accueil.
+
+
 == Organisation de l’épreuve
 
 L’usage de l’environnement de travail est placé sous la seule responsabilité de la personne candidate, dans le respect des consignes de sécurité, de sauvegarde des données et des ressources utilisées. Voir schéma ci-après.
 
 image:E5-SchemaExplicatif.jpg[E5]
 
+== Date butoir de remise des dossiers
+
+Votre dossier est constitué d'une chemise de couleur **bleue**, avec xref:attachment$BTS_SIO_2023_Page_de_garde_E5.docx[ce modèle de page de couverture] et comportant le descriptif de vos deux situations professionnelles.
+
+À déposer au plus tard le #**mercredi 05 avril 2023**#.
 
 == Annexe
 
