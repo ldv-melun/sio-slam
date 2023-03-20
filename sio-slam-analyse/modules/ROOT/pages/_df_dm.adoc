@@ -7,7 +7,7 @@
 :listing-caption: Listing
 :toc-title: Table des matières
 :toc: left
-:toclevels: 4
+:toclevels: 3
 
 == Introduction
 

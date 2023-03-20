@@ -2,13 +2,14 @@
 
 == Concevoir et développer une solution applicative
 
-* Analyser un besoin exprimé et son contexte juridique
-* Modéliser une solution applicative
-* Participer à la conception de l’architecture d’une solution applicative
-* Exploiter les technologies Web et mobile pour mettre en œuvre les échanges entre applications,
-* Programmation Objet, procédurale et fonctionnelle
-Notion de qualité et design pattern (Gof, ACID…)
-* Application en architecture 3 tiers Web
+== Épreuve pratique et orale – Coefficient 4
+
+=== Objectif
+Cette épreuve vise à évaluer chez la personne candidate l’acquisition des compétences décrites dans le bloc de compétences « Conception et développement d’applications » propre à l’option «Solutions logicielles et applications métiers», à savoir :
+
+* concevoir et développer une solution applicative ;
+* assurer la maintenance corrective ou évolutive d’une solution applicative ;
+* gérer les données.
 
 == Assurer la maintenance corrective ou évolutive d’une solution applicative
 
@@ -17,15 +18,68 @@ Notion de qualité et design pattern (Gof, ACID…)
 * Élaborer et réaliser des tests
 * Documentation technique et fonctionnelle
 
-== Gérer les données
+//
+// == Gérer les données
+//
+// * Éléments d’analyse et implémentation dans un SGBDR
+// * Les bases de SQL : DDL, DMLDCL, DQL…
+// image:sql-map.png[cartographie sql]
+//
+// * Procédures stockées, triggers (tombe parfois à l’examen)
+// * Notion de sauvegarde et restauration
+//
+// * NoSQL : exemple MongoDB, Firebase dans le cloud…
+//
+// * Prépa **épreuves dominantes E5** (et indirectement E6)
 
-* Éléments d’analyse et implémentation dans un SGBDR
-* Les bases de SQL : DDL, DMLDCL, DQL…
-image:sql-map.png[cartographie sql]
 
-* Procédures stockées, triggers (tombe parfois à l’examen)
-* Notion de sauvegarde et restauration
+=== Critères d’évaluation
 
-* NoSQL : exemple MongoDB, Firebase dans le cloud…
+Les critères d’évaluation correspondent aux critères de performance exprimés pour chaque
+compétence du bloc « Conception et développement d’applications » propre à l’option « Solutions
+logicielles et applications métiers » figurant dans le référentiel de certification.
 
-* Prépa **épreuves dominantes E5** (et indirectement E6)
+=== Modalités d’évaluation
+
+Cette épreuve est **pratique**, elle se déroule sous forme ponctuelle et en contrôle en cours de formation.
+
+L’épreuve prend appui sur **deux réalisations professionnelles composant le dossier remis par la personne candidate**.
+
+Ces réalisations professionnelles mobilisent les ressources décrites dans le
+référentiel de certification pour le bloc « Conception et développement d’applications » et ont été élaborées dans un environnement technologique conforme à l’annexe II.E.
+La commission d’évaluation dispose d’un dossier remis par la personne candidate. Un temps de préparation de l’épreuve par les membres de la commission doit leur permettre de prendre connaissance du dossier et de préparer les éléments de l’interrogation. La mise à disposition du dossier est définie par la circulaire nationale d’organisation et selon les modalités fixées par les autorités académiques.
+
+La commission d’évaluation **choisit une des deux réalisations** pour laquelle elle va établir une expression de besoins que la personne candidate doit traiter.
+
+L’expression des besoins remise au candidat est rédigée préalablement par la commission à partir de l’une des situations professionnelles présentes dans le dossier. Elle est définie par :
+
+- les spécifications fonctionnelles de la production attendue (au besoin illustrées par des schémas, diagrammes ou encore images écran) ;
+
+- éventuellement la nature de la documentation professionnelle à présenter à l’appui de la solution (rapport de test, documentation technique, rapport d’incident, etc.).
+
+Chaque réalisation professionnelle a été construite au cours de la formation. Les deux réalisations présentées doivent, dans leur ensemble, mobiliser toutes les compétences du bloc.
+
+== Contenu du dossier
+
+Le dossier est constitué :
+
+- D'une page de garde : xref:attachment$BTS_SIO_2023_Page_de_garde_E5.docx[Page de garde E5]
+- Des fiches descriptives des **deux réalisations professionnelles** intégrant les modalités d’accès aux éléments techniques. Ces fiches sont décrites à l’aide du xref:attachment$modele-de-fiche- SLAM-Descriptif-RP-EpreuveE5-BTSSIO2023.docx[modèle de fiche] présenté dans la circulaire nationale d’organisation.
++
+Une fiche présente des éléments constitutifs de la réalisation professionnelle mise en œuvre par la
+personne candidate : description des ressources matérielles et logicielles utilisées, schémas explicatifs ou encore documentation utile.
+
+== Organisation de l’épreuve
+
+L’usage de l’environnement de travail est placé sous la seule responsabilité de la personne candidate, dans le respect des consignes de sécurité, de sauvegarde des données et des ressources utilisées. Voir schéma ci-après.
+
+image:E5-SchemaExplicatif.jpg[E5]
+
+
+== Annexe
+
+Exemples de fiches descriptives :
+
+* xref:attachment$RealisationProfessionnelleRecto_RefactoringGeTAP.pdf[Fiche recto] -  xref:attachment$RealisationProfessionnelleVerso_RefactoringGeTAP.pdf[Fiche verso]  et une xref:attachment$E5-SituationProfessionnelle-GetAP-Refactor-ExpressionBesoins.pdf[Expression des besoins]
+
+

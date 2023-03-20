@@ -962,7 +962,7 @@ Le composant `HackerFormComponent` va avoir besoin de transférer les données d
   }
 ----
 
-<1> <2> L'opérateur ?? nous permet de définir une valeur par défaut
+<1> L'opérateur ?? nous permet de définir une valeur par défaut
 
 <2> La méthode `patchValue` permet de sélectionner les attributs à mettre à jour. Ici tous doivent l'être.
 
