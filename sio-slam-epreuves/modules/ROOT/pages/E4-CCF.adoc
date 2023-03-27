@@ -1,6 +1,74 @@
-= E4 en CCF (BLOC 1)
+= E4 Support et mise à disposition de services informatiques
+:toc:
+:toc-title: Tables des matières
 
-== Gestion du patrimoine informatique
+Épreuve orale – Coefficient 4
+
+
+== Objectifs
+
+Cette épreuve vise à évaluer chez la personne candidate l’acquisition des compétences décrites dans
+le bloc de compétences « Support et mise à disposition de services informatiques », à savoir :
+
+Compétences concernées :
+
+    • **Gérer le patrimoine informatique ;**
+    • **Répondre aux incidents et demandes d’assistance et d’évolution ;**
+    • **Développer la présence en ligne de l’organisation ;**
+    • **Travailler en mode projet ;**
+    • **Mettre à disposition des utilisateurs un service informatique ;**
+    • **Organiser son développement professionnel.**
+
+Elle prend appui sur des réalisations professionnelles **vécues** par la personne candidate au cours de
+sa formation et recensées dans un dossier numérique (portfolio)
+
+== Format de l’épreuve : Deux phases consécutives
+
+- pendant **10 minutes (maximum)** la personne candidate présente son parcours de professionnalisation et justifie les modalités d’acquisition des compétences du bloc « Support et mise à disposition de services informatiques ».
+- s’en suit **30 minutes** d’échange avec le jury qui permettent, d’une part, d’expliciter et d’apprécier le parcours de professionnalisation et, d’autre part, d’approfondir une ou plusieurs réalisations décrites dans le dossier numérique (portfolio)
+
+L'entretien permet d’apprécier la capacité de la personne candidate à **mobiliser les compétences** visées, **sa capacité à rendre compte d’un travail réalisé** au sein d’une équipe projet en mettant clairement en évidence sa **contribution personnelle**.
+
+== Les attendus en termes de comportement et de communication
+
+  • Écouter, interpréter et prendre en compte les demandes des utilisateurs et des clients, en autonomie ou en relayant vers une personne ou une entité habilitée et compétente.
+  • Informer et sensibiliser les utilisateurs et les clients concernant le stockage et le traitement des données à caractère personnel.
+  • Documenter ses actions.
+  • Savoir anticiper, gérer des priorités et faire preuve de sang-froid.
+  • Être capable de collaborer au sein d’une équipe d’informaticiens et d’échanger avec les clients et les partenaires.
+• Avoir l’esprit d’initiative et être autonome.
+• S’adapter à des situations complexes, sous contraintes.
+• Avoir une communication écrite et orale adaptée aux acteurs internes et externes:
+ - rendre compte synthétiquement des actions entreprises et des réalisations ;
+ - adapter sa communication aux différents types d’interlocuteurs ;
+ - respecter les règles de confidentialité.
+• S’impliquer dans l'actualisation de ses connaissances professionnelles et se former si nécessaire.
+
+
+
+== Contenu du dossier candidat E4
+
+Ce dossier est constitué :
+
+• D'une page de garde xref:attachment$BTS_SIO_2023_Page_de_garde_E4.docx[Page de garde E4]
+
+• Des **attestations de stage**, **première et deuxième année**, ou les **certificats de travail** (apprentis)
+
+• Un xref:attachment$Tableau-de-synthèse-Epreuve E4-BTS-SIO-2023.xlsx[ **tableau de synthèse**] récapitulant l’ensemble des réalisations présentées dans le portfolio dont le modèle est fourni. **Pour chaque réalisation présente dans le dossier, les compétences mobilisées sont précisées;**
+
+• Le lien vers un support de type **portfolio** retraçant **le parcours de professionnalisation** de la personne candidate et décrivant les **réalisations professionnelles** élaborées au cours de sa formation. Les réalisations professionnelles présentées doivent, dans leur ensemble, mobiliser toutes les compétences définies dans les <<_objectifs>> de cette épreuve.
+
+== Date butoir de remise des dossiers
+
+Votre dossier est constitué d'une chemise de couleur **rouge**, avec xref:attachment$BTS_SIO_2023_Page_de_garde_E4.docx[ce modèle de page de couverture] et comportant les documents demandés (<<_contenu_du_dossier_candidat_e4>>).
+
+À déposer au plus tard le #**mercredi 05 avril 2023**#.
+
+== Contextes des compétences évaluées
+
+En lien avec les <<_objectifs>>
+
+=== Gestion du patrimoine informatique
 
 * Recensement du patrimoine informatique réalisé au moyen d’un outil de gestion des actifs informatiques.
 * Référentiels, normes et standards sont mobilisés de façon pertinente.
@@ -8,32 +76,31 @@
 * Conditions de continuité et de reprise d’un service
 * Sauvegardes et restaurations
 
-== Répondre aux incidents et aux demandes d’assistance et d’évolution
+=== Répondre aux incidents et aux demandes d’assistance et d’évolution
 
 * Notion de niveaux de hotline
 * Outil de gestion de tickets d’incidents (jira… voir solutions en lien avec les dépôt distant git)
 
-== Développer la présence en ligne de l’organisation
+=== Développer la présence en ligne de l’organisation
 
 * Technologies du web (protocoles, format d’échanges et de présentation, html/css/xml/json, DOM, js …)
 * Notion de référencement
 
-== Travailler en mode projet
+=== Travailler en mode projet
 
 * Gestionnaire de code source, travail collaboratif: Git et dépôt distant
 * Méthodes agiles
 * UML et diagrammes courants
 
-== Mettre à disposition des utilisateurs d’un service informatique
+=== Mettre à disposition des utilisateurs d’un service informatique
 
 * Réaliser les tests d’intégration et d’acceptation d’un service
-* Déploiement
+* Mise en production et déploiement (outils, méthodes, tests...)
 
-== Organiser son développement professionnel
+=== Organiser son développement professionnel
 
 * Organiser sa veille technologique
 * Développer son projet professionnel
-* *Prépa épreuve dominante E4*, portfolio (et indirectement E5 et E6)
 
 
 
