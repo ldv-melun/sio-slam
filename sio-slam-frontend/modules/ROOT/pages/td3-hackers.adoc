@@ -769,7 +769,7 @@ D'après la  <<_maquette_de_home_component_html>>, un lien _"modifier"_ sera pla
 La solution la plus propre consiste à passer par `ManagerHackerService`, qui est déjà le composant commun à ces 2 composants.
 
 
-[plantuml,  format=png]
+[plantuml, format=png]
 ....
 @startuml
 
