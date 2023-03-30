@@ -4,8 +4,9 @@
 
 Épreuve orale – Coefficient 4
 
+== Épreuve orale – Coefficient 4
 
-== Objectifs
+=== Objectifs
 
 Cette épreuve vise à évaluer chez la personne candidate l’acquisition des compétences décrites dans
 le bloc de compétences « Support et mise à disposition de services informatiques », à savoir :
@@ -52,15 +53,15 @@ Ce dossier est constitué :
 
 • D'une page de garde xref:attachment$BTS_SIO_2023_Page_de_garde_E4.docx[Page de garde E4]
 
-• Des **attestations de stage**, **première et deuxième année**, ou les **certificats de travail** (apprentis)
+• Des #**attestations de stage**#, **première et deuxième année**, ou les **certificats de travail** (apprentis)
 
-• Un xref:attachment$Tableau-de-synthèse-Epreuve E4-BTS-SIO-2023.xlsx[ **tableau de synthèse**] récapitulant l’ensemble des réalisations présentées dans le portfolio dont le modèle est fourni. **Pour chaque réalisation présente dans le dossier, les compétences mobilisées sont précisées;**
+• Un xref:attachment$Tableau-de-synthèse-Epreuve E4-BTS-SIO-2023.xlsx[ #**tableau de synthèse**# (lien)] récapitulant l’ensemble des réalisations présentées dans le portfolio dont le modèle est fourni. **Pour chaque réalisation présente dans le dossier, les compétences mobilisées sont précisées;**
 
-• Le lien vers un support de type **portfolio** retraçant **le parcours de professionnalisation** de la personne candidate et décrivant les **réalisations professionnelles** élaborées au cours de sa formation. Les réalisations professionnelles présentées doivent, dans leur ensemble, mobiliser toutes les compétences définies dans les <<_objectifs>> de cette épreuve.
+• Le lien vers un support de type #**portfolio**# retraçant **le parcours de professionnalisation** de la personne candidate et décrivant les **réalisations professionnelles** élaborées au cours de sa formation. Les réalisations professionnelles présentées doivent, dans leur ensemble, mobiliser toutes les compétences définies dans les <<_objectifs>> de cette épreuve.
 
 == =>Date butoir de remise des dossiers
 
-Votre dossier est constitué d'une chemise de couleur **rouge**, avec xref:attachment$BTS_SIO_2023_Page_de_garde_E4.docx[ce modèle de page de couverture] et comportant les documents demandés (<<_contenu_du_dossier_candidat_e4>>).
+Votre dossier est constitué d'une chemise de couleur #**rouge**#, avec xref:attachment$BTS_SIO_2023_Page_de_garde_E4.docx[ce modèle de page de couverture] et comportant les documents demandés (<<_contenu_du_dossier_candidat_e4>>).
 
 À déposer au plus tard le #**mercredi 05 avril 2023**#.
 
