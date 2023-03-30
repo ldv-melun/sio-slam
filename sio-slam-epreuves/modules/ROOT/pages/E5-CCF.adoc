@@ -1,5 +1,5 @@
 = E5 en CCF
-
+:toc:
 == Concevoir et développer une solution applicative
 
 == Épreuve pratique et orale – Coefficient 4
@@ -96,7 +96,7 @@ Votre dossier est constitué d'une chemise de couleur **bleue**, avec xref:attac
 
 À déposer au plus tard le #**mercredi 05 avril 2023**#.
 
-== Annexe
+== Annexes
 
 Exemples de fiches descriptives :
 

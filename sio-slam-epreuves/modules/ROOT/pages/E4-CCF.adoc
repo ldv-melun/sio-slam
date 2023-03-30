@@ -59,13 +59,13 @@ Ce dossier est constitué :
 
 • Le lien vers un support de type #**portfolio**# retraçant **le parcours de professionnalisation** de la personne candidate et décrivant les **réalisations professionnelles** élaborées au cours de sa formation. Les réalisations professionnelles présentées doivent, dans leur ensemble, mobiliser toutes les compétences définies dans les <<_objectifs>> de cette épreuve.
 
-== =>Date butoir de remise des dossiers
+== Date butoir de remise des dossiers
 
 Votre dossier est constitué d'une chemise de couleur #**rouge**#, avec xref:attachment$BTS_SIO_2023_Page_de_garde_E4.docx[ce modèle de page de couverture] et comportant les documents demandés (<<_contenu_du_dossier_candidat_e4>>).
 
 À déposer au plus tard le #**mercredi 05 avril 2023**#.
 
-== Annexe : Contextes des compétences évaluées
+== Annexes : Contextes des compétences évaluées
 
 En lien avec les <<_objectifs>>
 
