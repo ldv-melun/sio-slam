@@ -64,10 +64,10 @@ Chaque réalisation professionnelle a été construite au cours de la formation.
 Le dossier est constitué :
 
 - D'une page de garde : xref:attachment$BTS_SIO_2023_Page_de_garde_E5.docx[Page de garde E5]
-- Des fiches descriptives des **deux réalisations professionnelles** intégrant les modalités d’accès aux éléments techniques. Ces fiches sont décrites à l’aide du xref:attachment$modele-de-fiche- SLAM-Descriptif-RP-EpreuveE5-BTSSIO2023.docx[modèle de fiche] présenté dans la circulaire nationale d’organisation.
+- Des fiches descriptives des #**deux réalisations professionnelles**# intégrant les modalités d’accès aux éléments techniques. Ces fiches sont décrites à l’aide du xref:attachment$modele-de-fiche- SLAM-Descriptif-RP-EpreuveE5-BTSSIO2023.docx[modèle de fiche] présenté dans la circulaire nationale d’organisation.
 +
 Une fiche présente des éléments constitutifs de la réalisation professionnelle mise en œuvre par la
-personne candidate : description des ressources matérielles et logicielles utilisées, schémas explicatifs ou encore documentation utile.
+personne candidate : finalité et contexte de la situation professionnelle, description des ressources matérielles et logicielles utilisées, schémas explicatifs et #toute documentation utile à la compréhension du travail réalisé et des résultats obtenus#.
 
 == Choix des situations professionnelles
 
