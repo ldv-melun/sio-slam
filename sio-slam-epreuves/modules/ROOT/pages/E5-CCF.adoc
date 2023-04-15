@@ -73,9 +73,9 @@ personne candidate : finalité et contexte de la situation professionnelle, desc
 
 La présence au minimum d'une situation professionnelle réalisée en cours de formation (back-end ou front-end)
 
-Possibilité de proposer une situation professionnelle (SPExtra) réalisée hors contexte introduit par les équipes pédagogiques, à condition que celle-ci ait été validée par vos professeurs.
+Possibilité de proposer une situation professionnelle (SPExtra) réalisée hors contexte introduit par les équipes pédagogiques, **à condition que celle-ci ait été validée par vos professeurs**.
 
-La SPExtra doit être une situation professionnelle qui s'intègre dans un projet, avec une finalité clairement identifiée (projet personnel, projet réalisé en période de stage)
+La SPExtra doit être une situation professionnelle qui s'intègre dans un projet, avec une finalité clairement identifiée (projet personnel, projet réalisé en période de stage), et ayant nécessité un temps d'investissement relativement important (sur une durée de plusieurs mois)
 
 => le candidat doit alors présenter le contexte organisationnel et les structures technologiques à partir desquels la SPExtra s'appuie.
 
